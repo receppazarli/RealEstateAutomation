@@ -2,8 +2,8 @@
 
 namespace RealEstateAutomation.Entities.Concrete
 {
-    public class Shop : IEntity
+    public class Shop //: IEntity
     {
-        public int Id { get; set; }
+        // public int Id { get; set; }
     }
 }
