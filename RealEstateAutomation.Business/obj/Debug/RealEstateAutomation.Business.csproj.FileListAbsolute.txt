@@ -1,0 +1,6 @@
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\RealEstateAutomation.Business.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\RealEstateAutomation.Business.pdb
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\obj\Debug\RealEstateAutomation.Business.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\obj\Debug\RealEstateAutomation.Business.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\obj\Debug\RealEstateAutomation.Business.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\obj\Debug\RealEstateAutomation.Business.pdb

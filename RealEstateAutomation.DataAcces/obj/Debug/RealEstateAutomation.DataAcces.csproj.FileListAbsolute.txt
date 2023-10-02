@@ -1,0 +1,6 @@
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAcces\bin\Debug\RealEstateAutomation.DataAcces.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAcces\bin\Debug\RealEstateAutomation.DataAcces.pdb
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAcces\obj\Debug\RealEstateAutomation.DataAcces.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAcces\obj\Debug\RealEstateAutomation.DataAcces.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAcces\obj\Debug\RealEstateAutomation.DataAcces.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAcces\obj\Debug\RealEstateAutomation.DataAcces.pdb

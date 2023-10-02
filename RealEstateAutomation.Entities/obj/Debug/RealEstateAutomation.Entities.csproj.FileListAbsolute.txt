@@ -1,0 +1,6 @@
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Entities\bin\Debug\RealEstateAutomation.Entities.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Entities\bin\Debug\RealEstateAutomation.Entities.pdb
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Entities\obj\Debug\RealEstateAutomation.Entities.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Entities\obj\Debug\RealEstateAutomation.Entities.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Entities\obj\Debug\RealEstateAutomation.Entities.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Entities\obj\Debug\RealEstateAutomation.Entities.pdb
