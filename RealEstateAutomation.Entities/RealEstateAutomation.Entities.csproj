@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Abstract\IEntity.cs" />
     <Compile Include="Concrete\Admin.cs" />
+    <Compile Include="Concrete\City.cs" />
+    <Compile Include="Concrete\County.cs" />
     <Compile Include="Concrete\Customer.cs" />
     <Compile Include="Concrete\Employee.cs" />
     <Compile Include="Concrete\Expense.cs" />

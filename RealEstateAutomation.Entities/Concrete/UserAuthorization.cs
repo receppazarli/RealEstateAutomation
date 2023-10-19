@@ -8,7 +8,7 @@ namespace RealEstateAutomation.Entities.Concrete
 
         public string UserAuthorizationName { get; set; }
 
-
+        public bool DeleteFlag { get; set; }
 
     }
 }
