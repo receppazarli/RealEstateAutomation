@@ -15,7 +15,6 @@ namespace RealEstateAutomation.DataAccess.Concrete.EntityFramework
         public DbSet<Owner> Owners { get; set; }
         public DbSet<Plot> Plots { get; set; }
         public DbSet<Property> Properties { get; set; }
-        public DbSet<PropertyType> PropertyTypes { get; set; }
         public DbSet<Sale> Sales { get; set; }
         public DbSet<Shop> Shops { get; set; }
         public DbSet<User> Users { get; set; }

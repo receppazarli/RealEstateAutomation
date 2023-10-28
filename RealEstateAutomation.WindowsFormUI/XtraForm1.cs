@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using RealEstateAutomation.WindowsFormUI.Forms.BaseForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace RealEstateAutomation.WindowsFormUI
 {
-    public partial class XtraForm1 : DevExpress.XtraEditors.XtraForm
+    public partial class XtraForm1 : CustomerForm
     {
         public XtraForm1()
         {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RealEstateAutomation.WindowsFormUI.Forms;
+using RealEstateAutomation.WindowsFormUI.Forms.BaseForms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,7 @@ namespace RealEstateAutomation.WindowsFormUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new XtraForm1());
+            Application.Run(new CustomerForm());
         }
     }
 }
