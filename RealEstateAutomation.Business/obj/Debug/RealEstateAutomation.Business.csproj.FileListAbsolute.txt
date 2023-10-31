@@ -4,3 +4,13 @@ C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\obj\
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\obj\Debug\RealEstateAutomation.Business.csproj.CoreCompileInputs.cache
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\obj\Debug\RealEstateAutomation.Business.dll
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\obj\Debug\RealEstateAutomation.Business.pdb
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\RealEstateAutomation.DataAccess.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\RealEstateAutomation.Entities.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\EntityFramework.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\RealEstateAutomation.DataAccess.pdb
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\RealEstateAutomation.DataAccess.dll.config
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\RealEstateAutomation.Entities.pdb
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\EntityFramework.xml
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\obj\Debug\RealEstateAutomation.Business.csproj.CopyComplete
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\Ninject.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\Ninject.xml

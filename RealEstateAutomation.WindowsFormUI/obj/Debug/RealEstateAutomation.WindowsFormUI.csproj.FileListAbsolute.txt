@@ -46,3 +46,16 @@ C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\DevExpress.Images.v22.2.dll
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.Forms.BaseForms.CustomerForm.resources
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.Forms.HomePageForm.resources
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\EntityFramework.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\RealEstateAutomation.Business.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\RealEstateAutomation.Entities.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\RealEstateAutomation.DataAccess.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\RealEstateAutomation.Business.pdb
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\RealEstateAutomation.Entities.pdb
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\EntityFramework.xml
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\RealEstateAutomation.DataAccess.pdb
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\RealEstateAutomation.DataAccess.dll.config
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\Ninject.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\Ninject.xml

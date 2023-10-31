@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject, Version=3.3.6.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.6\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,8 +44,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAdminService.cs" />
+    <Compile Include="Abstract\ICityService.cs" />
+    <Compile Include="Abstract\ICountyService.cs" />
     <Compile Include="Abstract\ICustomerService.cs" />
+    <Compile Include="Abstract\IEmployeeService.cs" />
+    <Compile Include="Abstract\IExpenseService.cs" />
+    <Compile Include="Abstract\IFieldService.cs" />
+    <Compile Include="Abstract\IHouseService.cs" />
+    <Compile Include="Abstract\IIncomeService.cs" />
+    <Compile Include="Abstract\IOwnerService.cs" />
+    <Compile Include="Abstract\IPlotService.cs" />
+    <Compile Include="Abstract\IPropertyService.cs" />
+    <Compile Include="Abstract\ISaleService.cs" />
+    <Compile Include="Abstract\IShopService.cs" />
+    <Compile Include="Abstract\IUserAuthorizationService.cs" />
+    <Compile Include="Abstract\IUserService.cs" />
+    <Compile Include="Concrete\AdminManager.cs" />
+    <Compile Include="Concrete\CityManager.cs" />
+    <Compile Include="Concrete\CountyManager.cs" />
     <Compile Include="Concrete\CustomerManager.cs" />
+    <Compile Include="Concrete\EmployeeManager.cs" />
+    <Compile Include="Concrete\ExpenseManager.cs" />
+    <Compile Include="Concrete\FieldManager.cs" />
+    <Compile Include="Concrete\HouseManager.cs" />
+    <Compile Include="Concrete\IncomeManager.cs" />
+    <Compile Include="Concrete\OwnerManager.cs" />
+    <Compile Include="Concrete\PlotManager.cs" />
+    <Compile Include="Concrete\PropertyManager.cs" />
+    <Compile Include="Concrete\SaleManager.cs" />
+    <Compile Include="Concrete\ShopManager.cs" />
+    <Compile Include="Concrete\UserAuthorizationManager.cs" />
+    <Compile Include="Concrete\UserManager.cs" />
+    <Compile Include="DependencyResolvers\BusinessModule.cs" />
+    <Compile Include="DependencyResolvers\InstanceFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
@@ -55,6 +90,9 @@
       <Project>{F8A4B8E2-33AC-4434-AAF8-0D4FF1DF19CE}</Project>
       <Name>RealEstateAutomation.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

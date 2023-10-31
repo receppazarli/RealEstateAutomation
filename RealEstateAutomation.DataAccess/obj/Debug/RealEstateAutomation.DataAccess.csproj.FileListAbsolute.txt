@@ -1,0 +1,14 @@
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAccess\bin\Debug\RealEstateAutomation.DataAccess.dll.config
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAccess\bin\Debug\RealEstateAutomation.DataAccess.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAccess\bin\Debug\RealEstateAutomation.DataAccess.pdb
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAccess\bin\Debug\RealEstateAutomation.Entities.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAccess\bin\Debug\RealEstateAutomation.Entities.pdb
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAccess\obj\Debug\RealEstateAutomation.DataAccess.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAccess\obj\Debug\RealEstateAutomation.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAccess\obj\Debug\RealEstateAutomation.DataAccess.csproj.CopyComplete
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAccess\obj\Debug\RealEstateAutomation.DataAccess.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.DataAccess\obj\Debug\RealEstateAutomation.DataAccess.pdb

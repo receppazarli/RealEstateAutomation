@@ -51,10 +51,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAdminDal.cs" />
+    <Compile Include="Abstract\ICityDal.cs" />
+    <Compile Include="Abstract\ICountyDal.cs" />
     <Compile Include="Abstract\ICustomerDal.cs" />
+    <Compile Include="Abstract\IEmployeeDal.cs" />
     <Compile Include="Abstract\IEntityRepository.cs" />
+    <Compile Include="Abstract\IExpensesDal.cs" />
+    <Compile Include="Abstract\IFieldDal.cs" />
+    <Compile Include="Abstract\IHouseDal.cs" />
+    <Compile Include="Abstract\IIncomeDal.cs" />
+    <Compile Include="Abstract\IOwnerDal.cs" />
+    <Compile Include="Abstract\IPlotDal.cs" />
+    <Compile Include="Abstract\IPropertyDal.cs" />
+    <Compile Include="Abstract\ISaleDal.cs" />
+    <Compile Include="Abstract\IShopDal.cs" />
+    <Compile Include="Abstract\IUserAuthorizationDal.cs" />
+    <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfAdminDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCityDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCountyDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCustomerDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfEmployeeDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfEntityRepositoryBase.cs" />
+    <Compile Include="Concrete\EntityFramework\EfExpenseDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfFieldDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfHouseDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfIncomeDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfOwnerDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfPlotDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfPropertyDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfSaleDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfShopDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfUserAuthorizationDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\EntityFramework\RealEstateAutomationContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

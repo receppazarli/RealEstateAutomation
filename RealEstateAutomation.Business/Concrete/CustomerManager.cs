@@ -20,7 +20,8 @@ namespace RealEstateAutomation.Business.Concrete
 
         public List<Customer> GetAll()
         {
-            throw new NotImplementedException();
+            return _customerDal.GetAll();
         }
+
     }
 }
