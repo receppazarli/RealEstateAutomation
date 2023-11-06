@@ -38,26 +38,26 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.cmbCounty = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cmbCity = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.grcCustomer = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.txtDescription = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtAddress = new System.Windows.Forms.TextBox();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtPhone = new System.Windows.Forms.TextBox();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.txtLastName = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.txtFirstName = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.txtNationalityId = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbCity = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbCounty = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
             this.simpleSeparator2 = new DevExpress.XtraLayout.SimpleSeparator();
             this.simpleSeparator3 = new DevExpress.XtraLayout.SimpleSeparator();
@@ -69,9 +69,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCounty.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
@@ -79,10 +81,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLastName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNationalityId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbCity.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbCounty.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator3)).BeginInit();
@@ -184,6 +184,97 @@
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // cmbCounty
+            // 
+            this.cmbCounty.Location = new System.Drawing.Point(884, 140);
+            this.cmbCounty.MenuManager = this.ribbonControl1;
+            this.cmbCounty.Name = "cmbCounty";
+            this.cmbCounty.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbCounty.Properties.Appearance.Options.UseFont = true;
+            this.cmbCounty.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbCounty.Size = new System.Drawing.Size(237, 22);
+            this.cmbCounty.StyleController = this.layoutControl1;
+            this.cmbCounty.TabIndex = 15;
+            // 
+            // cmbCity
+            // 
+            this.cmbCity.Location = new System.Drawing.Point(884, 113);
+            this.cmbCity.MenuManager = this.ribbonControl1;
+            this.cmbCity.Name = "cmbCity";
+            this.cmbCity.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbCity.Properties.Appearance.Options.UseFont = true;
+            this.cmbCity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbCity.Size = new System.Drawing.Size(237, 22);
+            this.cmbCity.StyleController = this.layoutControl1;
+            this.cmbCity.TabIndex = 14;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox8.Location = new System.Drawing.Point(884, 13);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(237, 20);
+            this.textBox8.TabIndex = 13;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox7.Location = new System.Drawing.Point(884, 38);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(237, 20);
+            this.textBox7.TabIndex = 12;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox6.Location = new System.Drawing.Point(884, 63);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(237, 20);
+            this.textBox6.TabIndex = 11;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtPhone.Location = new System.Drawing.Point(884, 88);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(237, 20);
+            this.txtPhone.TabIndex = 10;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAddress.Location = new System.Drawing.Point(884, 167);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(237, 20);
+            this.txtAddress.TabIndex = 9;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox3.Location = new System.Drawing.Point(884, 192);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(237, 20);
+            this.textBox3.TabIndex = 8;
+            // 
+            // grcCustomer
+            // 
+            this.grcCustomer.Location = new System.Drawing.Point(12, 12);
+            this.grcCustomer.MainView = this.gridView1;
+            this.grcCustomer.MenuManager = this.ribbonControl1;
+            this.grcCustomer.Name = "grcCustomer";
+            this.grcCustomer.Size = new System.Drawing.Size(764, 640);
+            this.grcCustomer.TabIndex = 4;
+            this.grcCustomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.grcCustomer;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.ReadOnly = true;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -210,22 +301,6 @@
             this.Root.Size = new System.Drawing.Size(1133, 664);
             this.Root.TextVisible = false;
             // 
-            // grcCustomer
-            // 
-            this.grcCustomer.Location = new System.Drawing.Point(12, 12);
-            this.grcCustomer.MainView = this.gridView1;
-            this.grcCustomer.MenuManager = this.ribbonControl1;
-            this.grcCustomer.Name = "grcCustomer";
-            this.grcCustomer.Size = new System.Drawing.Size(764, 640);
-            this.grcCustomer.TabIndex = 4;
-            this.grcCustomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.grcCustomer;
-            this.gridView1.Name = "gridView1";
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.grcCustomer;
@@ -234,14 +309,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(768, 644);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox3.Location = new System.Drawing.Point(884, 192);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(237, 20);
-            this.textBox3.TabIndex = 8;
             // 
             // txtDescription
             // 
@@ -254,14 +321,6 @@
             this.txtDescription.Text = "Description :";
             this.txtDescription.TextSize = new System.Drawing.Size(92, 19);
             // 
-            // txtAddress
-            // 
-            this.txtAddress.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAddress.Location = new System.Drawing.Point(884, 167);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(237, 20);
-            this.txtAddress.TabIndex = 9;
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -272,14 +331,6 @@
             this.layoutControlItem6.Size = new System.Drawing.Size(345, 24);
             this.layoutControlItem6.Text = "Address :";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(92, 19);
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtPhone.Location = new System.Drawing.Point(884, 88);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(237, 20);
-            this.txtPhone.TabIndex = 10;
             // 
             // layoutControlItem7
             // 
@@ -292,14 +343,6 @@
             this.layoutControlItem7.Text = "Phone :";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(92, 19);
             // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox6.Location = new System.Drawing.Point(884, 63);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(237, 20);
-            this.textBox6.TabIndex = 11;
-            // 
             // txtLastName
             // 
             this.txtLastName.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -310,14 +353,6 @@
             this.txtLastName.Size = new System.Drawing.Size(345, 24);
             this.txtLastName.Text = "Last Name :";
             this.txtLastName.TextSize = new System.Drawing.Size(92, 19);
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox7.Location = new System.Drawing.Point(884, 38);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(237, 20);
-            this.textBox7.TabIndex = 12;
             // 
             // txtFirstName
             // 
@@ -330,14 +365,6 @@
             this.txtFirstName.Text = "First Name :";
             this.txtFirstName.TextSize = new System.Drawing.Size(92, 19);
             // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox8.Location = new System.Drawing.Point(884, 13);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(237, 20);
-            this.textBox8.TabIndex = 13;
-            // 
             // txtNationalityId
             // 
             this.txtNationalityId.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -349,18 +376,16 @@
             this.txtNationalityId.Text = "Nationality ID :";
             this.txtNationalityId.TextSize = new System.Drawing.Size(92, 19);
             // 
-            // cmbCity
+            // layoutControlItem12
             // 
-            this.cmbCity.Location = new System.Drawing.Point(884, 113);
-            this.cmbCity.MenuManager = this.ribbonControl1;
-            this.cmbCity.Name = "cmbCity";
-            this.cmbCity.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cmbCity.Properties.Appearance.Options.UseFont = true;
-            this.cmbCity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbCity.Size = new System.Drawing.Size(237, 22);
-            this.cmbCity.StyleController = this.layoutControl1;
-            this.cmbCity.TabIndex = 14;
+            this.layoutControlItem12.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.layoutControlItem12.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem12.Control = this.cmbCounty;
+            this.layoutControlItem12.Location = new System.Drawing.Point(768, 128);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(345, 26);
+            this.layoutControlItem12.Text = "County :";
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(92, 19);
             // 
             // layoutControlItem11
             // 
@@ -372,30 +397,6 @@
             this.layoutControlItem11.Size = new System.Drawing.Size(345, 26);
             this.layoutControlItem11.Text = "City :";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(92, 19);
-            // 
-            // cmbCounty
-            // 
-            this.cmbCounty.Location = new System.Drawing.Point(884, 140);
-            this.cmbCounty.MenuManager = this.ribbonControl1;
-            this.cmbCounty.Name = "cmbCounty";
-            this.cmbCounty.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cmbCounty.Properties.Appearance.Options.UseFont = true;
-            this.cmbCounty.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbCounty.Size = new System.Drawing.Size(237, 22);
-            this.cmbCounty.StyleController = this.layoutControl1;
-            this.cmbCounty.TabIndex = 15;
-            // 
-            // layoutControlItem12
-            // 
-            this.layoutControlItem12.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.layoutControlItem12.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem12.Control = this.cmbCounty;
-            this.layoutControlItem12.Location = new System.Drawing.Point(768, 128);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(345, 26);
-            this.layoutControlItem12.Text = "County :";
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(92, 19);
             // 
             // simpleSeparator1
             // 
@@ -466,9 +467,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCounty.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
@@ -476,10 +479,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLastName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNationalityId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbCity.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbCounty.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator3)).EndInit();

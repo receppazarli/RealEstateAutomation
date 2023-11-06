@@ -18,6 +18,9 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             InitializeComponent();
         }
 
-        
+        private void HomePageForm_Load(object sender, EventArgs e)
+        {
+            //TODO Ana sayfa da ilk formlar ribbon un altında açalacak diğer kayıt etme formları ayrı açılacak 
+        }
     }
 }

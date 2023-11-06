@@ -45,6 +45,7 @@
             this.btnSales = new DevExpress.XtraBars.BarButtonItem();
             this.btnUsers = new DevExpress.XtraBars.BarButtonItem();
             this.btnAuthorizations = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.homePageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.customerGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -60,6 +61,8 @@
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -92,12 +95,15 @@
             this.btnProperties,
             this.btnSales,
             this.btnUsers,
-            this.btnAuthorizations});
+            this.btnAuthorizations,
+            this.barButtonItem6});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 16;
+            this.ribbonControl1.MaxItemId = 17;
             this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.PageHeaderItemLinks.Add(this.barButtonItem6);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1});
+            this.ribbonPage1,
+            this.ribbonPage2});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl1.Size = new System.Drawing.Size(1573, 133);
             // 
@@ -221,8 +227,8 @@
             // 
             this.btnSales.Caption = "SALES";
             this.btnSales.Id = 13;
-            this.btnSales.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
-            this.btnSales.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
+            this.btnSales.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSales.ImageOptions.Image")));
+            this.btnSales.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSales.ImageOptions.LargeImage")));
             this.btnSales.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSales.ItemAppearance.Normal.Options.UseFont = true;
             this.btnSales.Name = "btnSales";
@@ -231,8 +237,8 @@
             // 
             this.btnUsers.Caption = "USERS";
             this.btnUsers.Id = 14;
-            this.btnUsers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
-            this.btnUsers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
+            this.btnUsers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUsers.ImageOptions.Image")));
+            this.btnUsers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUsers.ImageOptions.LargeImage")));
             this.btnUsers.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUsers.ItemAppearance.Normal.Options.UseFont = true;
             this.btnUsers.Name = "btnUsers";
@@ -241,11 +247,18 @@
             // 
             this.btnAuthorizations.Caption = "AUTHORIZATIONS";
             this.btnAuthorizations.Id = 15;
-            this.btnAuthorizations.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.Image")));
-            this.btnAuthorizations.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.LargeImage")));
+            this.btnAuthorizations.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAuthorizations.ImageOptions.Image")));
+            this.btnAuthorizations.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAuthorizations.ImageOptions.LargeImage")));
             this.btnAuthorizations.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAuthorizations.ItemAppearance.Normal.Options.UseFont = true;
             this.btnAuthorizations.Name = "btnAuthorizations";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "barButtonItem6";
+            this.barButtonItem6.Id = 16;
+            this.barButtonItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem6.ImageOptions.SvgImage")));
+            this.barButtonItem6.Name = "barButtonItem6";
             // 
             // ribbonPage1
             // 
@@ -337,6 +350,18 @@
             this.ribbonPageGroup11.ItemLinks.Add(this.btnAuthorizations);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             // 
+            // ribbonPage2
+            // 
+            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup12});
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "ribbonPage2";
+            // 
+            // ribbonPageGroup12
+            // 
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup12.Text = "ribbonPageGroup12";
+            // 
             // layoutControl1
             // 
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -405,17 +430,18 @@
             this.barButtonItem5.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem5.Name = "barButtonItem5";
             // 
-            // HomePage
+            // HomePageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1573, 801);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl1);
-            this.Name = "HomePage";
+            this.Name = "HomePageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home Page";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.HomePageForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -464,5 +490,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         private DevExpress.XtraBars.BarButtonItem btnShops;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
     }
 }
