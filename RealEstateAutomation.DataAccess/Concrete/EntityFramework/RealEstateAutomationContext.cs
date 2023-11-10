@@ -6,6 +6,8 @@ namespace RealEstateAutomation.DataAccess.Concrete.EntityFramework
     public class RealEstateAutomationContext : DbContext
     {
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<County> Counties { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Expense> Expenses { get; set; }

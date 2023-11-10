@@ -128,69 +128,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\home_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\home_32x321.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\home_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bocustomer_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bocustomer_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\publicfix_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\publicfix_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\expandcollapsebuttonpivottable_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\expandcollapsebuttonpivottable_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\download_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\download_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\doublefirst_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\doublefirst_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\doublelast_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\doublelast_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\doublenext_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\doublenext_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\doubleprev_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\doubleprev_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\first_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\first_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\RealEstateAutomation.Business\RealEstateAutomation.Business.csproj">
       <Project>{252571CC-E8B0-4475-A00C-DEC5D588274D}</Project>
       <Name>RealEstateAutomation.Business</Name>

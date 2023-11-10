@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RealEstateAutomation.WindowsFormUI.Forms.BaseForms;
 
 namespace RealEstateAutomation.WindowsFormUI.Forms
 {
@@ -20,7 +21,14 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void HomePageForm_Load(object sender, EventArgs e)
         {
-            //TODO Ana sayfa da ilk formlar ribbon un altında açalacak diğer kayıt etme formları ayrı açılacak 
+
+        }
+
+        private void btnCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CustomerForm customerForm = new CustomerForm();
+            customerForm.MdiParent = this;
+            customerForm.Show();
         }
     }
 }
