@@ -40,11 +40,9 @@ C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\DevExpress.RichEdit.v22.2.Core.xml
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\DevExpress.XtraTreeList.v22.2.xml
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\DevExpress.Office.v22.2.Core.xml
-C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.XtraForm1.resources
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.exe.licenses
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.csproj.CopyComplete
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\DevExpress.Images.v22.2.dll
-C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.Forms.BaseForms.CustomerForm.resources
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.Forms.HomePageForm.resources
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\EntityFramework.dll
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\EntityFramework.SqlServer.dll
@@ -59,3 +57,4 @@ C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\RealEstateAutomation.DataAccess.dll.config
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\Ninject.dll
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\Ninject.xml
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.Forms.CustomerForm.resources
