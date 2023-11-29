@@ -14,3 +14,9 @@ C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\obj\Debug\RealEstateAutomation.Business.csproj.CopyComplete
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\Ninject.dll
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\Ninject.xml
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\FluentValidation.dll
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.Business\bin\Debug\FluentValidation.xml

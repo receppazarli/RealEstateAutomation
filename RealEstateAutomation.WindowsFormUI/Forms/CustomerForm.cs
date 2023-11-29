@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using DevExpress.XtraBars;
 using RealEstateAutomation.Business.Abstract;
 using RealEstateAutomation.Business.DependencyResolvers;
 using RealEstateAutomation.Entities.Concrete;
+using RealEstateAutomation.WindowsFormUI.Methods;
 
 namespace RealEstateAutomation.WindowsFormUI.Forms
 {
@@ -22,6 +24,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         private readonly ICustomerService _customerService;
         private readonly ICityService _cityService;
         private readonly ICountyService _countyService;
+        private readonly CommonMethods _commonMethods = new CommonMethods();
 
         private void BaseFormData_Load(object sender, EventArgs e)
         {
@@ -59,10 +62,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
             if (grwCustomers.FocusedRowHandle >= 0)
             {
-                txtNationalityId.Text = grwCustomers.GetFocusedRowCellValue("NationalityId").ToString();
+                btnNationalityId.Text = grwCustomers.GetFocusedRowCellValue("NationalityId").ToString();
                 txtFirstName.Text = grwCustomers.GetFocusedRowCellValue("FirstName").ToString();
                 txtLastName.Text = grwCustomers.GetFocusedRowCellValue("LastName").ToString();
-                txtPhone.Text = grwCustomers.GetFocusedRowCellValue("Phone").ToString();
+                btnPhone.Text = grwCustomers.GetFocusedRowCellValue("Phone").ToString();
                 lkuCounty.Text = grwCustomers.GetFocusedRowCellValue("County").ToString();
                 lkuCity.Text = grwCustomers.GetFocusedRowCellValue("City").ToString();
                 txtAddress.Text = grwCustomers.GetFocusedRowCellValue("Address").ToString();
@@ -75,16 +78,15 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void grcCustomer_Click(object sender, EventArgs e)
         {
-          
             LoadClick();
         }
 
         private void Clean()
         {
-            txtNationalityId.Text = "";
+            btnNationalityId.Text = "";
             txtFirstName.Text = "";
             txtLastName.Text = "";
-            txtPhone.Text = "";
+            btnPhone.Text = "";
             lkuCounty.EditValue = null;
             lkuCity.EditValue = null;
             txtAddress.Text = "";
@@ -93,68 +95,158 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             txtDeleteflag.Text = "";
         }
 
-        // City ve county int olarak geliyor ordan devam edilecek. Customer ekranı kayıt etme, silme,yeni kayıt ve sağ click eklenecek.
 
 
-        //private void Save()
-        //{
-        //    if (txtId.Text == "")
-        //    {
-        //        DialogResult Confirmation = MessageBox.Show(@"Are you sure you want to save the information?", @"Information", MessageBoxButtons.YesNo,
-        //            MessageBoxIcon.Information);
+        private void Save()
+        {
+            if (txtId.Text == "")
+            {
+                DialogResult confirmation = MessageBox.Show(@"Are you sure you want to save the information?", @"Information", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information);
 
-        //        if (Confirmation == DialogResult.Yes)
-        //        {
-        //            _customerService.Add(new Customer
-        //            {
-        //                NationalityId = txtNationalityId.Text,
-        //                FirstName = txtFirstName.Text,
-        //                LastName = txtLastName.Text,
-        //                Phone = txtPhone.Text,
-        //                City = lkuCity.Text,
-        //                County = lkuCounty.Text,
-        //                Address = txtAddress.Text,
-        //                Description = txtDescription.Text,
-        //                DeleteFlag = false
-        //            });
-        //            LoadCustomer();
-        //            Clean();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
-        //                MessageBoxIcon.Information);
-        //        }
-        //    }
-        //    else if (txtId.Text != "")
-        //    {
-        //        DialogResult Confirmation = MessageBox.Show(@"Are you sure you want to update the information?",
-        //            @"Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmation == DialogResult.Yes)
+                {
+                    _customerService.Add(new Customer
+                    {
+                        NationalityId = btnNationalityId.Text,
+                        FirstName = txtFirstName.Text,
+                        LastName = txtLastName.Text,
+                        Phone = btnPhone.Text,
+                        City = lkuCity.Text,
+                        County = lkuCounty.Text,
+                        Address = txtAddress.Text,
+                        Description = txtDescription.Text,
+                        DeleteFlag = false
+                    });
+                    LoadCustomer();
+                    Clean();
+                }
+                else
+                {
+                    MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+            }
+            else if (txtId.Text != "")
+            {
+                DialogResult confirmation = MessageBox.Show(@"Are you sure you want to update the information?",
+                    @"Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-        //        if (Confirmation == DialogResult.Yes)
-        //        {
-        //            _customerService.Update( new Customer()
-        //            {
-        //                Id = Convert.ToInt32(grwCustomers.GetRowCellValue(grwCustomers.FocusedRowHandle,"Id")),
-        //                NationalityId = txtNationalityId.Text,
-        //                FirstName = txtFirstName.Text,
-        //                LastName = txtLastName.Text,
-        //                Phone = txtPhone.Text,
-        //                City = lkuCity.Text,
-        //                County = lkuCounty.Text,
-        //                Address = txtAddress.Text,
-        //                Description = txtDescription.Text,
-        //                DeleteFlag = false
-        //            });
-        //            LoadCustomer();
-        //            Clean();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
-        //                MessageBoxIcon.Information);
-        //        }
-        //    }
-        //}
+                if (confirmation == DialogResult.Yes)
+                {
+                    _customerService.Update(new Customer()
+                    {
+                        Id = Convert.ToInt32(grwCustomers.GetRowCellValue(grwCustomers.FocusedRowHandle, "Id")),
+                        NationalityId = btnNationalityId.Text,
+                        FirstName = txtFirstName.Text,
+                        LastName = txtLastName.Text,
+                        Phone = btnPhone.Text,
+                        City = lkuCity.Text,
+                        County = lkuCounty.Text,
+                        Address = txtAddress.Text,
+                        Description = txtDescription.Text,
+                        DeleteFlag = false
+                    });
+                    LoadCustomer();
+                    Clean();
+                }
+                else
+                {
+                    MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        void Remove()
+        {
+            DialogResult confirmation = MessageBox.Show(@"Are you sure you want to delete your information?",
+                @"Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmation == DialogResult.Yes)
+            {
+                _customerService.Update(new Customer()
+                {
+                    Id = Convert.ToInt32(grwCustomers.GetRowCellValue(grwCustomers.FocusedRowHandle, "Id")),
+                    NationalityId = btnNationalityId.Text,
+                    FirstName = txtFirstName.Text,
+                    LastName = txtLastName.Text,
+                    Phone = btnPhone.Text,
+                    City = lkuCity.Text,
+                    County = lkuCounty.Text,
+                    Address = txtAddress.Text,
+                    Description = txtDescription.Text,
+                    DeleteFlag = true
+                });
+                LoadCustomer();
+                Clean();
+            }
+            else
+            {
+                MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Save();
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+
+            DialogResult confirmation = MessageBox.Show(@"Are you sure you want to add a new record?",
+                @"Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmation == DialogResult.Yes)
+            {
+                Clean();
+            }
+            else
+            {
+                MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            Remove();
+        }
+
+        private void grwCustomers_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var position = MousePosition;
+                grwCustomers.Focus();
+                popupMenu1.ShowPopup(position);
+            }
+        }
+
+        private void btnExcel_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            _commonMethods.ExcelTransfer(grwCustomers);
+        }
+
+        private void btnNew2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogResult confirmation = MessageBox.Show(@"Are you sure you want to add a new record?",
+                @"Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmation == DialogResult.Yes)
+            {
+                Clean();
+            }
+            else
+            {
+                MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+        }
+
+
     }
 }

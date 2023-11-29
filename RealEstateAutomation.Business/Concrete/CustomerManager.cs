@@ -1,13 +1,11 @@
 ﻿using RealEstateAutomation.Business.Abstract;
 using RealEstateAutomation.DataAccess.Abstract;
-using RealEstateAutomation.DataAccess.Concrete.EntityFramework;
 using RealEstateAutomation.Entities.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using RealEstateAutomation.Business.Utilities;
+using RealEstateAutomation.Business.ValidationRules.FluentValidation;
 
 namespace RealEstateAutomation.Business.Concrete
 {
@@ -22,13 +20,24 @@ namespace RealEstateAutomation.Business.Concrete
 
         public List<Customer> GetAll()
         {
-            return _customerDal.GetAll();
+            try
+            {
+                return _customerDal.GetAll(x => x.DeleteFlag == false);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("There was an error loading the information. Please try again.", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+
         }
 
         public void Add(Customer customer)
         {
             try
             {
+                ValidationTool.Validate(new CustomerValidator(), customer);
                 _customerDal.Add(customer);
             }
             catch (Exception e)
@@ -41,6 +50,7 @@ namespace RealEstateAutomation.Business.Concrete
         {
             try
             {
+                ValidationTool.Validate(new CustomerValidator(), customer);
                 _customerDal.Update(customer);
             }
             catch (Exception e)
