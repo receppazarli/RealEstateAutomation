@@ -7,13 +7,13 @@ namespace RealEstateAutomation.Business.ValidationRules.FluentValidation
     {
         public CustomerValidator()
         {
+            RuleFor(x => x.NationalityId).MinimumLength(11).MaximumLength(11).WithMessage("Please enter the correct Nationality ID");
+            RuleFor(x => x.NationalityId).NotEmpty().WithMessage("Nationality Id field cannot be empty");
+            RuleFor(x => x.FirstName).NotEmpty().WithMessage("Name field cannot be empty");
+            RuleFor(x => x.LastName).NotEmpty().WithMessage("Last name field cannot be empty");
+            RuleFor(x => x.Phone).NotEmpty().WithMessage("Phone field cannot be empty");
 
-            RuleFor(x => x.NationalityId).NotEmpty().WithMessage("Nationality Id field cannot be empty").ToString();
-            RuleFor(x => x.FirstName).NotEmpty().WithMessage("Name field cannot be empty").ToString();
-            RuleFor(x => x.LastName).NotEmpty().WithMessage("Last name field cannot be empty").ToString();
-            RuleFor(x => x.Phone).NotEmpty().WithMessage("Phone field cannot be empty").ToString();
-
-            //TODO fluent validation testi yaparken hata çıktı yarın ordan devam edilecek.
+           
 
         }
     }

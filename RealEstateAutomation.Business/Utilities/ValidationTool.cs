@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using System.Linq;
 
 namespace RealEstateAutomation.Business.Utilities
 {
@@ -13,7 +14,11 @@ namespace RealEstateAutomation.Business.Utilities
 
             if (result.Errors.Count > 0)
             {
-                throw new ValidationException(result.Errors.ToString());
+                // throw new ValidationException(result.Errors.ToString());
+
+                var errorMessages = result.Errors.Select(e => $"{e.PropertyName}: {e.ErrorMessage}\n").ToArray();
+                string combinedErrorMessage = string.Join("", errorMessages);
+                throw new ValidationException(combinedErrorMessage);
             }
         }
     }

@@ -23,11 +23,36 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         }
 
+        public void OpenForm<T>() where T : Form, new()
+        {
+            // MDI çocuk formlar arasında belirtilen form türünü ara
+            foreach (Form form in this.MdiChildren)
+            {
+                if (form is T)
+                {
+                    // Form zaten açıksa ona odaklan ve metoddan çık
+                    form.Activate();
+                    return;
+                }
+            }
+
+            // Form açık değilse yeni bir örnek oluştur ve göster
+            T newForm = new T
+            {
+                MdiParent = this
+            };
+            newForm.Show();
+        }
+
+
         private void btnCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            CustomerForm customerForm = new CustomerForm();
-            customerForm.MdiParent = this;
-            customerForm.Show();
+
+            OpenForm<CustomerForm>();
+
+            //CustomerForm customerForm = new CustomerForm();
+            //customerForm.MdiParent = this;
+            //customerForm.Show();
         }
     }
 }

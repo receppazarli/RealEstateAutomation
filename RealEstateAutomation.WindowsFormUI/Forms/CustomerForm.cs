@@ -26,6 +26,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         private readonly ICountyService _countyService;
         private readonly CommonMethods _commonMethods = new CommonMethods();
 
+        //TODO nationality id kontrol yapmıyo tekrar aynı id leri ekliyor.
         private void BaseFormData_Load(object sender, EventArgs e)
         {
             LoadCustomer();
