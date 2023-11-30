@@ -103,7 +103,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             if (txtId.Text == "")
             {
                 DialogResult confirmation = MessageBox.Show(@"Are you sure you want to save the information?", @"Information", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Information);
+                    MessageBoxIcon.Question);
 
                 if (confirmation == DialogResult.Yes)
                 {
@@ -198,7 +198,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         private void btnNew_Click(object sender, EventArgs e)
         {
 
-            DialogResult confirmation = MessageBox.Show(@"Are you sure you want to add a new record?",
+            DialogResult confirmation = MessageBox.Show(@"Are you sure you want to clear the boxes?",
                 @"Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (confirmation == DialogResult.Yes)
@@ -234,7 +234,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void btnNew2_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogResult confirmation = MessageBox.Show(@"Are you sure you want to add a new record?",
+            DialogResult confirmation = MessageBox.Show(@"Are you sure you want to clear the boxes?",
                 @"Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (confirmation == DialogResult.Yes)

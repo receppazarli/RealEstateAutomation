@@ -33,7 +33,7 @@
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnSave2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnRemove2 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnNew2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnClear2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnExcel = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -43,7 +43,7 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnNationalityId = new DevExpress.XtraEditors.ButtonEdit();
-            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
+            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnRemove = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.txtDeleteflag = new DevExpress.XtraEditors.TextEdit();
@@ -146,7 +146,7 @@
             this.ribbonControl1.SearchEditItem,
             this.btnSave2,
             this.btnRemove2,
-            this.btnNew2,
+            this.btnClear2,
             this.btnExcel,
             this.barButtonItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
@@ -178,16 +178,16 @@
             this.btnRemove2.ItemAppearance.Normal.Options.UseFont = true;
             this.btnRemove2.Name = "btnRemove2";
             // 
-            // btnNew2
+            // btnClear2
             // 
-            this.btnNew2.Caption = "NEW";
-            this.btnNew2.Id = 3;
-            this.btnNew2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew2.ImageOptions.Image")));
-            this.btnNew2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNew2.ImageOptions.LargeImage")));
-            this.btnNew2.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnNew2.ItemAppearance.Normal.Options.UseFont = true;
-            this.btnNew2.Name = "btnNew2";
-            this.btnNew2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNew2_ItemClick);
+            this.btnClear2.Caption = "CLEAR";
+            this.btnClear2.Id = 3;
+            this.btnClear2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew2.ImageOptions.Image")));
+            this.btnClear2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNew2.ImageOptions.LargeImage")));
+            this.btnClear2.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnClear2.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnClear2.Name = "btnClear2";
+            this.btnClear2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNew2_ItemClick);
             // 
             // btnExcel
             // 
@@ -218,7 +218,7 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup1.ImageOptions.Image")));
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnNew2);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnClear2);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPageGroup2
@@ -239,7 +239,7 @@
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.btnNationalityId);
-            this.layoutControl1.Controls.Add(this.btnNew);
+            this.layoutControl1.Controls.Add(this.btnClear);
             this.layoutControl1.Controls.Add(this.btnRemove);
             this.layoutControl1.Controls.Add(this.btnSave);
             this.layoutControl1.Controls.Add(this.txtDeleteflag);
@@ -272,18 +272,18 @@
             this.btnNationalityId.StyleController = this.layoutControl1;
             this.btnNationalityId.TabIndex = 24;
             // 
-            // btnNew
+            // btnClear
             // 
-            this.btnNew.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnNew.Appearance.Options.UseFont = true;
-            this.btnNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.ImageOptions.Image")));
-            this.btnNew.Location = new System.Drawing.Point(860, 347);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(377, 36);
-            this.btnNew.StyleController = this.layoutControl1;
-            this.btnNew.TabIndex = 21;
-            this.btnNew.Text = "NEW";
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            this.btnClear.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnClear.Appearance.Options.UseFont = true;
+            this.btnClear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.ImageOptions.Image")));
+            this.btnClear.Location = new System.Drawing.Point(860, 347);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(377, 36);
+            this.btnClear.StyleController = this.layoutControl1;
+            this.btnClear.TabIndex = 21;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnRemove
             // 
@@ -671,7 +671,7 @@
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.btnNew;
+            this.layoutControlItem8.Control = this.btnClear;
             this.layoutControlItem8.Location = new System.Drawing.Point(848, 335);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(381, 40);
@@ -795,7 +795,7 @@
             // 
             // popupMenu1
             // 
-            this.popupMenu1.ItemLinks.Add(this.btnNew2);
+            this.popupMenu1.ItemLinks.Add(this.btnClear2);
             this.popupMenu1.ItemLinks.Add(this.btnRemove2);
             this.popupMenu1.ItemLinks.Add(this.btnSave2);
             this.popupMenu1.ItemLinks.Add(this.btnExcel);
@@ -866,7 +866,7 @@
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraBars.BarButtonItem btnSave2;
         private DevExpress.XtraBars.BarButtonItem btnRemove2;
-        private DevExpress.XtraBars.BarButtonItem btnNew2;
+        private DevExpress.XtraBars.BarButtonItem btnClear2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraGrid.GridControl grcCustomer;
@@ -899,7 +899,7 @@
         private DevExpress.XtraEditors.TextEdit txtId;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraEditors.SimpleButton btnNew;
+        private DevExpress.XtraEditors.SimpleButton btnClear;
         private DevExpress.XtraEditors.SimpleButton btnRemove;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
