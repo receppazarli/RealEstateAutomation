@@ -1,7 +1,13 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraBars;
 using RealEstateAutomation.Business.Abstract;
 using RealEstateAutomation.Business.DependencyResolvers;
 using RealEstateAutomation.Entities.Concrete;
@@ -9,36 +15,33 @@ using RealEstateAutomation.WindowsFormUI.Methods;
 
 namespace RealEstateAutomation.WindowsFormUI.Forms
 {
-    public partial class CustomerForm : DevExpress.XtraEditors.XtraForm
+    public partial class AdminForm : DevExpress.XtraEditors.XtraForm
     {
-        public CustomerForm()
+        public AdminForm()
         {
             InitializeComponent();
 
-            _customerService = InstanceFactory.GetInstance<ICustomerService>();
+            _adminService = InstanceFactory.GetInstance<IAdminService>();
             _cityService = InstanceFactory.GetInstance<ICityService>();
             _countyService = InstanceFactory.GetInstance<ICountyService>();
         }
 
-
-        private readonly ICustomerService _customerService;
+        private readonly IAdminService _adminService;
         private readonly ICityService _cityService;
         private readonly ICountyService _countyService;
         private readonly CommonMethods _commonMethods = new CommonMethods();
 
-        //TODO nationality id kontrol yapmıyo tekrar aynı id leri ekliyor.
-        private void BaseFormData_Load(object sender, EventArgs e)
+        private void AdminForm_Load(object sender, EventArgs e)
         {
-            LoadCustomer();
+            LoadAdmin();
             LoadCity();
         }
 
-        private void LoadCustomer()
+        private void LoadAdmin()
         {
-            grcCustomer.DataSource = _customerService.GetAll();
+            grcAdmin.DataSource = _adminService.GetAll();
         }
 
-        //Şehirleri lookupedeite listeleme 
         private void LoadCity()
         {
             lkuCity.Properties.DataSource = _cityService.GetAll();
@@ -46,7 +49,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             lkuCity.Properties.ValueMember = "Id";
         }
 
-        // Şehire göre  İlçe listeleme
         private void LoadCounty()
         {
             lkuCounty.Properties.DataSource = _countyService.GetAll(Convert.ToInt32(lkuCity.EditValue)).ToList();
@@ -59,46 +61,48 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             LoadCounty();
         }
 
-        private void LoadClick()
+        void LoadClick()
         {
-            if (grwCustomers.FocusedRowHandle >= 0)
+            if (grwAdmin.FocusedRowHandle >= 0)
             {
-                btnNationalityId.Text = grwCustomers.GetFocusedRowCellValue("NationalityId").ToString();
-                txtFirstName.Text = grwCustomers.GetFocusedRowCellValue("FirstName").ToString();
-                txtLastName.Text = grwCustomers.GetFocusedRowCellValue("LastName").ToString();
-                btnPhone.Text = grwCustomers.GetFocusedRowCellValue("Phone").ToString();
-                lkuCounty.Text = grwCustomers.GetFocusedRowCellValue("County").ToString();
-                lkuCity.Text = grwCustomers.GetFocusedRowCellValue("City").ToString();
-                txtAddress.Text = grwCustomers.GetFocusedRowCellValue("Address").ToString();
-                txtDescription.Text = grwCustomers.GetFocusedRowCellValue("Description").ToString();
-                txtId.Text = grwCustomers.GetFocusedRowCellValue("Id").ToString();
-                txtDeleteflag.Text = grwCustomers.GetFocusedRowCellValue("DeleteFlag").ToString();
+                txtId.Text = grwAdmin.GetFocusedRowCellValue("Id").ToString();
+                txtNationalityId.Text = grwAdmin.GetFocusedRowCellValue("NationalityId").ToString();
+                txtFirstName.Text = grwAdmin.GetFocusedRowCellValue("FirstName").ToString();
+                txtLastName.Text = grwAdmin.GetFocusedRowCellValue("LastName").ToString();
+                btnPhone.Text = grwAdmin.GetFocusedRowCellValue("Phone").ToString();
+                txtEmail.Text = grwAdmin.GetFocusedRowCellValue("Email").ToString();
+                lkuCounty.Text = grwAdmin.GetFocusedRowCellValue("County").ToString();
+                lkuCity.Text = grwAdmin.GetFocusedRowCellValue("City").ToString();
+                txtAddress.Text = grwAdmin.GetFocusedRowCellValue("Address").ToString();
+                txtDeleteFlag.Text = grwAdmin.GetFocusedRowCellValue("DeleteFlag").ToString();
             }
         }
 
-
-        private void grcCustomer_Click(object sender, EventArgs e)
+        private void grcAdmin_Click(object sender, EventArgs e)
         {
             LoadClick();
         }
 
-        private void Clear()
+        void Clear()
         {
-            btnNationalityId.Text = "";
+            txtNationalityId.Text = "";
             txtFirstName.Text = "";
             txtLastName.Text = "";
             btnPhone.Text = "";
+            txtEmail.Text = "";
             lkuCounty.EditValue = null;
             lkuCity.EditValue = null;
             txtAddress.Text = "";
-            txtDescription.Text = "";
             txtId.Text = "";
-            txtDeleteflag.Text = "";
+            txtDeleteFlag.Text = "";
         }
 
+        private void btnExcelTransfer2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            _commonMethods.ExcelTransfer(grwAdmin);
+        }
 
-
-        private void Save()
+        void Save()
         {
             if (txtId.Text == "")
             {
@@ -107,19 +111,19 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                 if (confirmation == DialogResult.Yes)
                 {
-                    _customerService.Add(new Customer
+                    _adminService.Save(new Admin
                     {
-                        NationalityId = btnNationalityId.Text,
+                        NationalityId = txtNationalityId.Text,
                         FirstName = txtFirstName.Text,
                         LastName = txtLastName.Text,
                         Phone = btnPhone.Text,
+                        Email = txtEmail.Text,
                         City = lkuCity.Text,
                         County = lkuCounty.Text,
                         Address = txtAddress.Text,
-                        Description = txtDescription.Text,
                         DeleteFlag = false
                     });
-                    LoadCustomer();
+                    LoadAdmin();
                     Clear();
                 }
                 else
@@ -135,20 +139,20 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                 if (confirmation == DialogResult.Yes)
                 {
-                    _customerService.Update(new Customer()
+                    _adminService.Update(new Admin
                     {
-                        Id = Convert.ToInt32(grwCustomers.GetRowCellValue(grwCustomers.FocusedRowHandle, "Id")),
-                        NationalityId = btnNationalityId.Text,
+                        Id = Convert.ToInt32(grwAdmin.GetRowCellValue(grwAdmin.FocusedRowHandle, "Id")),
+                        NationalityId = txtNationalityId.Text,
                         FirstName = txtFirstName.Text,
                         LastName = txtLastName.Text,
                         Phone = btnPhone.Text,
+                        Email = txtEmail.Text,
                         City = lkuCity.Text,
                         County = lkuCounty.Text,
                         Address = txtAddress.Text,
-                        Description = txtDescription.Text,
                         DeleteFlag = false
                     });
-                    LoadCustomer();
+                    LoadAdmin();
                     Clear();
                 }
                 else
@@ -166,20 +170,20 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
             if (confirmation == DialogResult.Yes)
             {
-                _customerService.Update(new Customer()
+                _adminService.Update(new Admin
                 {
-                    Id = Convert.ToInt32(grwCustomers.GetRowCellValue(grwCustomers.FocusedRowHandle, "Id")),
-                    NationalityId = btnNationalityId.Text,
+                    Id = Convert.ToInt32(grwAdmin.GetRowCellValue(grwAdmin.FocusedRowHandle, "Id")),
+                    NationalityId = txtNationalityId.Text,
                     FirstName = txtFirstName.Text,
                     LastName = txtLastName.Text,
                     Phone = btnPhone.Text,
+                    Email = txtEmail.Text,
                     City = lkuCity.Text,
                     County = lkuCounty.Text,
                     Address = txtAddress.Text,
-                    Description = txtDescription.Text,
                     DeleteFlag = true
                 });
-                LoadCustomer();
+                LoadAdmin();
                 Clear();
             }
             else
@@ -190,28 +194,19 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         }
 
-
-
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Save();
         }
 
-        private void btnNew_Click(object sender, EventArgs e)
+        private void btnRemove2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Remove();
+        }
 
-            DialogResult confirmation = MessageBox.Show(@"Are you sure you want to clear the boxes?",
-                @"Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (confirmation == DialogResult.Yes)
-            {
-                Clear();
-            }
-            else
-            {
-                MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Save();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -219,22 +214,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             Remove();
         }
 
-        private void grwCustomers_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                var position = MousePosition;
-                grwCustomers.Focus();
-                popupMenu1.ShowPopup(position);
-            }
-        }
-
-        private void btnExcel_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            _commonMethods.ExcelTransfer(grwCustomers);
-        }
-
-        private void btnNew2_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             DialogResult confirmation = MessageBox.Show(@"Are you sure you want to clear the boxes?",
                 @"Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -250,6 +230,30 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             }
         }
 
+        private void btnClear2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogResult confirmation = MessageBox.Show(@"Are you sure you want to clear the boxes?",
+                @"Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (confirmation == DialogResult.Yes)
+            {
+                Clear();
+            }
+            else
+            {
+                MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+        }
+
+        private void grcAdmin_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var position = MousePosition;
+                grwAdmin.Focus();
+                popupMenu1.ShowPopup(position);
+            }
+        }
     }
 }

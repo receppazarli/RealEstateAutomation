@@ -33,11 +33,11 @@
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnHomePage = new DevExpress.XtraBars.BarButtonItem();
             this.C = new DevExpress.XtraBars.BarButtonItem();
-            this.btnCustomer = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCustomers = new DevExpress.XtraBars.BarButtonItem();
             this.btnEmployee = new DevExpress.XtraBars.BarButtonItem();
             this.btnExpenses = new DevExpress.XtraBars.BarButtonItem();
             this.btnFıelds = new DevExpress.XtraBars.BarButtonItem();
-            this.btnHouse = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHouses = new DevExpress.XtraBars.BarButtonItem();
             this.btnPlots = new DevExpress.XtraBars.BarButtonItem();
             this.btnShops = new DevExpress.XtraBars.BarButtonItem();
             this.btnIncomes = new DevExpress.XtraBars.BarButtonItem();
@@ -47,8 +47,8 @@
             this.btnUsers = new DevExpress.XtraBars.BarButtonItem();
             this.btnAuthorizations = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnIncome = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAdmin = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.homePageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.customerGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -89,11 +89,11 @@
             this.ribbonControl1.SearchEditItem,
             this.btnHomePage,
             this.C,
-            this.btnCustomer,
+            this.btnCustomers,
             this.btnEmployee,
             this.btnExpenses,
             this.btnFıelds,
-            this.btnHouse,
+            this.btnHouses,
             this.btnPlots,
             this.btnShops,
             this.btnIncomes,
@@ -103,8 +103,8 @@
             this.btnUsers,
             this.btnAuthorizations,
             this.barButtonItem6,
-            this.barButtonItem8,
-            this.barButtonItem9});
+            this.btnIncome,
+            this.btnAdmin});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 19;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -139,22 +139,22 @@
             this.C.Id = 2;
             this.C.Name = "C";
             // 
-            // btnCustomer
+            // btnCustomers
             // 
-            this.btnCustomer.Caption = "CUSTOMERS";
-            this.btnCustomer.Id = 3;
-            this.btnCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.ImageOptions.Image")));
-            this.btnCustomer.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCustomer.ImageOptions.LargeImage")));
-            this.btnCustomer.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCustomer.ItemAppearance.Disabled.Options.UseFont = true;
-            this.btnCustomer.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCustomer.ItemAppearance.Hovered.Options.UseFont = true;
-            this.btnCustomer.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCustomer.ItemAppearance.Normal.Options.UseFont = true;
-            this.btnCustomer.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCustomer.ItemAppearance.Pressed.Options.UseFont = true;
-            this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomer_ItemClick);
+            this.btnCustomers.Caption = "CUSTOMERS";
+            this.btnCustomers.Id = 3;
+            this.btnCustomers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.ImageOptions.Image")));
+            this.btnCustomers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCustomer.ImageOptions.LargeImage")));
+            this.btnCustomers.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCustomers.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnCustomers.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCustomers.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnCustomers.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCustomers.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnCustomers.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCustomers.ItemAppearance.Pressed.Options.UseFont = true;
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomer_ItemClick);
             // 
             // btnEmployee
             // 
@@ -204,21 +204,21 @@
             this.btnFıelds.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnFıelds.Name = "btnFıelds";
             // 
-            // btnHouse
+            // btnHouses
             // 
-            this.btnHouse.Caption = "HOUSES";
-            this.btnHouse.Id = 7;
-            this.btnHouse.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHouse.ImageOptions.Image")));
-            this.btnHouse.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHouse.ImageOptions.LargeImage")));
-            this.btnHouse.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnHouse.ItemAppearance.Disabled.Options.UseFont = true;
-            this.btnHouse.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnHouse.ItemAppearance.Hovered.Options.UseFont = true;
-            this.btnHouse.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnHouse.ItemAppearance.Normal.Options.UseFont = true;
-            this.btnHouse.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnHouse.ItemAppearance.Pressed.Options.UseFont = true;
-            this.btnHouse.Name = "btnHouse";
+            this.btnHouses.Caption = "HOUSES";
+            this.btnHouses.Id = 7;
+            this.btnHouses.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHouse.ImageOptions.Image")));
+            this.btnHouses.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHouse.ImageOptions.LargeImage")));
+            this.btnHouses.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnHouses.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnHouses.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnHouses.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnHouses.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnHouses.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnHouses.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnHouses.ItemAppearance.Pressed.Options.UseFont = true;
+            this.btnHouses.Name = "btnHouses";
             // 
             // btnPlots
             // 
@@ -347,37 +347,38 @@
             this.barButtonItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem6.ImageOptions.SvgImage")));
             this.barButtonItem6.Name = "barButtonItem6";
             // 
-            // barButtonItem8
+            // btnIncome
             // 
-            this.barButtonItem8.Caption = "INCOME";
-            this.barButtonItem8.Id = 17;
-            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
-            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
-            this.barButtonItem8.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.barButtonItem8.ItemAppearance.Disabled.Options.UseFont = true;
-            this.barButtonItem8.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.barButtonItem8.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem8.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.barButtonItem8.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem8.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.barButtonItem8.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonItem8.Name = "barButtonItem8";
+            this.btnIncome.Caption = "INCOME";
+            this.btnIncome.Id = 17;
+            this.btnIncome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
+            this.btnIncome.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.btnIncome.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnIncome.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnIncome.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnIncome.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnIncome.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnIncome.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnIncome.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnIncome.ItemAppearance.Pressed.Options.UseFont = true;
+            this.btnIncome.Name = "btnIncome";
             // 
-            // barButtonItem9
+            // btnAdmin
             // 
-            this.barButtonItem9.Caption = "ADMIN";
-            this.barButtonItem9.Id = 18;
-            this.barButtonItem9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
-            this.barButtonItem9.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
-            this.barButtonItem9.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.barButtonItem9.ItemAppearance.Disabled.Options.UseFont = true;
-            this.barButtonItem9.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.barButtonItem9.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem9.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.barButtonItem9.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem9.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.barButtonItem9.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonItem9.Name = "barButtonItem9";
+            this.btnAdmin.Caption = "ADMIN";
+            this.btnAdmin.Id = 18;
+            this.btnAdmin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
+            this.btnAdmin.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
+            this.btnAdmin.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAdmin.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnAdmin.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAdmin.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnAdmin.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAdmin.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnAdmin.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAdmin.ItemAppearance.Pressed.Options.UseFont = true;
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdmin_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -411,7 +412,7 @@
             // 
             // ribbonPageGroup6
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnHouse);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnHouses);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
             // ribbonPageGroup7
@@ -444,7 +445,7 @@
             // 
             // ribbonPageGroup11
             // 
-            this.ribbonPageGroup11.ItemLinks.Add(this.btnCustomer);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnCustomers);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             // 
             // ribbonPage3
@@ -467,7 +468,7 @@
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem8);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnIncome);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPageGroup9
@@ -494,7 +495,7 @@
             // 
             // ribbonPageGroup14
             // 
-            this.ribbonPageGroup14.ItemLinks.Add(this.barButtonItem9);
+            this.ribbonPageGroup14.ItemLinks.Add(this.btnAdmin);
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
             // 
             // ribbonPage4
@@ -604,7 +605,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup homePageGroup;
         private DevExpress.XtraBars.BarButtonItem btnHomePage;
         private DevExpress.XtraBars.BarButtonItem C;
-        private DevExpress.XtraBars.BarButtonItem btnCustomer;
+        private DevExpress.XtraBars.BarButtonItem btnCustomers;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup customerGroup;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
@@ -614,7 +615,7 @@
         private DevExpress.XtraBars.BarButtonItem btnEmployee;
         private DevExpress.XtraBars.BarButtonItem btnExpenses;
         private DevExpress.XtraBars.BarButtonItem btnFıelds;
-        private DevExpress.XtraBars.BarButtonItem btnHouse;
+        private DevExpress.XtraBars.BarButtonItem btnHouses;
         private DevExpress.XtraBars.BarButtonItem btnPlots;
         private DevExpress.XtraBars.BarButtonItem btnIncomes;
         private DevExpress.XtraBars.BarButtonItem btnOwners;
@@ -633,7 +634,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem btnIncome;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
@@ -643,7 +644,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem btnAdmin;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
     }

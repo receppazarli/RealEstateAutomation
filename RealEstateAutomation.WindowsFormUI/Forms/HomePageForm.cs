@@ -47,12 +47,12 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void btnCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
             OpenForm<CustomerForm>();
+        }
 
-            //CustomerForm customerForm = new CustomerForm();
-            //customerForm.MdiParent = this;
-            //customerForm.Show();
+        private void btnAdmin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<AdminForm>();
         }
     }
 }

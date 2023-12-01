@@ -90,6 +90,7 @@
     <Compile Include="DependencyResolvers\InstanceFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ValidationTool.cs" />
+    <Compile Include="ValidationRules\FluentValidation\AdminValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\CustomerValidator.cs" />
   </ItemGroup>
   <ItemGroup />
