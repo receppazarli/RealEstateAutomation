@@ -97,6 +97,12 @@
     <Compile Include="Forms\HomePageForm.Designer.cs">
       <DependentUpon>HomePageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Methods\CommonMethods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomePageForm.resx">
       <DependentUpon>HomePageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

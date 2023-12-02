@@ -59,5 +59,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
             OpenForm<EmployeeForm>();
         }
+
+        private void btnOwners_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<OwnerForm>();
+        }
     }
 }
