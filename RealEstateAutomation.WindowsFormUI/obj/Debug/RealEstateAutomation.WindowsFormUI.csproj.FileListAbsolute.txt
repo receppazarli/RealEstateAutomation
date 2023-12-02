@@ -67,3 +67,4 @@ C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.Forms.AdminForm.resources
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.Forms.EmployeeForm.resources
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.Forms.OwnerForm.resources
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.Forms.FieldForm.resources

@@ -105,8 +105,8 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
-            this.ribbonControl1.Size = new System.Drawing.Size(1248, 150);
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
+            this.ribbonControl1.Size = new System.Drawing.Size(1248, 133);
             this.ribbonControl1.Visible = false;
             // 
             // btnClear2
@@ -195,10 +195,10 @@
             this.layoutControl1.Controls.Add(this.txtDeleteFlag);
             this.layoutControl1.Controls.Add(this.grcOwner);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 150);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 133);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1248, 468);
+            this.layoutControl1.Size = new System.Drawing.Size(1248, 485);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -295,7 +295,7 @@
             this.grcOwner.MainView = this.grwOwner;
             this.grcOwner.MenuManager = this.ribbonControl1;
             this.grcOwner.Name = "grcOwner";
-            this.grcOwner.Size = new System.Drawing.Size(843, 444);
+            this.grcOwner.Size = new System.Drawing.Size(843, 461);
             this.grcOwner.TabIndex = 4;
             this.grcOwner.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grwOwner});
@@ -374,7 +374,7 @@
             this.layoutControlItem10,
             this.layoutControlItem2});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1248, 468);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1248, 485);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -382,7 +382,7 @@
             this.layoutControlItem1.Control = this.grcOwner;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(847, 448);
+            this.layoutControlItem1.Size = new System.Drawing.Size(847, 465);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -447,7 +447,7 @@
             this.layoutControlItem8.Control = this.btnClear;
             this.layoutControlItem8.Location = new System.Drawing.Point(847, 224);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(381, 224);
+            this.layoutControlItem8.Size = new System.Drawing.Size(381, 241);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
