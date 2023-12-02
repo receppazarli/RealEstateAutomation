@@ -65,3 +65,4 @@ C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.Forms.AdminForm.resources
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.Forms.EmployeeForm.resources

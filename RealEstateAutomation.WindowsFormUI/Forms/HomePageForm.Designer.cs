@@ -143,8 +143,8 @@
             // 
             this.btnCustomers.Caption = "CUSTOMERS";
             this.btnCustomers.Id = 3;
-            this.btnCustomers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.ImageOptions.Image")));
-            this.btnCustomers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCustomer.ImageOptions.LargeImage")));
+            this.btnCustomers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomers.ImageOptions.Image")));
+            this.btnCustomers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCustomers.ImageOptions.LargeImage")));
             this.btnCustomers.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCustomers.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnCustomers.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -171,6 +171,7 @@
             this.btnEmployee.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnEmployee.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnEmployee.Name = "btnEmployee";
+            this.btnEmployee.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEmployee_ItemClick);
             // 
             // btnExpenses
             // 
@@ -208,8 +209,8 @@
             // 
             this.btnHouses.Caption = "HOUSES";
             this.btnHouses.Id = 7;
-            this.btnHouses.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHouse.ImageOptions.Image")));
-            this.btnHouses.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHouse.ImageOptions.LargeImage")));
+            this.btnHouses.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHouses.ImageOptions.Image")));
+            this.btnHouses.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHouses.ImageOptions.LargeImage")));
             this.btnHouses.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnHouses.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnHouses.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -351,8 +352,8 @@
             // 
             this.btnIncome.Caption = "INCOME";
             this.btnIncome.Id = 17;
-            this.btnIncome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
-            this.btnIncome.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.btnIncome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIncome.ImageOptions.Image")));
+            this.btnIncome.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnIncome.ImageOptions.LargeImage")));
             this.btnIncome.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnIncome.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnIncome.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -367,8 +368,8 @@
             // 
             this.btnAdmin.Caption = "ADMIN";
             this.btnAdmin.Id = 18;
-            this.btnAdmin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
-            this.btnAdmin.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
+            this.btnAdmin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmin.ImageOptions.Image")));
+            this.btnAdmin.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAdmin.ImageOptions.LargeImage")));
             this.btnAdmin.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAdmin.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnAdmin.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
