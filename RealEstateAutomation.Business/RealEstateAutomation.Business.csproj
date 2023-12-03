@@ -93,6 +93,7 @@
     <Compile Include="ValidationRules\FluentValidation\AdminValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\CustomerValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\EmployeeValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\FieldValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\OwnerValidator.cs" />
   </ItemGroup>
   <ItemGroup />

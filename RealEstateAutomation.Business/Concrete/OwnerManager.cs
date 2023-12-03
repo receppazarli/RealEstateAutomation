@@ -26,7 +26,7 @@ namespace RealEstateAutomation.Business.Concrete
             {
                 return _ownerDal.GetAll(x => x.DeleteFlag == false);
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 MessageBox.Show("There was an error loading the information. Please try again.", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);

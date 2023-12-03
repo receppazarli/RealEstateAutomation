@@ -25,7 +25,7 @@ namespace RealEstateAutomation.Business.Concrete
             {
                 return _customerDal.GetAll(x => x.DeleteFlag == false);
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 MessageBox.Show("There was an error loading the information. Please try again.", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -69,16 +69,6 @@ namespace RealEstateAutomation.Business.Concrete
 
         public void Update(Customer customer)
         {
-            //try
-            //{
-            //    ValidationTool.Validate(new CustomerValidator(), customer);
-            //    _customerDal.Update(customer);
-            //}
-            //catch (Exception e)
-            //{
-            //    MessageBox.Show(e.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-
 
             try
             {

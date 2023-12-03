@@ -6,14 +6,13 @@ using RealEstateAutomation.Business.Abstract;
 using RealEstateAutomation.Business.Utilities;
 using RealEstateAutomation.Business.ValidationRules.FluentValidation;
 using RealEstateAutomation.DataAccess.Abstract;
-using RealEstateAutomation.DataAccess.Concrete.EntityFramework;
 using RealEstateAutomation.Entities.Concrete;
 
 namespace RealEstateAutomation.Business.Concrete
 {
     public class AdminManager : IAdminService
     {
-        private IAdminDal _adminDal;
+        private readonly IAdminDal _adminDal;
 
         public AdminManager(IAdminDal adminDal)
         {
@@ -26,7 +25,7 @@ namespace RealEstateAutomation.Business.Concrete
             {
                 return _adminDal.GetAll(x => x.DeleteFlag == false);
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 MessageBox.Show("There was an error loading the information. Please try again.", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -160,6 +160,10 @@
       <Project>{252571CC-E8B0-4475-A00C-DEC5D588274D}</Project>
       <Name>RealEstateAutomation.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RealEstateAutomation.DataAccess\RealEstateAutomation.DataAccess.csproj">
+      <Project>{3DCA0A7D-5150-4C00-841B-83592AC3E633}</Project>
+      <Name>RealEstateAutomation.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RealEstateAutomation.Entities\RealEstateAutomation.Entities.csproj">
       <Project>{F8A4B8E2-33AC-4434-AAF8-0D4FF1DF19CE}</Project>
       <Name>RealEstateAutomation.Entities</Name>
