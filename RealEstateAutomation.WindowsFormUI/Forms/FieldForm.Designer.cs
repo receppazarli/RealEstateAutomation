@@ -41,6 +41,7 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnOwnerAdd = new DevExpress.XtraEditors.SimpleButton();
             this.txtPafta = new DevExpress.XtraEditors.TextEdit();
             this.txtPrice = new DevExpress.XtraEditors.TextEdit();
             this.txtArea = new DevExpress.XtraEditors.TextEdit();
@@ -71,7 +72,6 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -82,9 +82,9 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.btnOwnerAdd = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -100,7 +100,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -111,8 +110,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -233,6 +233,17 @@
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnOwnerAdd
+            // 
+            this.btnOwnerAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOwnerAdd.ImageOptions.Image")));
+            this.btnOwnerAdd.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnOwnerAdd.Location = new System.Drawing.Point(1202, 36);
+            this.btnOwnerAdd.Name = "btnOwnerAdd";
+            this.btnOwnerAdd.Size = new System.Drawing.Size(34, 22);
+            this.btnOwnerAdd.StyleController = this.layoutControl1;
+            this.btnOwnerAdd.TabIndex = 23;
+            this.btnOwnerAdd.Click += new System.EventHandler(this.btnOwnerAdd_Click);
+            // 
             // txtPafta
             // 
             this.txtPafta.Location = new System.Drawing.Point(957, 86);
@@ -268,7 +279,6 @@
             this.txtArea.Size = new System.Drawing.Size(279, 20);
             this.txtArea.StyleController = this.layoutControl1;
             this.txtArea.TabIndex = 20;
-            this.txtArea.EditValueChanged += new System.EventHandler(this.txtArea_EditValueChanged);
             // 
             // btnSave
             // 
@@ -560,18 +570,6 @@
             this.layoutControlItem11.Text = "Address:";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(86, 19);
             // 
-            // layoutControlItem12
-            // 
-            this.layoutControlItem12.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.layoutControlItem12.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem12.Control = this.txtId;
-            this.layoutControlItem12.Location = new System.Drawing.Point(847, 0);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(381, 24);
-            this.layoutControlItem12.Text = "Id:";
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(86, 19);
-            this.layoutControlItem12.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -677,26 +675,6 @@
             this.layoutControlItem13.Text = "Pafta:";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(86, 19);
             // 
-            // popupMenu1
-            // 
-            this.popupMenu1.ItemLinks.Add(this.btnSave2);
-            this.popupMenu1.ItemLinks.Add(this.btnDelete2);
-            this.popupMenu1.ItemLinks.Add(this.btnClear2);
-            this.popupMenu1.ItemLinks.Add(this.btnExcelTransfer2);
-            this.popupMenu1.Name = "popupMenu1";
-            this.popupMenu1.Ribbon = this.ribbonControl1;
-            // 
-            // btnOwnerAdd
-            // 
-            this.btnOwnerAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnOwnerAdd.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnOwnerAdd.Location = new System.Drawing.Point(1202, 36);
-            this.btnOwnerAdd.Name = "btnOwnerAdd";
-            this.btnOwnerAdd.Size = new System.Drawing.Size(34, 22);
-            this.btnOwnerAdd.StyleController = this.layoutControl1;
-            this.btnOwnerAdd.TabIndex = 23;
-            this.btnOwnerAdd.Click += new System.EventHandler(this.btnOwnerAdd_Click);
-            // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnOwnerAdd;
@@ -705,6 +683,27 @@
             this.layoutControlItem7.Size = new System.Drawing.Size(38, 26);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.layoutControlItem12.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem12.Control = this.txtId;
+            this.layoutControlItem12.Location = new System.Drawing.Point(847, 0);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(381, 24);
+            this.layoutControlItem12.Text = "Id:";
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(86, 19);
+            this.layoutControlItem12.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.ItemLinks.Add(this.btnSave2);
+            this.popupMenu1.ItemLinks.Add(this.btnDelete2);
+            this.popupMenu1.ItemLinks.Add(this.btnClear2);
+            this.popupMenu1.ItemLinks.Add(this.btnExcelTransfer2);
+            this.popupMenu1.Name = "popupMenu1";
+            this.popupMenu1.Ribbon = this.ribbonControl1;
             // 
             // FieldForm
             // 
@@ -731,7 +730,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -742,8 +740,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -57,6 +57,7 @@ namespace RealEstateAutomation.Business.Concrete
             }
 
             catch (Exception ex)
+
             {
                 MessageBox.Show(
                     ex.InnerException == null ? ex.Message : "This record already exists please check your details",

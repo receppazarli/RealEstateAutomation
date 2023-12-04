@@ -67,7 +67,12 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void btnFıelds_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            OpenForm<FieldForm>(); 
+            OpenForm<FieldForm>();
+        }
+
+        private void btnPlots_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<PlotForm>();
         }
     }
 }

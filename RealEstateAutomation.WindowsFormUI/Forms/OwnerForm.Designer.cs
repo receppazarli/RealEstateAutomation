@@ -181,9 +181,9 @@
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup2,
             this.ribbonPageGroup3,
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup1,
             this.ribbonPageGroup4});
             this.ribbonPage1.Name = "ribbonPage1";
             // 

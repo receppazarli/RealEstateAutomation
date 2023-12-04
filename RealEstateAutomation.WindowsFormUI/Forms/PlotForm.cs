@@ -1,4 +1,7 @@
 ﻿using DevExpress.XtraEditors;
+using RealEstateAutomation.Business.Abstract;
+using RealEstateAutomation.Business.DependencyResolvers;
+using RealEstateAutomation.WindowsFormUI.Methods;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,42 +11,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RealEstateAutomation.Business.Abstract;
-using RealEstateAutomation.Business.DependencyResolvers;
 using RealEstateAutomation.DataAccess.Concrete.EntityFramework;
+using static DevExpress.XtraPrinting.Native.ExportOptionsPropertiesNames;
 using RealEstateAutomation.Entities.Concrete;
-using RealEstateAutomation.WindowsFormUI.Methods;
-using DevExpress.XtraBars;
 using DevExpress.XtraLayout.Utils;
 
 namespace RealEstateAutomation.WindowsFormUI.Forms
 {
-    public partial class FieldForm : DevExpress.XtraEditors.XtraForm
+    public partial class PlotForm : DevExpress.XtraEditors.XtraForm
     {
-        public FieldForm()
+        public PlotForm()
         {
             InitializeComponent();
-            _fieldService = InstanceFactory.GetInstance<IFieldService>();
+            _plotService = InstanceFactory.GetInstance<IPlotService>();
             _ownerService = InstanceFactory.GetInstance<IOwnerService>();
             _cityService = InstanceFactory.GetInstance<ICityService>();
             _countyService = InstanceFactory.GetInstance<ICountyService>();
-
-
         }
 
-        private readonly IFieldService _fieldService;
+        private void PlotForm_Load(object sender, EventArgs e)
+        {
+            LoadPlot();
+            LoadOwner();
+            LoadCity();
+            LoadCounty();
+        }
+
+        private readonly IPlotService _plotService;
         private readonly IOwnerService _ownerService;
         private readonly ICityService _cityService;
         private readonly ICountyService _countyService;
         private readonly CommonMethods _commonMethods = new CommonMethods();
-
-        private void FieldForm_Load(object sender, EventArgs e)
-        {
-            LoadField();
-            LoadCity();
-            LoadCounty();
-            LoadOwner();
-        }
 
         void LoadOwner()
         {
@@ -71,32 +69,33 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             LoadCounty();
         }
 
-        void LoadField()
+        void LoadPlot()
         {
             try
             {
                 using (RealEstateAutomationContext context = new RealEstateAutomationContext())
                 {
-                    var entity = from f in context.Fields
-                                 join p in context.Properties on f.PropertyId equals p.Id
-                                 join o in context.Owners on f.OwnerId equals o.Id
-                                 join ci in context.Cities on f.City equals ci.Id
-                                 join co in context.Counties on f.County equals co.Id
+                    var entity = from pl in context.Plots
+                                 join p in context.Properties on pl.PropertyId equals p.Id
+                                 join o in context.Owners on pl.OwnerId equals o.Id
+                                 join ci in context.Cities on pl.City equals ci.Id
+                                 join co in context.Counties on pl.County equals co.Id
                                  select new
                                  {
-                                     Id = f.Id,
+                                     Id = pl.Id,
                                      PropertyId = p.PropertyType,
                                      OwnerId = o.FirstName,
-                                     Area = f.Area,
-                                     Pafta = f.Pafta,
+                                     Area = pl.Area,
+                                     Ada = pl.Ada,
+                                     Pafta = pl.Pafta,
                                      City = ci.CityName,
                                      County = co.CountyName,
-                                     Address = f.Address,
-                                     Price = f.Price,
-                                     Description = f.Description,
-                                     DeleteFlag = f.DeleteFlag,
+                                     Address = pl.Address,
+                                     Price = pl.Price,
+                                     Description = pl.Description,
+                                     DeleteFlag = pl.DeleteFlag,
                                  };
-                    grcField.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
+                    grcPlot.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
 
                 }
             }
@@ -112,32 +111,31 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             txtId.Text = "";
             lkuOwnerId.EditValue = 0;
             txtArea.Text = "0";
+            txtAda.Text = "";
             txtPafta.Text = "";
             lkuCity.EditValue = 0;
             lkuCounty.EditValue = 0;
             txtAddress.Text = "";
             txtPrice.Text = "0";
             txtDescription.Text = "";
-            txtDeleteFlag.Text = "";
         }
 
         void LoadClick()
         {
-            if (grwField.FocusedRowHandle >= 0)
+            if (grwPlot.FocusedRowHandle >= 0)
             {
-                txtId.Text = grwField.GetFocusedRowCellValue("Id").ToString();
-                lkuOwnerId.Text = grwField.GetFocusedRowCellValue("OwnerId").ToString();
-                txtArea.Text = grwField.GetFocusedRowCellValue("Area").ToString();
-                txtPafta.Text = grwField.GetFocusedRowCellValue("Pafta").ToString();
-                lkuCity.Text = grwField.GetFocusedRowCellValue("City").ToString();
-                lkuCounty.Text = grwField.GetFocusedRowCellValue("County").ToString();
-                txtAddress.Text = grwField.GetFocusedRowCellValue("Address").ToString();
-                txtPrice.Text = grwField.GetFocusedRowCellValue("Price").ToString();
-                txtDescription.Text = grwField.GetFocusedRowCellValue("Description").ToString();
-                txtDeleteFlag.Text = grwField.GetFocusedRowCellValue("DeleteFlag").ToString();
+                txtId.Text = grwPlot.GetFocusedRowCellValue("Id").ToString();
+                lkuOwnerId.Text = grwPlot.GetFocusedRowCellValue("OwnerId").ToString();
+                txtArea.Text = grwPlot.GetFocusedRowCellValue("Area").ToString();
+                txtAda.Text = grwPlot.GetFocusedRowCellValue("Ada").ToString();
+                txtPafta.Text = grwPlot.GetFocusedRowCellValue("Pafta").ToString();
+                lkuCity.Text = grwPlot.GetFocusedRowCellValue("City").ToString();
+                lkuCounty.Text = grwPlot.GetFocusedRowCellValue("County").ToString();
+                txtAddress.Text = grwPlot.GetFocusedRowCellValue("Address").ToString();
+                txtPrice.Text = grwPlot.GetFocusedRowCellValue("Price").ToString();
+                txtDescription.Text = grwPlot.GetFocusedRowCellValue("Description").ToString();
             }
         }
-
 
         void Save()
         {
@@ -149,11 +147,12 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 if (confirmation == DialogResult.Yes)
                 {
 
-                    _fieldService.Add(new Field
+                    _plotService.Add(new Plot
                     {
                         OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
-                        PropertyId = 1,
+                        PropertyId = 3,
                         Area = Convert.ToDecimal(txtArea.Text),
+                        Ada = txtAda.Text,
                         Pafta = txtPafta.Text,
                         City = Convert.ToInt32(lkuCity.EditValue),
                         County = Convert.ToInt32(lkuCounty.EditValue),
@@ -162,7 +161,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         Description = txtDescription.Text,
                         DeleteFlag = false
                     });
-                    LoadField();
+                    LoadPlot();
                     Clear();
 
                 }
@@ -179,12 +178,13 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                 if (confirmation == DialogResult.Yes)
                 {
-                    _fieldService.Update(new Field
+                    _plotService.Update(new Plot
                     {
-                        Id = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Id")),
-                        PropertyId = Convert.ToInt32("1"),
+                        Id = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Id")),
+                        PropertyId = Convert.ToInt32("3"),
                         OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
                         Area = Convert.ToDecimal(txtArea.Text),
+                        Ada = txtAda.Text,
                         Pafta = txtPafta.Text,
                         City = Convert.ToInt32(lkuCity.EditValue),
                         County = Convert.ToInt32(lkuCounty.EditValue),
@@ -193,7 +193,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         Description = txtDescription.Text,
                         DeleteFlag = false
                     });
-                    LoadField();
+                    LoadPlot();
                     Clear();
 
                 }
@@ -213,12 +213,13 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             if (confirmation == DialogResult.Yes)
             {
 
-                _fieldService.Update(new Field
+                _plotService.Update(new Plot
                 {
-                    Id = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Id")),
-                    PropertyId = Convert.ToInt32("1"),
+                    Id = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Id")),
+                    PropertyId = Convert.ToInt32("3"),
                     OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
                     Area = Convert.ToDecimal(txtArea.Text),
+                    Ada = txtAda.Text,
                     Pafta = txtPafta.Text,
                     City = Convert.ToInt32(lkuCity.EditValue),
                     County = Convert.ToInt32(lkuCounty.EditValue),
@@ -227,7 +228,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     Description = txtDescription.Text,
                     DeleteFlag = true
                 });
-                LoadField();
+                LoadPlot();
                 Clear();
 
 
@@ -272,12 +273,12 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             }
         }
 
-        private void btnDelete2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             Remove();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Remove();
         }
@@ -294,20 +295,15 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void btnExcelTransfer2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            _commonMethods.ExcelTransfer(grwField);
+            _commonMethods.ExcelTransfer(grwPlot);
         }
 
-        private void grcField_Click(object sender, EventArgs e)
-        {
-            LoadClick();
-        }
-
-        private void grwField_MouseDown(object sender, MouseEventArgs e)
+        private void grwPlot_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
                 var position = MousePosition;
-                grwField.Focus();
+                grwPlot.Focus();
                 popupMenu1.ShowPopup(position);
             }
         }
@@ -320,7 +316,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             }
         }
 
-        private void lkuCity_Properties_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        private void lkuCity_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {
             if (e.Value == null || e.Value == DBNull.Value)
             {
@@ -328,20 +324,17 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             }
         }
 
-        private void lkuCounty_Properties_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        private void lkuCounty_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {
             if (e.Value == null || e.Value == DBNull.Value)
             {
                 e.DisplayText = "";
             }
         }
-
-        
 
         private OwnerForm _ownerForm = new OwnerForm();
         private void btnOwnerAdd_Click(object sender, EventArgs e)
         {
-         
             _ownerForm.ribbonControl1.Visible = true;
             _ownerForm.lcSave.Visibility = LayoutVisibility.Never;
             _ownerForm.lcDelete.Visibility = LayoutVisibility.Never;
@@ -350,7 +343,9 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             LoadOwner();
         }
 
-
-
+        private void grcPlot_Click(object sender, EventArgs e)
+        {
+            LoadClick();
+        }
     }
 }
