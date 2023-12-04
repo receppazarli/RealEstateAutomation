@@ -14,6 +14,7 @@ using RealEstateAutomation.DataAccess.Concrete.EntityFramework;
 using RealEstateAutomation.Entities.Concrete;
 using RealEstateAutomation.WindowsFormUI.Methods;
 using DevExpress.XtraBars;
+using DevExpress.XtraLayout.Utils;
 
 namespace RealEstateAutomation.WindowsFormUI.Forms
 {
@@ -119,14 +120,13 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         void Clear()
         {
             txtId.Text = "";
-            //lkuPropertyId.EditValue = 0;
             lkuOwnerId.EditValue = 0;
-            btnArea.Text = "";
-            btnPafta.Text = "";
+            txtArea.Text = "0";
+            txtPafta.Text = "";
             lkuCity.EditValue = 0;
             lkuCounty.EditValue = 0;
             txtAddress.Text = "";
-            btnPrice.Text = "";
+            txtPrice.Text = "0";
             txtDescription.Text = "";
             txtDeleteFlag.Text = "";
         }
@@ -136,18 +136,18 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             if (grwField.FocusedRowHandle >= 0)
             {
                 txtId.Text = grwField.GetFocusedRowCellValue("Id").ToString();
-                // lkuPropertyId.Text = grwField.GetFocusedRowCellValue("PropertyId").ToString();
                 lkuOwnerId.Text = grwField.GetFocusedRowCellValue("OwnerId").ToString();
-                btnArea.Text = grwField.GetFocusedRowCellValue("Area").ToString();
-                btnPafta.Text = grwField.GetFocusedRowCellValue("Pafta").ToString();
+                txtArea.Text = grwField.GetFocusedRowCellValue("Area").ToString();
+                txtPafta.Text = grwField.GetFocusedRowCellValue("Pafta").ToString();
                 lkuCity.Text = grwField.GetFocusedRowCellValue("City").ToString();
                 lkuCounty.Text = grwField.GetFocusedRowCellValue("County").ToString();
                 txtAddress.Text = grwField.GetFocusedRowCellValue("Address").ToString();
-                btnPrice.Text = grwField.GetFocusedRowCellValue("Price").ToString();
+                txtPrice.Text = grwField.GetFocusedRowCellValue("Price").ToString();
                 txtDescription.Text = grwField.GetFocusedRowCellValue("Description").ToString();
                 txtDeleteFlag.Text = grwField.GetFocusedRowCellValue("DeleteFlag").ToString();
             }
         }
+
 
         void Save()
         {
@@ -159,31 +159,22 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 if (confirmation == DialogResult.Yes)
                 {
 
+                    _fieldService.Add(new Field
+                    {
+                        OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
+                        PropertyId = 1,
+                        Area = Convert.ToDecimal(txtArea.Text),
+                        Pafta = txtPafta.Text,
+                        City = Convert.ToInt32(lkuCity.EditValue),
+                        County = Convert.ToInt32(lkuCounty.EditValue),
+                        Address = txtAddress.Text,
+                        Price = Convert.ToDecimal(txtPrice.Text),
+                        Description = txtDescription.Text,
+                        DeleteFlag = false
+                    });
+                    LoadField();
+                    Clear();
 
-                    try
-                    {
-                        _fieldService.Add(new Field
-                        {
-                            OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
-                            PropertyId = Convert.ToInt32("1"),
-                            Area = Convert.ToDecimal(btnArea.Text),
-                            Pafta = btnPafta.Text,
-                            City = Convert.ToInt32(lkuCity.EditValue),
-                            County = Convert.ToInt32(lkuCounty.EditValue),
-                            Address = txtAddress.Text,
-                            Price = Convert.ToDecimal(btnPrice.Text),
-                            Description = txtDescription.Text,
-                            DeleteFlag = false
-                        });
-                        LoadField();
-                        Clear();
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show(@"Please fill in all boxes, Please try again.", @"Information", MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                        Clear();
-                    }
                 }
                 else
                 {
@@ -198,32 +189,23 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                 if (confirmation == DialogResult.Yes)
                 {
-                    try
+                    _fieldService.Update(new Field
                     {
-                        _fieldService.Update(new Field
-                        {
-                            Id = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Id")),
-                            PropertyId = Convert.ToInt32("1"),
-                            OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
-                            Area = Convert.ToDecimal(btnArea.Text),
-                            Pafta = btnPafta.Text,
-                            City = Convert.ToInt32(lkuCity.EditValue),
-                            County = Convert.ToInt32(lkuCounty.EditValue),
-                            Address = txtAddress.Text,
-                            Price = Convert.ToDecimal(btnPrice.Text),
-                            Description = txtDescription.Text,
-                            DeleteFlag = false
-                        });
-                        LoadField();
-                        Clear();
-                    }
-                    catch (Exception )
-                    {
-                        MessageBox.Show(@"Please do not leave any missing space.", @"Information", MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                        Clear();
-                    }
-                   
+                        Id = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Id")),
+                        PropertyId = Convert.ToInt32("1"),
+                        OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
+                        Area = Convert.ToDecimal(txtArea.Text),
+                        Pafta = txtPafta.Text,
+                        City = Convert.ToInt32(lkuCity.EditValue),
+                        County = Convert.ToInt32(lkuCounty.EditValue),
+                        Address = txtAddress.Text,
+                        Price = Convert.ToDecimal(txtPrice.Text),
+                        Description = txtDescription.Text,
+                        DeleteFlag = false
+                    });
+                    LoadField();
+                    Clear();
+
                 }
                 else
                 {
@@ -240,32 +222,25 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
             if (confirmation == DialogResult.Yes)
             {
-                try
+
+                _fieldService.Update(new Field
                 {
-                    _fieldService.Update(new Field
-                    {
-                        Id = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Id")),
-                        PropertyId = Convert.ToInt32("1"),
-                        OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
-                        Area = Convert.ToDecimal(btnArea.Text),
-                        Pafta = btnPafta.Text,
-                        City = Convert.ToInt32(lkuCity.EditValue),
-                        County = Convert.ToInt32(lkuCounty.EditValue),
-                        Address = txtAddress.Text,
-                        Price = Convert.ToDecimal(btnPrice.Text),
-                        Description = txtDescription.Text,
-                        DeleteFlag = true
-                    });
-                    LoadField();
-                    Clear();
-                }
-                catch (Exception )
-                {
-                    MessageBox.Show(@"Please select the field you want to delete and try again", @"Information", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    Clear();
-                }
-               
+                    Id = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Id")),
+                    PropertyId = Convert.ToInt32("1"),
+                    OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
+                    Area = Convert.ToDecimal(txtArea.Text),
+                    Pafta = txtPafta.Text,
+                    City = Convert.ToInt32(lkuCity.EditValue),
+                    County = Convert.ToInt32(lkuCounty.EditValue),
+                    Address = txtAddress.Text,
+                    Price = Convert.ToDecimal(txtPrice.Text),
+                    Description = txtDescription.Text,
+                    DeleteFlag = true
+                });
+                LoadField();
+                Clear();
+
+
             }
             else
             {
@@ -346,5 +321,65 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 popupMenu1.ShowPopup(position);
             }
         }
+
+        private void lkuOwnerId_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            if (e.Value == null || e.Value == DBNull.Value)
+            {
+                e.DisplayText = "";
+            }
+        }
+
+        private void lkuCity_Properties_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            if (e.Value == null || e.Value == DBNull.Value)
+            {
+                e.DisplayText = "";
+            }
+        }
+
+        private void lkuCounty_Properties_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            if (e.Value == null || e.Value == DBNull.Value)
+            {
+                e.DisplayText = "";
+            }
+        }
+
+        private void txtArea_EditValueChanged(object sender, EventArgs e)
+        {
+            var editor = sender as TextEdit;
+            if (editor != null)
+            {
+                string input = editor.Text.Trim();
+
+                // Özel bir durumu kontrol edin, örneğin, girişin boş olup olmadığını
+                if (string.IsNullOrEmpty(input))
+                {
+                    // Belirli bir koşul altında TextEdit metnini ayarlayın
+                    editor.Text = ""; // veya istediğiniz başka bir değer
+                }
+                else
+                {
+                    // Normal giriş işleme
+                }
+            }
+        }
+
+        private OwnerForm _ownerForm = new OwnerForm();
+        private void btnOwnerAdd_Click(object sender, EventArgs e)
+        {
+            // _ownerForm.Height = 600;
+            // _ownerForm.Width = 1000;
+            _ownerForm.ribbonControl1.Visible = true;
+            _ownerForm.lcSave.Visibility = LayoutVisibility.Never;
+            _ownerForm.lcDelete.Visibility = LayoutVisibility.Never;
+            _ownerForm.lcClear.Visibility = LayoutVisibility.Never;
+            _ownerForm.ShowDialog();
+            LoadOwner();
+        }
+
+
+
     }
 }

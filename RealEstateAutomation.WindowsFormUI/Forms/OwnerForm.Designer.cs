@@ -65,9 +65,9 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lcClear = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lcDelete = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lcSave = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -83,9 +83,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcClear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
@@ -115,8 +115,14 @@
             this.btnClear2.Id = 1;
             this.btnClear2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClear2.ImageOptions.Image")));
             this.btnClear2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClear2.ImageOptions.LargeImage")));
+            this.btnClear2.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnClear2.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnClear2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnClear2.ItemAppearance.Hovered.Options.UseFont = true;
             this.btnClear2.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnClear2.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnClear2.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnClear2.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnClear2.Name = "btnClear2";
             this.btnClear2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClear2_ItemClick);
             // 
@@ -126,8 +132,14 @@
             this.btnDelete2.Id = 2;
             this.btnDelete2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete2.ImageOptions.Image")));
             this.btnDelete2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDelete2.ImageOptions.LargeImage")));
+            this.btnDelete2.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDelete2.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnDelete2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDelete2.ItemAppearance.Hovered.Options.UseFont = true;
             this.btnDelete2.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnDelete2.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnDelete2.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDelete2.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnDelete2.Name = "btnDelete2";
             this.btnDelete2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelete2_ItemClick);
             // 
@@ -137,8 +149,14 @@
             this.btnSave2.Id = 3;
             this.btnSave2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave2.ImageOptions.Image")));
             this.btnSave2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSave2.ImageOptions.LargeImage")));
+            this.btnSave2.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSave2.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnSave2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSave2.ItemAppearance.Hovered.Options.UseFont = true;
             this.btnSave2.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSave2.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnSave2.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSave2.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnSave2.Name = "btnSave2";
             this.btnSave2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSave2_ItemClick);
             // 
@@ -148,9 +166,16 @@
             this.btnExcelTransfer2.Id = 4;
             this.btnExcelTransfer2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExcelTransfer2.ImageOptions.Image")));
             this.btnExcelTransfer2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnExcelTransfer2.ImageOptions.LargeImage")));
+            this.btnExcelTransfer2.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnExcelTransfer2.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnExcelTransfer2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnExcelTransfer2.ItemAppearance.Hovered.Options.UseFont = true;
             this.btnExcelTransfer2.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnExcelTransfer2.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnExcelTransfer2.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnExcelTransfer2.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnExcelTransfer2.Name = "btnExcelTransfer2";
+            this.btnExcelTransfer2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnExcelTransfer2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExcelTransfer2_ItemClick);
             // 
             // ribbonPage1
@@ -181,6 +206,7 @@
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.btnExcelTransfer2);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Visible = false;
             // 
             // layoutControl1
             // 
@@ -369,9 +395,9 @@
             this.layoutControlItem5,
             this.layoutControlItem6,
             this.layoutControlItem7,
-            this.layoutControlItem8,
-            this.layoutControlItem9,
-            this.layoutControlItem10,
+            this.lcClear,
+            this.lcDelete,
+            this.lcSave,
             this.layoutControlItem2});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1248, 485);
@@ -442,32 +468,32 @@
             this.layoutControlItem7.Text = "Phone:";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(88, 19);
             // 
-            // layoutControlItem8
+            // lcClear
             // 
-            this.layoutControlItem8.Control = this.btnClear;
-            this.layoutControlItem8.Location = new System.Drawing.Point(847, 224);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(381, 241);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextVisible = false;
+            this.lcClear.Control = this.btnClear;
+            this.lcClear.Location = new System.Drawing.Point(847, 224);
+            this.lcClear.Name = "lcClear";
+            this.lcClear.Size = new System.Drawing.Size(381, 241);
+            this.lcClear.TextSize = new System.Drawing.Size(0, 0);
+            this.lcClear.TextVisible = false;
             // 
-            // layoutControlItem9
+            // lcDelete
             // 
-            this.layoutControlItem9.Control = this.btnDelete;
-            this.layoutControlItem9.Location = new System.Drawing.Point(847, 184);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(381, 40);
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextVisible = false;
+            this.lcDelete.Control = this.btnDelete;
+            this.lcDelete.Location = new System.Drawing.Point(847, 184);
+            this.lcDelete.Name = "lcDelete";
+            this.lcDelete.Size = new System.Drawing.Size(381, 40);
+            this.lcDelete.TextSize = new System.Drawing.Size(0, 0);
+            this.lcDelete.TextVisible = false;
             // 
-            // layoutControlItem10
+            // lcSave
             // 
-            this.layoutControlItem10.Control = this.btnSave;
-            this.layoutControlItem10.Location = new System.Drawing.Point(847, 144);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(381, 40);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
+            this.lcSave.Control = this.btnSave;
+            this.lcSave.Location = new System.Drawing.Point(847, 144);
+            this.lcSave.Name = "lcSave";
+            this.lcSave.Size = new System.Drawing.Size(381, 40);
+            this.lcSave.TextSize = new System.Drawing.Size(0, 0);
+            this.lcSave.TextVisible = false;
             // 
             // layoutControlItem2
             // 
@@ -497,7 +523,10 @@
             this.ClientSize = new System.Drawing.Size(1248, 618);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "OwnerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OWNER";
             this.Load += new System.EventHandler(this.OwnerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
@@ -513,9 +542,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcClear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
@@ -525,7 +554,7 @@
 
         #endregion
 
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        public DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
@@ -552,12 +581,12 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private DevExpress.XtraEditors.SimpleButton btnSave;
-        private DevExpress.XtraEditors.SimpleButton btnDelete;
-        private DevExpress.XtraEditors.SimpleButton btnClear;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        public DevExpress.XtraEditors.SimpleButton btnSave;
+        public DevExpress.XtraEditors.SimpleButton btnDelete;
+        public DevExpress.XtraEditors.SimpleButton btnClear;
+        public DevExpress.XtraLayout.LayoutControlItem lcClear;
+        public DevExpress.XtraLayout.LayoutControlItem lcDelete;
+        public DevExpress.XtraLayout.LayoutControlItem lcSave;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private DevExpress.XtraGrid.Columns.GridColumn Id;
         private DevExpress.XtraGrid.Columns.GridColumn NationalityId;

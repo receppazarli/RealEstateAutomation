@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using System.Security.Cryptography.X509Certificates;
+using FluentValidation;
 using RealEstateAutomation.Entities.Concrete;
 
 namespace RealEstateAutomation.Business.ValidationRules.FluentValidation
@@ -15,9 +16,11 @@ namespace RealEstateAutomation.Business.ValidationRules.FluentValidation
             RuleFor(x => x.County).NotEmpty().WithMessage("County cannot be empty.");
             RuleFor(x => x.Price).NotEmpty().WithMessage("Price cannot be empty.");
             RuleFor(x => x.Price).GreaterThan(0).WithMessage("Price cannot be less than 0.");
-            
+
 
         }
+
+        
 
     }
 }
