@@ -74,5 +74,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
             OpenForm<PlotForm>();
         }
+
+        private void btnHouses_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<HouseForm>();
+        }
     }
 }

@@ -94,6 +94,7 @@
     <Compile Include="ValidationRules\FluentValidation\CustomerValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\EmployeeValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\FieldValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\HouseValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\OwnerValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\PlotValidator.cs" />
   </ItemGroup>

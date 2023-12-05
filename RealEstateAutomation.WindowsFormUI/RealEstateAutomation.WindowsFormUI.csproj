@@ -103,6 +103,12 @@
     <Compile Include="Forms\HomePageForm.Designer.cs">
       <DependentUpon>HomePageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HouseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HouseForm.Designer.cs">
+      <DependentUpon>HouseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\OwnerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomePageForm.resx">
       <DependentUpon>HomePageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HouseForm.resx">
+      <DependentUpon>HouseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OwnerForm.resx">
       <DependentUpon>OwnerForm.cs</DependentUpon>

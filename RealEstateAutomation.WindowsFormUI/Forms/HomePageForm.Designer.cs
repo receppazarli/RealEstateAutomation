@@ -221,6 +221,7 @@
             this.btnHouses.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnHouses.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnHouses.Name = "btnHouses";
+            this.btnHouses.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHouses_ItemClick);
             // 
             // btnPlots
             // 
