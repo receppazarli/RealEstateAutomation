@@ -255,6 +255,7 @@
             this.btnShops.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnShops.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnShops.Name = "btnShops";
+            this.btnShops.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShops_ItemClick);
             // 
             // btnIncomes
             // 

@@ -70,3 +70,4 @@ C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.Forms.FieldForm.resources
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.Forms.PlotForm.resources
 C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.Forms.HouseForm.resources
+C:\Users\HP\source\repos\RealEstateAutomation\RealEstateAutomation.WindowsFormUI\obj\Debug\RealEstateAutomation.WindowsFormUI.Forms.ShopForm.resources

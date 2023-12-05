@@ -13,31 +13,30 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RealEstateAutomation.DataAccess.Concrete.EntityFramework;
 using RealEstateAutomation.Entities.Concrete;
-using DevExpress.XtraBars;
 using DevExpress.XtraLayout.Utils;
 
 namespace RealEstateAutomation.WindowsFormUI.Forms
 {
-    public partial class HouseForm : DevExpress.XtraEditors.XtraForm
+    public partial class ShopForm : DevExpress.XtraEditors.XtraForm
     {
-        private readonly IHouseService _houseService;
-        private readonly IOwnerService _ownerService;
-        private readonly ICityService _cityService;
-        private readonly ICountyService _countyService;
-        private readonly CommonMethods _commonMethods = new CommonMethods();
-
-        public HouseForm()
+        public ShopForm()
         {
             InitializeComponent();
-            _houseService = InstanceFactory.GetInstance<IHouseService>();
+            _shopService = InstanceFactory.GetInstance<IShopService>();
             _ownerService = InstanceFactory.GetInstance<IOwnerService>();
             _cityService = InstanceFactory.GetInstance<ICityService>();
             _countyService = InstanceFactory.GetInstance<ICountyService>();
         }
 
-        private void HouseForm_Load(object sender, EventArgs e)
+        private readonly IShopService _shopService;
+        private readonly IOwnerService _ownerService;
+        private readonly ICityService _cityService;
+        private readonly ICountyService _countyService;
+        private readonly CommonMethods _commonMethods = new CommonMethods();
+
+        private void ShopForm_Load(object sender, EventArgs e)
         {
-            LoadHouse();
+            LoadShop();
             LoadOwner();
             LoadCity();
             LoadCounty();
@@ -69,32 +68,31 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             LoadCounty();
         }
 
-        void LoadHouse()
+        void LoadShop()
         {
             try
             {
                 using (RealEstateAutomationContext context = new RealEstateAutomationContext())
                 {
-                    var entity = from h in context.Houses
-                                 join p in context.Properties on h.PropertyId equals p.Id
-                                 join o in context.Owners on h.OwnerId equals o.Id
-                                 join ci in context.Cities on h.City equals ci.Id
-                                 join co in context.Counties on h.County equals co.Id
+                    var entity = from s in context.Shops
+                                 join p in context.Properties on s.PropertyId equals p.Id
+                                 join o in context.Owners on s.OwnerId equals o.Id
+                                 join ci in context.Cities on s.City equals ci.Id
+                                 join co in context.Counties on s.County equals co.Id
                                  select new
                                  {
-                                     Id = h.Id,
+                                     Id = s.Id,
                                      PropertyId = p.PropertyType,
                                      OwnerId = o.FirstName,
-                                     Area = h.Area,
-                                     HouseType = h.HouseType,
+                                     Area = s.Area,
                                      City = ci.CityName,
                                      County = co.CountyName,
-                                     Address = h.Address,
-                                     Price = h.Price,
-                                     Description = h.Description,
-                                     DeleteFlag = h.DeleteFlag,
+                                     Address = s.Address,
+                                     Price = s.Price,
+                                     Description = s.Description,
+                                     DeleteFlag = s.DeleteFlag,
                                  };
-                    grcHouse.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
+                    grcShop.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
 
                 }
             }
@@ -110,7 +108,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             txtId.Text = "";
             lkuOwnerId.EditValue = 0;
             txtArea.Text = "0";
-            txtHouseType.Text = "";
             lkuCity.EditValue = 0;
             lkuCounty.EditValue = 0;
             txtAddress.Text = "";
@@ -120,17 +117,16 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         void LoadClick()
         {
-            if (grwHouse.FocusedRowHandle >= 0)
+            if (grwShop.FocusedRowHandle >= 0)
             {
-                txtId.Text = grwHouse.GetFocusedRowCellValue("Id").ToString();
-                lkuOwnerId.Text = grwHouse.GetFocusedRowCellValue("OwnerId").ToString();
-                txtArea.Text = grwHouse.GetFocusedRowCellValue("Area").ToString();
-                txtHouseType.Text = grwHouse.GetFocusedRowCellValue("HouseType").ToString();
-                lkuCity.Text = grwHouse.GetFocusedRowCellValue("City").ToString();
-                lkuCounty.Text = grwHouse.GetFocusedRowCellValue("County").ToString();
-                txtAddress.Text = grwHouse.GetFocusedRowCellValue("Address").ToString();
-                txtPrice.Text = grwHouse.GetFocusedRowCellValue("Price").ToString();
-                txtDescription.Text = grwHouse.GetFocusedRowCellValue("Description").ToString();
+                txtId.Text = grwShop.GetFocusedRowCellValue("Id").ToString();
+                lkuOwnerId.Text = grwShop.GetFocusedRowCellValue("OwnerId").ToString();
+                txtArea.Text = grwShop.GetFocusedRowCellValue("Area").ToString();
+                lkuCity.Text = grwShop.GetFocusedRowCellValue("City").ToString();
+                lkuCounty.Text = grwShop.GetFocusedRowCellValue("County").ToString();
+                txtAddress.Text = grwShop.GetFocusedRowCellValue("Address").ToString();
+                txtPrice.Text = grwShop.GetFocusedRowCellValue("Price").ToString();
+                txtDescription.Text = grwShop.GetFocusedRowCellValue("Description").ToString();
             }
         }
 
@@ -144,12 +140,11 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 if (confirmation == DialogResult.Yes)
                 {
 
-                    _houseService.Add(new House
+                    _shopService.Add(new Shop
                     {
                         OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
-                        PropertyId = 2,
+                        PropertyId = 4,
                         Area = Convert.ToDecimal(txtArea.Text),
-                        HouseType = txtHouseType.Text,
                         City = Convert.ToInt32(lkuCity.EditValue),
                         County = Convert.ToInt32(lkuCounty.EditValue),
                         Address = txtAddress.Text,
@@ -157,7 +152,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         Description = txtDescription.Text,
                         DeleteFlag = false
                     });
-                    LoadHouse();
+                    LoadShop();
                     Clear();
 
                 }
@@ -174,13 +169,12 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                 if (confirmation == DialogResult.Yes)
                 {
-                    _houseService.Update(new House
+                    _shopService.Update(new Shop
                     {
-                        Id = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Id")),
-                        PropertyId = Convert.ToInt32("2"),
+                        Id = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Id")),
+                        PropertyId = Convert.ToInt32("4"),
                         OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
                         Area = Convert.ToDecimal(txtArea.Text),
-                        HouseType = txtHouseType.Text,
                         City = Convert.ToInt32(lkuCity.EditValue),
                         County = Convert.ToInt32(lkuCounty.EditValue),
                         Address = txtAddress.Text,
@@ -188,7 +182,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         Description = txtDescription.Text,
                         DeleteFlag = false
                     });
-                    LoadHouse();
+                    LoadShop();
                     Clear();
 
                 }
@@ -208,13 +202,12 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             if (confirmation == DialogResult.Yes)
             {
 
-                _houseService.Update(new House
+                _shopService.Update(new Shop
                 {
-                    Id = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Id")),
-                    PropertyId = Convert.ToInt32("2"),
+                    Id = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Id")),
+                    PropertyId = Convert.ToInt32("4"),
                     OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
                     Area = Convert.ToDecimal(txtArea.Text),
-                    HouseType = txtHouseType.Text,
                     City = Convert.ToInt32(lkuCity.EditValue),
                     County = Convert.ToInt32(lkuCounty.EditValue),
                     Address = txtAddress.Text,
@@ -222,7 +215,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     Description = txtDescription.Text,
                     DeleteFlag = true
                 });
-                LoadHouse();
+                LoadShop();
                 Clear();
 
 
@@ -232,7 +225,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
-
         }
 
         private void btnClear2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -289,20 +281,21 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void btnExcelTransfer2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            _commonMethods.ExcelTransfer(grwHouse);
+            _commonMethods.ExcelTransfer(grwShop);
         }
 
-        private void grwHouse_MouseDown(object sender, MouseEventArgs e)
+        private void grwShop_MouseDown(object sender, MouseEventArgs e)
         {
+
             if (e.Button == MouseButtons.Right)
             {
                 var position = MousePosition;
-                grwHouse.Focus();
+                grwShop.Focus();
                 popupMenu1.ShowPopup(position);
             }
         }
 
-        private void lookUpEdit2_Properties_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        private void lookUpEdit3_Properties_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {
             if (e.Value == null || e.Value == DBNull.Value)
             {
@@ -338,7 +331,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             LoadOwner();
         }
 
-        private void grcHouse_Click(object sender, EventArgs e)
+        private void grcShop_Click(object sender, EventArgs e)
         {
             LoadClick();
         }

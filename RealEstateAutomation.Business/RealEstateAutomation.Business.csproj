@@ -97,6 +97,7 @@
     <Compile Include="ValidationRules\FluentValidation\HouseValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\OwnerValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\PlotValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\ShopValidator.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
