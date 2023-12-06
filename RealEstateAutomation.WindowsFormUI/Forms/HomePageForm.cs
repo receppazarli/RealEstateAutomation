@@ -84,5 +84,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
             OpenForm<ShopForm>();
         }
+
+        private void btnProperties_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<PropertyForm>();
+        }
     }
 }

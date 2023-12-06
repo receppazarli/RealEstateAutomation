@@ -26,7 +26,7 @@ namespace RealEstateAutomation.Business.Concrete
             {
                 return _fieldDal.GetAll(x => x.DeleteFlag == false);
             }
-            catch (Exception )
+            catch (Exception)
             {
                 MessageBox.Show("There was an error loading the information. Please try again.", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -93,6 +93,20 @@ namespace RealEstateAutomation.Business.Concrete
                 MessageBox.Show(
                     ex.InnerException == null ? ex.Message : "This record already exists please check your details",
                     "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        public List<Field> GetById(int id)
+        {
+            try
+            {
+                return _fieldDal.GetAll(x => x.Id == id);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an error loading the information. Please try again.", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
         }
     }

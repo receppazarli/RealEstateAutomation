@@ -36,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="DevExpress.Charts.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dashboard.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dashboard.v22.2.Win, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -86,8 +87,11 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -117,6 +121,12 @@
     <Compile Include="Forms\EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FieldDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FieldDetailForm.Designer.cs">
+      <DependentUpon>FieldDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FieldForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +138,12 @@
     </Compile>
     <Compile Include="Forms\HomePageForm.Designer.cs">
       <DependentUpon>HomePageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HouseDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HouseDetailForm.Designer.cs">
+      <DependentUpon>HouseDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HouseForm.cs">
       <SubType>Form</SubType>
@@ -141,6 +157,12 @@
     <Compile Include="Forms\OwnerForm.Designer.cs">
       <DependentUpon>OwnerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PlotDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlotDetailForm.Designer.cs">
+      <DependentUpon>PlotDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PlotForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +174,12 @@
     </Compile>
     <Compile Include="Forms\PropertyForm.Designer.cs">
       <DependentUpon>PropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShopDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShopDetailForm.Designer.cs">
+      <DependentUpon>ShopDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ShopForm.cs">
       <SubType>Form</SubType>
@@ -171,11 +199,17 @@
     <EmbeddedResource Include="Forms\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FieldDetailForm.resx">
+      <DependentUpon>FieldDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FieldForm.resx">
       <DependentUpon>FieldForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomePageForm.resx">
       <DependentUpon>HomePageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HouseDetailForm.resx">
+      <DependentUpon>HouseDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HouseForm.resx">
       <DependentUpon>HouseForm.cs</DependentUpon>
@@ -183,11 +217,17 @@
     <EmbeddedResource Include="Forms\OwnerForm.resx">
       <DependentUpon>OwnerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlotDetailForm.resx">
+      <DependentUpon>PlotDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PlotForm.resx">
       <DependentUpon>PlotForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PropertyForm.resx">
       <DependentUpon>PropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShopDetailForm.resx">
+      <DependentUpon>ShopDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ShopForm.resx">
       <DependentUpon>ShopForm.cs</DependentUpon>
