@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShopDetailForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.txtAddress = new DevExpress.XtraEditors.TextEdit();
             this.txtPrice = new DevExpress.XtraEditors.TextEdit();
-            this.lkuOwnerId = new DevExpress.XtraEditors.LookUpEdit();
-            this.txtArea = new DevExpress.XtraEditors.TextEdit();
-            this.lkuCounty = new DevExpress.XtraEditors.LookUpEdit();
-            this.lkuCity = new DevExpress.XtraEditors.LookUpEdit();
             this.txtDescription = new DevExpress.XtraEditors.TextEdit();
-            this.txtId = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtArea = new DevExpress.XtraEditors.TextEdit();
+            this.lkuCity = new DevExpress.XtraEditors.LookUpEdit();
+            this.lkuCounty = new DevExpress.XtraEditors.LookUpEdit();
+            this.lkuOwnerId = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -48,19 +48,19 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrice.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuOwnerId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtArea.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuCounty.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuCity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtArea.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkuCity.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkuCounty.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkuOwnerId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
@@ -74,7 +74,7 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.simpleButton1);
+            this.layoutControl1.Controls.Add(this.btnSave);
             this.layoutControl1.Controls.Add(this.txtId);
             this.layoutControl1.Controls.Add(this.txtAddress);
             this.layoutControl1.Controls.Add(this.txtPrice);
@@ -91,23 +91,26 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // layoutControlGroup1
+            // btnSave
             // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem5,
-            this.layoutControlItem6,
-            this.layoutControlItem3,
-            this.layoutControlItem8,
-            this.layoutControlItem7,
-            this.layoutControlItem4,
-            this.layoutControlItem9});
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(498, 254);
-            this.layoutControlGroup1.TextVisible = false;
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSave.Appearance.Options.UseFont = true;
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
+            this.btnSave.Location = new System.Drawing.Point(12, 204);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(474, 36);
+            this.btnSave.StyleController = this.layoutControl1;
+            this.btnSave.TabIndex = 18;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(110, 12);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(376, 20);
+            this.txtId.StyleController = this.layoutControl1;
+            this.txtId.TabIndex = 4;
             // 
             // txtAddress
             // 
@@ -121,9 +124,60 @@
             // 
             this.txtPrice.Location = new System.Drawing.Point(110, 156);
             this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPrice.Properties.MaskSettings.Set("mask", "c");
             this.txtPrice.Size = new System.Drawing.Size(376, 20);
             this.txtPrice.StyleController = this.layoutControl1;
             this.txtPrice.TabIndex = 8;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(110, 180);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(376, 20);
+            this.txtDescription.StyleController = this.layoutControl1;
+            this.txtDescription.TabIndex = 9;
+            // 
+            // txtArea
+            // 
+            this.txtArea.Location = new System.Drawing.Point(110, 60);
+            this.txtArea.Name = "txtArea";
+            this.txtArea.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
+            this.txtArea.Properties.MaskSettings.Set("MaskManagerSignature", "isOptimistic=False");
+            this.txtArea.Properties.MaskSettings.Set("mask", "\\d+(\\R.\\d{0,2})?");
+            this.txtArea.Size = new System.Drawing.Size(376, 20);
+            this.txtArea.StyleController = this.layoutControl1;
+            this.txtArea.TabIndex = 6;
+            // 
+            // lkuCity
+            // 
+            this.lkuCity.Location = new System.Drawing.Point(110, 84);
+            this.lkuCity.Name = "lkuCity";
+            this.lkuCity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkuCity.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CityName", "City Name")});
+            this.lkuCity.Properties.NullText = "Please Choose";
+            this.lkuCity.Size = new System.Drawing.Size(376, 20);
+            this.lkuCity.StyleController = this.layoutControl1;
+            this.lkuCity.TabIndex = 11;
+            this.lkuCity.EditValueChanged += new System.EventHandler(this.lkuCity_EditValueChanged);
+            // 
+            // lkuCounty
+            // 
+            this.lkuCounty.Location = new System.Drawing.Point(110, 108);
+            this.lkuCounty.Name = "lkuCounty";
+            this.lkuCounty.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkuCounty.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountyName", "County Name"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CityId", "CityId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lkuCounty.Properties.NullText = "Please Choose";
+            this.lkuCounty.Size = new System.Drawing.Size(376, 20);
+            this.lkuCounty.StyleController = this.layoutControl1;
+            this.lkuCounty.TabIndex = 10;
             // 
             // lkuOwnerId
             // 
@@ -143,69 +197,23 @@
             this.lkuOwnerId.StyleController = this.layoutControl1;
             this.lkuOwnerId.TabIndex = 15;
             // 
-            // txtArea
+            // layoutControlGroup1
             // 
-            this.txtArea.Location = new System.Drawing.Point(110, 60);
-            this.txtArea.Name = "txtArea";
-            this.txtArea.Size = new System.Drawing.Size(376, 20);
-            this.txtArea.StyleController = this.layoutControl1;
-            this.txtArea.TabIndex = 6;
-            // 
-            // lkuCounty
-            // 
-            this.lkuCounty.Location = new System.Drawing.Point(110, 108);
-            this.lkuCounty.Name = "lkuCounty";
-            this.lkuCounty.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkuCounty.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountyName", "County Name"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CityId", "CityId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.lkuCounty.Properties.NullText = "Please Choose";
-            this.lkuCounty.Size = new System.Drawing.Size(376, 20);
-            this.lkuCounty.StyleController = this.layoutControl1;
-            this.lkuCounty.TabIndex = 10;
-            // 
-            // lkuCity
-            // 
-            this.lkuCity.Location = new System.Drawing.Point(110, 84);
-            this.lkuCity.Name = "lkuCity";
-            this.lkuCity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkuCity.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CityName", "City Name")});
-            this.lkuCity.Properties.NullText = "Please Choose";
-            this.lkuCity.Size = new System.Drawing.Size(376, 20);
-            this.lkuCity.StyleController = this.layoutControl1;
-            this.lkuCity.TabIndex = 11;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(110, 180);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(376, 20);
-            this.txtDescription.StyleController = this.layoutControl1;
-            this.txtDescription.TabIndex = 9;
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(110, 12);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(376, 20);
-            this.txtId.StyleController = this.layoutControl1;
-            this.txtId.TabIndex = 4;
-            // 
-            // simpleButton11
-            // 
-            this.simpleButton11.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.simpleButton11.Appearance.Options.UseFont = true;
-            this.simpleButton11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton11.ImageOptions.Image")));
-            this.simpleButton11.Location = new System.Drawing.Point(12, 228);
-            this.simpleButton11.Name = "simpleButton11";
-            this.simpleButton11.Size = new System.Drawing.Size(474, 36);
-            this.simpleButton11.TabIndex = 17;
-            this.simpleButton11.Text = "SAVE";
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem5,
+            this.layoutControlItem6,
+            this.layoutControlItem3,
+            this.layoutControlItem8,
+            this.layoutControlItem7,
+            this.layoutControlItem4,
+            this.layoutControlItem9});
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(498, 254);
+            this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
@@ -314,26 +322,25 @@
             this.layoutControlItem4.Text = "Owner Name:";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(86, 19);
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(12, 204);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(474, 36);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 18;
-            this.simpleButton1.Text = "SAVE";
-            // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.simpleButton1;
+            this.layoutControlItem9.Control = this.btnSave;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 192);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(478, 42);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
+            // 
+            // simpleButton11
+            // 
+            this.simpleButton11.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.simpleButton11.Appearance.Options.UseFont = true;
+            this.simpleButton11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton11.ImageOptions.Image")));
+            this.simpleButton11.Location = new System.Drawing.Point(12, 228);
+            this.simpleButton11.Name = "simpleButton11";
+            this.simpleButton11.Size = new System.Drawing.Size(474, 36);
+            this.simpleButton11.TabIndex = 17;
+            this.simpleButton11.Text = "SAVE";
             // 
             // ShopDetailForm
             // 
@@ -346,17 +353,18 @@
             this.Name = "ShopDetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SHOP DETAIL";
+            this.Load += new System.EventHandler(this.ShopDetailForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrice.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuOwnerId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtArea.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuCounty.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuCity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtArea.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkuCity.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkuCounty.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkuOwnerId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
@@ -391,7 +399,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.SimpleButton simpleButton11;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
     }
 }

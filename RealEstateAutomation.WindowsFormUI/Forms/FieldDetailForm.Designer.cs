@@ -130,7 +130,9 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LastName", "Last Name"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Phone", "Phone", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DeleteFlag", "Delete Flag", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lkuOwnerId.Properties.DisplayMember = "FirstName";
             this.lkuOwnerId.Properties.NullText = "Please Choose";
+            this.lkuOwnerId.Properties.ValueMember = "Id";
             this.lkuOwnerId.Size = new System.Drawing.Size(376, 20);
             this.lkuOwnerId.StyleController = this.layoutControl2;
             this.lkuOwnerId.TabIndex = 15;
@@ -139,6 +141,9 @@
             // 
             this.txtPafta.Location = new System.Drawing.Point(110, 84);
             this.txtPafta.Name = "txtPafta";
+            this.txtPafta.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
+            this.txtPafta.Properties.MaskSettings.Set("MaskManagerSignature", "isOptimistic=False");
+            this.txtPafta.Properties.MaskSettings.Set("mask", "\\d+(\\R.\\d{0,2})?");
             this.txtPafta.Size = new System.Drawing.Size(376, 20);
             this.txtPafta.StyleController = this.layoutControl2;
             this.txtPafta.TabIndex = 14;
@@ -193,6 +198,9 @@
             // 
             this.txtArea.Location = new System.Drawing.Point(110, 60);
             this.txtArea.Name = "txtArea";
+            this.txtArea.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
+            this.txtArea.Properties.MaskSettings.Set("MaskManagerSignature", "isOptimistic=False");
+            this.txtArea.Properties.MaskSettings.Set("mask", "\\d+(\\R.\\d{0,2})?");
             this.txtArea.Size = new System.Drawing.Size(376, 20);
             this.txtArea.StyleController = this.layoutControl2;
             this.txtArea.TabIndex = 6;
@@ -201,6 +209,8 @@
             // 
             this.txtPrice.Location = new System.Drawing.Point(110, 180);
             this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPrice.Properties.MaskSettings.Set("mask", "c");
             this.txtPrice.Size = new System.Drawing.Size(376, 20);
             this.txtPrice.StyleController = this.layoutControl2;
             this.txtPrice.TabIndex = 8;
@@ -224,6 +234,7 @@
             this.btnSave.StyleController = this.layoutControl2;
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "SAVE";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // layoutControlGroup2
             // 

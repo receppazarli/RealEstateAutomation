@@ -1,18 +1,8 @@
-﻿using DevExpress.XtraEditors;
-using RealEstateAutomation.Business.Abstract;
+﻿using RealEstateAutomation.Business.Abstract;
 using RealEstateAutomation.Business.DependencyResolvers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.DashboardCommon;
-using DevExpress.DashboardCommon.Native;
-using DevExpress.XtraRichEdit.Model;
 using RealEstateAutomation.DataAccess.Concrete.EntityFramework;
 using Field = RealEstateAutomation.Entities.Concrete.Field;
 
@@ -36,13 +26,74 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         private readonly ICityService _cityService;
         private readonly ICountyService _countyService;
 
+
         private void FieldDetailForm_Load(object sender, EventArgs e)
         {
-
-            // LoadField();
             LoadOwner();
             LoadCity();
             LoadCounty();
+            LoadField();
+
+            txtId.Text = ItemId.ToString();
+
+        }
+
+        public int ItemId;
+
+        private readonly Field _field = new Field();
+
+
+        void LoadField()
+        {
+            using (RealEstateAutomationContext context = new RealEstateAutomationContext())
+            {
+                var entity = from f in context.Fields
+                             join p in context.Properties on f.PropertyId equals p.Id
+                             join o in context.Owners on f.OwnerId equals o.Id
+                             join ci in context.Cities on f.City equals ci.Id
+                             join co in context.Counties on f.County equals co.Id
+                             select new
+                             {
+                                 Id = f.Id,
+                                 PropertyId = p.PropertyType,
+                                 OwnerId = o.FirstName,
+                                 Area = f.Area,
+                                 Pafta = f.Pafta,
+                                 City = ci.CityName,
+                                 County = co.CountyName,
+                                 Address = f.Address,
+                                 Price = f.Price,
+                                 Description = f.Description,
+                                 DeleteFlag = f.DeleteFlag,
+                             };
+
+                var field = entity.ToList().Where(x => x.Id == ItemId);
+
+                var current = field.FirstOrDefault(x => x.Id == ItemId);
+                if (current != null)
+                {
+                    txtId.Text = current.Id.ToString();
+
+
+                    lkuOwnerId.Text = current.OwnerId;
+                    lkuCity.Text = current.City.ToString();
+                    lkuCounty.Text = current.County.ToString();
+
+                    txtArea.Text = current.Area.ToString();
+                    txtPafta.Text = current.Pafta;
+                    txtAddress.Text = current.Address;
+                    txtPrice.Text = current.Price.ToString();
+                    txtDescription.Text = current.Description;
+                }
+                else
+                {
+                    MessageBox.Show(@"There was an error loading the information. Please try again.", @"Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+
+
+
 
         }
         void LoadOwner()
@@ -59,6 +110,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             lkuCity.Properties.ValueMember = "Id";
         }
 
+
         private void LoadCounty()
         {
             lkuCounty.Properties.DataSource = _countyService.GetAll(Convert.ToInt32(lkuCity.EditValue)).ToList();
@@ -71,52 +123,53 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             LoadCounty();
         }
 
-        //DbHotelEntities db = new DbHotelEntities();
-        //public int id;
-
-        //Repository<TblProductProcess> repo = new Repository<TblProductProcess>();
-        //TblProductProcess t = new TblProductProcess();
-
-        //private void FrmProcessDefinitions_Load(object sender, EventArgs e)
-        //{
-        //    //id value
-        //    TxtID.Text = id.ToString();
-        //    TxtID.Enabled = false;
-
-        //    lookUpEditProduct.Properties.DataSource = (from x in db.TblProducts
-        //        select new
-        //        {
-        //            x.ProductID,
-        //            x.ProductName
-        //        }).ToList();
-        //          //fill the list
-        //    if (id != 0)
-        //    {
-        //        var product = repo.Find(x => x.ProcessID == id);
-        //        lookUpEditProduct.EditValue = product.Product;
-        //        TxtAmount.Text = product.Amount.ToString();
-        //        TxtStatement.Text = product.Statement;
-        //        comboBox1.Text = product.ProcessType;
-        //        dateEdit1.Text = product.Date.ToString();
-        //    }
-        //}
-
-       // private EfEntityRepositoryBase<> repo = new EfFieldDal();
-
-
-
-        void LoadField(int id)
+        void Save()
         {
-            var field = _fieldService.GetById(id);
-
-            if (field != null)
+            if (txtId.Text != "")
             {
-                //txtId.Text=field
+                DialogResult confirmation = MessageBox.Show(@"Are you sure you want to update the information?",
+                    @"Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (confirmation == DialogResult.Yes)
+                {
+                    try
+                    {
+                        _fieldService.Update(new Field
+                        {
+                            Id = Convert.ToInt32(txtId.Text),
+                            PropertyId = Convert.ToInt32("1"),
+                            OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
+                            Area = Convert.ToDecimal(txtArea.Text),
+                            Pafta = txtPafta.Text,
+                            City = Convert.ToInt32(lkuCity.EditValue),
+                            County = Convert.ToInt32(lkuCounty.EditValue),
+                            Address = txtAddress.Text,
+                            Price = Convert.ToDecimal(txtPrice.Text),
+                            Description = txtDescription.Text,
+                            DeleteFlag = false
+                        });
+                        LoadField();
+                    }
+                    catch (Exception )
+                    {
+                        MessageBox.Show(@"Incorrect data entry, Please fill in the missing fields ", @"Information", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
             }
 
 
         }
 
-
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Save();
+        }
     }
 }

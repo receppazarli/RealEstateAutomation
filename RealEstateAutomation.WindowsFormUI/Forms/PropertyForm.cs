@@ -190,25 +190,33 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
 
             FieldDetailForm fieldDetailForm = new FieldDetailForm();
+            fieldDetailForm.ItemId = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Id"));
             fieldDetailForm.ShowDialog();
+            LoadField();
         }
 
         private void grcPlot_DoubleClick(object sender, EventArgs e)
         {
             PlotDetailForm plotDetailForm = new PlotDetailForm();
+            plotDetailForm.ItemId = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Id"));
             plotDetailForm.ShowDialog();
+            LoadPlot();
         }
 
         private void grcShop_DoubleClick(object sender, EventArgs e)
         {
             ShopDetailForm shopDetailForm = new ShopDetailForm();
+            shopDetailForm.ItemId = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Id"));
             shopDetailForm.ShowDialog();
+            LoadShop();
         }
 
         private void grcHouse_DoubleClick(object sender, EventArgs e)
         {
             HouseDetailForm houseDetailForm = new HouseDetailForm();
+            houseDetailForm.ItemId = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Id"));
             houseDetailForm.ShowDialog();
+            LoadHouse();
         }
     }
 }

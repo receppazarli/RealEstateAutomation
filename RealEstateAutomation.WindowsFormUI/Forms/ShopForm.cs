@@ -84,7 +84,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                      Id = s.Id,
                                      PropertyId = p.PropertyType,
                                      OwnerId = o.FirstName,
-                                     Area = s.Area,
+                                     Area = s.Area,  
                                      City = ci.CityName,
                                      County = co.CountyName,
                                      Address = s.Address,

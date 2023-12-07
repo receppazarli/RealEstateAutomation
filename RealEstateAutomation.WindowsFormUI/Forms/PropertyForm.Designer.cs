@@ -144,6 +144,8 @@
             this.gridColumn31});
             this.grwHouse.GridControl = this.grcHouse;
             this.grwHouse.Name = "grwHouse";
+            this.grwHouse.OptionsView.ShowViewCaption = true;
+            this.grwHouse.ViewCaption = "House Detail";
             // 
             // gridColumn22
             // 
@@ -255,6 +257,8 @@
             this.gridColumn21});
             this.grwPlot.GridControl = this.grcPlot;
             this.grwPlot.Name = "grwPlot";
+            this.grwPlot.OptionsView.ShowViewCaption = true;
+            this.grwPlot.ViewCaption = "Plot Detail";
             // 
             // gridColumn11
             // 
@@ -373,6 +377,8 @@
             this.gridColumn10});
             this.grwField.GridControl = this.grcField;
             this.grwField.Name = "grwField";
+            this.grwField.OptionsView.ShowViewCaption = true;
+            this.grwField.ViewCaption = "Field Detail";
             // 
             // gridColumn1
             // 
@@ -482,6 +488,8 @@
             this.DeleteFlag});
             this.grwShop.GridControl = this.grcShop;
             this.grwShop.Name = "grwShop";
+            this.grwShop.OptionsView.ShowViewCaption = true;
+            this.grwShop.ViewCaption = "Shop Detail";
             // 
             // Id
             // 
