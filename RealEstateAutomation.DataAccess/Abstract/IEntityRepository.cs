@@ -12,5 +12,7 @@ namespace RealEstateAutomation.DataAccess.Abstract
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
+
+        T GetLastAddedEntity(Expression<Func<T, bool>> filter = null);
     }
 }

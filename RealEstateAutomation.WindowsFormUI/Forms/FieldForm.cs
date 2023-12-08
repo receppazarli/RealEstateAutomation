@@ -27,10 +27,12 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             _ownerService = InstanceFactory.GetInstance<IOwnerService>();
             _cityService = InstanceFactory.GetInstance<ICityService>();
             _countyService = InstanceFactory.GetInstance<ICountyService>();
+            _propertyService = InstanceFactory.GetInstance<IPropertyService>();
 
 
         }
 
+        private readonly IPropertyService _propertyService;
         private readonly IFieldService _fieldService;
         private readonly IOwnerService _ownerService;
         private readonly ICityService _cityService;
@@ -85,7 +87,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                  select new
                                  {
                                      Id = f.Id,
-                                     PropertyId = p.PropertyType,
+                                     PropertyId = f.PropertyId,
                                      OwnerId = o.FirstName,
                                      Area = f.Area,
                                      Pafta = f.Pafta,
@@ -110,6 +112,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         void Clear()
         {
             txtId.Text = "";
+            txtPropertyType.Text = "";
             lkuOwnerId.EditValue = 0;
             txtArea.Text = "0";
             txtPafta.Text = "";
@@ -126,6 +129,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             if (grwField.FocusedRowHandle >= 0)
             {
                 txtId.Text = grwField.GetFocusedRowCellValue("Id").ToString();
+                txtPropertyType.Text = grwField.GetFocusedRowCellValue("PropertyId").ToString();
                 lkuOwnerId.Text = grwField.GetFocusedRowCellValue("OwnerId").ToString();
                 txtArea.Text = grwField.GetFocusedRowCellValue("Area").ToString();
                 txtPafta.Text = grwField.GetFocusedRowCellValue("Pafta").ToString();
@@ -149,19 +153,65 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 if (confirmation == DialogResult.Yes)
                 {
 
-                    _fieldService.Add(new Field
+                    _propertyService.Add(new Property
                     {
-                        OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
-                        PropertyId = 1,
-                        Area = Convert.ToDecimal(txtArea.Text),
-                        Pafta = txtPafta.Text,
-                        City = Convert.ToInt32(lkuCity.EditValue),
-                        County = Convert.ToInt32(lkuCounty.EditValue),
-                        Address = txtAddress.Text,
-                        Price = Convert.ToDecimal(txtPrice.Text),
-                        Description = txtDescription.Text,
+                        PropertyType = "Field",
                         DeleteFlag = false
                     });
+
+                    Property lastAddedProperty = _propertyService.GetLastAddedProperty();
+                    int newPropertyId = 0;
+                    newPropertyId = lastAddedProperty?.Id ?? -1;
+
+
+                    if (newPropertyId != -1 && newPropertyId != 0)
+                    {
+                        try
+                        {
+                            _fieldService.Add(new Field
+                            {
+                                OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
+                                PropertyId = Convert.ToInt32(newPropertyId),
+                                Area = Convert.ToDecimal(txtArea.Text),
+                                Pafta = txtPafta.Text,
+                                City = Convert.ToInt32(lkuCity.EditValue),
+                                County = Convert.ToInt32(lkuCounty.EditValue),
+                                Address = txtAddress.Text,
+                                Price = Convert.ToDecimal(txtPrice.Text),
+                                Description = txtDescription.Text,
+                                DeleteFlag = false
+                            });
+
+                            Field lastAddedField = _fieldService.GetLastAddedField();
+                            int newFieldId = 0;
+                            newFieldId = lastAddedField?.Id ?? -1;
+
+                            if (newFieldId != -1 && newFieldId != 0)
+                            {
+                                _propertyService.Update(new Property
+                                {
+                                    Id = newPropertyId,
+                                    ReferenceId = newFieldId,
+                                    PropertyType = "Field",
+                                    DeleteFlag = false
+
+                                });
+
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            _propertyService.Delete(new Property
+                            {
+                                Id = newPropertyId
+                            });
+
+                            MessageBox.Show(
+                                 e.InnerException == null ? e.Message : "This record already exists please check your details",
+                                   @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                    }
                     LoadField();
                     Clear();
 
@@ -182,7 +232,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     _fieldService.Update(new Field
                     {
                         Id = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Id")),
-                        PropertyId = Convert.ToInt32("1"),
+                        PropertyId = Convert.ToInt32(txtPropertyType.Text),
                         OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
                         Area = Convert.ToDecimal(txtArea.Text),
                         Pafta = txtPafta.Text,
@@ -212,11 +262,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
             if (confirmation == DialogResult.Yes)
             {
-
                 _fieldService.Update(new Field
                 {
                     Id = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Id")),
-                    PropertyId = Convert.ToInt32("1"),
+                    PropertyId = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "PropertyId")),
                     OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
                     Area = Convert.ToDecimal(txtArea.Text),
                     Pafta = txtPafta.Text,
@@ -229,8 +278,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 });
                 LoadField();
                 Clear();
-
-
             }
             else
             {
@@ -336,12 +383,12 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             }
         }
 
-        
+
 
         private OwnerForm _ownerForm = new OwnerForm();
         private void btnOwnerAdd_Click(object sender, EventArgs e)
         {
-         
+
             _ownerForm.ribbonControl1.Visible = true;
             _ownerForm.lcSave.Visibility = LayoutVisibility.Never;
             _ownerForm.lcDelete.Visibility = LayoutVisibility.Never;

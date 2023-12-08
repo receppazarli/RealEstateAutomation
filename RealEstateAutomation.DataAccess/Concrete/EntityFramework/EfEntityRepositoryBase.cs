@@ -58,5 +58,13 @@ namespace RealEstateAutomation.DataAccess.Concrete.EntityFramework
                 context.SaveChanges();
             }
         }
+
+        public TEntity GetLastAddedEntity(Expression<Func<TEntity, bool>> filter = null)
+        {
+            using (TContext context = new TContext())
+            {
+                return context.Set<TEntity>().OrderByDescending(x => x.Id).FirstOrDefault();
+            }
+        }
     }
 }

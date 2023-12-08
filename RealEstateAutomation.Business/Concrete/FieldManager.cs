@@ -36,33 +36,33 @@ namespace RealEstateAutomation.Business.Concrete
 
         public void Add(Field field)
         {
-            try
-            {
-                ValidationTool.Validate(new FieldValidator(), field);
-                _fieldDal.Add(field);
-            }
+            //try
+            //{
+            ValidationTool.Validate(new FieldValidator(), field);
+            _fieldDal.Add(field);
+            //}
 
-            catch (SqlException e)
-            {
-                switch (e.Number)
-                {
-                    case 2627: // Unique key 
+            //catch (SqlException e)
+            //{
+            //    switch (e.Number)
+            //    {
+            //        case 2627: // Unique key 
 
-                        MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+            //            MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            break;
 
-                    default:
-                        MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                }
-            }
+            //        default:
+            //            MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            break;
+            //    }
+            //}
 
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    ex.InnerException == null ? ex.Message : "This record already exists please check your details",
-                    "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(
+            //        ex.InnerException == null ? ex.Message : "This record already exists please check your details",
+            //        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
         }
 
         public void Update(Field field)
@@ -108,6 +108,11 @@ namespace RealEstateAutomation.Business.Concrete
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
+        }
+
+        public Field GetLastAddedField()
+        {
+            return _fieldDal.GetLastAddedEntity();
         }
     }
 }

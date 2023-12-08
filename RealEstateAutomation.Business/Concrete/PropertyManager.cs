@@ -23,12 +23,51 @@ namespace RealEstateAutomation.Business.Concrete
             {
                 return _propertyDal.GetAll(x => x.DeleteFlag == false);
             }
-            catch (Exception )
+            catch (Exception)
             {
                 MessageBox.Show("There was an error loading the information. Please try again.", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
+        }
+
+        public void Add(Property property)
+        {
+            try
+            {
+                _propertyDal.Add(property);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred while registering the property", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        public Property GetLastAddedProperty()
+        {
+            return _propertyDal.GetLastAddedEntity();
+
+        }
+
+        public void Update(Property property)
+        {
+            try
+            {
+                _propertyDal.Update(property);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred while updating the property", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        public void Delete(Property property)
+        {
+            _propertyDal.Delete(property);
         }
     }
 }

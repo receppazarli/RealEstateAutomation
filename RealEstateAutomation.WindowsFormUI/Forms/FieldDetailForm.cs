@@ -55,7 +55,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                              select new
                              {
                                  Id = f.Id,
-                                 PropertyId = p.PropertyType,
+                                 PropertyId = f.PropertyId,
                                  OwnerId = o.FirstName,
                                  Area = f.Area,
                                  Pafta = f.Pafta,
@@ -74,6 +74,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 {
                     txtId.Text = current.Id.ToString();
 
+                    txtPropertyType.Text = current.PropertyId.ToString();
 
                     lkuOwnerId.Text = current.OwnerId;
                     lkuCity.Text = current.City.ToString();
@@ -137,7 +138,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         _fieldService.Update(new Field
                         {
                             Id = Convert.ToInt32(txtId.Text),
-                            PropertyId = Convert.ToInt32("1"),
+                            PropertyId = Convert.ToInt32(txtPropertyType.Text),
                             OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
                             Area = Convert.ToDecimal(txtArea.Text),
                             Pafta = txtPafta.Text,
@@ -150,7 +151,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         });
                         LoadField();
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
                         MessageBox.Show(@"Incorrect data entry, Please fill in the missing fields ", @"Information", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);

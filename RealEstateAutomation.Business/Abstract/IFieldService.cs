@@ -9,5 +9,6 @@ namespace RealEstateAutomation.Business.Abstract
         void Add(Field field);
         void Update(Field field);
         List<Field> GetById(int id);
+        Field GetLastAddedField();
     }
 }
