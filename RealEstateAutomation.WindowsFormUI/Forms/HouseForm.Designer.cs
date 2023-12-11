@@ -85,6 +85,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.Sold = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -459,6 +460,7 @@
             this.Address,
             this.Price,
             this.Description,
+            this.Sold,
             this.DeleteFlag});
             this.grwHouse.GridControl = this.grcHouse;
             this.grwHouse.Name = "grwHouse";
@@ -736,6 +738,14 @@
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Ribbon = this.ribbonControl1;
             // 
+            // Sold
+            // 
+            this.Sold.Caption = "Sold";
+            this.Sold.FieldName = "Sold";
+            this.Sold.Name = "Sold";
+            this.Sold.Visible = true;
+            this.Sold.VisibleIndex = 8;
+            // 
             // HouseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -840,5 +850,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.TextEdit txtPropertyType;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
+        private DevExpress.XtraGrid.Columns.GridColumn Sold;
     }
 }

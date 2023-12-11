@@ -7,6 +7,7 @@ using RealEstateAutomation.Entities.Concrete;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System;
+using System.Collections.Generic;
 
 namespace RealEstateAutomation.Business.Concrete
 {
@@ -84,6 +85,20 @@ namespace RealEstateAutomation.Business.Concrete
         public House GetLastAddedHouse()
         {
             return _houseDal.GetLastAddedEntity();
+        }
+
+        public List<House> GetAll()
+        {
+            try
+            {
+                return _houseDal.GetAll(x => x.DeleteFlag == false);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an error loading the information. Please try again.", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
     }
 }

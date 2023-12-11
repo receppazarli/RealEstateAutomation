@@ -92,6 +92,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                      Address = s.Address,
                                      Price = s.Price,
                                      Description = s.Description,
+                                     Sold = s.Sold,
                                      DeleteFlag = s.DeleteFlag,
                                  };
                     grcShop.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
@@ -157,7 +158,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     {
                         if (newPropertyId != -1 && newPropertyId != 0)
                         {
-                            
+
                             _shopService.Add(new Shop
                             {
                                 OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
@@ -168,6 +169,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                 Address = txtAddress.Text,
                                 Price = Convert.ToDecimal(txtPrice.Text),
                                 Description = txtDescription.Text,
+                                Sold = false,
                                 DeleteFlag = false
                             });
 
@@ -231,6 +233,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         Address = txtAddress.Text,
                         Price = Convert.ToDecimal(txtPrice.Text),
                         Description = txtDescription.Text,
+                        Sold = false,
                         DeleteFlag = false
                     });
                     LoadShop();
@@ -255,7 +258,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 _shopService.Update(new Shop
                 {
                     Id = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Id")),
-                    PropertyId = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle,"PropertyId")),
+                    PropertyId = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "PropertyId")),
                     OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
                     Area = Convert.ToDecimal(txtArea.Text),
                     City = Convert.ToInt32(lkuCity.EditValue),
@@ -263,6 +266,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     Address = txtAddress.Text,
                     Price = Convert.ToDecimal(txtPrice.Text),
                     Description = txtDescription.Text,
+                    Sold = false,
                     DeleteFlag = true
                 });
                 LoadShop();

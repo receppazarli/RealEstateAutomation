@@ -95,6 +95,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                      Address = pl.Address,
                                      Price = pl.Price,
                                      Description = pl.Description,
+                                     Sold = pl.Sold,
                                      DeleteFlag = pl.DeleteFlag,
                                  };
                     grcPlot.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
@@ -104,7 +105,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             catch (Exception)
             {
                 MessageBox.Show(@"There was an error loading the information. Please try again.", @"Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
             }
         }
 
@@ -177,6 +177,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                 Address = txtAddress.Text,
                                 Price = Convert.ToDecimal(txtPrice.Text),
                                 Description = txtDescription.Text,
+                                Sold = false,
                                 DeleteFlag = false
                             });
 
@@ -237,6 +238,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         Address = txtAddress.Text,
                         Price = Convert.ToDecimal(txtPrice.Text),
                         Description = txtDescription.Text,
+                        Sold = false,
                         DeleteFlag = false
                     });
                     LoadPlot();
@@ -272,6 +274,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     Address = txtAddress.Text,
                     Price = Convert.ToDecimal(txtPrice.Text),
                     Description = txtDescription.Text,
+                    Sold = false,
                     DeleteFlag = true
                 });
                 LoadPlot();

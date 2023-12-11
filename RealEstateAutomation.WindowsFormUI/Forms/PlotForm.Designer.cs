@@ -43,6 +43,7 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtPropertyType = new DevExpress.XtraEditors.TextEdit();
             this.btnOwnerAdd = new DevExpress.XtraEditors.SimpleButton();
             this.txtPafta = new DevExpress.XtraEditors.TextEdit();
             this.txtAda = new DevExpress.XtraEditors.TextEdit();
@@ -87,14 +88,15 @@
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.txtPropertyType = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.Sold = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPropertyType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPafta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkuCity.Properties)).BeginInit();
@@ -120,9 +122,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPropertyType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -285,6 +286,15 @@
             this.layoutControl2.Size = new System.Drawing.Size(1248, 485);
             this.layoutControl2.TabIndex = 1;
             this.layoutControl2.Text = "layoutControl2";
+            // 
+            // txtPropertyType
+            // 
+            this.txtPropertyType.Location = new System.Drawing.Point(962, 36);
+            this.txtPropertyType.MenuManager = this.ribbonControl1;
+            this.txtPropertyType.Name = "txtPropertyType";
+            this.txtPropertyType.Size = new System.Drawing.Size(274, 20);
+            this.txtPropertyType.StyleController = this.layoutControl2;
+            this.txtPropertyType.TabIndex = 21;
             // 
             // btnOwnerAdd
             // 
@@ -483,6 +493,7 @@
             this.Address,
             this.Price,
             this.Description,
+            this.Sold,
             this.DeleteFlag});
             this.grwPlot.GridControl = this.grcPlot;
             this.grwPlot.Name = "grwPlot";
@@ -759,24 +770,6 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // popupMenu1
-            // 
-            this.popupMenu1.ItemLinks.Add(this.btnSave2);
-            this.popupMenu1.ItemLinks.Add(this.btnDelete2);
-            this.popupMenu1.ItemLinks.Add(this.btnClear2);
-            this.popupMenu1.ItemLinks.Add(this.btnExcelTransfer2);
-            this.popupMenu1.Name = "popupMenu1";
-            this.popupMenu1.Ribbon = this.ribbonControl1;
-            // 
-            // txtPropertyType
-            // 
-            this.txtPropertyType.Location = new System.Drawing.Point(962, 36);
-            this.txtPropertyType.MenuManager = this.ribbonControl1;
-            this.txtPropertyType.Name = "txtPropertyType";
-            this.txtPropertyType.Size = new System.Drawing.Size(274, 20);
-            this.txtPropertyType.StyleController = this.layoutControl2;
-            this.txtPropertyType.TabIndex = 21;
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -788,6 +781,23 @@
             this.layoutControlItem6.Text = "Property Type:";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(91, 19);
             this.layoutControlItem6.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.ItemLinks.Add(this.btnSave2);
+            this.popupMenu1.ItemLinks.Add(this.btnDelete2);
+            this.popupMenu1.ItemLinks.Add(this.btnClear2);
+            this.popupMenu1.ItemLinks.Add(this.btnExcelTransfer2);
+            this.popupMenu1.Name = "popupMenu1";
+            this.popupMenu1.Ribbon = this.ribbonControl1;
+            // 
+            // Sold
+            // 
+            this.Sold.Caption = "Sold";
+            this.Sold.FieldName = "Sold";
+            this.Sold.Name = "Sold";
+            this.Sold.Visible = true;
+            this.Sold.VisibleIndex = 9;
             // 
             // PlotForm
             // 
@@ -804,6 +814,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtPropertyType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPafta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAda.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkuCity.Properties)).EndInit();
@@ -829,9 +840,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPropertyType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -898,5 +908,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraEditors.TextEdit txtPropertyType;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraGrid.Columns.GridColumn Sold;
     }
 }

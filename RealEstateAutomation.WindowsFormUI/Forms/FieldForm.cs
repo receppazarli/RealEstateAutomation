@@ -97,6 +97,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                      Address = f.Address,
                                      Price = f.Price,
                                      Description = f.Description,
+                                     Sold = f.Sold,
                                      DeleteFlag = f.DeleteFlag,
                                  };
                     grcField.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
@@ -180,6 +181,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                 Address = txtAddress.Text,
                                 Price = Convert.ToDecimal(txtPrice.Text),
                                 Description = txtDescription.Text,
+                                Sold = false,
                                 DeleteFlag = false
                             });
 
@@ -241,6 +243,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         Address = txtAddress.Text,
                         Price = Convert.ToDecimal(txtPrice.Text),
                         Description = txtDescription.Text,
+                        Sold = false,
                         DeleteFlag = false
                     });
                     LoadField();
@@ -274,6 +277,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     Address = txtAddress.Text,
                     Price = Convert.ToDecimal(txtPrice.Text),
                     Description = txtDescription.Text,
+                    Sold = false,
                     DeleteFlag = true
                 });
                 LoadField();

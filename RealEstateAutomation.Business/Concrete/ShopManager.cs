@@ -7,6 +7,7 @@ using RealEstateAutomation.Entities.Concrete;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System;
+using System.Collections.Generic;
 
 namespace RealEstateAutomation.Business.Concrete
 {
@@ -54,6 +55,20 @@ namespace RealEstateAutomation.Business.Concrete
         public Shop GetLastAddedShop()
         {
             return _shopDal.GetLastAddedEntity();
+        }
+
+        public List<Shop> GetAll()
+        {
+            try
+            {
+                return _shopDal.GetAll(x => x.DeleteFlag == false);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an error loading the information. Please try again.", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
 
         public void Update(Shop shop)

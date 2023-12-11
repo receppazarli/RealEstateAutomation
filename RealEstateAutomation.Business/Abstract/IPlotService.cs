@@ -1,4 +1,5 @@
-﻿using RealEstateAutomation.Entities.Concrete;
+﻿using System.Collections.Generic;
+using RealEstateAutomation.Entities.Concrete;
 
 namespace RealEstateAutomation.Business.Abstract
 {
@@ -7,5 +8,6 @@ namespace RealEstateAutomation.Business.Abstract
         void Add(Plot plot);
         void Update(Plot plot);
         Plot GetLastAddedHouse();
+        List<Plot> GetAll();
     }
 }

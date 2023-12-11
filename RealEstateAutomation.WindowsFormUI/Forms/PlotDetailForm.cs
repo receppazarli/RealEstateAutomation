@@ -153,6 +153,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         Address = txtAddress.Text,
                         Price = Convert.ToDecimal(txtPrice.Text),
                         Description = txtDescription.Text,
+                        Sold = false,
                         DeleteFlag = false
                     });
                     LoadPlot();
