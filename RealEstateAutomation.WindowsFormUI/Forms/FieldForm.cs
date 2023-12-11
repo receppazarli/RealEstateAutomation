@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.PivotGrid.QueryMode;
 using RealEstateAutomation.Business.Abstract;
 using RealEstateAutomation.Business.DependencyResolvers;
 using RealEstateAutomation.DataAccess.Concrete.EntityFramework;
@@ -108,7 +109,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 throw;
             }
         }
-
+        
         void Clear()
         {
             txtId.Text = "";
@@ -210,7 +211,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                  e.InnerException == null ? e.Message : "This record already exists please check your details",
                                    @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-
                     }
                     LoadField();
                     Clear();

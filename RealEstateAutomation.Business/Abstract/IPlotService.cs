@@ -6,5 +6,6 @@ namespace RealEstateAutomation.Business.Abstract
     {
         void Add(Plot plot);
         void Update(Plot plot);
+        Plot GetLastAddedHouse();
     }
 }

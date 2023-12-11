@@ -6,5 +6,6 @@ namespace RealEstateAutomation.Business.Abstract
     {
         void Update(Shop shop);
         void Add(Shop shop);
+        Shop GetLastAddedShop();
     }
 }

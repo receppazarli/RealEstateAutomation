@@ -80,5 +80,10 @@ namespace RealEstateAutomation.Business.Concrete
                     "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        public House GetLastAddedHouse()
+        {
+            return _houseDal.GetLastAddedEntity();
+        }
     }
 }

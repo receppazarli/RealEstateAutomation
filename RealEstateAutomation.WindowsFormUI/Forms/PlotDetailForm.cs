@@ -80,7 +80,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                              select new
                              {
                                  Id = pl.Id,
-                                 PropertyId = p.PropertyType,
+                                 PropertyId = pl.PropertyId,
                                  OwnerId = o.FirstName,
                                  Area = pl.Area,
                                  Ada = pl.Ada,
@@ -101,7 +101,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     try
                     {
                         txtId.Text = current.Id.ToString();
-
+                        txtPropertyType.Text = current.PropertyId.ToString();
 
                         lkuOwnerId.Text = current.OwnerId;
                         lkuCity.Text = current.City.ToString();
@@ -114,7 +114,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         txtPrice.Text = current.Price.ToString();
                         txtDescription.Text = current.Description;
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
                         MessageBox.Show(@"Incorrect data entry, Please fill in the missing fields ", @"Information", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
@@ -143,7 +143,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     _plotService.Update(new Plot
                     {
                         Id = Convert.ToInt32(txtId.Text),
-                        PropertyId = Convert.ToInt32("1"),
+                        PropertyId = Convert.ToInt32(txtPropertyType.Text),
                         OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
                         Area = Convert.ToDecimal(txtArea.Text),
                         Ada = txtAda.Text,

@@ -24,6 +24,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
             InitializeComponent();
             _plotService = InstanceFactory.GetInstance<IPlotService>();
+            _propertyService = InstanceFactory.GetInstance<IPropertyService>();
             _ownerService = InstanceFactory.GetInstance<IOwnerService>();
             _cityService = InstanceFactory.GetInstance<ICityService>();
             _countyService = InstanceFactory.GetInstance<ICountyService>();
@@ -38,6 +39,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         }
 
         private readonly IPlotService _plotService;
+        private readonly IPropertyService _propertyService;
         private readonly IOwnerService _ownerService;
         private readonly ICityService _cityService;
         private readonly ICountyService _countyService;
@@ -83,7 +85,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                  select new
                                  {
                                      Id = pl.Id,
-                                     PropertyId = p.PropertyType,
+                                     PropertyId = pl.PropertyId,
                                      OwnerId = o.FirstName,
                                      Area = pl.Area,
                                      Ada = pl.Ada,
@@ -109,6 +111,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         void Clear()
         {
             txtId.Text = "";
+            txtPropertyType.Text = "";
             lkuOwnerId.EditValue = 0;
             txtArea.Text = "0";
             txtAda.Text = "";
@@ -125,6 +128,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             if (grwPlot.FocusedRowHandle >= 0)
             {
                 txtId.Text = grwPlot.GetFocusedRowCellValue("Id").ToString();
+                txtPropertyType.Text = grwPlot.GetFocusedRowCellValue("PropertyId").ToString();
                 lkuOwnerId.Text = grwPlot.GetFocusedRowCellValue("OwnerId").ToString();
                 txtArea.Text = grwPlot.GetFocusedRowCellValue("Area").ToString();
                 txtAda.Text = grwPlot.GetFocusedRowCellValue("Ada").ToString();
@@ -147,23 +151,65 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 if (confirmation == DialogResult.Yes)
                 {
 
-                    _plotService.Add(new Plot
+                    _propertyService.Add(new Property
                     {
-                        OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
-                        PropertyId = 3,
-                        Area = Convert.ToDecimal(txtArea.Text),
-                        Ada = txtAda.Text,
-                        Pafta = txtPafta.Text,
-                        City = Convert.ToInt32(lkuCity.EditValue),
-                        County = Convert.ToInt32(lkuCounty.EditValue),
-                        Address = txtAddress.Text,
-                        Price = Convert.ToDecimal(txtPrice.Text),
-                        Description = txtDescription.Text,
+                        PropertyType = "Plot",
                         DeleteFlag = false
                     });
+
+                    Property lastAddedProperty = _propertyService.GetLastAddedProperty();
+                    int newPropertyId = 0;
+                    newPropertyId = lastAddedProperty?.Id ?? -1;
+
+                    if (newPropertyId != -1 && newPropertyId != 0)
+                    {
+                        try
+                        {
+                            _plotService.Add(new Plot
+                            {
+                                OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
+                                PropertyId = newPropertyId,
+                                Area = Convert.ToDecimal(txtArea.Text),
+                                Ada = txtAda.Text,
+                                Pafta = txtPafta.Text,
+                                City = Convert.ToInt32(lkuCity.EditValue),
+                                County = Convert.ToInt32(lkuCounty.EditValue),
+                                Address = txtAddress.Text,
+                                Price = Convert.ToDecimal(txtPrice.Text),
+                                Description = txtDescription.Text,
+                                DeleteFlag = false
+                            });
+
+                            Plot lastAddedHouse = _plotService.GetLastAddedHouse();
+                            int newPlotId = 0;
+                            newPlotId = lastAddedHouse?.Id ?? -1;
+
+                            if (newPlotId != -1 && newPlotId != 0)
+                            {
+                                _propertyService.Update(new Property
+                                {
+                                    Id = newPropertyId,
+                                    ReferenceId = newPlotId,
+                                    PropertyType = "Plot",
+                                    DeleteFlag = false
+
+                                });
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            _propertyService.Delete(new Property
+                            {
+                                Id = newPropertyId
+                            });
+
+                            MessageBox.Show(
+                                e.InnerException == null ? e.Message : "This record already exists please check your details",
+                                @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                     LoadPlot();
                     Clear();
-
                 }
                 else
                 {
@@ -181,7 +227,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     _plotService.Update(new Plot
                     {
                         Id = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Id")),
-                        PropertyId = Convert.ToInt32("3"),
+                        PropertyId = Convert.ToInt32(txtPropertyType.Text),
                         OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
                         Area = Convert.ToDecimal(txtArea.Text),
                         Ada = txtAda.Text,
@@ -216,7 +262,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 _plotService.Update(new Plot
                 {
                     Id = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Id")),
-                    PropertyId = Convert.ToInt32("3"),
+                    PropertyId = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "PropertyId")),
                     OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
                     Area = Convert.ToDecimal(txtArea.Text),
                     Ada = txtAda.Text,

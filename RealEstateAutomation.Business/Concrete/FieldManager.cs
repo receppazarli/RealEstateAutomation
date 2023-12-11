@@ -110,6 +110,7 @@ namespace RealEstateAutomation.Business.Concrete
             }
         }
 
+
         public Field GetLastAddedField()
         {
             return _fieldDal.GetLastAddedEntity();

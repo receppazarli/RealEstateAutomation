@@ -23,12 +23,14 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
             InitializeComponent();
             _shopService = InstanceFactory.GetInstance<IShopService>();
+            _propertyService = InstanceFactory.GetInstance<IPropertyService>();
             _ownerService = InstanceFactory.GetInstance<IOwnerService>();
             _cityService = InstanceFactory.GetInstance<ICityService>();
             _countyService = InstanceFactory.GetInstance<ICountyService>();
         }
 
         private readonly IShopService _shopService;
+        private readonly IPropertyService _propertyService;
         private readonly IOwnerService _ownerService;
         private readonly ICityService _cityService;
         private readonly ICountyService _countyService;
@@ -82,9 +84,9 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                  select new
                                  {
                                      Id = s.Id,
-                                     PropertyId = p.PropertyType,
+                                     PropertyId = s.PropertyId,
                                      OwnerId = o.FirstName,
-                                     Area = s.Area,  
+                                     Area = s.Area,
                                      City = ci.CityName,
                                      County = co.CountyName,
                                      Address = s.Address,
@@ -106,6 +108,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         void Clear()
         {
             txtId.Text = "";
+            txtPropertyType.Text = "";
             lkuOwnerId.EditValue = 0;
             txtArea.Text = "0";
             lkuCity.EditValue = 0;
@@ -120,6 +123,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             if (grwShop.FocusedRowHandle >= 0)
             {
                 txtId.Text = grwShop.GetFocusedRowCellValue("Id").ToString();
+                txtPropertyType.Text = grwShop.GetFocusedRowCellValue("PropertyId").ToString();
                 lkuOwnerId.Text = grwShop.GetFocusedRowCellValue("OwnerId").ToString();
                 txtArea.Text = grwShop.GetFocusedRowCellValue("Area").ToString();
                 lkuCity.Text = grwShop.GetFocusedRowCellValue("City").ToString();
@@ -139,19 +143,66 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                 if (confirmation == DialogResult.Yes)
                 {
-
-                    _shopService.Add(new Shop
+                    _propertyService.Add(new Property
                     {
-                        OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
-                        PropertyId = 4,
-                        Area = Convert.ToDecimal(txtArea.Text),
-                        City = Convert.ToInt32(lkuCity.EditValue),
-                        County = Convert.ToInt32(lkuCounty.EditValue),
-                        Address = txtAddress.Text,
-                        Price = Convert.ToDecimal(txtPrice.Text),
-                        Description = txtDescription.Text,
+                        PropertyType = "Shop",
                         DeleteFlag = false
                     });
+
+                    Property lastAddedProperty = _propertyService.GetLastAddedProperty();
+                    int newPropertyId = 0;
+                    newPropertyId = lastAddedProperty?.Id ?? -1;
+
+                    try
+                    {
+                        if (newPropertyId != -1 && newPropertyId != 0)
+                        {
+                            
+                            _shopService.Add(new Shop
+                            {
+                                OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
+                                PropertyId = newPropertyId,
+                                Area = Convert.ToDecimal(txtArea.Text),
+                                City = Convert.ToInt32(lkuCity.EditValue),
+                                County = Convert.ToInt32(lkuCounty.EditValue),
+                                Address = txtAddress.Text,
+                                Price = Convert.ToDecimal(txtPrice.Text),
+                                Description = txtDescription.Text,
+                                DeleteFlag = false
+                            });
+
+                            Shop lastAddedShop = _shopService.GetLastAddedShop();
+                            int newShopId = 0;
+                            newShopId = lastAddedShop?.Id ?? -1;
+
+                            if (newShopId != -1 && newShopId != 0)
+                            {
+                                _propertyService.Update(new Property
+                                {
+                                    Id = newPropertyId,
+                                    ReferenceId = newShopId,
+                                    PropertyType = "Shop",
+                                    DeleteFlag = false
+
+                                });
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        _propertyService.Delete(new Property
+                        {
+                            Id = newPropertyId
+                        });
+
+                        MessageBox.Show(
+                            e.InnerException == null ? e.Message : "This record already exists please check your details",
+                            @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+
+
+
                     LoadShop();
                     Clear();
 
@@ -172,7 +223,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     _shopService.Update(new Shop
                     {
                         Id = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Id")),
-                        PropertyId = Convert.ToInt32("4"),
+                        PropertyId = Convert.ToInt32(txtPropertyType.Text),
                         OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
                         Area = Convert.ToDecimal(txtArea.Text),
                         City = Convert.ToInt32(lkuCity.EditValue),
@@ -201,11 +252,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
             if (confirmation == DialogResult.Yes)
             {
-
                 _shopService.Update(new Shop
                 {
                     Id = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Id")),
-                    PropertyId = Convert.ToInt32("4"),
+                    PropertyId = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle,"PropertyId")),
                     OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
                     Area = Convert.ToDecimal(txtArea.Text),
                     City = Convert.ToInt32(lkuCity.EditValue),
@@ -217,8 +267,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 });
                 LoadShop();
                 Clear();
-
-
             }
             else
             {

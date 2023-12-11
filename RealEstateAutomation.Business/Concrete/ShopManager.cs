@@ -51,6 +51,11 @@ namespace RealEstateAutomation.Business.Concrete
 
         }
 
+        public Shop GetLastAddedShop()
+        {
+            return _shopDal.GetLastAddedEntity();
+        }
+
         public void Update(Shop shop)
         {
             try

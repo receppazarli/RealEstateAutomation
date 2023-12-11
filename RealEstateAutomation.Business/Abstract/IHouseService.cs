@@ -6,5 +6,6 @@ namespace RealEstateAutomation.Business.Abstract
     {
         void Add(House house);
         void Update(House house);
+        House GetLastAddedHouse();
     }
 }

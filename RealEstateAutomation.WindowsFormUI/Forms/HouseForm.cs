@@ -1,4 +1,8 @@
-﻿using DevExpress.XtraEditors;
+﻿
+
+
+
+using DevExpress.XtraEditors;
 using RealEstateAutomation.Business.Abstract;
 using RealEstateAutomation.Business.DependencyResolvers;
 using RealEstateAutomation.WindowsFormUI.Methods;
@@ -20,6 +24,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 {
     public partial class HouseForm : DevExpress.XtraEditors.XtraForm
     {
+        private readonly IPropertyService _propertyService;
         private readonly IHouseService _houseService;
         private readonly IOwnerService _ownerService;
         private readonly ICityService _cityService;
@@ -29,6 +34,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         public HouseForm()
         {
             InitializeComponent();
+            _propertyService = InstanceFactory.GetInstance<IPropertyService>();
             _houseService = InstanceFactory.GetInstance<IHouseService>();
             _ownerService = InstanceFactory.GetInstance<IOwnerService>();
             _cityService = InstanceFactory.GetInstance<ICityService>();
@@ -83,7 +89,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                  select new
                                  {
                                      Id = h.Id,
-                                     PropertyId = p.PropertyType,
+                                     PropertyId = h.PropertyId,
                                      OwnerId = o.FirstName,
                                      Area = h.Area,
                                      HouseType = h.HouseType,
@@ -108,6 +114,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         void Clear()
         {
             txtId.Text = "";
+            txtPropertyType.Text = "";
             lkuOwnerId.EditValue = 0;
             txtArea.Text = "0";
             txtHouseType.Text = "";
@@ -123,6 +130,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             if (grwHouse.FocusedRowHandle >= 0)
             {
                 txtId.Text = grwHouse.GetFocusedRowCellValue("Id").ToString();
+                txtPropertyType.Text = grwHouse.GetFocusedRowCellValue("PropertyId").ToString();
                 lkuOwnerId.Text = grwHouse.GetFocusedRowCellValue("OwnerId").ToString();
                 txtArea.Text = grwHouse.GetFocusedRowCellValue("Area").ToString();
                 txtHouseType.Text = grwHouse.GetFocusedRowCellValue("HouseType").ToString();
@@ -143,23 +151,65 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                 if (confirmation == DialogResult.Yes)
                 {
-
-                    _houseService.Add(new House
+                    _propertyService.Add(new Property
                     {
-                        OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
-                        PropertyId = 2,
-                        Area = Convert.ToDecimal(txtArea.Text),
-                        HouseType = txtHouseType.Text,
-                        City = Convert.ToInt32(lkuCity.EditValue),
-                        County = Convert.ToInt32(lkuCounty.EditValue),
-                        Address = txtAddress.Text,
-                        Price = Convert.ToDecimal(txtPrice.Text),
-                        Description = txtDescription.Text,
+                        PropertyType = "House",
                         DeleteFlag = false
                     });
+
+                    Property lastAddedProperty = _propertyService.GetLastAddedProperty();
+                    int newPropertyId = 0;
+                    newPropertyId = lastAddedProperty?.Id ?? -1;
+
+                    if (newPropertyId != -1 && newPropertyId != 0)
+                    {
+                        try
+                        {
+                            _houseService.Add(new House
+                            {
+                                OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
+                                PropertyId = Convert.ToInt32(newPropertyId),
+                                Area = Convert.ToDecimal(txtArea.Text),
+                                HouseType = txtHouseType.Text,
+                                City = Convert.ToInt32(lkuCity.EditValue),
+                                County = Convert.ToInt32(lkuCounty.EditValue),
+                                Address = txtAddress.Text,
+                                Price = Convert.ToDecimal(txtPrice.Text),
+                                Description = txtDescription.Text,
+                                DeleteFlag = false
+                            });
+                            House lastAddedHouse = _houseService.GetLastAddedHouse();
+                            int newHouseId = 0;
+                            newHouseId = lastAddedHouse?.Id ?? -1;
+
+
+                            if (newHouseId != -1 && newHouseId != 0)
+                            {
+                                _propertyService.Update(new Property
+                                {
+                                    Id = newPropertyId,
+                                    ReferenceId = newHouseId,
+                                    PropertyType = "House",
+                                    DeleteFlag = false
+
+                                });
+
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            _propertyService.Delete(new Property
+                            {
+                                Id = newPropertyId
+                            });
+
+                            MessageBox.Show(
+                                e.InnerException == null ? e.Message : "This record already exists please check your details",
+                                @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                     LoadHouse();
                     Clear();
-
                 }
                 else
                 {
@@ -177,7 +227,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     _houseService.Update(new House
                     {
                         Id = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Id")),
-                        PropertyId = Convert.ToInt32("2"),
+                        PropertyId = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "PropertyId")),
                         OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
                         Area = Convert.ToDecimal(txtArea.Text),
                         HouseType = txtHouseType.Text,
@@ -211,7 +261,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 _houseService.Update(new House
                 {
                     Id = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Id")),
-                    PropertyId = Convert.ToInt32("2"),
+                    PropertyId = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "PropertyId")),
                     OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
                     Area = Convert.ToDecimal(txtArea.Text),
                     HouseType = txtHouseType.Text,
