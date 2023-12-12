@@ -29,8 +29,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             _cityService = InstanceFactory.GetInstance<ICityService>();
             _countyService = InstanceFactory.GetInstance<ICountyService>();
             _propertyService = InstanceFactory.GetInstance<IPropertyService>();
-
-
         }
 
         private readonly IPropertyService _propertyService;

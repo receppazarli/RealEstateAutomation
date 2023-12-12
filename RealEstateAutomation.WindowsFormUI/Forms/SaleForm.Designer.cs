@@ -45,7 +45,8 @@
             this.grwShop = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OwerShopId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OwnerShop = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,7 +59,8 @@
             this.grwPlot = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OwnerPlotId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OwnerPlot = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ada = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -73,7 +75,8 @@
             this.grwHouse = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OwnerHouseId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OwnerHouse = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HouseType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -87,7 +90,8 @@
             this.grwField = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PropertyId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OwnerFieldId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OwnerField = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Area = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Pafta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.City = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -101,7 +105,7 @@
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.txtSalePrice = new DevExpress.XtraEditors.TextEdit();
-            this.txtOwnerId = new DevExpress.XtraEditors.TextEdit();
+            this.txtOwnerName = new DevExpress.XtraEditors.TextEdit();
             this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.txtSaleDate = new DevExpress.XtraEditors.TextEdit();
             this.txtPropertyId = new DevExpress.XtraEditors.TextEdit();
@@ -133,6 +137,8 @@
             this.lycPlot = new DevExpress.XtraLayout.LayoutControlItem();
             this.lycShop = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.txtOwnerId = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -145,7 +151,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grcField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grwField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSalePrice.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOwnerId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOwnerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSaleDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPropertyId.Properties)).BeginInit();
@@ -170,6 +176,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lycPlot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lycShop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOwnerId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -262,6 +270,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.txtOwnerId);
             this.layoutControl1.Controls.Add(this.grcShop);
             this.layoutControl1.Controls.Add(this.grcPlot);
             this.layoutControl1.Controls.Add(this.grcHouse);
@@ -270,7 +279,7 @@
             this.layoutControl1.Controls.Add(this.btnDelete);
             this.layoutControl1.Controls.Add(this.btnClear);
             this.layoutControl1.Controls.Add(this.txtSalePrice);
-            this.layoutControl1.Controls.Add(this.txtOwnerId);
+            this.layoutControl1.Controls.Add(this.txtOwnerName);
             this.layoutControl1.Controls.Add(this.txtId);
             this.layoutControl1.Controls.Add(this.txtSaleDate);
             this.layoutControl1.Controls.Add(this.txtPropertyId);
@@ -295,13 +304,15 @@
             this.grcShop.TabIndex = 19;
             this.grcShop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grwShop});
+            this.grcShop.Click += new System.EventHandler(this.grcShop_Click);
             // 
             // grwShop
             // 
             this.grwShop.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn27,
             this.gridColumn28,
-            this.gridColumn29,
+            this.OwerShopId,
+            this.OwnerShop,
             this.gridColumn30,
             this.gridColumn31,
             this.gridColumn32,
@@ -325,13 +336,19 @@
             this.gridColumn28.FieldName = "PropertyId";
             this.gridColumn28.Name = "gridColumn28";
             // 
-            // gridColumn29
+            // OwerShopId
             // 
-            this.gridColumn29.Caption = "Owner Name";
-            this.gridColumn29.FieldName = "OwnerId";
-            this.gridColumn29.Name = "gridColumn29";
-            this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 0;
+            this.OwerShopId.Caption = "Owner Name";
+            this.OwerShopId.FieldName = "OwnerId";
+            this.OwerShopId.Name = "OwerShopId";
+            // 
+            // OwnerShop
+            // 
+            this.OwnerShop.Caption = "Owner Name";
+            this.OwnerShop.FieldName = "OwnerShop";
+            this.OwnerShop.Name = "OwnerShop";
+            this.OwnerShop.Visible = true;
+            this.OwnerShop.VisibleIndex = 0;
             // 
             // gridColumn30
             // 
@@ -405,13 +422,15 @@
             this.grcPlot.TabIndex = 18;
             this.grcPlot.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grwPlot});
+            this.grcPlot.Click += new System.EventHandler(this.grcPlot_Click);
             // 
             // grwPlot
             // 
             this.grwPlot.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn15,
             this.gridColumn16,
-            this.gridColumn17,
+            this.OwnerPlotId,
+            this.OwnerPlot,
             this.gridColumn18,
             this.Ada,
             this.gridColumn19,
@@ -437,13 +456,19 @@
             this.gridColumn16.FieldName = "PropertyId";
             this.gridColumn16.Name = "gridColumn16";
             // 
-            // gridColumn17
+            // OwnerPlotId
             // 
-            this.gridColumn17.Caption = "Owner Name";
-            this.gridColumn17.FieldName = "OwnerId";
-            this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 0;
+            this.OwnerPlotId.Caption = "Owner Name";
+            this.OwnerPlotId.FieldName = "OwnerId";
+            this.OwnerPlotId.Name = "OwnerPlotId";
+            // 
+            // OwnerPlot
+            // 
+            this.OwnerPlot.Caption = "Owner Name";
+            this.OwnerPlot.FieldName = "OwnerPlot";
+            this.OwnerPlot.Name = "OwnerPlot";
+            this.OwnerPlot.Visible = true;
+            this.OwnerPlot.VisibleIndex = 0;
             // 
             // gridColumn18
             // 
@@ -533,13 +558,15 @@
             this.grcHouse.TabIndex = 17;
             this.grcHouse.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grwHouse});
+            this.grcHouse.Click += new System.EventHandler(this.grcHouse_Click);
             // 
             // grwHouse
             // 
             this.grwHouse.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn4,
             this.gridColumn5,
-            this.gridColumn6,
+            this.OwnerHouseId,
+            this.OwnerHouse,
             this.gridColumn7,
             this.HouseType,
             this.gridColumn8,
@@ -564,13 +591,19 @@
             this.gridColumn5.FieldName = "PropertyId";
             this.gridColumn5.Name = "gridColumn5";
             // 
-            // gridColumn6
+            // OwnerHouseId
             // 
-            this.gridColumn6.Caption = "Owner Name";
-            this.gridColumn6.FieldName = "OwnerId";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 0;
+            this.OwnerHouseId.Caption = "Owner Name";
+            this.OwnerHouseId.FieldName = "OwnerId";
+            this.OwnerHouseId.Name = "OwnerHouseId";
+            // 
+            // OwnerHouse
+            // 
+            this.OwnerHouse.Caption = "Owner Name";
+            this.OwnerHouse.FieldName = "OwnerHouse";
+            this.OwnerHouse.Name = "OwnerHouse";
+            this.OwnerHouse.Visible = true;
+            this.OwnerHouse.VisibleIndex = 0;
             // 
             // gridColumn7
             // 
@@ -652,13 +685,15 @@
             this.grcField.TabIndex = 16;
             this.grcField.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grwField});
+            this.grcField.Click += new System.EventHandler(this.grcField_Click);
             // 
             // grwField
             // 
             this.grwField.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.PropertyId,
-            this.gridColumn2,
+            this.OwnerFieldId,
+            this.OwnerField,
             this.Area,
             this.Pafta,
             this.City,
@@ -683,13 +718,19 @@
             this.PropertyId.FieldName = "PropertyId";
             this.PropertyId.Name = "PropertyId";
             // 
-            // gridColumn2
+            // OwnerFieldId
             // 
-            this.gridColumn2.Caption = "Owner Name";
-            this.gridColumn2.FieldName = "OwnerId";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
+            this.OwnerFieldId.Caption = "OwnerId";
+            this.OwnerFieldId.FieldName = "OwnerId";
+            this.OwnerFieldId.Name = "OwnerFieldId";
+            // 
+            // OwnerField
+            // 
+            this.OwnerField.Caption = "Owner Name";
+            this.OwnerField.FieldName = "OwnerField";
+            this.OwnerField.Name = "OwnerField";
+            this.OwnerField.Visible = true;
+            this.OwnerField.VisibleIndex = 0;
             // 
             // Area
             // 
@@ -766,7 +807,7 @@
             this.btnSale.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSale.Appearance.Options.UseFont = true;
             this.btnSale.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSale.ImageOptions.Image")));
-            this.btnSale.Location = new System.Drawing.Point(859, 180);
+            this.btnSale.Location = new System.Drawing.Point(859, 204);
             this.btnSale.Name = "btnSale";
             this.btnSale.Size = new System.Drawing.Size(377, 36);
             this.btnSale.StyleController = this.layoutControl1;
@@ -778,7 +819,7 @@
             this.btnDelete.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(859, 220);
+            this.btnDelete.Location = new System.Drawing.Point(859, 244);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(377, 36);
             this.btnDelete.StyleController = this.layoutControl1;
@@ -790,7 +831,7 @@
             this.btnClear.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnClear.Appearance.Options.UseFont = true;
             this.btnClear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.ImageOptions.Image")));
-            this.btnClear.Location = new System.Drawing.Point(859, 260);
+            this.btnClear.Location = new System.Drawing.Point(859, 284);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(377, 36);
             this.btnClear.StyleController = this.layoutControl1;
@@ -799,7 +840,7 @@
             // 
             // txtSalePrice
             // 
-            this.txtSalePrice.Location = new System.Drawing.Point(974, 132);
+            this.txtSalePrice.Location = new System.Drawing.Point(974, 156);
             this.txtSalePrice.MenuManager = this.ribbonControl1;
             this.txtSalePrice.Name = "txtSalePrice";
             this.txtSalePrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
@@ -809,14 +850,14 @@
             this.txtSalePrice.StyleController = this.layoutControl1;
             this.txtSalePrice.TabIndex = 12;
             // 
-            // txtOwnerId
+            // txtOwnerName
             // 
-            this.txtOwnerId.Location = new System.Drawing.Point(974, 84);
-            this.txtOwnerId.MenuManager = this.ribbonControl1;
-            this.txtOwnerId.Name = "txtOwnerId";
-            this.txtOwnerId.Size = new System.Drawing.Size(262, 20);
-            this.txtOwnerId.StyleController = this.layoutControl1;
-            this.txtOwnerId.TabIndex = 11;
+            this.txtOwnerName.Location = new System.Drawing.Point(974, 108);
+            this.txtOwnerName.MenuManager = this.ribbonControl1;
+            this.txtOwnerName.Name = "txtOwnerName";
+            this.txtOwnerName.Size = new System.Drawing.Size(262, 20);
+            this.txtOwnerName.StyleController = this.layoutControl1;
+            this.txtOwnerName.TabIndex = 11;
             // 
             // txtId
             // 
@@ -829,7 +870,7 @@
             // 
             // txtSaleDate
             // 
-            this.txtSaleDate.Location = new System.Drawing.Point(974, 156);
+            this.txtSaleDate.Location = new System.Drawing.Point(974, 180);
             this.txtSaleDate.MenuManager = this.ribbonControl1;
             this.txtSaleDate.Name = "txtSaleDate";
             this.txtSaleDate.Size = new System.Drawing.Size(262, 20);
@@ -847,7 +888,7 @@
             // 
             // lkuCustomerId
             // 
-            this.lkuCustomerId.Location = new System.Drawing.Point(974, 108);
+            this.lkuCustomerId.Location = new System.Drawing.Point(974, 132);
             this.lkuCustomerId.MenuManager = this.ribbonControl1;
             this.lkuCustomerId.Name = "lkuCustomerId";
             this.lkuCustomerId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -870,7 +911,7 @@
             // 
             // cmbPropertyType
             // 
-            this.cmbPropertyType.Location = new System.Drawing.Point(974, 60);
+            this.cmbPropertyType.Location = new System.Drawing.Point(974, 84);
             this.cmbPropertyType.MenuManager = this.ribbonControl1;
             this.cmbPropertyType.Name = "cmbPropertyType";
             this.cmbPropertyType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -971,7 +1012,8 @@
             this.lycField,
             this.lycHouse,
             this.lycPlot,
-            this.lycShop});
+            this.lycShop,
+            this.layoutControlItem1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1248, 485);
             this.layoutControlGroup1.TextVisible = false;
@@ -981,7 +1023,7 @@
             this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem3.Control = this.lkuCustomerId;
-            this.layoutControlItem3.Location = new System.Drawing.Point(847, 96);
+            this.layoutControlItem3.Location = new System.Drawing.Point(847, 120);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(381, 24);
             this.layoutControlItem3.Text = "Customer Name:";
@@ -1002,8 +1044,8 @@
             // 
             this.layoutControlItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem8.Control = this.txtOwnerId;
-            this.layoutControlItem8.Location = new System.Drawing.Point(847, 72);
+            this.layoutControlItem8.Control = this.txtOwnerName;
+            this.layoutControlItem8.Location = new System.Drawing.Point(847, 96);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(381, 24);
             this.layoutControlItem8.Text = "Owner Name:";
@@ -1014,7 +1056,7 @@
             this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem2.Control = this.cmbPropertyType;
-            this.layoutControlItem2.Location = new System.Drawing.Point(847, 48);
+            this.layoutControlItem2.Location = new System.Drawing.Point(847, 72);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(381, 24);
             this.layoutControlItem2.Text = "Property Type:";
@@ -1036,7 +1078,7 @@
             this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem4.Control = this.txtSalePrice;
-            this.layoutControlItem4.Location = new System.Drawing.Point(847, 120);
+            this.layoutControlItem4.Location = new System.Drawing.Point(847, 144);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(381, 24);
             this.layoutControlItem4.Text = "Sale Price:";
@@ -1054,9 +1096,9 @@
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.btnClear;
-            this.layoutControlItem9.Location = new System.Drawing.Point(847, 248);
+            this.layoutControlItem9.Location = new System.Drawing.Point(847, 272);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(381, 217);
+            this.layoutControlItem9.Size = new System.Drawing.Size(381, 193);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -1065,7 +1107,7 @@
             this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem6.Control = this.txtSaleDate;
-            this.layoutControlItem6.Location = new System.Drawing.Point(847, 144);
+            this.layoutControlItem6.Location = new System.Drawing.Point(847, 168);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(381, 24);
             this.layoutControlItem6.Text = "Sale Date:";
@@ -1074,7 +1116,7 @@
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.btnDelete;
-            this.layoutControlItem10.Location = new System.Drawing.Point(847, 208);
+            this.layoutControlItem10.Location = new System.Drawing.Point(847, 232);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(381, 40);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
@@ -1083,7 +1125,7 @@
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.btnSale;
-            this.layoutControlItem11.Location = new System.Drawing.Point(847, 168);
+            this.layoutControlItem11.Location = new System.Drawing.Point(847, 192);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(381, 40);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
@@ -1138,6 +1180,26 @@
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Ribbon = this.ribbonControl1;
             // 
+            // txtOwnerId
+            // 
+            this.txtOwnerId.Location = new System.Drawing.Point(974, 60);
+            this.txtOwnerId.MenuManager = this.ribbonControl1;
+            this.txtOwnerId.Name = "txtOwnerId";
+            this.txtOwnerId.Size = new System.Drawing.Size(262, 20);
+            this.txtOwnerId.StyleController = this.layoutControl1;
+            this.txtOwnerId.TabIndex = 20;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.layoutControlItem1.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem1.Control = this.txtOwnerId;
+            this.layoutControlItem1.Location = new System.Drawing.Point(847, 48);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(381, 24);
+            this.layoutControlItem1.Text = "Owner Id:";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(103, 19);
+            // 
             // SaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1160,7 +1222,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grcField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grwField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSalePrice.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOwnerId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOwnerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSaleDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPropertyId.Properties)).EndInit();
@@ -1185,6 +1247,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lycPlot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lycShop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOwnerId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1218,7 +1282,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.TextEdit txtId;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private DevExpress.XtraEditors.TextEdit txtOwnerId;
+        private DevExpress.XtraEditors.TextEdit txtOwnerName;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraEditors.TextEdit txtSalePrice;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
@@ -1239,7 +1303,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView grwField;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn PropertyId;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn OwnerFieldId;
         private DevExpress.XtraGrid.Columns.GridColumn Area;
         private DevExpress.XtraGrid.Columns.GridColumn Pafta;
         private DevExpress.XtraGrid.Columns.GridColumn City;
@@ -1254,7 +1318,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView grwHouse;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn OwnerHouseId;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn HouseType;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
@@ -1269,7 +1333,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView grwPlot;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn OwnerPlotId;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Columns.GridColumn Ada;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
@@ -1285,7 +1349,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView grwShop;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
+        private DevExpress.XtraGrid.Columns.GridColumn OwerShopId;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn32;
@@ -1295,5 +1359,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn36;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn37;
         private DevExpress.XtraLayout.LayoutControlItem lycShop;
+        private DevExpress.XtraGrid.Columns.GridColumn OwnerField;
+        private DevExpress.XtraGrid.Columns.GridColumn OwnerPlot;
+        private DevExpress.XtraGrid.Columns.GridColumn OwnerHouse;
+        private DevExpress.XtraGrid.Columns.GridColumn OwnerShop;
+        private DevExpress.XtraEditors.TextEdit txtOwnerId;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }
