@@ -15,6 +15,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
             InitializeComponent();
             _customerService = InstanceFactory.GetInstance<ICustomerService>();
+            _ownerService = InstanceFactory.GetInstance<IOwnerService>();
             _saleService = InstanceFactory.GetInstance<ISaleService>();
             _fieldService = InstanceFactory.GetInstance<IFieldService>();
             _houseService = InstanceFactory.GetInstance<IHouseService>();
@@ -23,6 +24,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         }
 
         private readonly ICustomerService _customerService;
+        private readonly IOwnerService _ownerService;
         private readonly ISaleService _saleService;
         private readonly IFieldService _fieldService;
         private readonly IHouseService _houseService;
@@ -32,6 +34,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         private void SaleForm_Load(object sender, EventArgs e)
         {
             LoadCustomer();
+           // LoadField();
+            LoadPlot();
+            LoadHouse();
+            LoadShop();
         }
 
         void LoadCustomer()
@@ -40,6 +46,37 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             lkuCustomerId.Properties.DisplayMember = "FirstName";
             lkuCustomerId.Properties.ValueMember = "Id";
         }
+
+        void LoadField()
+        {
+            lkuField.Properties.DataSource = _fieldService.GetAll().Where(x => x.Sold == false);
+            lkuField.Properties.DisplayMember = "OwnerId";
+            lkuField.Properties.ValueMember = "Id";
+        }
+
+        void LoadPlot()
+        {
+            lkuPlot.Properties.DataSource = _plotService.GetAll().Where(x => x.Sold == false);
+            lkuPlot.Properties.DisplayMember = "OwnerId";
+            lkuPlot.Properties.ValueMember = "Id";
+        }
+
+        void LoadHouse()
+        {
+            lkuHouse.Properties.DataSource = _houseService.GetAll().Where(x => x.Sold == false);
+            lkuHouse.Properties.DisplayMember = "OwnerId";
+            lkuHouse.Properties.ValueMember = "Id";
+        }
+
+        void LoadShop()
+        {
+            lkuShop.Properties.DataSource = _shopService.GetAll().Where(x => x.Sold == false);
+            lkuShop.Properties.DisplayMember = "OwnerId";
+            lkuShop.Properties.ValueMember = "Id";
+
+        }
+
+
 
         void LoadSale()
         {
@@ -59,9 +96,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                          {
                                              Id = f.Id,
                                              PropertyId = f.PropertyId,
-                                             OwnerId = f.OwnerId,
+                                             OwnerId = o.FirstName,
                                              // OwnerFieldId = f.OwnerId,
-                                             OwnerField = o.FirstName,
                                              Area = f.Area,
                                              Pafta = f.Pafta,
                                              City = ci.CityName,
@@ -72,12 +108,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                              Sold = f.Sold,
                                              DeleteFlag = f.DeleteFlag,
                                          };
-                            grcField.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
-                            lycSale.Visibility = LayoutVisibility.Never;
-                            lycHouse.Visibility = LayoutVisibility.Never;
-                            lycPlot.Visibility = LayoutVisibility.Never;
-                            lycShop.Visibility = LayoutVisibility.Never;
-                            lycField.Visibility = LayoutVisibility.Always;
+                            //grcField.DataSource = entity.ToList().Where(x => x.DeleteFlag == false)
+                            lkuField.Properties.DataSource = entity.ToList().Where(x => x.DeleteFlag == false && x.Sold == false);
+                            lkuField.Properties.DisplayMember = "OwnerId";
+                            lkuField.Properties.ValueMember = "Id";
 
                         }
                     }
@@ -116,14 +150,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                              Sold = h.Sold,
                                              DeleteFlag = h.DeleteFlag,
                                          };
-                            grcHouse.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
+                            // grcHouse.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
 
                         }
-                        lycSale.Visibility = LayoutVisibility.Never;
-                        lycPlot.Visibility = LayoutVisibility.Never;
-                        lycShop.Visibility = LayoutVisibility.Never;
-                        lycField.Visibility = LayoutVisibility.Never;
-                        lycHouse.Visibility = LayoutVisibility.Always;
+
                     }
                     catch (Exception)
                     {
@@ -161,12 +191,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                              Sold = pl.Sold,
                                              DeleteFlag = pl.DeleteFlag,
                                          };
-                            grcPlot.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
-                            lycSale.Visibility = LayoutVisibility.Never;
-                            lycShop.Visibility = LayoutVisibility.Never;
-                            lycField.Visibility = LayoutVisibility.Never;
-                            lycHouse.Visibility = LayoutVisibility.Never;
-                            lycPlot.Visibility = LayoutVisibility.Always;
+                            // grcPlot.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
 
                         }
                     }
@@ -203,12 +228,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                              Sold = s.Sold,
                                              DeleteFlag = s.DeleteFlag,
                                          };
-                            grcShop.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
-                            lycSale.Visibility = LayoutVisibility.Never;
-                            lycField.Visibility = LayoutVisibility.Never;
-                            lycHouse.Visibility = LayoutVisibility.Never;
-                            lycPlot.Visibility = LayoutVisibility.Never;
-                            lycShop.Visibility = LayoutVisibility.Always;
+                            // grcShop.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
 
                         }
                     }
@@ -228,26 +248,18 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             switch (cmbPropertyType.Text)
             {
                 case "Field":
-                    txtId.Text = grwField.GetFocusedRowCellValue("Id").ToString();
-                    txtPropertyId.Text = grwField.GetFocusedRowCellValue("PropertyId").ToString();
-                    txtOwnerName.Text = grwField.GetFocusedRowCellValue("OwnerId").ToString();
+
                     break;
                 case "House":
-                    txtId.Text = grwHouse.GetFocusedRowCellValue("Id").ToString();
-                    txtPropertyId.Text = grwHouse.GetFocusedRowCellValue("PropertyId").ToString();
-                    txtOwnerName.Text = grwHouse.GetFocusedRowCellValue("OwnerId").ToString();
+
 
                     break;
                 case "Plot":
-                    txtId.Text = grwPlot.GetFocusedRowCellValue("Id").ToString();
-                    txtPropertyId.Text = grwPlot.GetFocusedRowCellValue("PropertyId").ToString();
-                    txtOwnerName.Text = grwPlot.GetFocusedRowCellValue("OwnerId").ToString();
+
 
                     break;
                 case "Shop":
-                    txtId.Text = grwShop.GetFocusedRowCellValue("Id").ToString();
-                    txtPropertyId.Text = grwShop.GetFocusedRowCellValue("PropertyId").ToString();
-                    txtOwnerName.Text = grwShop.GetFocusedRowCellValue("OwnerId").ToString();
+
 
                     break;
             }
@@ -255,64 +267,16 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void cmbPropertyType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadSale();
+            //LoadSale();
         }
 
-        private void grcField_Click(object sender, EventArgs e)
-        {
-            if (grwField.FocusedRowHandle >= 0)
-            {
-                //txtId.Text = grwField.GetFocusedRowCellValue("Id").ToString();
-                txtPropertyId.Text = grwField.GetFocusedRowCellValue("PropertyId").ToString();
-                txtOwnerName.Text = grwField.GetFocusedRowCellValue("OwnerField").ToString();
-                txtOwnerId.Text = grwField.GetFocusedRowCellValue("OwnerId").ToString();
-            }
-
-        }
-
-        private void grcHouse_Click(object sender, EventArgs e)
-        {
-            if (grwHouse.FocusedRowHandle >= 0)
-            {
-                //txtId.Text = grwHouse.GetFocusedRowCellValue("Id").ToString();
-                txtPropertyId.Text = grwHouse.GetFocusedRowCellValue("PropertyId").ToString();
-                txtOwnerName.Text = grwHouse.GetFocusedRowCellValue("OwnerHouse").ToString();
-                txtOwnerId.Text = grwHouse.GetFocusedRowCellValue("OwnerId").ToString();
-            }
-
-        }
-
-        private void grcPlot_Click(object sender, EventArgs e)
-        {
-            if (grwPlot.FocusedRowHandle >= 0)
-            {
-                // txtId.Text = grwPlot.GetFocusedRowCellValue("Id").ToString();
-                txtPropertyId.Text = grwPlot.GetFocusedRowCellValue("PropertyId").ToString();
-                txtOwnerName.Text = grwPlot.GetFocusedRowCellValue("OwnerPlot").ToString();
-                txtOwnerId.Text = grwPlot.GetFocusedRowCellValue("OwnerId").ToString();
-            }
-
-        }
-
-        private void grcShop_Click(object sender, EventArgs e)
-        {
-            if (grwShop.FocusedRowHandle >= 0)
-            {
-                //txtId.Text = grwShop.GetFocusedRowCellValue("Id").ToString();
-                txtPropertyId.Text = grwShop.GetFocusedRowCellValue("PropertyId").ToString();
-                txtOwnerName.Text = grwShop.GetFocusedRowCellValue("OwnerShop").ToString();
-                txtOwnerId.Text = grwShop.GetFocusedRowCellValue("OwnerId").ToString();
-            }
-
-
-        }
 
         void Clean()
         {
             txtId.Text = "";
-            txtPropertyId.Text = "";
+            // txtPropertyId.Text = "";
             // cmbPropertyType.Text = "";
-            txtOwnerName.Text = "";
+            //txtOwnerName.Text = "";
             txtSaleDate.Text = "";
             txtSalePrice.Text = "";
             lkuCustomerId.Text = "";
@@ -330,9 +294,9 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 {
                     _saleService.Add(new Sale
                     {
-                        OwnerId = Convert.ToInt32(txtOwnerId.Text),
+                        //OwnerId = Convert.ToInt32(txtOwnerId.Text),
                         CustomerId = Convert.ToInt32(lkuCustomerId.Text),
-                        SalePropertyId = Convert.ToInt32(txtPropertyId.Text),
+                        // SalePropertyId = Convert.ToInt32(txtPropertyId.Text),
                         SaleDate = DateTime.Now,
                         SalePrice = Convert.ToDecimal(txtSalePrice.Text),
                         DeleteFlag = false
@@ -340,74 +304,74 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     switch (cmbPropertyType.Text)
                     {
                         case "Field":
-                            _fieldService.Update(new Field
-                            {
-                                Id = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Id")),
-                                PropertyId = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "PropertyId")),
-                                OwnerId = Convert.ToInt32(lkuCustomerId.EditValue),
-                                Area = Convert.ToDecimal(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Area")),
-                                Pafta = grwField.GetRowCellValue(grwField.FocusedRowHandle, "Pafta").ToString(),
-                                City = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "City")),
-                                County = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "County")),
-                                Address = grwField.GetRowCellValue(grwField.FocusedRowHandle, "Address").ToString(),
-                                Price = Convert.ToDecimal(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Price")),
-                                Description = grwField.GetRowCellValue(grwField.FocusedRowHandle, "Description").ToString(),
-                                Sold = true,
-                                DeleteFlag = false
-                            });
+                            //_fieldService.Update(new Field
+                            //{
+                            //    Id = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Id")),
+                            //    PropertyId = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "PropertyId")),
+                            //    OwnerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                            //    Area = Convert.ToDecimal(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Area")),
+                            //    Pafta = grwField.GetRowCellValue(grwField.FocusedRowHandle, "Pafta").ToString(),
+                            //    City = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "City")),
+                            //    County = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "County")),
+                            //    Address = grwField.GetRowCellValue(grwField.FocusedRowHandle, "Address").ToString(),
+                            //    Price = Convert.ToDecimal(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Price")),
+                            //    Description = grwField.GetRowCellValue(grwField.FocusedRowHandle, "Description").ToString(),
+                            //    Sold = true,
+                            //    DeleteFlag = false
+                            //});
                             break;
                         case "House":
-                            _houseService.Update(new House
-                            {
-                                Id = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Id")),
-                                PropertyId = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "PropertyId")),
-                                OwnerId = Convert.ToInt32(lkuCustomerId.EditValue),
-                                Area = Convert.ToDecimal(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Area")),
-                                HouseType = grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "HouseType").ToString(),
-                                City = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "City")),
-                                County = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "County")),
-                                Address = grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Address").ToString(),
-                                Price = Convert.ToDecimal(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Price")),
-                                Description = grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Description").ToString(),
-                                Sold = true,
-                                DeleteFlag = false
-                            });
+                            //_houseService.Update(new House
+                            //{
+                            //    Id = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Id")),
+                            //    PropertyId = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "PropertyId")),
+                            //    OwnerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                            //    Area = Convert.ToDecimal(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Area")),
+                            //    HouseType = grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "HouseType").ToString(),
+                            //    City = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "City")),
+                            //    County = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "County")),
+                            //    Address = grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Address").ToString(),
+                            //    Price = Convert.ToDecimal(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Price")),
+                            //    Description = grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Description").ToString(),
+                            //    Sold = true,
+                            //    DeleteFlag = false
+                            //});
 
                             break;
                         case "Plot":
-                            _plotService.Update(new Plot
-                            {
-                                Id = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Id")),
-                                PropertyId = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "PropertyId")),
-                                OwnerId = Convert.ToInt32(lkuCustomerId.EditValue),
-                                Area = Convert.ToDecimal(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Area")),
-                                Ada = grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Ada").ToString(),
-                                Pafta = grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Pafta").ToString(),
-                                City = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "City")),
-                                County = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "County")),
-                                Address = grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Address").ToString(),
-                                Price = Convert.ToDecimal(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Price")),
-                                Description = grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Description").ToString(),
-                                Sold = true,
-                                DeleteFlag = false
-                            });
+                            //_plotService.Update(new Plot
+                            //{
+                            //    Id = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Id")),
+                            //    PropertyId = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "PropertyId")),
+                            //    OwnerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                            //    Area = Convert.ToDecimal(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Area")),
+                            //    Ada = grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Ada").ToString(),
+                            //    Pafta = grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Pafta").ToString(),
+                            //    City = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "City")),
+                            //    County = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "County")),
+                            //    Address = grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Address").ToString(),
+                            //    Price = Convert.ToDecimal(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Price")),
+                            //    Description = grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Description").ToString(),
+                            //    Sold = true,
+                            //    DeleteFlag = false
+                            //});
 
                             break;
                         case "Shop":
-                            _shopService.Update(new Shop
-                            {
-                                Id = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Id")),
-                                PropertyId = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "PropertyId")),
-                                OwnerId = Convert.ToInt32(lkuCustomerId.EditValue),
-                                Area = Convert.ToDecimal(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Area")),
-                                City = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "City")),
-                                County = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "County")),
-                                Address = grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Address").ToString(),
-                                Price = Convert.ToDecimal(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Price")),
-                                Description = grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Description").ToString(),
-                                Sold = true,
-                                DeleteFlag = false
-                            });
+                            //_shopService.Update(new Shop
+                            //{
+                            //    Id = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Id")),
+                            //    PropertyId = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "PropertyId")),
+                            //    OwnerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                            //    Area = Convert.ToDecimal(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Area")),
+                            //    City = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "City")),
+                            //    County = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "County")),
+                            //    Address = grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Address").ToString(),
+                            //    Price = Convert.ToDecimal(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Price")),
+                            //    Description = grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Description").ToString(),
+                            //    Sold = true,
+                            //    DeleteFlag = false
+                            //});
 
                             break;
                     }
