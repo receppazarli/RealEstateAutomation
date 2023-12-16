@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using DevExpress.Utils.Extensions;
 using DevExpress.XtraLayout.Utils;
 using RealEstateAutomation.Business.Abstract;
 using RealEstateAutomation.Business.DependencyResolvers;
@@ -33,8 +34,9 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void SaleForm_Load(object sender, EventArgs e)
         {
+            //LoadSale();
             LoadCustomer();
-           // LoadField();
+            //LoadField();
             LoadPlot();
             LoadHouse();
             LoadShop();
@@ -87,31 +89,73 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     {
                         using (RealEstateAutomationContext context = new RealEstateAutomationContext())
                         {
-                            var entity = from f in context.Fields
-                                         join p in context.Properties on f.PropertyId equals p.Id
-                                         join o in context.Owners on f.OwnerId equals o.Id
+                            var entity = from s in context.Sales
+
+                                         join p in context.Properties on s.SalePropertyId equals p.Id
+                                         join f in context.Fields on p.ReferenceId equals f.Id
+                                         join o in context.Owners on s.OwnerId equals o.Id
                                          join ci in context.Cities on f.City equals ci.Id
                                          join co in context.Counties on f.County equals co.Id
+                                         join c in context.Customers on s.CustomerId equals c.Id
+                                         where p.PropertyType == "Field"
                                          select new
                                          {
-                                             Id = f.Id,
-                                             PropertyId = f.PropertyId,
+                                             Id = s.Id,
+                                             SalePropertyId = s.SalePropertyId,
+                                             SalePropertyType = s.SalePropertyType,
                                              OwnerId = o.FirstName,
-                                             // OwnerFieldId = f.OwnerId,
+                                             CustomerId = c.FirstName,
                                              Area = f.Area,
                                              Pafta = f.Pafta,
                                              City = ci.CityName,
                                              County = co.CountyName,
                                              Address = f.Address,
-                                             Price = f.Price,
+                                             SalePrice = s.SalePrice,
+                                             SaleDate = s.SaleDate,
                                              Description = f.Description,
                                              Sold = f.Sold,
-                                             DeleteFlag = f.DeleteFlag,
+                                             DeleteFlag = s.DeleteFlag,
                                          };
-                            //grcField.DataSource = entity.ToList().Where(x => x.DeleteFlag == false)
-                            lkuField.Properties.DataSource = entity.ToList().Where(x => x.DeleteFlag == false && x.Sold == false);
+
+
+                            grcSale.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
+
+                            grwSale.Columns["Ada"].Visible = false;
+                            grwSale.Columns["HouseType"].Visible = false;
+                            grwSale.Columns["Pafta"].Visible = true;
+
+
+                            var entity2 = from f in context.Fields
+                                          join p in context.Properties on f.PropertyId equals p.Id
+                                          join o in context.Owners on f.OwnerId equals o.Id
+                                          join ci in context.Cities on f.City equals ci.Id
+                                          join co in context.Counties on f.County equals co.Id
+                                          select new
+                                          {
+                                              Id = f.Id,
+                                              PropertyId = f.PropertyId,
+                                              OwnerId = o.FirstName,
+                                              Area = f.Area,
+                                              Pafta = f.Pafta,
+                                              City = ci.CityName,
+                                              County = co.CountyName,
+                                              Address = f.Address,
+                                              Price = f.Price,
+                                              Description = f.Description,
+                                              Sold = f.Sold,
+                                              DeleteFlag = f.DeleteFlag,
+                                          };
+
+                            lycField.Visibility = LayoutVisibility.Always;
+                            lycShop.Visibility = LayoutVisibility.Never;
+                            lycHouse.Visibility = LayoutVisibility.Never;
+                            lycPlot.Visibility = LayoutVisibility.Never;
+
+                            lkuField.Properties.DataSource = entity2.ToList().Where(x => x.Sold == false && x.DeleteFlag == false);
                             lkuField.Properties.DisplayMember = "OwnerId";
                             lkuField.Properties.ValueMember = "Id";
+
+
 
                         }
                     }
@@ -128,29 +172,72 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     {
                         using (RealEstateAutomationContext context = new RealEstateAutomationContext())
                         {
-                            var entity = from h in context.Houses
-                                         join p in context.Properties on h.PropertyId equals p.Id
-                                         join o in context.Owners on h.OwnerId equals o.Id
+                            var entity = from s in context.Sales
+
+                                         join p in context.Properties on s.SalePropertyId equals p.Id
+                                         join h in context.Houses on p.ReferenceId equals h.Id
+                                         join o in context.Owners on s.OwnerId equals o.Id
                                          join ci in context.Cities on h.City equals ci.Id
                                          join co in context.Counties on h.County equals co.Id
+                                         join c in context.Customers on s.CustomerId equals c.Id
+                                         where p.PropertyType == "House"
                                          select new
                                          {
-                                             Id = h.Id,
-                                             PropertyId = h.PropertyId,
-                                             OwnerId = h.OwnerId,
-                                             //OwnerHouseId = h.OwnerId,
-                                             OwnerHouse = o.FirstName,
+                                             Id = s.Id,
+                                             SalePropertyId = s.SalePropertyId,
+                                             SalePropertyType = s.SalePropertyType,
+                                             OwnerId = o.FirstName,
+                                             CustomerId = c.FirstName,
                                              Area = h.Area,
                                              HouseType = h.HouseType,
                                              City = ci.CityName,
                                              County = co.CountyName,
                                              Address = h.Address,
-                                             Price = h.Price,
+                                             SalePrice = s.SalePrice,
+                                             SaleDate = s.SaleDate,
                                              Description = h.Description,
                                              Sold = h.Sold,
-                                             DeleteFlag = h.DeleteFlag,
+                                             DeleteFlag = s.DeleteFlag,
                                          };
-                            // grcHouse.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
+
+                            grcSale.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
+
+                            grwSale.Columns["Ada"].Visible = false;
+                            grwSale.Columns["HouseType"].Visible = true;
+                            grwSale.Columns["Pafta"].Visible = false;
+
+                            var entity2 = from h in context.Houses
+                                          join p in context.Properties on h.PropertyId equals p.Id
+                                          join o in context.Owners on h.OwnerId equals o.Id
+                                          join ci in context.Cities on h.City equals ci.Id
+                                          join co in context.Counties on h.County equals co.Id
+                                          select new
+                                          {
+                                              Id = h.Id,
+                                              PropertyId = h.PropertyId,
+                                              OwnerId = o.FirstName,
+                                              Area = h.Area,
+                                              HouseType = h.HouseType,
+                                              City = ci.CityName,
+                                              County = co.CountyName,
+                                              Address = h.Address,
+                                              Price = h.Price,
+                                              Description = h.Description,
+                                              Sold = h.Sold,
+                                              DeleteFlag = h.DeleteFlag,
+                                          };
+
+                            lycHouse.Visibility = LayoutVisibility.Always;
+                            lycField.Visibility = LayoutVisibility.Never;
+                            lycShop.Visibility = LayoutVisibility.Never;
+                            lycPlot.Visibility = LayoutVisibility.Never;
+
+                            lkuHouse.Properties.DataSource = entity2.ToList().Where(x => x.Sold == false && x.DeleteFlag == false);
+                            lkuHouse.Properties.DisplayMember = "OwnerId";
+                            lkuHouse.Properties.ValueMember = "Id";
+
+
+
 
                         }
 
@@ -168,30 +255,76 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     {
                         using (RealEstateAutomationContext context = new RealEstateAutomationContext())
                         {
-                            var entity = from pl in context.Plots
-                                         join p in context.Properties on pl.PropertyId equals p.Id
-                                         join o in context.Owners on pl.OwnerId equals o.Id
+                            var entity = from s in context.Sales
+
+                                         join p in context.Properties on s.SalePropertyId equals p.Id
+                                         join pl in context.Plots on p.ReferenceId equals pl.Id
+                                         join o in context.Owners on s.OwnerId equals o.Id
                                          join ci in context.Cities on pl.City equals ci.Id
                                          join co in context.Counties on pl.County equals co.Id
+                                         join c in context.Customers on s.CustomerId equals c.Id
+                                         where p.PropertyType == "Plot"
                                          select new
                                          {
-                                             Id = pl.Id,
-                                             PropertyId = pl.PropertyId,
-                                             OwnerId = pl.OwnerId,
-                                             //OwnerPlotId = pl.OwnerId,
-                                             OwnerPlot = o.FirstName,
+                                             Id = s.Id,
+                                             SalePropertyId = s.SalePropertyId,
+                                             SalePropertyType = s.SalePropertyType,
+                                             OwnerId = o.FirstName,
+                                             CustomerId = c.FirstName,
                                              Area = pl.Area,
                                              Ada = pl.Ada,
                                              Pafta = pl.Pafta,
                                              City = ci.CityName,
                                              County = co.CountyName,
                                              Address = pl.Address,
-                                             Price = pl.Price,
+                                             SalePrice = s.SalePrice,
+                                             SaleDate = s.SaleDate,
                                              Description = pl.Description,
                                              Sold = pl.Sold,
-                                             DeleteFlag = pl.DeleteFlag,
+                                             DeleteFlag = s.DeleteFlag,
                                          };
-                            // grcPlot.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
+
+
+                            grcSale.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
+
+                            grwSale.Columns["Ada"].Visible = true;
+                            grwSale.Columns["HouseType"].Visible = false;
+                            grwSale.Columns["Pafta"].Visible = true;
+
+                            var entity2 = from pl in context.Plots
+                                          join p in context.Properties on pl.PropertyId equals p.Id
+                                          join o in context.Owners on pl.OwnerId equals o.Id
+                                          join ci in context.Cities on pl.City equals ci.Id
+                                          join co in context.Counties on pl.County equals co.Id
+                                          select new
+                                          {
+                                              Id = pl.Id,
+                                              PropertyId = pl.PropertyId,
+                                              OwnerId = o.FirstName,
+                                              Area = pl.Area,
+                                              Ada = pl.Ada,
+                                              Pafta = pl.Pafta,
+                                              City = ci.CityName,
+                                              County = co.CountyName,
+                                              Address = pl.Address,
+                                              Price = pl.Price,
+                                              Description = pl.Description,
+                                              Sold = pl.Sold,
+                                              DeleteFlag = pl.DeleteFlag,
+                                          };
+
+                            lycPlot.Visibility = LayoutVisibility.Always;
+                            lycField.Visibility = LayoutVisibility.Never;
+                            lycShop.Visibility = LayoutVisibility.Never;
+                            lycHouse.Visibility = LayoutVisibility.Never;
+
+
+                            lkuPlot.Properties.DataSource = entity2.ToList().Where(x => x.Sold == false && x.DeleteFlag == false);
+                            lkuPlot.Properties.DisplayMember = "OwnerId";
+                            lkuPlot.Properties.ValueMember = "Id";
+
+
+
 
                         }
                     }
@@ -207,28 +340,71 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     {
                         using (RealEstateAutomationContext context = new RealEstateAutomationContext())
                         {
-                            var entity = from s in context.Shops
-                                         join p in context.Properties on s.PropertyId equals p.Id
+                            var entity = from s in context.Sales
+
+                                         join p in context.Properties on s.SalePropertyId equals p.Id
+                                         join sh in context.Shops on p.ReferenceId equals sh.Id
                                          join o in context.Owners on s.OwnerId equals o.Id
-                                         join ci in context.Cities on s.City equals ci.Id
-                                         join co in context.Counties on s.County equals co.Id
+                                         join ci in context.Cities on sh.City equals ci.Id
+                                         join co in context.Counties on sh.County equals co.Id
+                                         join c in context.Customers on s.CustomerId equals c.Id
+                                         where p.PropertyType == "Shop"
                                          select new
                                          {
                                              Id = s.Id,
-                                             PropertyId = s.PropertyId,
-                                             OwnerId = s.OwnerId,
-                                             // OwnerShopId = s.OwnerId,
-                                             OwnerShop = o.FirstName,
-                                             Area = s.Area,
+                                             SalePropertyId = s.SalePropertyId,
+                                             SalePropertyType = s.SalePropertyType,
+                                             OwnerId = o.FirstName,
+                                             CustomerId = c.FirstName,
+                                             Area = sh.Area,
                                              City = ci.CityName,
                                              County = co.CountyName,
-                                             Address = s.Address,
-                                             Price = s.Price,
-                                             Description = s.Description,
-                                             Sold = s.Sold,
+                                             Address = sh.Address,
+                                             SalePrice = s.SalePrice,
+                                             SaleDate = s.SaleDate,
+                                             Description = sh.Description,
+                                             Sold = sh.Sold,
                                              DeleteFlag = s.DeleteFlag,
                                          };
-                            // grcShop.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
+
+
+                            grcSale.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
+
+                            grwSale.Columns["Ada"].Visible = false;
+                            grwSale.Columns["HouseType"].Visible = false;
+                            grwSale.Columns["Pafta"].Visible = false;
+
+                            var entity2 = from s in context.Shops
+                                          join p in context.Properties on s.PropertyId equals p.Id
+                                          join o in context.Owners on s.OwnerId equals o.Id
+                                          join ci in context.Cities on s.City equals ci.Id
+                                          join co in context.Counties on s.County equals co.Id
+                                          select new
+                                          {
+                                              Id = s.Id,
+                                              PropertyId = s.PropertyId,
+                                              OwnerId = o.FirstName,
+                                              Area = s.Area,
+                                              City = ci.CityName,
+                                              County = co.CountyName,
+                                              Address = s.Address,
+                                              Price = s.Price,
+                                              Description = s.Description,
+                                              Sold = s.Sold,
+                                              DeleteFlag = s.DeleteFlag,
+                                          };
+
+                            lycField.Visibility = LayoutVisibility.Never;
+                            lycShop.Visibility = LayoutVisibility.Always;
+                            lycHouse.Visibility = LayoutVisibility.Never;
+                            lycPlot.Visibility = LayoutVisibility.Never;
+
+                            lkuShop.Properties.DataSource = entity2.ToList().Where(x => x.Sold == false && x.DeleteFlag == false);
+                            lkuShop.Properties.DisplayMember = "OwnerId";
+                            lkuShop.Properties.ValueMember = "Id";
+
+
+
 
                         }
                     }
@@ -249,6 +425,17 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             {
                 case "Field":
 
+                    // TODO bu kısımda kaldım sorun var bunu düzeltmem lazım veriler yanlış geliyor.
+                    if (grwSale.FocusedRowHandle > 0)
+                    {
+                        txtId.Text = grwSale.GetFocusedRowCellValue("Id").ToString();
+                        lkuField.Text = grwSale.GetFocusedRowCellValue("OwnerId").ToString();
+                        lkuCustomerId.Text = grwSale.GetFocusedRowCellValue("CustomerId").ToString();
+                        txtSalePrice.Text = grwSale.GetFocusedRowCellValue("SalePrice").ToString();
+                        txtSaleDate.Text = grwSale.GetFocusedRowCellValue("SaleDate").ToString();
+                    }
+
+
                     break;
                 case "House":
 
@@ -267,7 +454,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void cmbPropertyType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //LoadSale();
+            LoadSale();
         }
 
 
@@ -386,6 +573,11 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             {
 
             }
+        }
+
+        private void grcSale_Click(object sender, EventArgs e)
+        {
+            LoadClick();
         }
     }
 }

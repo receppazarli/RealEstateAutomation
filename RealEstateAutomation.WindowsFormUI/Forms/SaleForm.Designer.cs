@@ -41,6 +41,7 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lkuShop = new DevExpress.XtraEditors.LookUpEdit();
             this.btnSale = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
@@ -54,32 +55,40 @@
             this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OwnerId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CustomerId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Area = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Ada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Pafta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HouseType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.City = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.County = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Address = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SalePropertyType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SalePropertyId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SaleDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SalePrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DeleteFlag = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lkuHouse = new DevExpress.XtraEditors.LookUpEdit();
+            this.lkuField = new DevExpress.XtraEditors.LookUpEdit();
+            this.lkuPlot = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lycSale = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lycShop = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lycHouse = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lycSale = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lycPlot = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lycField = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.lkuShop = new DevExpress.XtraEditors.LookUpEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lkuHouse = new DevExpress.XtraEditors.LookUpEdit();
-            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lkuField = new DevExpress.XtraEditors.LookUpEdit();
-            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lkuPlot = new DevExpress.XtraEditors.LookUpEdit();
-            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkuShop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSalePrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSaleDate.Properties)).BeginInit();
@@ -87,25 +96,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbPropertyType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcSale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grwSale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkuHouse.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkuField.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkuPlot.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lycSale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lycShop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lycHouse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lycSale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lycPlot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lycField)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuShop.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuHouse.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuField.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuPlot.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -218,6 +226,30 @@
             this.layoutControl1.Size = new System.Drawing.Size(1248, 485);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // lkuShop
+            // 
+            this.lkuShop.Location = new System.Drawing.Point(974, 60);
+            this.lkuShop.MenuManager = this.ribbonControl1;
+            this.lkuShop.Name = "lkuShop";
+            this.lkuShop.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkuShop.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PropertyId", "PropertyId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("OwnerId", "Owner Name"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Area", "Area"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("City", "City"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("County", "County"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Address", "Address"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Price", "Price"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Description", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Sold", "Sold", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DeleteFlag", "DeleteFlag", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lkuShop.Properties.NullText = "Please Choose";
+            this.lkuShop.Size = new System.Drawing.Size(262, 20);
+            this.lkuShop.StyleController = this.layoutControl1;
+            this.lkuShop.TabIndex = 16;
             // 
             // btnSale
             // 
@@ -336,6 +368,7 @@
             this.grcSale.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grwSale});
             this.grcSale.Visible = false;
+            this.grcSale.Click += new System.EventHandler(this.grcSale_Click);
             // 
             // grwSale
             // 
@@ -343,6 +376,14 @@
             this.Id,
             this.OwnerId,
             this.CustomerId,
+            this.Area,
+            this.Ada,
+            this.Pafta,
+            this.HouseType,
+            this.City,
+            this.County,
+            this.Address,
+            this.SalePropertyType,
             this.SalePropertyId,
             this.SaleDate,
             this.SalePrice,
@@ -358,15 +399,81 @@
             // 
             // OwnerId
             // 
-            this.OwnerId.Caption = "OwnerId";
+            this.OwnerId.Caption = "Owner Name";
             this.OwnerId.FieldName = "OwnerId";
             this.OwnerId.Name = "OwnerId";
+            this.OwnerId.Visible = true;
+            this.OwnerId.VisibleIndex = 0;
             // 
             // CustomerId
             // 
-            this.CustomerId.Caption = "CustomerId";
+            this.CustomerId.Caption = "Customer Name";
             this.CustomerId.FieldName = "CustomerId";
             this.CustomerId.Name = "CustomerId";
+            this.CustomerId.Visible = true;
+            this.CustomerId.VisibleIndex = 1;
+            // 
+            // Area
+            // 
+            this.Area.Caption = "Area";
+            this.Area.FieldName = "Area";
+            this.Area.Name = "Area";
+            this.Area.Visible = true;
+            this.Area.VisibleIndex = 2;
+            // 
+            // Ada
+            // 
+            this.Ada.Caption = "Ada";
+            this.Ada.FieldName = "Ada";
+            this.Ada.Name = "Ada";
+            this.Ada.Visible = true;
+            this.Ada.VisibleIndex = 3;
+            // 
+            // Pafta
+            // 
+            this.Pafta.Caption = "Pafta";
+            this.Pafta.FieldName = "Pafta";
+            this.Pafta.Name = "Pafta";
+            this.Pafta.Visible = true;
+            this.Pafta.VisibleIndex = 4;
+            // 
+            // HouseType
+            // 
+            this.HouseType.Caption = "HouseType";
+            this.HouseType.FieldName = "HouseType";
+            this.HouseType.Name = "HouseType";
+            this.HouseType.Visible = true;
+            this.HouseType.VisibleIndex = 5;
+            // 
+            // City
+            // 
+            this.City.Caption = "City";
+            this.City.FieldName = "City";
+            this.City.Name = "City";
+            this.City.Visible = true;
+            this.City.VisibleIndex = 6;
+            // 
+            // County
+            // 
+            this.County.Caption = "County";
+            this.County.FieldName = "County";
+            this.County.Name = "County";
+            this.County.Visible = true;
+            this.County.VisibleIndex = 7;
+            // 
+            // Address
+            // 
+            this.Address.Caption = "Address";
+            this.Address.FieldName = "Address";
+            this.Address.Name = "Address";
+            this.Address.Visible = true;
+            this.Address.VisibleIndex = 8;
+            // 
+            // SalePropertyType
+            // 
+            this.SalePropertyType.Caption = "SalePropertyType";
+            this.SalePropertyType.FieldName = "SalePropertyType";
+            this.SalePropertyType.Name = "SalePropertyType";
             // 
             // SalePropertyId
             // 
@@ -379,18 +486,95 @@
             this.SaleDate.Caption = "SaleDate";
             this.SaleDate.FieldName = "SaleDate";
             this.SaleDate.Name = "SaleDate";
+            this.SaleDate.Visible = true;
+            this.SaleDate.VisibleIndex = 9;
             // 
             // SalePrice
             // 
             this.SalePrice.Caption = "SalePrice";
             this.SalePrice.FieldName = "SalePrice";
             this.SalePrice.Name = "SalePrice";
+            this.SalePrice.Visible = true;
+            this.SalePrice.VisibleIndex = 10;
             // 
             // DeleteFlag
             // 
             this.DeleteFlag.Caption = "DeleteFlag";
             this.DeleteFlag.FieldName = "DeleteFlag";
             this.DeleteFlag.Name = "DeleteFlag";
+            // 
+            // lkuHouse
+            // 
+            this.lkuHouse.Location = new System.Drawing.Point(974, 108);
+            this.lkuHouse.Name = "lkuHouse";
+            this.lkuHouse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkuHouse.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PropertyId", "PropertyId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("OwnerId", "Owner Name"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Area", "Area"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("HouseType", "HouseType"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("City", "City"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("County", "County"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Address", "Address"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Price", "Price"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Description", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Sold", "Sold", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DeleteFlag", "DeleteFlag", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lkuHouse.Properties.NullText = "Please Choose";
+            this.lkuHouse.Size = new System.Drawing.Size(262, 20);
+            this.lkuHouse.StyleController = this.layoutControl1;
+            this.lkuHouse.TabIndex = 16;
+            // 
+            // lkuField
+            // 
+            this.lkuField.Location = new System.Drawing.Point(974, 132);
+            this.lkuField.Name = "lkuField";
+            this.lkuField.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkuField.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PropertyId", "PropertyId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("OwnerId", "Owner Name"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Area", "Area"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Pafta", "Pafta"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("City", "City"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("County", "County"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Address", "Address"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Price", "Price"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Description", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Sold", "Sold", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DeleteFlag", "DeleteFlag", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lkuField.Properties.NullText = "Please Choose";
+            this.lkuField.Size = new System.Drawing.Size(262, 20);
+            this.lkuField.StyleController = this.layoutControl1;
+            this.lkuField.TabIndex = 16;
+            // 
+            // lkuPlot
+            // 
+            this.lkuPlot.Location = new System.Drawing.Point(974, 84);
+            this.lkuPlot.Name = "lkuPlot";
+            this.lkuPlot.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkuPlot.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PropertyId", "PropertyId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("OwnerId", "Owner Name"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Area", "Area"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Ada", "Ada"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Pafta", "Pafta"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("City", "City"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("County", "County"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Address", "Address"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Price", "Price"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Description", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Sold", "Sold", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DeleteFlag", "DeleteFlag", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lkuPlot.Properties.NullText = "Please Choose";
+            this.lkuPlot.Size = new System.Drawing.Size(262, 20);
+            this.lkuPlot.StyleController = this.layoutControl1;
+            this.lkuPlot.TabIndex = 16;
             // 
             // layoutControlGroup1
             // 
@@ -404,26 +588,15 @@
             this.layoutControlItem6,
             this.layoutControlItem10,
             this.layoutControlItem11,
-            this.layoutControlItem1,
-            this.layoutControlItem14,
+            this.lycShop,
+            this.lycHouse,
             this.lycSale,
-            this.layoutControlItem16,
-            this.layoutControlItem15,
+            this.lycPlot,
+            this.lycField,
             this.layoutControlItem3});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1248, 485);
             this.layoutControlGroup1.TextVisible = false;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem3.Control = this.lkuCustomerId;
-            this.layoutControlItem3.Location = new System.Drawing.Point(847, 144);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(381, 24);
-            this.layoutControlItem3.Text = "Customer Name:";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(103, 19);
             // 
             // layoutControlItem7
             // 
@@ -457,15 +630,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(381, 24);
             this.layoutControlItem4.Text = "Sale Price:";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(103, 19);
-            // 
-            // lycSale
-            // 
-            this.lycSale.Control = this.grcSale;
-            this.lycSale.Location = new System.Drawing.Point(0, 0);
-            this.lycSale.Name = "lycSale";
-            this.lycSale.Size = new System.Drawing.Size(847, 465);
-            this.lycSale.TextSize = new System.Drawing.Size(0, 0);
-            this.lycSale.TextVisible = false;
             // 
             // layoutControlItem9
             // 
@@ -505,6 +669,80 @@
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
+            // lycShop
+            // 
+            this.lycShop.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lycShop.AppearanceItemCaption.Options.UseFont = true;
+            this.lycShop.Control = this.lkuShop;
+            this.lycShop.Location = new System.Drawing.Point(847, 48);
+            this.lycShop.Name = "lycShop";
+            this.lycShop.Size = new System.Drawing.Size(381, 24);
+            this.lycShop.Text = "Shop:";
+            this.lycShop.TextSize = new System.Drawing.Size(103, 19);
+            this.lycShop.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            // 
+            // lycHouse
+            // 
+            this.lycHouse.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lycHouse.AppearanceItemCaption.Options.UseFont = true;
+            this.lycHouse.Control = this.lkuHouse;
+            this.lycHouse.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lycHouse.CustomizationFormText = "House:";
+            this.lycHouse.Location = new System.Drawing.Point(847, 96);
+            this.lycHouse.Name = "lycHouse";
+            this.lycHouse.Size = new System.Drawing.Size(381, 24);
+            this.lycHouse.Text = "House:";
+            this.lycHouse.TextSize = new System.Drawing.Size(103, 19);
+            this.lycHouse.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            // 
+            // lycSale
+            // 
+            this.lycSale.Control = this.grcSale;
+            this.lycSale.Location = new System.Drawing.Point(0, 0);
+            this.lycSale.Name = "lycSale";
+            this.lycSale.Size = new System.Drawing.Size(847, 465);
+            this.lycSale.TextSize = new System.Drawing.Size(0, 0);
+            this.lycSale.TextVisible = false;
+            // 
+            // lycPlot
+            // 
+            this.lycPlot.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lycPlot.AppearanceItemCaption.Options.UseFont = true;
+            this.lycPlot.Control = this.lkuPlot;
+            this.lycPlot.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lycPlot.CustomizationFormText = "Plot:";
+            this.lycPlot.Location = new System.Drawing.Point(847, 72);
+            this.lycPlot.Name = "lycPlot";
+            this.lycPlot.Size = new System.Drawing.Size(381, 24);
+            this.lycPlot.Text = "Plot:";
+            this.lycPlot.TextSize = new System.Drawing.Size(103, 19);
+            this.lycPlot.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            // 
+            // lycField
+            // 
+            this.lycField.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lycField.AppearanceItemCaption.Options.UseFont = true;
+            this.lycField.Control = this.lkuField;
+            this.lycField.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lycField.CustomizationFormText = "Field:";
+            this.lycField.Location = new System.Drawing.Point(847, 120);
+            this.lycField.Name = "lycField";
+            this.lycField.Size = new System.Drawing.Size(381, 24);
+            this.lycField.Text = "Field:";
+            this.lycField.TextSize = new System.Drawing.Size(103, 19);
+            this.lycField.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem3.Control = this.lkuCustomerId;
+            this.layoutControlItem3.Location = new System.Drawing.Point(847, 144);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(381, 24);
+            this.layoutControlItem3.Text = "Customer Name:";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(103, 19);
+            // 
             // popupMenu1
             // 
             this.popupMenu1.ItemLinks.Add(this.btnSale2);
@@ -513,153 +751,6 @@
             this.popupMenu1.ItemLinks.Add(this.btnExcelTransfer2);
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Ribbon = this.ribbonControl1;
-            // 
-            // lkuShop
-            // 
-            this.lkuShop.Location = new System.Drawing.Point(974, 60);
-            this.lkuShop.MenuManager = this.ribbonControl1;
-            this.lkuShop.Name = "lkuShop";
-            this.lkuShop.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkuShop.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PropertyId", "PropertyId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("OwnerId", "OwnerId"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Area", "Area"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("City", "City"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("County", "County"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Address", "Address"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Price", "Price"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Description", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Sold", "Sold", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DeleteFlag", "DeleteFlag", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.lkuShop.Properties.NullText = "Please Choose";
-            this.lkuShop.Size = new System.Drawing.Size(262, 20);
-            this.lkuShop.StyleController = this.layoutControl1;
-            this.lkuShop.TabIndex = 16;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.layoutControlItem1.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem1.Control = this.lkuShop;
-            this.layoutControlItem1.Location = new System.Drawing.Point(847, 48);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(381, 24);
-            this.layoutControlItem1.Text = "Shop:";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(103, 19);
-            // 
-            // lkuHouse
-            // 
-            this.lkuHouse.Location = new System.Drawing.Point(974, 108);
-            this.lkuHouse.Name = "lkuHouse";
-            this.lkuHouse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkuHouse.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PropertyId", "PropertyId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("OwnerId", "OwnerId"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Area", "Area"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("HouseType", "HouseType"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("City", "City"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("County", "County"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Address", "Address"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Price", "Price"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Description", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Sold", "Sold", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DeleteFlag", "DeleteFlag", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.lkuHouse.Properties.NullText = "Please Choose";
-            this.lkuHouse.Size = new System.Drawing.Size(262, 20);
-            this.lkuHouse.StyleController = this.layoutControl1;
-            this.lkuHouse.TabIndex = 16;
-            // 
-            // layoutControlItem14
-            // 
-            this.layoutControlItem14.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.layoutControlItem14.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem14.Control = this.lkuHouse;
-            this.layoutControlItem14.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem14.CustomizationFormText = "House:";
-            this.layoutControlItem14.Location = new System.Drawing.Point(847, 96);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(381, 24);
-            this.layoutControlItem14.Text = "House:";
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(103, 19);
-            // 
-            // lkuField
-            // 
-            this.lkuField.Location = new System.Drawing.Point(974, 132);
-            this.lkuField.Name = "lkuField";
-            this.lkuField.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkuField.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PropertyId", "PropertyId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("OwnerId", "OwnerId"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Area", "Area"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Pafta", "Pafta"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("City", "City"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("County", "County"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Address", "Address"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Price", "Price"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Description", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Sold", "Sold", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DeleteFlag", "DeleteFlag", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.lkuField.Properties.NullText = "Please Choose";
-            this.lkuField.Size = new System.Drawing.Size(262, 20);
-            this.lkuField.StyleController = this.layoutControl1;
-            this.lkuField.TabIndex = 16;
-            // 
-            // layoutControlItem15
-            // 
-            this.layoutControlItem15.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.layoutControlItem15.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem15.Control = this.lkuField;
-            this.layoutControlItem15.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem15.CustomizationFormText = "Field:";
-            this.layoutControlItem15.Location = new System.Drawing.Point(847, 120);
-            this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(381, 24);
-            this.layoutControlItem15.Text = "Field:";
-            this.layoutControlItem15.TextSize = new System.Drawing.Size(103, 19);
-            // 
-            // lkuPlot
-            // 
-            this.lkuPlot.Location = new System.Drawing.Point(974, 84);
-            this.lkuPlot.Name = "lkuPlot";
-            this.lkuPlot.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkuPlot.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PropertyId", "PropertyId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("OwnerId", "OwnerId"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Area", "Area"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Ada", "Ada"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Pafta", "Pafta"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("City", "City"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("County", "County"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Address", "Address"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Price", "Price"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Description", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Sold", "Sold", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DeleteFlag", "DeleteFlag", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.lkuPlot.Properties.NullText = "Please Choose";
-            this.lkuPlot.Size = new System.Drawing.Size(262, 20);
-            this.lkuPlot.StyleController = this.layoutControl1;
-            this.lkuPlot.TabIndex = 16;
-            // 
-            // layoutControlItem16
-            // 
-            this.layoutControlItem16.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.layoutControlItem16.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem16.Control = this.lkuPlot;
-            this.layoutControlItem16.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem16.CustomizationFormText = "Plot:";
-            this.layoutControlItem16.Location = new System.Drawing.Point(847, 72);
-            this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(381, 24);
-            this.layoutControlItem16.Text = "Plot:";
-            this.layoutControlItem16.TextSize = new System.Drawing.Size(103, 19);
             // 
             // SaleForm
             // 
@@ -674,6 +765,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lkuShop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSalePrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSaleDate.Properties)).EndInit();
@@ -681,25 +773,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbPropertyType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcSale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grwSale)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkuHouse.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkuField.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkuPlot.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lycSale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lycShop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lycHouse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lycSale)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lycPlot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lycField)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuShop.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuHouse.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuField.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuPlot.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -747,12 +838,20 @@
         private DevExpress.XtraGrid.Columns.GridColumn SalePrice;
         private DevExpress.XtraGrid.Columns.GridColumn DeleteFlag;
         private DevExpress.XtraEditors.LookUpEdit lkuShop;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem lycShop;
         private DevExpress.XtraEditors.LookUpEdit lkuHouse;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
+        private DevExpress.XtraLayout.LayoutControlItem lycHouse;
         private DevExpress.XtraEditors.LookUpEdit lkuField;
         private DevExpress.XtraEditors.LookUpEdit lkuPlot;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
+        private DevExpress.XtraLayout.LayoutControlItem lycPlot;
+        private DevExpress.XtraLayout.LayoutControlItem lycField;
+        private DevExpress.XtraGrid.Columns.GridColumn Area;
+        private DevExpress.XtraGrid.Columns.GridColumn Ada;
+        private DevExpress.XtraGrid.Columns.GridColumn Pafta;
+        private DevExpress.XtraGrid.Columns.GridColumn HouseType;
+        private DevExpress.XtraGrid.Columns.GridColumn City;
+        private DevExpress.XtraGrid.Columns.GridColumn County;
+        private DevExpress.XtraGrid.Columns.GridColumn Address;
+        private DevExpress.XtraGrid.Columns.GridColumn SalePropertyType;
     }
 }
