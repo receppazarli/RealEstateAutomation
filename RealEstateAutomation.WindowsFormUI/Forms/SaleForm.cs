@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using DevExpress.DashboardCommon.DataProcessing;
 using DevExpress.Utils.Extensions;
 using DevExpress.XtraLayout.Utils;
 using RealEstateAutomation.Business.Abstract;
@@ -36,7 +37,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
             //LoadSale();
             LoadCustomer();
-            //LoadField();
+            LoadField();
             LoadPlot();
             LoadHouse();
             LoadShop();
@@ -49,33 +50,131 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             lkuCustomerId.Properties.ValueMember = "Id";
         }
 
-        void LoadField()
-        {
-            lkuField.Properties.DataSource = _fieldService.GetAll().Where(x => x.Sold == false);
-            lkuField.Properties.DisplayMember = "OwnerId";
-            lkuField.Properties.ValueMember = "Id";
-        }
 
         void LoadPlot()
         {
-            lkuPlot.Properties.DataSource = _plotService.GetAll().Where(x => x.Sold == false);
-            lkuPlot.Properties.DisplayMember = "OwnerId";
-            lkuPlot.Properties.ValueMember = "Id";
+            using (RealEstateAutomationContext context = new RealEstateAutomationContext())
+            {
+                var entity2 = from pl in context.Plots
+                              join p in context.Properties on pl.PropertyId equals p.Id
+                              join o in context.Owners on pl.OwnerId equals o.Id
+                              join ci in context.Cities on pl.City equals ci.Id
+                              join co in context.Counties on pl.County equals co.Id
+                              select new
+                              {
+                                  Id = pl.Id,
+                                  PropertyId = pl.PropertyId,
+                                  OwnerId = o.FirstName,
+                                  Area = pl.Area,
+                                  Ada = pl.Ada,
+                                  Pafta = pl.Pafta,
+                                  City = ci.CityName,
+                                  County = co.CountyName,
+                                  Address = pl.Address,
+                                  Price = pl.Price,
+                                  Description = pl.Description,
+                                  Sold = pl.Sold,
+                                  DeleteFlag = pl.DeleteFlag,
+                              };
+
+                lkuPlot.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false && x.Sold == false);
+                lkuPlot.Properties.DisplayMember = "OwnerId";
+                lkuPlot.Properties.ValueMember = "PropertyId";
+            }
         }
 
         void LoadHouse()
         {
-            lkuHouse.Properties.DataSource = _houseService.GetAll().Where(x => x.Sold == false);
-            lkuHouse.Properties.DisplayMember = "OwnerId";
-            lkuHouse.Properties.ValueMember = "Id";
+            using (RealEstateAutomationContext context = new RealEstateAutomationContext())
+            {
+                var entity2 = from h in context.Houses
+                              join p in context.Properties on h.PropertyId equals p.Id
+                              join o in context.Owners on h.OwnerId equals o.Id
+                              join ci in context.Cities on h.City equals ci.Id
+                              join co in context.Counties on h.County equals co.Id
+                              select new
+                              {
+                                  Id = h.Id,
+                                  PropertyId = h.PropertyId,
+                                  OwnerId = o.FirstName,
+                                  Area = h.Area,
+                                  HouseType = h.HouseType,
+                                  City = ci.CityName,
+                                  County = co.CountyName,
+                                  Address = h.Address,
+                                  Price = h.Price,
+                                  Description = h.Description,
+                                  Sold = h.Sold,
+                                  DeleteFlag = h.DeleteFlag,
+                              };
+
+                lkuHouse.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false && x.Sold == false);
+                lkuHouse.Properties.DisplayMember = "OwnerId";
+                lkuHouse.Properties.ValueMember = "PropertyId";
+            }
         }
 
         void LoadShop()
         {
-            lkuShop.Properties.DataSource = _shopService.GetAll().Where(x => x.Sold == false);
-            lkuShop.Properties.DisplayMember = "OwnerId";
-            lkuShop.Properties.ValueMember = "Id";
+            using (RealEstateAutomationContext context = new RealEstateAutomationContext())
+            {
+                var entity2 = from s in context.Shops
+                              join p in context.Properties on s.PropertyId equals p.Id
+                              join o in context.Owners on s.OwnerId equals o.Id
+                              join ci in context.Cities on s.City equals ci.Id
+                              join co in context.Counties on s.County equals co.Id
+                              select new
+                              {
+                                  Id = s.Id,
+                                  PropertyId = s.PropertyId,
+                                  OwnerId = o.FirstName,
+                                  Area = s.Area,
+                                  City = ci.CityName,
+                                  County = co.CountyName,
+                                  Address = s.Address,
+                                  Price = s.Price,
+                                  Description = s.Description,
+                                  Sold = s.Sold,
+                                  DeleteFlag = s.DeleteFlag,
+                              };
 
+                lkuShop.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false && x.Sold == false);
+                lkuShop.Properties.DisplayMember = "OwnerId";
+                lkuShop.Properties.ValueMember = "PropertyId";
+            }
+
+        }
+
+        void LoadField()
+        {
+            using (RealEstateAutomationContext context = new RealEstateAutomationContext())
+            {
+                var entity2 = from f in context.Fields
+                              join p in context.Properties on f.PropertyId equals p.Id
+                              join o in context.Owners on f.OwnerId equals o.Id
+                              join ci in context.Cities on f.City equals ci.Id
+                              join co in context.Counties on f.County equals co.Id
+                              select new
+                              {
+                                  Id = f.Id,
+                                  PropertyId = f.PropertyId,
+                                  OwnerId = f.OwnerId,
+                                  OwnerName = o.FirstName,
+                                  Area = f.Area,
+                                  Pafta = f.Pafta,
+                                  City = ci.CityName,
+                                  County = co.CountyName,
+                                  Address = f.Address,
+                                  Price = f.Price,
+                                  Description = f.Description,
+                                  Sold = f.Sold,
+                                  DeleteFlag = f.DeleteFlag,
+                              };
+
+                lkuField.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false && x.Sold == false);
+                lkuField.Properties.DisplayMember = "OwnerName";
+                lkuField.Properties.ValueMember = "PropertyId";
+            }
         }
 
 
@@ -87,77 +186,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 case "Field":
                     try
                     {
-                        using (RealEstateAutomationContext context = new RealEstateAutomationContext())
-                        {
-                            var entity = from s in context.Sales
-
-                                         join p in context.Properties on s.SalePropertyId equals p.Id
-                                         join f in context.Fields on p.ReferenceId equals f.Id
-                                         join o in context.Owners on s.OwnerId equals o.Id
-                                         join ci in context.Cities on f.City equals ci.Id
-                                         join co in context.Counties on f.County equals co.Id
-                                         join c in context.Customers on s.CustomerId equals c.Id
-                                         where p.PropertyType == "Field"
-                                         select new
-                                         {
-                                             Id = s.Id,
-                                             SalePropertyId = s.SalePropertyId,
-                                             SalePropertyType = s.SalePropertyType,
-                                             OwnerId = o.FirstName,
-                                             CustomerId = c.FirstName,
-                                             Area = f.Area,
-                                             Pafta = f.Pafta,
-                                             City = ci.CityName,
-                                             County = co.CountyName,
-                                             Address = f.Address,
-                                             SalePrice = s.SalePrice,
-                                             SaleDate = s.SaleDate,
-                                             Description = f.Description,
-                                             Sold = f.Sold,
-                                             DeleteFlag = s.DeleteFlag,
-                                         };
-
-
-                            grcSale.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
-
-                            grwSale.Columns["Ada"].Visible = false;
-                            grwSale.Columns["HouseType"].Visible = false;
-                            grwSale.Columns["Pafta"].Visible = true;
-
-
-                            var entity2 = from f in context.Fields
-                                          join p in context.Properties on f.PropertyId equals p.Id
-                                          join o in context.Owners on f.OwnerId equals o.Id
-                                          join ci in context.Cities on f.City equals ci.Id
-                                          join co in context.Counties on f.County equals co.Id
-                                          select new
-                                          {
-                                              Id = f.Id,
-                                              PropertyId = f.PropertyId,
-                                              OwnerId = o.FirstName,
-                                              Area = f.Area,
-                                              Pafta = f.Pafta,
-                                              City = ci.CityName,
-                                              County = co.CountyName,
-                                              Address = f.Address,
-                                              Price = f.Price,
-                                              Description = f.Description,
-                                              Sold = f.Sold,
-                                              DeleteFlag = f.DeleteFlag,
-                                          };
-
-                            lycField.Visibility = LayoutVisibility.Always;
-                            lycShop.Visibility = LayoutVisibility.Never;
-                            lycHouse.Visibility = LayoutVisibility.Never;
-                            lycPlot.Visibility = LayoutVisibility.Never;
-
-                            lkuField.Properties.DataSource = entity2.ToList().Where(x => x.Sold == false && x.DeleteFlag == false);
-                            lkuField.Properties.DisplayMember = "OwnerId";
-                            lkuField.Properties.ValueMember = "Id";
-
-
-
-                        }
+                        LoadSaleField();
                     }
                     catch (Exception)
                     {
@@ -170,77 +199,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 case "House":
                     try
                     {
-                        using (RealEstateAutomationContext context = new RealEstateAutomationContext())
-                        {
-                            var entity = from s in context.Sales
-
-                                         join p in context.Properties on s.SalePropertyId equals p.Id
-                                         join h in context.Houses on p.ReferenceId equals h.Id
-                                         join o in context.Owners on s.OwnerId equals o.Id
-                                         join ci in context.Cities on h.City equals ci.Id
-                                         join co in context.Counties on h.County equals co.Id
-                                         join c in context.Customers on s.CustomerId equals c.Id
-                                         where p.PropertyType == "House"
-                                         select new
-                                         {
-                                             Id = s.Id,
-                                             SalePropertyId = s.SalePropertyId,
-                                             SalePropertyType = s.SalePropertyType,
-                                             OwnerId = o.FirstName,
-                                             CustomerId = c.FirstName,
-                                             Area = h.Area,
-                                             HouseType = h.HouseType,
-                                             City = ci.CityName,
-                                             County = co.CountyName,
-                                             Address = h.Address,
-                                             SalePrice = s.SalePrice,
-                                             SaleDate = s.SaleDate,
-                                             Description = h.Description,
-                                             Sold = h.Sold,
-                                             DeleteFlag = s.DeleteFlag,
-                                         };
-
-                            grcSale.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
-
-                            grwSale.Columns["Ada"].Visible = false;
-                            grwSale.Columns["HouseType"].Visible = true;
-                            grwSale.Columns["Pafta"].Visible = false;
-
-                            var entity2 = from h in context.Houses
-                                          join p in context.Properties on h.PropertyId equals p.Id
-                                          join o in context.Owners on h.OwnerId equals o.Id
-                                          join ci in context.Cities on h.City equals ci.Id
-                                          join co in context.Counties on h.County equals co.Id
-                                          select new
-                                          {
-                                              Id = h.Id,
-                                              PropertyId = h.PropertyId,
-                                              OwnerId = o.FirstName,
-                                              Area = h.Area,
-                                              HouseType = h.HouseType,
-                                              City = ci.CityName,
-                                              County = co.CountyName,
-                                              Address = h.Address,
-                                              Price = h.Price,
-                                              Description = h.Description,
-                                              Sold = h.Sold,
-                                              DeleteFlag = h.DeleteFlag,
-                                          };
-
-                            lycHouse.Visibility = LayoutVisibility.Always;
-                            lycField.Visibility = LayoutVisibility.Never;
-                            lycShop.Visibility = LayoutVisibility.Never;
-                            lycPlot.Visibility = LayoutVisibility.Never;
-
-                            lkuHouse.Properties.DataSource = entity2.ToList().Where(x => x.Sold == false && x.DeleteFlag == false);
-                            lkuHouse.Properties.DisplayMember = "OwnerId";
-                            lkuHouse.Properties.ValueMember = "Id";
-
-
-
-
-                        }
-
+                        LoadSaleHouse();
                     }
                     catch (Exception)
                     {
@@ -253,80 +212,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 case "Plot":
                     try
                     {
-                        using (RealEstateAutomationContext context = new RealEstateAutomationContext())
-                        {
-                            var entity = from s in context.Sales
-
-                                         join p in context.Properties on s.SalePropertyId equals p.Id
-                                         join pl in context.Plots on p.ReferenceId equals pl.Id
-                                         join o in context.Owners on s.OwnerId equals o.Id
-                                         join ci in context.Cities on pl.City equals ci.Id
-                                         join co in context.Counties on pl.County equals co.Id
-                                         join c in context.Customers on s.CustomerId equals c.Id
-                                         where p.PropertyType == "Plot"
-                                         select new
-                                         {
-                                             Id = s.Id,
-                                             SalePropertyId = s.SalePropertyId,
-                                             SalePropertyType = s.SalePropertyType,
-                                             OwnerId = o.FirstName,
-                                             CustomerId = c.FirstName,
-                                             Area = pl.Area,
-                                             Ada = pl.Ada,
-                                             Pafta = pl.Pafta,
-                                             City = ci.CityName,
-                                             County = co.CountyName,
-                                             Address = pl.Address,
-                                             SalePrice = s.SalePrice,
-                                             SaleDate = s.SaleDate,
-                                             Description = pl.Description,
-                                             Sold = pl.Sold,
-                                             DeleteFlag = s.DeleteFlag,
-                                         };
-
-
-                            grcSale.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
-
-                            grwSale.Columns["Ada"].Visible = true;
-                            grwSale.Columns["HouseType"].Visible = false;
-                            grwSale.Columns["Pafta"].Visible = true;
-
-                            var entity2 = from pl in context.Plots
-                                          join p in context.Properties on pl.PropertyId equals p.Id
-                                          join o in context.Owners on pl.OwnerId equals o.Id
-                                          join ci in context.Cities on pl.City equals ci.Id
-                                          join co in context.Counties on pl.County equals co.Id
-                                          select new
-                                          {
-                                              Id = pl.Id,
-                                              PropertyId = pl.PropertyId,
-                                              OwnerId = o.FirstName,
-                                              Area = pl.Area,
-                                              Ada = pl.Ada,
-                                              Pafta = pl.Pafta,
-                                              City = ci.CityName,
-                                              County = co.CountyName,
-                                              Address = pl.Address,
-                                              Price = pl.Price,
-                                              Description = pl.Description,
-                                              Sold = pl.Sold,
-                                              DeleteFlag = pl.DeleteFlag,
-                                          };
-
-                            lycPlot.Visibility = LayoutVisibility.Always;
-                            lycField.Visibility = LayoutVisibility.Never;
-                            lycShop.Visibility = LayoutVisibility.Never;
-                            lycHouse.Visibility = LayoutVisibility.Never;
-
-
-                            lkuPlot.Properties.DataSource = entity2.ToList().Where(x => x.Sold == false && x.DeleteFlag == false);
-                            lkuPlot.Properties.DisplayMember = "OwnerId";
-                            lkuPlot.Properties.ValueMember = "Id";
-
-
-
-
-                        }
+                        LoadSalePlot();
                     }
                     catch (Exception)
                     {
@@ -338,75 +224,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 case "Shop":
                     try
                     {
-                        using (RealEstateAutomationContext context = new RealEstateAutomationContext())
-                        {
-                            var entity = from s in context.Sales
-
-                                         join p in context.Properties on s.SalePropertyId equals p.Id
-                                         join sh in context.Shops on p.ReferenceId equals sh.Id
-                                         join o in context.Owners on s.OwnerId equals o.Id
-                                         join ci in context.Cities on sh.City equals ci.Id
-                                         join co in context.Counties on sh.County equals co.Id
-                                         join c in context.Customers on s.CustomerId equals c.Id
-                                         where p.PropertyType == "Shop"
-                                         select new
-                                         {
-                                             Id = s.Id,
-                                             SalePropertyId = s.SalePropertyId,
-                                             SalePropertyType = s.SalePropertyType,
-                                             OwnerId = o.FirstName,
-                                             CustomerId = c.FirstName,
-                                             Area = sh.Area,
-                                             City = ci.CityName,
-                                             County = co.CountyName,
-                                             Address = sh.Address,
-                                             SalePrice = s.SalePrice,
-                                             SaleDate = s.SaleDate,
-                                             Description = sh.Description,
-                                             Sold = sh.Sold,
-                                             DeleteFlag = s.DeleteFlag,
-                                         };
-
-
-                            grcSale.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
-
-                            grwSale.Columns["Ada"].Visible = false;
-                            grwSale.Columns["HouseType"].Visible = false;
-                            grwSale.Columns["Pafta"].Visible = false;
-
-                            var entity2 = from s in context.Shops
-                                          join p in context.Properties on s.PropertyId equals p.Id
-                                          join o in context.Owners on s.OwnerId equals o.Id
-                                          join ci in context.Cities on s.City equals ci.Id
-                                          join co in context.Counties on s.County equals co.Id
-                                          select new
-                                          {
-                                              Id = s.Id,
-                                              PropertyId = s.PropertyId,
-                                              OwnerId = o.FirstName,
-                                              Area = s.Area,
-                                              City = ci.CityName,
-                                              County = co.CountyName,
-                                              Address = s.Address,
-                                              Price = s.Price,
-                                              Description = s.Description,
-                                              Sold = s.Sold,
-                                              DeleteFlag = s.DeleteFlag,
-                                          };
-
-                            lycField.Visibility = LayoutVisibility.Never;
-                            lycShop.Visibility = LayoutVisibility.Always;
-                            lycHouse.Visibility = LayoutVisibility.Never;
-                            lycPlot.Visibility = LayoutVisibility.Never;
-
-                            lkuShop.Properties.DataSource = entity2.ToList().Where(x => x.Sold == false && x.DeleteFlag == false);
-                            lkuShop.Properties.DisplayMember = "OwnerId";
-                            lkuShop.Properties.ValueMember = "Id";
-
-
-
-
-                        }
+                        LoadSaleShop();
                     }
                     catch (Exception)
                     {
@@ -418,6 +236,196 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             }
         }
 
+        private void LoadSaleShop()
+        {
+            using (RealEstateAutomationContext context = new RealEstateAutomationContext())
+            {
+                var entity = from s in context.Sales
+                             join p in context.Properties on s.SalePropertyId equals p.Id
+                             join sh in context.Shops on p.ReferenceId equals sh.Id
+                             join o in context.Owners on s.OwnerId equals o.Id
+                             join ci in context.Cities on sh.City equals ci.Id
+                             join co in context.Counties on sh.County equals co.Id
+                             join c in context.Customers on s.CustomerId equals c.Id
+                             where p.PropertyType == "Shop"
+                             select new
+                             {
+                                 Id = s.Id,
+                                 SalePropertyId = s.SalePropertyId,
+                                 SalePropertyType = s.SalePropertyType,
+                                 OwnerId = o.FirstName,
+                                 CustomerId = c.FirstName,
+                                 Area = sh.Area,
+                                 City = ci.CityName,
+                                 County = co.CountyName,
+                                 Address = sh.Address,
+                                 SalePrice = s.SalePrice,
+                                 SaleDate = s.SaleDate,
+                                 Price = sh.Price,
+                                 Description = sh.Description,
+                                 Sold = sh.Sold,
+                                 DeleteFlag = sh.DeleteFlag,
+                                 SaleDeleteFlag = s.DeleteFlag,
+
+                             };
+
+
+                grcSale.DataSource = entity.ToList().Where(x => x.SaleDeleteFlag == false);
+
+                grwSale.Columns["Ada"].Visible = false;
+                grwSale.Columns["HouseType"].Visible = false;
+                grwSale.Columns["Pafta"].Visible = false;
+
+                lycField.Visibility = LayoutVisibility.Never;
+                lycShop.Visibility = LayoutVisibility.Always;
+                lycHouse.Visibility = LayoutVisibility.Never;
+                lycPlot.Visibility = LayoutVisibility.Never;
+            }
+        }
+
+        private void LoadSalePlot()
+        {
+            using (RealEstateAutomationContext context = new RealEstateAutomationContext())
+            {
+                var entity = from s in context.Sales
+                             join p in context.Properties on s.SalePropertyId equals p.Id
+                             join pl in context.Plots on p.ReferenceId equals pl.Id
+                             join o in context.Owners on s.OwnerId equals o.Id
+                             join ci in context.Cities on pl.City equals ci.Id
+                             join co in context.Counties on pl.County equals co.Id
+                             join c in context.Customers on s.CustomerId equals c.Id
+                             where p.PropertyType == "Plot"
+                             select new
+                             {
+                                 Id = s.Id,
+                                 SalePropertyId = s.SalePropertyId,
+                                 SalePropertyType = s.SalePropertyType,
+                                 OwnerId = o.FirstName,
+                                 CustomerId = c.FirstName,
+                                 Area = pl.Area,
+                                 Ada = pl.Ada,
+                                 Pafta = pl.Pafta,
+                                 City = ci.CityName,
+                                 County = co.CountyName,
+                                 Address = pl.Address,
+                                 SalePrice = s.SalePrice,
+                                 SaleDate = s.SaleDate,
+                                 Price = pl.Price,
+                                 DeleteFlag = pl.DeleteFlag,
+                                 Description = pl.Description,
+                                 Sold = pl.Sold,
+                                 SaleDeleteFlag = s.DeleteFlag,
+                             };
+
+
+                grcSale.DataSource = entity.ToList().Where(x => x.SaleDeleteFlag == false);
+
+                grwSale.Columns["Ada"].Visible = true;
+                grwSale.Columns["HouseType"].Visible = false;
+                grwSale.Columns["Pafta"].Visible = true;
+
+                lycPlot.Visibility = LayoutVisibility.Always;
+                lycField.Visibility = LayoutVisibility.Never;
+                lycShop.Visibility = LayoutVisibility.Never;
+                lycHouse.Visibility = LayoutVisibility.Never;
+            }
+        }
+
+        private void LoadSaleHouse()
+        {
+            using (RealEstateAutomationContext context = new RealEstateAutomationContext())
+            {
+                var entity = from s in context.Sales
+                             join p in context.Properties on s.SalePropertyId equals p.Id
+                             join h in context.Houses on p.ReferenceId equals h.Id
+                             join o in context.Owners on s.OwnerId equals o.Id
+                             join ci in context.Cities on h.City equals ci.Id
+                             join co in context.Counties on h.County equals co.Id
+                             join c in context.Customers on s.CustomerId equals c.Id
+                             where p.PropertyType == "House"
+                             select new
+                             {
+                                 Id = s.Id,
+                                 SalePropertyId = s.SalePropertyId,
+                                 SalePropertyType = s.SalePropertyType,
+                                 OwnerId = o.FirstName,
+                                 CustomerId = c.FirstName,
+                                 Area = h.Area,
+                                 HouseType = h.HouseType,
+                                 City = ci.CityName,
+                                 County = co.CountyName,
+                                 Address = h.Address,
+                                 SalePrice = s.SalePrice,
+                                 SaleDate = s.SaleDate,
+                                 Price = h.Price,
+                                 DeleteFlag = h.DeleteFlag,
+                                 Description = h.Description,
+                                 Sold = h.Sold,
+                                 SaleDeleteFlag = s.DeleteFlag,
+                             };
+
+                grcSale.DataSource = entity.ToList().Where(x => x.SaleDeleteFlag == false);
+
+                grwSale.Columns["Ada"].Visible = false;
+                grwSale.Columns["HouseType"].Visible = true;
+                grwSale.Columns["Pafta"].Visible = false;
+
+                lycHouse.Visibility = LayoutVisibility.Always;
+                lycField.Visibility = LayoutVisibility.Never;
+                lycShop.Visibility = LayoutVisibility.Never;
+                lycPlot.Visibility = LayoutVisibility.Never;
+            }
+        }
+
+        private void LoadSaleField()
+        {
+            using (RealEstateAutomationContext context = new RealEstateAutomationContext())
+            {
+                var entity = from s in context.Sales
+                             join p in context.Properties on s.SalePropertyId equals p.Id
+                             join f in context.Fields on p.ReferenceId equals f.Id
+                             join o in context.Owners on s.OwnerId equals o.Id
+                             join ci in context.Cities on f.City equals ci.Id
+                             join co in context.Counties on f.County equals co.Id
+                             join c in context.Customers on s.CustomerId equals c.Id
+                             where p.PropertyType == "Field"
+                             select new
+                             {
+                                 Id = s.Id,
+
+
+                                 SalePropertyId = s.SalePropertyId,
+                                 SalePropertyType = s.SalePropertyType,
+                                 OwnerId = o.FirstName,
+                                 CustomerId = c.FirstName,
+                                 Area = f.Area,
+                                 Pafta = f.Pafta,
+                                 City = ci.CityName,
+                                 County = co.CountyName,
+                                 Address = f.Address,
+                                 SalePrice = s.SalePrice,
+                                 SaleDate = s.SaleDate,
+                                 Price = f.Price,
+                                 DeleteFlag = f.DeleteFlag,
+                                 Description = f.Description,
+                                 Sold = f.Sold,
+                                 SaleDeleteFlag = s.DeleteFlag,
+                             };
+
+
+                grcSale.DataSource = entity.ToList().Where(x => x.SaleDeleteFlag == false);
+
+                grwSale.Columns["Ada"].Visible = false;
+                grwSale.Columns["HouseType"].Visible = false;
+                grwSale.Columns["Pafta"].Visible = true;
+
+                lycField.Visibility = LayoutVisibility.Always;
+                lycShop.Visibility = LayoutVisibility.Never;
+                lycHouse.Visibility = LayoutVisibility.Never;
+                lycPlot.Visibility = LayoutVisibility.Never;
+            }
+        }
+
 
         void LoadClick()
         {
@@ -425,8 +433,9 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             {
                 case "Field":
 
-                    // TODO bu kısımda kaldım sorun var bunu düzeltmem lazım veriler yanlış geliyor.
-                    if (grwSale.FocusedRowHandle > 0)
+                    LoadFieldClick();
+
+                    if (grwSale.FocusedRowHandle >= 0)
                     {
                         txtId.Text = grwSale.GetFocusedRowCellValue("Id").ToString();
                         lkuField.Text = grwSale.GetFocusedRowCellValue("OwnerId").ToString();
@@ -435,20 +444,175 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         txtSaleDate.Text = grwSale.GetFocusedRowCellValue("SaleDate").ToString();
                     }
 
-
                     break;
                 case "House":
 
+                    LoadHouseClick();
+
+                    if (grwSale.FocusedRowHandle >= 0)
+                    {
+                        txtId.Text = grwSale.GetFocusedRowCellValue("Id").ToString();
+                        lkuHouse.Text = grwSale.GetFocusedRowCellValue("OwnerId").ToString();
+                        lkuCustomerId.Text = grwSale.GetFocusedRowCellValue("CustomerId").ToString();
+                        txtSalePrice.Text = grwSale.GetFocusedRowCellValue("SalePrice").ToString();
+                        txtSaleDate.Text = grwSale.GetFocusedRowCellValue("SaleDate").ToString();
+                    }
 
                     break;
                 case "Plot":
 
+                    LoadPlotClick();
+
+
+                    if (grwSale.FocusedRowHandle >= 0)
+                    {
+                        txtId.Text = grwSale.GetFocusedRowCellValue("Id").ToString();
+                        lkuPlot.Text = grwSale.GetFocusedRowCellValue("OwnerId").ToString();
+                        lkuCustomerId.Text = grwSale.GetFocusedRowCellValue("CustomerId").ToString();
+                        txtSalePrice.Text = grwSale.GetFocusedRowCellValue("SalePrice").ToString();
+                        txtSaleDate.Text = grwSale.GetFocusedRowCellValue("SaleDate").ToString();
+                    }
 
                     break;
                 case "Shop":
 
+                    LoadShopClick();
+
+                    if (grwSale.FocusedRowHandle >= 0)
+                    {
+                        txtId.Text = grwSale.GetFocusedRowCellValue("Id").ToString();
+                        lkuShop.Text = grwSale.GetFocusedRowCellValue("OwnerId").ToString();
+                        lkuCustomerId.Text = grwSale.GetFocusedRowCellValue("CustomerId").ToString();
+                        txtSalePrice.Text = grwSale.GetFocusedRowCellValue("SalePrice").ToString();
+                        txtSaleDate.Text = grwSale.GetFocusedRowCellValue("SaleDate").ToString();
+                    }
 
                     break;
+            }
+        }
+
+        private void LoadShopClick()
+        {
+            using (RealEstateAutomationContext context = new RealEstateAutomationContext())
+            {
+                var entity2 = from s in context.Shops
+                              join p in context.Properties on s.PropertyId equals p.Id
+                              join o in context.Owners on s.OwnerId equals o.Id
+                              join ci in context.Cities on s.City equals ci.Id
+                              join co in context.Counties on s.County equals co.Id
+                              select new
+                              {
+                                  Id = s.Id,
+                                  PropertyId = s.PropertyId,
+                                  OwnerId = o.FirstName,
+                                  Area = s.Area,
+                                  City = ci.CityName,
+                                  County = co.CountyName,
+                                  Address = s.Address,
+                                  Price = s.Price,
+                                  Description = s.Description,
+                                  Sold = s.Sold,
+                                  DeleteFlag = s.DeleteFlag,
+                              };
+
+                lkuShop.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false && x.Sold == true);
+                lkuShop.Properties.DisplayMember = "OwnerId";
+                lkuShop.Properties.ValueMember = "PropertyId";
+            }
+        }
+
+        private void LoadPlotClick()
+        {
+            using (RealEstateAutomationContext context = new RealEstateAutomationContext())
+            {
+                var entity2 = from pl in context.Plots
+                              join p in context.Properties on pl.PropertyId equals p.Id
+                              join o in context.Owners on pl.OwnerId equals o.Id
+                              join ci in context.Cities on pl.City equals ci.Id
+                              join co in context.Counties on pl.County equals co.Id
+                              select new
+                              {
+                                  Id = pl.Id,
+                                  PropertyId = pl.PropertyId,
+                                  OwnerId = o.FirstName,
+                                  Area = pl.Area,
+                                  Ada = pl.Ada,
+                                  Pafta = pl.Pafta,
+                                  City = ci.CityName,
+                                  County = co.CountyName,
+                                  Address = pl.Address,
+                                  Price = pl.Price,
+                                  Description = pl.Description,
+                                  Sold = pl.Sold,
+                                  DeleteFlag = pl.DeleteFlag,
+                              };
+
+                lkuPlot.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false && x.Sold == true);
+                lkuPlot.Properties.DisplayMember = "OwnerId";
+                lkuPlot.Properties.ValueMember = "PropertyId";
+            }
+        }
+
+        private void LoadHouseClick()
+        {
+            using (RealEstateAutomationContext context = new RealEstateAutomationContext())
+            {
+                var entity2 = from h in context.Houses
+                              join p in context.Properties on h.PropertyId equals p.Id
+                              join o in context.Owners on h.OwnerId equals o.Id
+                              join ci in context.Cities on h.City equals ci.Id
+                              join co in context.Counties on h.County equals co.Id
+                              select new
+                              {
+                                  Id = h.Id,
+                                  PropertyId = h.PropertyId,
+                                  OwnerId = o.FirstName,
+                                  Area = h.Area,
+                                  HouseType = h.HouseType,
+                                  City = ci.CityName,
+                                  County = co.CountyName,
+                                  Address = h.Address,
+                                  Price = h.Price,
+                                  Description = h.Description,
+                                  Sold = h.Sold,
+                                  DeleteFlag = h.DeleteFlag,
+                              };
+
+                lkuHouse.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false && x.Sold == true);
+                lkuHouse.Properties.DisplayMember = "OwnerId";
+                lkuHouse.Properties.ValueMember = "PropertyId";
+            }
+        }
+
+        private void LoadFieldClick()
+        {
+            using (RealEstateAutomationContext context = new RealEstateAutomationContext())
+            {
+                var entity2 = from f in context.Fields
+                              join p in context.Properties on f.PropertyId equals p.Id
+                              join o in context.Owners on f.OwnerId equals o.Id
+                              join ci in context.Cities on f.City equals ci.Id
+                              join co in context.Counties on f.County equals co.Id
+                              select new
+                              {
+                                  Id = f.Id,
+                                  PropertyId = f.PropertyId,
+                                  OwnerId = f.OwnerId,
+                                  OwnerName = o.FirstName,
+                                  Area = f.Area,
+                                  Pafta = f.Pafta,
+                                  City = ci.CityName,
+                                  County = co.CountyName,
+                                  Address = f.Address,
+                                  Price = f.Price,
+                                  Description = f.Description,
+                                  Sold = f.Sold,
+                                  DeleteFlag = f.DeleteFlag,
+                              };
+
+                lkuField.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false && x.Sold == true);
+                lkuField.Properties.DisplayMember = "OwnerName";
+                lkuField.Properties.ValueMember = "PropertyId";
             }
         }
 
@@ -461,12 +625,14 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         void Clean()
         {
             txtId.Text = "";
-            // txtPropertyId.Text = "";
-            // cmbPropertyType.Text = "";
-            //txtOwnerName.Text = "";
+            lkuCustomerId.EditValue = 0;
+            lkuField.EditValue = 0;
+            lkuHouse.EditValue = 0;
+            lkuPlot.EditValue = 0;
+            lkuShop.EditValue = 0;
             txtSaleDate.Text = "";
             txtSalePrice.Text = "";
-            lkuCustomerId.Text = "";
+
         }
 
 
@@ -474,94 +640,249 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
             if (txtId.Text == "")
             {
+
                 DialogResult confirmation = MessageBox.Show(@"Are you sure you want to save the information?", @"Information", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
 
                 if (confirmation == DialogResult.Yes)
                 {
-                    _saleService.Add(new Sale
-                    {
-                        //OwnerId = Convert.ToInt32(txtOwnerId.Text),
-                        CustomerId = Convert.ToInt32(lkuCustomerId.Text),
-                        // SalePropertyId = Convert.ToInt32(txtPropertyId.Text),
-                        SaleDate = DateTime.Now,
-                        SalePrice = Convert.ToDecimal(txtSalePrice.Text),
-                        DeleteFlag = false
-                    });
+                    int selectedId = 0;
+                    int selectedOwnerId = 0;
+                    decimal selectedArea = 0;
+                    string selectedAda = "";
+                    string selectedPafta = "";
+                    string selectedHouseType = "";
+                    int selectedCity = 0;
+                    int selectedCounty = 0;
+                    string selectedAddress = "";
+                    decimal selectedPrice = 0;
+                    string selectedDescription = "";
+                    bool selectedSold = false;
+                    bool selectedDeleteFlag = false;
+
                     switch (cmbPropertyType.Text)
                     {
                         case "Field":
-                            //_fieldService.Update(new Field
-                            //{
-                            //    Id = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Id")),
-                            //    PropertyId = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "PropertyId")),
-                            //    OwnerId = Convert.ToInt32(lkuCustomerId.EditValue),
-                            //    Area = Convert.ToDecimal(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Area")),
-                            //    Pafta = grwField.GetRowCellValue(grwField.FocusedRowHandle, "Pafta").ToString(),
-                            //    City = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "City")),
-                            //    County = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "County")),
-                            //    Address = grwField.GetRowCellValue(grwField.FocusedRowHandle, "Address").ToString(),
-                            //    Price = Convert.ToDecimal(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Price")),
-                            //    Description = grwField.GetRowCellValue(grwField.FocusedRowHandle, "Description").ToString(),
-                            //    Sold = true,
-                            //    DeleteFlag = false
-                            //});
+
+
+                            int selectedFieldPropertyId = (int)lkuField.EditValue;
+                            var selectedField = _fieldService.GetAll()
+                                .FirstOrDefault(f => f.PropertyId == selectedFieldPropertyId);
+
+                            if (selectedField != null)
+                            {
+                                selectedId = selectedField.Id; // Seçilen Field'ın Id'sini al
+                                selectedOwnerId = selectedField.OwnerId; // Seçilen Field'ın OwnerId'sini al
+                                selectedArea = selectedField.Area;
+                                selectedPafta = selectedField.Pafta;
+                                selectedCity = selectedField.City;
+                                selectedCounty = selectedField.County;
+                                selectedAddress = selectedField.Address;
+                                selectedPrice = selectedField.Price;
+                                selectedDescription = selectedField.Description;
+                                selectedSold = selectedField.Sold;
+                                selectedDeleteFlag = selectedField.DeleteFlag;
+
+                            }
+
+                            if (selectedOwnerId != 0 && selectedId != 0)
+                            {
+                                _saleService.Add(new Sale
+                                {
+                                    OwnerId = selectedOwnerId,
+                                    SalePropertyId = selectedFieldPropertyId,
+                                    SalePropertyType = "Field",
+                                    CustomerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                                    SaleDate = DateTime.Now,
+                                    SalePrice = Convert.ToDecimal(txtSalePrice.Text),
+                                    DeleteFlag = false
+                                });
+
+                                _fieldService.Update(new Field
+                                {
+                                    Id = selectedId,
+                                    PropertyId = selectedFieldPropertyId,
+                                    OwnerId = selectedOwnerId,
+                                    Area = selectedArea,
+                                    Pafta = selectedPafta,
+                                    City = selectedCity,
+                                    County = selectedCounty,
+                                    Address = selectedAddress,
+                                    Price = selectedPrice,
+                                    Description = selectedDescription,
+                                    Sold = true,
+                                    DeleteFlag = selectedDeleteFlag
+                                });
+                            }
+
+                            LoadSaleField();
+
                             break;
+
                         case "House":
-                            //_houseService.Update(new House
-                            //{
-                            //    Id = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Id")),
-                            //    PropertyId = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "PropertyId")),
-                            //    OwnerId = Convert.ToInt32(lkuCustomerId.EditValue),
-                            //    Area = Convert.ToDecimal(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Area")),
-                            //    HouseType = grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "HouseType").ToString(),
-                            //    City = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "City")),
-                            //    County = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "County")),
-                            //    Address = grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Address").ToString(),
-                            //    Price = Convert.ToDecimal(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Price")),
-                            //    Description = grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Description").ToString(),
-                            //    Sold = true,
-                            //    DeleteFlag = false
-                            //});
 
+                            int selectedHousePropertyId = (int)lkuHouse.EditValue;
+                            var selectedHouse = _houseService.GetAll()
+                                .FirstOrDefault(f => f.PropertyId == selectedHousePropertyId);
+
+                            if (selectedHouse != null)
+                            {
+                                selectedId = selectedHouse.Id; // Seçilen Field'ın Id'sini al
+                                selectedOwnerId = selectedHouse.OwnerId; // Seçilen Field'ın OwnerId'sini al
+                                selectedArea = selectedHouse.Area;
+                                selectedHouseType = selectedHouse.HouseType;
+                                selectedCity = selectedHouse.City;
+                                selectedCounty = selectedHouse.County;
+                                selectedAddress = selectedHouse.Address;
+                                selectedPrice = selectedHouse.Price;
+                                selectedDescription = selectedHouse.Description;
+                                selectedSold = selectedHouse.Sold;
+                                selectedDeleteFlag = selectedHouse.DeleteFlag;
+
+                            }
+
+                            if (selectedOwnerId != 0 && selectedId != 0)
+                            {
+                                _saleService.Add(new Sale
+                                {
+                                    OwnerId = selectedOwnerId,
+                                    SalePropertyId = selectedHousePropertyId,
+                                    SalePropertyType = "House",
+                                    CustomerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                                    SaleDate = DateTime.Now,
+                                    SalePrice = Convert.ToDecimal(txtSalePrice.Text),
+                                    DeleteFlag = false
+                                });
+
+                                _houseService.Update(new House
+                                {
+                                    Id = selectedId,
+                                    PropertyId = selectedHousePropertyId,
+                                    OwnerId = selectedOwnerId,
+                                    Area = selectedArea,
+                                    HouseType = selectedHouseType,
+                                    City = selectedCity,
+                                    County = selectedCounty,
+                                    Address = selectedAddress,
+                                    Price = selectedPrice,
+                                    Description = selectedDescription,
+                                    Sold = true,
+                                    DeleteFlag = selectedDeleteFlag
+                                });
+                            }
+                            LoadSaleHouse();
                             break;
+
                         case "Plot":
-                            //_plotService.Update(new Plot
-                            //{
-                            //    Id = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Id")),
-                            //    PropertyId = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "PropertyId")),
-                            //    OwnerId = Convert.ToInt32(lkuCustomerId.EditValue),
-                            //    Area = Convert.ToDecimal(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Area")),
-                            //    Ada = grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Ada").ToString(),
-                            //    Pafta = grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Pafta").ToString(),
-                            //    City = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "City")),
-                            //    County = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "County")),
-                            //    Address = grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Address").ToString(),
-                            //    Price = Convert.ToDecimal(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Price")),
-                            //    Description = grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Description").ToString(),
-                            //    Sold = true,
-                            //    DeleteFlag = false
-                            //});
 
+                            int selectedPlotPropertyId = (int)lkuPlot.EditValue;
+                            var selectedPlot = _plotService.GetAll()
+                                .FirstOrDefault(f => f.PropertyId == selectedPlotPropertyId);
+
+                            if (selectedPlot != null)
+                            {
+                                selectedId = selectedPlot.Id; // Seçilen Field'ın Id'sini al
+                                selectedOwnerId = selectedPlot.OwnerId; // Seçilen Field'ın OwnerId'sini al
+                                selectedArea = selectedPlot.Area;
+                                selectedAda = selectedPlot.Ada;
+                                selectedPafta = selectedPlot.Pafta;
+                                selectedCity = selectedPlot.City;
+                                selectedCounty = selectedPlot.County;
+                                selectedAddress = selectedPlot.Address;
+                                selectedPrice = selectedPlot.Price;
+                                selectedDescription = selectedPlot.Description;
+                                selectedSold = selectedPlot.Sold;
+                                selectedDeleteFlag = selectedPlot.DeleteFlag;
+
+                            }
+
+                            if (selectedOwnerId != 0 && selectedId != 0)
+                            {
+                                _saleService.Add(new Sale
+                                {
+                                    OwnerId = selectedOwnerId,
+                                    SalePropertyId = selectedPlotPropertyId,
+                                    SalePropertyType = "Plot",
+                                    CustomerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                                    SaleDate = DateTime.Now,
+                                    SalePrice = Convert.ToDecimal(txtSalePrice.Text),
+                                    DeleteFlag = false
+                                });
+
+                                _plotService.Update(new Plot
+                                {
+                                    Id = selectedId,
+                                    PropertyId = selectedPlotPropertyId,
+                                    OwnerId = selectedOwnerId,
+                                    Area = selectedArea,
+                                    Ada = selectedAda,
+                                    Pafta = selectedPafta,
+                                    City = selectedCity,
+                                    County = selectedCounty,
+                                    Address = selectedAddress,
+                                    Price = selectedPrice,
+                                    Description = selectedDescription,
+                                    Sold = true,
+                                    DeleteFlag = selectedDeleteFlag
+                                });
+                            }
+                            LoadSalePlot();
                             break;
-                        case "Shop":
-                            //_shopService.Update(new Shop
-                            //{
-                            //    Id = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Id")),
-                            //    PropertyId = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "PropertyId")),
-                            //    OwnerId = Convert.ToInt32(lkuCustomerId.EditValue),
-                            //    Area = Convert.ToDecimal(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Area")),
-                            //    City = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "City")),
-                            //    County = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "County")),
-                            //    Address = grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Address").ToString(),
-                            //    Price = Convert.ToDecimal(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Price")),
-                            //    Description = grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Description").ToString(),
-                            //    Sold = true,
-                            //    DeleteFlag = false
-                            //});
 
+                        case "Shop":
+
+
+                            int selectedShopPropertyId = (int)lkuShop.EditValue;
+                            var selectedShop = _shopService.GetAll()
+                                .FirstOrDefault(f => f.PropertyId == selectedShopPropertyId);
+
+                            if (selectedShop != null)
+                            {
+                                selectedId = selectedShop.Id; // Seçilen Field'ın Id'sini al
+                                selectedOwnerId = selectedShop.OwnerId; // Seçilen Field'ın OwnerId'sini al
+                                selectedArea = selectedShop.Area;
+                                selectedCity = selectedShop.City;
+                                selectedCounty = selectedShop.County;
+                                selectedAddress = selectedShop.Address;
+                                selectedPrice = selectedShop.Price;
+                                selectedDescription = selectedShop.Description;
+                                selectedSold = selectedShop.Sold;
+                                selectedDeleteFlag = selectedShop.DeleteFlag;
+
+                            }
+
+                            if (selectedOwnerId != 0 && selectedId != 0)
+                            {
+                                _saleService.Add(new Sale
+                                {
+                                    OwnerId = selectedOwnerId,
+                                    SalePropertyId = selectedShopPropertyId,
+                                    SalePropertyType = "Shop",
+                                    CustomerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                                    SaleDate = DateTime.Now,
+                                    SalePrice = Convert.ToDecimal(txtSalePrice.Text),
+                                    DeleteFlag = false
+                                });
+
+                                _shopService.Update(new Shop
+                                {
+                                    Id = selectedId,
+                                    PropertyId = selectedShopPropertyId,
+                                    OwnerId = selectedOwnerId,
+                                    Area = selectedArea,
+                                    City = selectedCity,
+                                    County = selectedCounty,
+                                    Address = selectedAddress,
+                                    Price = selectedPrice,
+                                    Description = selectedDescription,
+                                    Sold = true,
+                                    DeleteFlag = selectedDeleteFlag
+                                });
+                            }
+                            LoadSaleShop();
                             break;
                     }
+
                 }
                 else
                 {
@@ -578,6 +899,83 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         private void grcSale_Click(object sender, EventArgs e)
         {
             LoadClick();
+        }
+
+        private void btnClear2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogResult confirmation = MessageBox.Show(@"Are you sure you want to clear the boxes?",
+                @"Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmation == DialogResult.Yes)
+            {
+                Clean();
+
+                switch (cmbPropertyType.Text)
+                {
+                    case "Field":
+                        LoadField();
+                        break;
+
+                    case "House":
+                        LoadHouse();
+                        break;
+
+                    case "Plot":
+                        LoadPlot();
+                        break;
+
+                    case "Shop":
+                        LoadShop();
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            DialogResult confirmation = MessageBox.Show(@"Are you sure you want to clear the boxes?",
+                @"Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmation == DialogResult.Yes)
+            {
+                Clean();
+
+                switch (cmbPropertyType.Text)
+                {
+                    case "Field":
+                        LoadField();
+                        break;
+
+                    case "House":
+                        LoadHouse();
+                        break;
+
+                    case "Plot":
+                        LoadPlot();
+                        break;
+
+                    case "Shop":
+                        LoadShop();
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnSale_Click(object sender, EventArgs e)
+        {
+            Sale();
         }
     }
 }

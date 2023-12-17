@@ -66,7 +66,7 @@
             this.SalePropertyId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SaleDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SalePrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DeleteFlag = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SaleDeleteFlag = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lkuHouse = new DevExpress.XtraEditors.LookUpEdit();
             this.lkuField = new DevExpress.XtraEditors.LookUpEdit();
             this.lkuPlot = new DevExpress.XtraEditors.LookUpEdit();
@@ -85,6 +85,10 @@
             this.lycField = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.Price = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Description = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Sold = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DeleteFlag = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -144,6 +148,7 @@
             this.btnClear2.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnClear2.ItemAppearance.Normal.Options.UseFont = true;
             this.btnClear2.Name = "btnClear2";
+            this.btnClear2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClear2_ItemClick);
             // 
             // btnDelete2
             // 
@@ -262,6 +267,7 @@
             this.btnSale.StyleController = this.layoutControl1;
             this.btnSale.TabIndex = 15;
             this.btnSale.Text = "SALE";
+            this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
             // 
             // btnDelete
             // 
@@ -286,6 +292,7 @@
             this.btnClear.StyleController = this.layoutControl1;
             this.btnClear.TabIndex = 13;
             this.btnClear.Text = "CLEAR";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtSalePrice
             // 
@@ -383,11 +390,15 @@
             this.City,
             this.County,
             this.Address,
+            this.Price,
+            this.Description,
+            this.Sold,
+            this.DeleteFlag,
             this.SalePropertyType,
             this.SalePropertyId,
             this.SaleDate,
             this.SalePrice,
-            this.DeleteFlag});
+            this.SaleDeleteFlag});
             this.grwSale.GridControl = this.grcSale;
             this.grwSale.Name = "grwSale";
             // 
@@ -497,11 +508,11 @@
             this.SalePrice.Visible = true;
             this.SalePrice.VisibleIndex = 10;
             // 
-            // DeleteFlag
+            // SaleDeleteFlag
             // 
-            this.DeleteFlag.Caption = "DeleteFlag";
-            this.DeleteFlag.FieldName = "DeleteFlag";
-            this.DeleteFlag.Name = "DeleteFlag";
+            this.SaleDeleteFlag.Caption = "DeleteFlag";
+            this.SaleDeleteFlag.FieldName = "DeleteFlag";
+            this.SaleDeleteFlag.Name = "SaleDeleteFlag";
             // 
             // lkuHouse
             // 
@@ -536,7 +547,8 @@
             this.lkuField.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PropertyId", "PropertyId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("OwnerId", "Owner Name"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("OwnerId", "OwnerId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("OwnerName", "Owner Name"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Area", "Area"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Pafta", "Pafta"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("City", "City"),
@@ -608,6 +620,7 @@
             this.layoutControlItem7.Size = new System.Drawing.Size(381, 24);
             this.layoutControlItem7.Text = "Id:";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(103, 19);
+            this.layoutControlItem7.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // layoutControlItem2
             // 
@@ -650,6 +663,7 @@
             this.layoutControlItem6.Size = new System.Drawing.Size(381, 24);
             this.layoutControlItem6.Text = "Sale Date:";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(103, 19);
+            this.layoutControlItem6.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // layoutControlItem10
             // 
@@ -752,6 +766,30 @@
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Ribbon = this.ribbonControl1;
             // 
+            // Price
+            // 
+            this.Price.Caption = "Price";
+            this.Price.FieldName = "Price";
+            this.Price.Name = "Price";
+            // 
+            // Description
+            // 
+            this.Description.Caption = "Description";
+            this.Description.FieldName = "Description";
+            this.Description.Name = "Description";
+            // 
+            // Sold
+            // 
+            this.Sold.Caption = "Sold";
+            this.Sold.FieldName = "Sold";
+            this.Sold.Name = "Sold";
+            // 
+            // DeleteFlag
+            // 
+            this.DeleteFlag.Caption = "DeleteFlag";
+            this.DeleteFlag.FieldName = "DeleteFlag";
+            this.DeleteFlag.Name = "DeleteFlag";
+            // 
             // SaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -836,7 +874,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn SalePropertyId;
         private DevExpress.XtraGrid.Columns.GridColumn SaleDate;
         private DevExpress.XtraGrid.Columns.GridColumn SalePrice;
-        private DevExpress.XtraGrid.Columns.GridColumn DeleteFlag;
+        private DevExpress.XtraGrid.Columns.GridColumn SaleDeleteFlag;
         private DevExpress.XtraEditors.LookUpEdit lkuShop;
         private DevExpress.XtraLayout.LayoutControlItem lycShop;
         private DevExpress.XtraEditors.LookUpEdit lkuHouse;
@@ -853,5 +891,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn County;
         private DevExpress.XtraGrid.Columns.GridColumn Address;
         private DevExpress.XtraGrid.Columns.GridColumn SalePropertyType;
+        private DevExpress.XtraGrid.Columns.GridColumn Price;
+        private DevExpress.XtraGrid.Columns.GridColumn Description;
+        private DevExpress.XtraGrid.Columns.GridColumn Sold;
+        private DevExpress.XtraGrid.Columns.GridColumn DeleteFlag;
     }
 }
