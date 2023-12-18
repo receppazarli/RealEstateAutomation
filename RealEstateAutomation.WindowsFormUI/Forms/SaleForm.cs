@@ -8,6 +8,7 @@ using RealEstateAutomation.Business.Abstract;
 using RealEstateAutomation.Business.DependencyResolvers;
 using RealEstateAutomation.DataAccess.Concrete.EntityFramework;
 using RealEstateAutomation.Entities.Concrete;
+using RealEstateAutomation.WindowsFormUI.Methods;
 
 namespace RealEstateAutomation.WindowsFormUI.Forms
 {
@@ -32,6 +33,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         private readonly IHouseService _houseService;
         private readonly IPlotService _plotService;
         private readonly IShopService _shopService;
+        private readonly CommonMethods _commonMethods = new CommonMethods();
 
         private void SaleForm_Load(object sender, EventArgs e)
         {
@@ -433,7 +435,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             {
                 case "Field":
 
-                    LoadFieldClick();
+                    LoadLookUpFieldClick();
 
                     if (grwSale.FocusedRowHandle >= 0)
                     {
@@ -443,11 +445,12 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         txtSalePrice.Text = grwSale.GetFocusedRowCellValue("SalePrice").ToString();
                         txtSaleDate.Text = grwSale.GetFocusedRowCellValue("SaleDate").ToString();
                     }
-
+                    
                     break;
+
                 case "House":
 
-                    LoadHouseClick();
+                    LoadLookUpHouseClick();
 
                     if (grwSale.FocusedRowHandle >= 0)
                     {
@@ -461,8 +464,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     break;
                 case "Plot":
 
-                    LoadPlotClick();
-
+                    LoadLookUpPlotClick();
 
                     if (grwSale.FocusedRowHandle >= 0)
                     {
@@ -476,7 +478,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     break;
                 case "Shop":
 
-                    LoadShopClick();
+                    LoadLookUpShopClick();
 
                     if (grwSale.FocusedRowHandle >= 0)
                     {
@@ -491,7 +493,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             }
         }
 
-        private void LoadShopClick()
+        private void LoadLookUpShopClick()
         {
             using (RealEstateAutomationContext context = new RealEstateAutomationContext())
             {
@@ -521,7 +523,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             }
         }
 
-        private void LoadPlotClick()
+        private void LoadLookUpPlotClick()
         {
             using (RealEstateAutomationContext context = new RealEstateAutomationContext())
             {
@@ -553,7 +555,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             }
         }
 
-        private void LoadHouseClick()
+        private void LoadLookUpHouseClick()
         {
             using (RealEstateAutomationContext context = new RealEstateAutomationContext())
             {
@@ -584,7 +586,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             }
         }
 
-        private void LoadFieldClick()
+        private void LoadLookUpFieldClick()
         {
             using (RealEstateAutomationContext context = new RealEstateAutomationContext())
             {
@@ -664,6 +666,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     {
                         case "Field":
 
+                            // TODO boşmu değil mi diye look up edit kontrol koyulcak
+                            // TODO exception kontrolü yapman lazım tip seçmenden işlem yapılırsa silme yapılırsa diye
 
                             int selectedFieldPropertyId = (int)lkuField.EditValue;
                             var selectedField = _fieldService.GetAll()
@@ -892,7 +896,517 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             }
             else if (txtId.Text != "")
             {
+                DialogResult confirmation = MessageBox.Show(@"Are you sure you want to update the information?", @"Information", MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Question);
 
+                if (confirmation == DialogResult.Yes)
+                {
+                    int selectedId = 0;
+                    int selectedOwnerId = 0;
+                    decimal selectedArea = 0;
+                    string selectedAda = "";
+                    string selectedPafta = "";
+                    string selectedHouseType = "";
+                    int selectedCity = 0;
+                    int selectedCounty = 0;
+                    string selectedAddress = "";
+                    decimal selectedPrice = 0;
+                    string selectedDescription = "";
+                    bool selectedSold = false;
+                    bool selectedDeleteFlag = false;
+
+                    switch (cmbPropertyType.Text)
+                    {
+                        case "Field":
+
+
+                            int selectedFieldPropertyId = (int)lkuField.EditValue;
+                            var selectedField = _fieldService.GetAll()
+                                .FirstOrDefault(f => f.PropertyId == selectedFieldPropertyId);
+
+                            if (selectedField != null)
+                            {
+                                selectedId = selectedField.Id; // Seçilen Field'ın Id'sini al
+                                selectedOwnerId = selectedField.OwnerId; // Seçilen Field'ın OwnerId'sini al
+                                selectedArea = selectedField.Area;
+                                selectedPafta = selectedField.Pafta;
+                                selectedCity = selectedField.City;
+                                selectedCounty = selectedField.County;
+                                selectedAddress = selectedField.Address;
+                                selectedPrice = selectedField.Price;
+                                selectedDescription = selectedField.Description;
+                                selectedSold = selectedField.Sold;
+                                selectedDeleteFlag = selectedField.DeleteFlag;
+
+                            }
+
+                            if (selectedOwnerId != 0 && selectedId != 0)
+                            {
+                                _saleService.Update(new Sale
+                                {
+                                    Id = Convert.ToInt32(txtId.Text),
+                                    OwnerId = selectedOwnerId,
+                                    SalePropertyId = selectedFieldPropertyId,
+                                    SalePropertyType = "Field",
+                                    CustomerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                                    SaleDate = DateTime.Now,
+                                    SalePrice = Convert.ToDecimal(txtSalePrice.Text),
+                                    DeleteFlag = false
+                                });
+
+                                _fieldService.Update(new Field
+                                {
+                                    Id = selectedId,
+                                    PropertyId = selectedFieldPropertyId,
+                                    OwnerId = selectedOwnerId,
+                                    Area = selectedArea,
+                                    Pafta = selectedPafta,
+                                    City = selectedCity,
+                                    County = selectedCounty,
+                                    Address = selectedAddress,
+                                    Price = selectedPrice,
+                                    Description = selectedDescription,
+                                    Sold = true,
+                                    DeleteFlag = selectedDeleteFlag
+                                });
+                            }
+
+                            LoadSaleField();
+
+                            break;
+
+                        case "House":
+
+                            int selectedHousePropertyId = (int)lkuHouse.EditValue;
+                            var selectedHouse = _houseService.GetAll()
+                                .FirstOrDefault(f => f.PropertyId == selectedHousePropertyId);
+
+                            if (selectedHouse != null)
+                            {
+                                selectedId = selectedHouse.Id; // Seçilen Field'ın Id'sini al
+                                selectedOwnerId = selectedHouse.OwnerId; // Seçilen Field'ın OwnerId'sini al
+                                selectedArea = selectedHouse.Area;
+                                selectedHouseType = selectedHouse.HouseType;
+                                selectedCity = selectedHouse.City;
+                                selectedCounty = selectedHouse.County;
+                                selectedAddress = selectedHouse.Address;
+                                selectedPrice = selectedHouse.Price;
+                                selectedDescription = selectedHouse.Description;
+                                selectedSold = selectedHouse.Sold;
+                                selectedDeleteFlag = selectedHouse.DeleteFlag;
+
+                            }
+
+                            if (selectedOwnerId != 0 && selectedId != 0)
+                            {
+                                _saleService.Update(new Sale
+                                {
+                                    Id = Convert.ToInt32(txtId.Text),
+                                    OwnerId = selectedOwnerId,
+                                    SalePropertyId = selectedHousePropertyId,
+                                    SalePropertyType = "House",
+                                    CustomerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                                    SaleDate = DateTime.Now,
+                                    SalePrice = Convert.ToDecimal(txtSalePrice.Text),
+                                    DeleteFlag = false
+                                });
+
+                                _houseService.Update(new House
+                                {
+                                    Id = selectedId,
+                                    PropertyId = selectedHousePropertyId,
+                                    OwnerId = selectedOwnerId,
+                                    Area = selectedArea,
+                                    HouseType = selectedHouseType,
+                                    City = selectedCity,
+                                    County = selectedCounty,
+                                    Address = selectedAddress,
+                                    Price = selectedPrice,
+                                    Description = selectedDescription,
+                                    Sold = true,
+                                    DeleteFlag = selectedDeleteFlag
+                                });
+                            }
+                            LoadSaleHouse();
+                            break;
+
+                        case "Plot":
+
+                            int selectedPlotPropertyId = (int)lkuPlot.EditValue;
+                            var selectedPlot = _plotService.GetAll()
+                                .FirstOrDefault(f => f.PropertyId == selectedPlotPropertyId);
+
+                            if (selectedPlot != null)
+                            {
+                                selectedId = selectedPlot.Id; // Seçilen Field'ın Id'sini al
+                                selectedOwnerId = selectedPlot.OwnerId; // Seçilen Field'ın OwnerId'sini al
+                                selectedArea = selectedPlot.Area;
+                                selectedAda = selectedPlot.Ada;
+                                selectedPafta = selectedPlot.Pafta;
+                                selectedCity = selectedPlot.City;
+                                selectedCounty = selectedPlot.County;
+                                selectedAddress = selectedPlot.Address;
+                                selectedPrice = selectedPlot.Price;
+                                selectedDescription = selectedPlot.Description;
+                                selectedSold = selectedPlot.Sold;
+                                selectedDeleteFlag = selectedPlot.DeleteFlag;
+
+                            }
+
+                            if (selectedOwnerId != 0 && selectedId != 0)
+                            {
+                                _saleService.Update(new Sale
+                                {
+                                    Id = Convert.ToInt32(txtId.Text),
+                                    OwnerId = selectedOwnerId,
+                                    SalePropertyId = selectedPlotPropertyId,
+                                    SalePropertyType = "Plot",
+                                    CustomerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                                    SaleDate = DateTime.Now,
+                                    SalePrice = Convert.ToDecimal(txtSalePrice.Text),
+                                    DeleteFlag = false
+                                });
+
+                                _plotService.Update(new Plot
+                                {
+                                    Id = selectedId,
+                                    PropertyId = selectedPlotPropertyId,
+                                    OwnerId = selectedOwnerId,
+                                    Area = selectedArea,
+                                    Ada = selectedAda,
+                                    Pafta = selectedPafta,
+                                    City = selectedCity,
+                                    County = selectedCounty,
+                                    Address = selectedAddress,
+                                    Price = selectedPrice,
+                                    Description = selectedDescription,
+                                    Sold = true,
+                                    DeleteFlag = selectedDeleteFlag
+                                });
+                            }
+                            LoadSalePlot();
+                            break;
+
+                        case "Shop":
+
+
+                            int selectedShopPropertyId = (int)lkuShop.EditValue;
+                            var selectedShop = _shopService.GetAll()
+                                .FirstOrDefault(f => f.PropertyId == selectedShopPropertyId);
+
+                            if (selectedShop != null)
+                            {
+                                selectedId = selectedShop.Id; // Seçilen Field'ın Id'sini al
+                                selectedOwnerId = selectedShop.OwnerId; // Seçilen Field'ın OwnerId'sini al
+                                selectedArea = selectedShop.Area;
+                                selectedCity = selectedShop.City;
+                                selectedCounty = selectedShop.County;
+                                selectedAddress = selectedShop.Address;
+                                selectedPrice = selectedShop.Price;
+                                selectedDescription = selectedShop.Description;
+                                selectedSold = selectedShop.Sold;
+                                selectedDeleteFlag = selectedShop.DeleteFlag;
+
+                            }
+
+                            if (selectedOwnerId != 0 && selectedId != 0)
+                            {
+                                _saleService.Update(new Sale
+                                {
+                                    Id = Convert.ToInt32(txtId.Text),
+                                    OwnerId = selectedOwnerId,
+                                    SalePropertyId = selectedShopPropertyId,
+                                    SalePropertyType = "Shop",
+                                    CustomerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                                    SaleDate = DateTime.Now,
+                                    SalePrice = Convert.ToDecimal(txtSalePrice.Text),
+                                    DeleteFlag = false
+                                });
+
+                                _shopService.Update(new Shop
+                                {
+                                    Id = selectedId,
+                                    PropertyId = selectedShopPropertyId,
+                                    OwnerId = selectedOwnerId,
+                                    Area = selectedArea,
+                                    City = selectedCity,
+                                    County = selectedCounty,
+                                    Address = selectedAddress,
+                                    Price = selectedPrice,
+                                    Description = selectedDescription,
+                                    Sold = true,
+                                    DeleteFlag = selectedDeleteFlag
+                                });
+                            }
+                            LoadSaleShop();
+                            break;
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        void Remove()
+        {
+            DialogResult confirmation = MessageBox.Show(@"Are you sure you want to remove the information?", @"Information", MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Question);
+
+            if (confirmation == DialogResult.Yes)
+            {
+                int selectedId = 0;
+                int selectedOwnerId = 0;
+                decimal selectedArea = 0;
+                string selectedAda = "";
+                string selectedPafta = "";
+                string selectedHouseType = "";
+                int selectedCity = 0;
+                int selectedCounty = 0;
+                string selectedAddress = "";
+                decimal selectedPrice = 0;
+                string selectedDescription = "";
+                bool selectedSold = false;
+                bool selectedDeleteFlag = false;
+
+                switch (cmbPropertyType.Text)
+                {
+                    case "Field":
+
+
+                        int selectedFieldPropertyId = (int)lkuField.EditValue;
+                        var selectedField = _fieldService.GetAll()
+                            .FirstOrDefault(f => f.PropertyId == selectedFieldPropertyId);
+
+                        if (selectedField != null)
+                        {
+                            selectedId = selectedField.Id; // Seçilen Field'ın Id'sini al
+                            selectedOwnerId = selectedField.OwnerId; // Seçilen Field'ın OwnerId'sini al
+                            selectedArea = selectedField.Area;
+                            selectedPafta = selectedField.Pafta;
+                            selectedCity = selectedField.City;
+                            selectedCounty = selectedField.County;
+                            selectedAddress = selectedField.Address;
+                            selectedPrice = selectedField.Price;
+                            selectedDescription = selectedField.Description;
+                            selectedSold = selectedField.Sold;
+                            selectedDeleteFlag = selectedField.DeleteFlag;
+
+                        }
+
+                        if (selectedOwnerId != 0 && selectedId != 0)
+                        {
+                            _saleService.Update(new Sale
+                            {
+                                Id = Convert.ToInt32(txtId.Text),
+                                OwnerId = selectedOwnerId,
+                                SalePropertyId = selectedFieldPropertyId,
+                                SalePropertyType = "Field",
+                                CustomerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                                SaleDate = DateTime.Now,
+                                SalePrice = Convert.ToDecimal(txtSalePrice.Text),
+                                DeleteFlag = true
+                            });
+
+                            _fieldService.Update(new Field
+                            {
+                                Id = selectedId,
+                                PropertyId = selectedFieldPropertyId,
+                                OwnerId = selectedOwnerId,
+                                Area = selectedArea,
+                                Pafta = selectedPafta,
+                                City = selectedCity,
+                                County = selectedCounty,
+                                Address = selectedAddress,
+                                Price = selectedPrice,
+                                Description = selectedDescription,
+                                Sold = false,
+                                DeleteFlag = selectedDeleteFlag
+                            });
+                        }
+
+                        LoadSaleField();
+                        Clean();
+                        break;
+
+                    case "House":
+
+                        int selectedHousePropertyId = (int)lkuHouse.EditValue;
+                        var selectedHouse = _houseService.GetAll()
+                            .FirstOrDefault(f => f.PropertyId == selectedHousePropertyId);
+
+                        if (selectedHouse != null)
+                        {
+                            selectedId = selectedHouse.Id; // Seçilen Field'ın Id'sini al
+                            selectedOwnerId = selectedHouse.OwnerId; // Seçilen Field'ın OwnerId'sini al
+                            selectedArea = selectedHouse.Area;
+                            selectedHouseType = selectedHouse.HouseType;
+                            selectedCity = selectedHouse.City;
+                            selectedCounty = selectedHouse.County;
+                            selectedAddress = selectedHouse.Address;
+                            selectedPrice = selectedHouse.Price;
+                            selectedDescription = selectedHouse.Description;
+                            selectedSold = selectedHouse.Sold;
+                            selectedDeleteFlag = selectedHouse.DeleteFlag;
+
+                        }
+
+                        if (selectedOwnerId != 0 && selectedId != 0)
+                        {
+                            _saleService.Update(new Sale
+                            {
+                                Id = Convert.ToInt32(txtId.Text),
+                                OwnerId = selectedOwnerId,
+                                SalePropertyId = selectedHousePropertyId,
+                                SalePropertyType = "House",
+                                CustomerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                                SaleDate = DateTime.Now,
+                                SalePrice = Convert.ToDecimal(txtSalePrice.Text),
+                                DeleteFlag = true
+                            });
+
+                            _houseService.Update(new House
+                            {
+                                Id = selectedId,
+                                PropertyId = selectedHousePropertyId,
+                                OwnerId = selectedOwnerId,
+                                Area = selectedArea,
+                                HouseType = selectedHouseType,
+                                City = selectedCity,
+                                County = selectedCounty,
+                                Address = selectedAddress,
+                                Price = selectedPrice,
+                                Description = selectedDescription,
+                                Sold = false,
+                                DeleteFlag = selectedDeleteFlag
+                            });
+                        }
+                        LoadSaleHouse();
+                        Clean();
+                        break;
+
+                    case "Plot":
+
+                        int selectedPlotPropertyId = (int)lkuPlot.EditValue;
+                        var selectedPlot = _plotService.GetAll()
+                            .FirstOrDefault(f => f.PropertyId == selectedPlotPropertyId);
+
+                        if (selectedPlot != null)
+                        {
+                            selectedId = selectedPlot.Id; // Seçilen Field'ın Id'sini al
+                            selectedOwnerId = selectedPlot.OwnerId; // Seçilen Field'ın OwnerId'sini al
+                            selectedArea = selectedPlot.Area;
+                            selectedAda = selectedPlot.Ada;
+                            selectedPafta = selectedPlot.Pafta;
+                            selectedCity = selectedPlot.City;
+                            selectedCounty = selectedPlot.County;
+                            selectedAddress = selectedPlot.Address;
+                            selectedPrice = selectedPlot.Price;
+                            selectedDescription = selectedPlot.Description;
+                            selectedSold = selectedPlot.Sold;
+                            selectedDeleteFlag = selectedPlot.DeleteFlag;
+
+                        }
+
+                        if (selectedOwnerId != 0 && selectedId != 0)
+                        {
+                            _saleService.Update(new Sale
+                            {
+                                Id = Convert.ToInt32(txtId.Text),
+                                OwnerId = selectedOwnerId,
+                                SalePropertyId = selectedPlotPropertyId,
+                                SalePropertyType = "Plot",
+                                CustomerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                                SaleDate = DateTime.Now,
+                                SalePrice = Convert.ToDecimal(txtSalePrice.Text),
+                                DeleteFlag = true
+                            });
+
+                            _plotService.Update(new Plot
+                            {
+                                Id = selectedId,
+                                PropertyId = selectedPlotPropertyId,
+                                OwnerId = selectedOwnerId,
+                                Area = selectedArea,
+                                Ada = selectedAda,
+                                Pafta = selectedPafta,
+                                City = selectedCity,
+                                County = selectedCounty,
+                                Address = selectedAddress,
+                                Price = selectedPrice,
+                                Description = selectedDescription,
+                                Sold = false,
+                                DeleteFlag = selectedDeleteFlag
+                            });
+                        }
+                        LoadSalePlot();
+                        Clean();
+                        break;
+
+                    case "Shop":
+
+
+                        int selectedShopPropertyId = (int)lkuShop.EditValue;
+                        var selectedShop = _shopService.GetAll()
+                            .FirstOrDefault(f => f.PropertyId == selectedShopPropertyId);
+
+                        if (selectedShop != null)
+                        {
+                            selectedId = selectedShop.Id; // Seçilen Field'ın Id'sini al
+                            selectedOwnerId = selectedShop.OwnerId; // Seçilen Field'ın OwnerId'sini al
+                            selectedArea = selectedShop.Area;
+                            selectedCity = selectedShop.City;
+                            selectedCounty = selectedShop.County;
+                            selectedAddress = selectedShop.Address;
+                            selectedPrice = selectedShop.Price;
+                            selectedDescription = selectedShop.Description;
+                            selectedSold = selectedShop.Sold;
+                            selectedDeleteFlag = selectedShop.DeleteFlag;
+
+                        }
+
+                        if (selectedOwnerId != 0 && selectedId != 0)
+                        {
+                            _saleService.Update(new Sale
+                            {
+                                Id = Convert.ToInt32(txtId.Text),
+                                OwnerId = selectedOwnerId,
+                                SalePropertyId = selectedShopPropertyId,
+                                SalePropertyType = "Shop",
+                                CustomerId = Convert.ToInt32(lkuCustomerId.EditValue),
+                                SaleDate = DateTime.Now,
+                                SalePrice = Convert.ToDecimal(txtSalePrice.Text),
+                                DeleteFlag = true
+                            });
+
+                            _shopService.Update(new Shop
+                            {
+                                Id = selectedId,
+                                PropertyId = selectedShopPropertyId,
+                                OwnerId = selectedOwnerId,
+                                Area = selectedArea,
+                                City = selectedCity,
+                                County = selectedCounty,
+                                Address = selectedAddress,
+                                Price = selectedPrice,
+                                Description = selectedDescription,
+                                Sold = false,
+                                DeleteFlag = selectedDeleteFlag
+                            });
+                        }
+                        LoadSaleShop();
+                        Clean();
+                        break;
+                }
+
+            }
+            else
+            {
+                MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
         }
 
@@ -976,6 +1490,48 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         private void btnSale_Click(object sender, EventArgs e)
         {
             Sale();
+        }
+
+        private void btnSale2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Sale();
+        }
+
+        private void btnDelete2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Remove();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Remove();
+        }
+
+        private void btnExcelTransfer2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            _commonMethods.ExcelTransfer(grwSale);
+        }
+
+        private void grwSale_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Right)
+            {
+                var position = MousePosition;
+                grwSale.Focus();
+                popupMenu1.ShowPopup(position);
+            }
+        }
+
+        private CustomerForm _customerForm = new CustomerForm();
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            _customerForm.ribbonControl1.Visible = true;
+            _customerForm.lcSave.Visibility = LayoutVisibility.Never;
+            _customerForm.lcDelete.Visibility = LayoutVisibility.Never;
+            _customerForm.lcClear.Visibility = LayoutVisibility.Never;
+            _customerForm.ShowDialog();
+            LoadSale();
         }
     }
 }

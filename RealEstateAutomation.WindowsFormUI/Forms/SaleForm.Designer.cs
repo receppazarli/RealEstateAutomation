@@ -41,6 +41,7 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnAddCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.lkuShop = new DevExpress.XtraEditors.LookUpEdit();
             this.btnSale = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
@@ -62,6 +63,10 @@
             this.City = new DevExpress.XtraGrid.Columns.GridColumn();
             this.County = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Address = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Price = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Description = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Sold = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DeleteFlag = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SalePropertyType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SalePropertyId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SaleDate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,21 +79,18 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lcClear = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lcDelete = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lcSale = new DevExpress.XtraLayout.LayoutControlItem();
             this.lycShop = new DevExpress.XtraLayout.LayoutControlItem();
             this.lycHouse = new DevExpress.XtraLayout.LayoutControlItem();
             this.lycSale = new DevExpress.XtraLayout.LayoutControlItem();
             this.lycPlot = new DevExpress.XtraLayout.LayoutControlItem();
             this.lycField = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.Price = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Description = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Sold = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DeleteFlag = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -107,16 +109,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcClear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcSale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lycShop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lycHouse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lycSale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lycPlot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lycField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,6 +162,7 @@
             this.btnDelete2.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnDelete2.ItemAppearance.Normal.Options.UseFont = true;
             this.btnDelete2.Name = "btnDelete2";
+            this.btnDelete2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelete2_ItemClick);
             // 
             // btnSale2
             // 
@@ -169,6 +173,7 @@
             this.btnSale2.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSale2.ItemAppearance.Normal.Options.UseFont = true;
             this.btnSale2.Name = "btnSale2";
+            this.btnSale2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSale2_ItemClick);
             // 
             // btnExcelTransfer2
             // 
@@ -179,6 +184,7 @@
             this.btnExcelTransfer2.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnExcelTransfer2.ItemAppearance.Normal.Options.UseFont = true;
             this.btnExcelTransfer2.Name = "btnExcelTransfer2";
+            this.btnExcelTransfer2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExcelTransfer2_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -211,6 +217,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnAddCustomer);
             this.layoutControl1.Controls.Add(this.lkuShop);
             this.layoutControl1.Controls.Add(this.btnSale);
             this.layoutControl1.Controls.Add(this.btnDelete);
@@ -231,6 +238,17 @@
             this.layoutControl1.Size = new System.Drawing.Size(1248, 485);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCustomer.ImageOptions.Image")));
+            this.btnAddCustomer.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnAddCustomer.Location = new System.Drawing.Point(1207, 156);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Size = new System.Drawing.Size(29, 22);
+            this.btnAddCustomer.StyleController = this.layoutControl1;
+            this.btnAddCustomer.TabIndex = 17;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // lkuShop
             // 
@@ -261,7 +279,7 @@
             this.btnSale.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSale.Appearance.Options.UseFont = true;
             this.btnSale.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSale.ImageOptions.Image")));
-            this.btnSale.Location = new System.Drawing.Point(859, 228);
+            this.btnSale.Location = new System.Drawing.Point(859, 230);
             this.btnSale.Name = "btnSale";
             this.btnSale.Size = new System.Drawing.Size(377, 36);
             this.btnSale.StyleController = this.layoutControl1;
@@ -274,19 +292,20 @@
             this.btnDelete.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(859, 308);
+            this.btnDelete.Location = new System.Drawing.Point(859, 310);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(377, 36);
             this.btnDelete.StyleController = this.layoutControl1;
             this.btnDelete.TabIndex = 14;
             this.btnDelete.Text = "DELETE";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
             this.btnClear.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnClear.Appearance.Options.UseFont = true;
             this.btnClear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.ImageOptions.Image")));
-            this.btnClear.Location = new System.Drawing.Point(859, 268);
+            this.btnClear.Location = new System.Drawing.Point(859, 270);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(377, 36);
             this.btnClear.StyleController = this.layoutControl1;
@@ -296,7 +315,7 @@
             // 
             // txtSalePrice
             // 
-            this.txtSalePrice.Location = new System.Drawing.Point(974, 180);
+            this.txtSalePrice.Location = new System.Drawing.Point(974, 182);
             this.txtSalePrice.MenuManager = this.ribbonControl1;
             this.txtSalePrice.Name = "txtSalePrice";
             this.txtSalePrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
@@ -317,7 +336,7 @@
             // 
             // txtSaleDate
             // 
-            this.txtSaleDate.Location = new System.Drawing.Point(974, 204);
+            this.txtSaleDate.Location = new System.Drawing.Point(974, 206);
             this.txtSaleDate.MenuManager = this.ribbonControl1;
             this.txtSaleDate.Name = "txtSaleDate";
             this.txtSaleDate.Size = new System.Drawing.Size(262, 20);
@@ -343,7 +362,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Description", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DeleteFlag", "DeleteFlag", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lkuCustomerId.Properties.NullText = "Please Choose";
-            this.lkuCustomerId.Size = new System.Drawing.Size(262, 20);
+            this.lkuCustomerId.Size = new System.Drawing.Size(229, 20);
             this.lkuCustomerId.StyleController = this.layoutControl1;
             this.lkuCustomerId.TabIndex = 6;
             // 
@@ -401,6 +420,7 @@
             this.SaleDeleteFlag});
             this.grwSale.GridControl = this.grcSale;
             this.grwSale.Name = "grwSale";
+            this.grwSale.MouseDown += new System.Windows.Forms.MouseEventHandler(this.grwSale_MouseDown);
             // 
             // Id
             // 
@@ -479,6 +499,30 @@
             this.Address.Name = "Address";
             this.Address.Visible = true;
             this.Address.VisibleIndex = 8;
+            // 
+            // Price
+            // 
+            this.Price.Caption = "Price";
+            this.Price.FieldName = "Price";
+            this.Price.Name = "Price";
+            // 
+            // Description
+            // 
+            this.Description.Caption = "Description";
+            this.Description.FieldName = "Description";
+            this.Description.Name = "Description";
+            // 
+            // Sold
+            // 
+            this.Sold.Caption = "Sold";
+            this.Sold.FieldName = "Sold";
+            this.Sold.Name = "Sold";
+            // 
+            // DeleteFlag
+            // 
+            this.DeleteFlag.Caption = "DeleteFlag";
+            this.DeleteFlag.FieldName = "DeleteFlag";
+            this.DeleteFlag.Name = "DeleteFlag";
             // 
             // SalePropertyType
             // 
@@ -596,16 +640,17 @@
             this.layoutControlItem7,
             this.layoutControlItem2,
             this.layoutControlItem4,
-            this.layoutControlItem9,
+            this.lcClear,
             this.layoutControlItem6,
-            this.layoutControlItem10,
-            this.layoutControlItem11,
+            this.lcDelete,
+            this.lcSale,
             this.lycShop,
             this.lycHouse,
             this.lycSale,
             this.lycPlot,
             this.lycField,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem1});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1248, 485);
             this.layoutControlGroup1.TextVisible = false;
@@ -638,50 +683,50 @@
             this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem4.Control = this.txtSalePrice;
-            this.layoutControlItem4.Location = new System.Drawing.Point(847, 168);
+            this.layoutControlItem4.Location = new System.Drawing.Point(847, 170);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(381, 24);
             this.layoutControlItem4.Text = "Sale Price:";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(103, 19);
             // 
-            // layoutControlItem9
+            // lcClear
             // 
-            this.layoutControlItem9.Control = this.btnClear;
-            this.layoutControlItem9.Location = new System.Drawing.Point(847, 256);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(381, 40);
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextVisible = false;
+            this.lcClear.Control = this.btnClear;
+            this.lcClear.Location = new System.Drawing.Point(847, 258);
+            this.lcClear.Name = "lcClear";
+            this.lcClear.Size = new System.Drawing.Size(381, 40);
+            this.lcClear.TextSize = new System.Drawing.Size(0, 0);
+            this.lcClear.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem6.Control = this.txtSaleDate;
-            this.layoutControlItem6.Location = new System.Drawing.Point(847, 192);
+            this.layoutControlItem6.Location = new System.Drawing.Point(847, 194);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(381, 24);
             this.layoutControlItem6.Text = "Sale Date:";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(103, 19);
             this.layoutControlItem6.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
-            // layoutControlItem10
+            // lcDelete
             // 
-            this.layoutControlItem10.Control = this.btnDelete;
-            this.layoutControlItem10.Location = new System.Drawing.Point(847, 296);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(381, 169);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
+            this.lcDelete.Control = this.btnDelete;
+            this.lcDelete.Location = new System.Drawing.Point(847, 298);
+            this.lcDelete.Name = "lcDelete";
+            this.lcDelete.Size = new System.Drawing.Size(381, 167);
+            this.lcDelete.TextSize = new System.Drawing.Size(0, 0);
+            this.lcDelete.TextVisible = false;
             // 
-            // layoutControlItem11
+            // lcSale
             // 
-            this.layoutControlItem11.Control = this.btnSale;
-            this.layoutControlItem11.Location = new System.Drawing.Point(847, 216);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(381, 40);
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem11.TextVisible = false;
+            this.lcSale.Control = this.btnSale;
+            this.lcSale.Location = new System.Drawing.Point(847, 218);
+            this.lcSale.Name = "lcSale";
+            this.lcSale.Size = new System.Drawing.Size(381, 40);
+            this.lcSale.TextSize = new System.Drawing.Size(0, 0);
+            this.lcSale.TextVisible = false;
             // 
             // lycShop
             // 
@@ -753,9 +798,18 @@
             this.layoutControlItem3.Control = this.lkuCustomerId;
             this.layoutControlItem3.Location = new System.Drawing.Point(847, 144);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(381, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(348, 26);
             this.layoutControlItem3.Text = "Customer Name:";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(103, 19);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.btnAddCustomer;
+            this.layoutControlItem1.Location = new System.Drawing.Point(1195, 144);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(33, 26);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
             // 
             // popupMenu1
             // 
@@ -765,30 +819,6 @@
             this.popupMenu1.ItemLinks.Add(this.btnExcelTransfer2);
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Ribbon = this.ribbonControl1;
-            // 
-            // Price
-            // 
-            this.Price.Caption = "Price";
-            this.Price.FieldName = "Price";
-            this.Price.Name = "Price";
-            // 
-            // Description
-            // 
-            this.Description.Caption = "Description";
-            this.Description.FieldName = "Description";
-            this.Description.Name = "Description";
-            // 
-            // Sold
-            // 
-            this.Sold.Caption = "Sold";
-            this.Sold.FieldName = "Sold";
-            this.Sold.Name = "Sold";
-            // 
-            // DeleteFlag
-            // 
-            this.DeleteFlag.Caption = "DeleteFlag";
-            this.DeleteFlag.FieldName = "DeleteFlag";
-            this.DeleteFlag.Name = "DeleteFlag";
             // 
             // SaleForm
             // 
@@ -818,16 +848,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcClear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcSale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lycShop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lycHouse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lycSale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lycPlot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lycField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -865,9 +896,8 @@
         private DevExpress.XtraEditors.SimpleButton btnSale;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnClear;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private DevExpress.XtraLayout.LayoutControlItem lcClear;
+        private DevExpress.XtraLayout.LayoutControlItem lcDelete;
         private DevExpress.XtraGrid.Columns.GridColumn Id;
         private DevExpress.XtraGrid.Columns.GridColumn OwnerId;
         private DevExpress.XtraGrid.Columns.GridColumn CustomerId;
@@ -895,5 +925,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn Description;
         private DevExpress.XtraGrid.Columns.GridColumn Sold;
         private DevExpress.XtraGrid.Columns.GridColumn DeleteFlag;
+        private DevExpress.XtraEditors.SimpleButton btnAddCustomer;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem lcSale;
     }
 }

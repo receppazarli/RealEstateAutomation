@@ -8,5 +8,6 @@ namespace RealEstateAutomation.Business.Abstract
         void Add(Sale sale);
         List<Sale> GetAll();
 
+        void Update(Sale sale);
     }
 }

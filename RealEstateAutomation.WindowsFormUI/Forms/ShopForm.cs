@@ -338,7 +338,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void grwShop_MouseDown(object sender, MouseEventArgs e)
         {
-
             if (e.Button == MouseButtons.Right)
             {
                 var position = MousePosition;

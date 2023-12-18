@@ -250,6 +250,14 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             }
         }
 
+        private void btnSave2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Save();
+        }
 
+        private void btnRemove2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Remove();
+        }
     }
 }

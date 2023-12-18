@@ -78,11 +78,11 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtDescription2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lcDelete = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lcClear = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lcSave = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
             this.simpleSeparator2 = new DevExpress.XtraLayout.SimpleSeparator();
             this.simpleSeparator3 = new DevExpress.XtraLayout.SimpleSeparator();
@@ -118,11 +118,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcClear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator3)).BeginInit();
@@ -167,6 +167,7 @@
             this.btnSave2.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSave2.ItemAppearance.Normal.Options.UseFont = true;
             this.btnSave2.Name = "btnSave2";
+            this.btnSave2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSave2_ItemClick);
             // 
             // btnRemove2
             // 
@@ -177,6 +178,7 @@
             this.btnRemove2.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnRemove2.ItemAppearance.Normal.Options.UseFont = true;
             this.btnRemove2.Name = "btnRemove2";
+            this.btnRemove2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemove2_ItemClick);
             // 
             // btnClear2
             // 
@@ -544,11 +546,11 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.txtDescription2,
-            this.layoutControlItem4,
-            this.layoutControlItem8,
+            this.lcDelete,
+            this.lcClear,
             this.layoutControlItem10,
             this.layoutControlItem7,
-            this.layoutControlItem5,
+            this.lcSave,
             this.simpleSeparator1,
             this.simpleSeparator2,
             this.simpleSeparator3,
@@ -660,23 +662,23 @@
             this.txtDescription2.Text = "Description :";
             this.txtDescription2.TextSize = new System.Drawing.Size(88, 19);
             // 
-            // layoutControlItem4
+            // lcDelete
             // 
-            this.layoutControlItem4.Control = this.btnRemove;
-            this.layoutControlItem4.Location = new System.Drawing.Point(847, 294);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(381, 40);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
+            this.lcDelete.Control = this.btnRemove;
+            this.lcDelete.Location = new System.Drawing.Point(847, 294);
+            this.lcDelete.Name = "lcDelete";
+            this.lcDelete.Size = new System.Drawing.Size(381, 40);
+            this.lcDelete.TextSize = new System.Drawing.Size(0, 0);
+            this.lcDelete.TextVisible = false;
             // 
-            // layoutControlItem8
+            // lcClear
             // 
-            this.layoutControlItem8.Control = this.btnClear;
-            this.layoutControlItem8.Location = new System.Drawing.Point(847, 335);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(381, 40);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextVisible = false;
+            this.lcClear.Control = this.btnClear;
+            this.lcClear.Location = new System.Drawing.Point(847, 335);
+            this.lcClear.Name = "lcClear";
+            this.lcClear.Size = new System.Drawing.Size(381, 40);
+            this.lcClear.TextSize = new System.Drawing.Size(0, 0);
+            this.lcClear.TextVisible = false;
             // 
             // layoutControlItem10
             // 
@@ -700,14 +702,14 @@
             this.layoutControlItem7.Text = "Nationality ID:";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(88, 19);
             // 
-            // layoutControlItem5
+            // lcSave
             // 
-            this.layoutControlItem5.Control = this.btnSave;
-            this.layoutControlItem5.Location = new System.Drawing.Point(847, 252);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(381, 40);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
+            this.lcSave.Control = this.btnSave;
+            this.lcSave.Location = new System.Drawing.Point(847, 252);
+            this.lcSave.Name = "lcSave";
+            this.lcSave.Size = new System.Drawing.Size(381, 40);
+            this.lcSave.TextSize = new System.Drawing.Size(0, 0);
+            this.lcSave.TextVisible = false;
             // 
             // simpleSeparator1
             // 
@@ -834,11 +836,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcClear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator3)).EndInit();
@@ -859,7 +861,7 @@
 
         #endregion
 
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        public DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
@@ -902,9 +904,6 @@
         private DevExpress.XtraEditors.SimpleButton btnClear;
         private DevExpress.XtraEditors.SimpleButton btnRemove;
         private DevExpress.XtraEditors.SimpleButton btnSave;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraBars.BarButtonItem btnExcel;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
@@ -925,5 +924,8 @@
         private DevExpress.XtraLayout.SimpleSeparator simpleSeparator10;
         private DevExpress.XtraLayout.SimpleSeparator simpleSeparator11;
         private DevExpress.XtraLayout.SimpleSeparator simpleSeparator12;
+        public DevExpress.XtraLayout.LayoutControlItem lcSave;
+        public DevExpress.XtraLayout.LayoutControlItem lcDelete;
+        public DevExpress.XtraLayout.LayoutControlItem lcClear;
     }
 }
