@@ -69,6 +69,7 @@ namespace RealEstateAutomation.Business.Concrete
 
         public void Update(Sale sale)
         {
+
             try
             {
                 ValidationTool.Validate(new SaleValidator(), sale);
@@ -81,32 +82,21 @@ namespace RealEstateAutomation.Business.Concrete
                 {
                     case 2627: // Unique key 
 
-                        MessageBox.Show("This record already exists please check your details.", "Information",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
 
                     default:
-                        MessageBox.Show("An unexpected database error occurred, please try again.", "Information",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                 }
             }
 
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(
-            //        ex.InnerException == null ? ex.Message : "This record already exists please check your details",
-            //        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            catch (ValidationException ve)
-            {
-                // Validasyon hataları için özel bir işlem
-                MessageBox.Show(ve.Message, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             catch (Exception ex)
+
             {
-                // Genel hata işleme
-                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    ex.InnerException == null ? ex.Message : "This record already exists please check your details",
+                    "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using DevExpress.DashboardCommon.DataProcessing;
-using DevExpress.Utils.Extensions;
 using DevExpress.XtraLayout.Utils;
 using RealEstateAutomation.Business.Abstract;
 using RealEstateAutomation.Business.DependencyResolvers;
@@ -445,7 +443,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         txtSalePrice.Text = grwSale.GetFocusedRowCellValue("SalePrice").ToString();
                         txtSaleDate.Text = grwSale.GetFocusedRowCellValue("SaleDate").ToString();
                     }
-                    
+
                     break;
 
                 case "House":
@@ -490,6 +488,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     }
 
                     break;
+
             }
         }
 
@@ -517,7 +516,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                   DeleteFlag = s.DeleteFlag,
                               };
 
-                lkuShop.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false && x.Sold == true);
+                lkuShop.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false);
                 lkuShop.Properties.DisplayMember = "OwnerId";
                 lkuShop.Properties.ValueMember = "PropertyId";
             }
@@ -549,7 +548,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                   DeleteFlag = pl.DeleteFlag,
                               };
 
-                lkuPlot.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false && x.Sold == true);
+                lkuPlot.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false);
                 lkuPlot.Properties.DisplayMember = "OwnerId";
                 lkuPlot.Properties.ValueMember = "PropertyId";
             }
@@ -580,7 +579,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                   DeleteFlag = h.DeleteFlag,
                               };
 
-                lkuHouse.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false && x.Sold == true);
+                lkuHouse.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false);
                 lkuHouse.Properties.DisplayMember = "OwnerId";
                 lkuHouse.Properties.ValueMember = "PropertyId";
             }
@@ -612,7 +611,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                   DeleteFlag = f.DeleteFlag,
                               };
 
-                lkuField.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false && x.Sold == true);
+                lkuField.Properties.DataSource = entity2.ToList().Where(x => x.DeleteFlag == false);
                 lkuField.Properties.DisplayMember = "OwnerName";
                 lkuField.Properties.ValueMember = "PropertyId";
             }
@@ -628,12 +627,12 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
             txtId.Text = "";
             lkuCustomerId.EditValue = 0;
-            lkuField.EditValue = 0;
-            lkuHouse.EditValue = 0;
-            lkuPlot.EditValue = 0;
-            lkuShop.EditValue = 0;
+            lkuField.EditValue = null;
+            lkuHouse.EditValue = null;
+            lkuPlot.EditValue = null;
+            lkuShop.EditValue = null;
             txtSaleDate.Text = "";
-            txtSalePrice.Text = "";
+            txtSalePrice.Text = "0";
 
         }
 
@@ -648,6 +647,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                 if (confirmation == DialogResult.Yes)
                 {
+                    int selectedFieldPropertyId = 0;
+                    int selectedHousePropertyId = 0;
+                    int selectedPlotPropertyId = 0;
+                    int selectedShopPropertyId = 0;
                     int selectedId = 0;
                     int selectedOwnerId = 0;
                     decimal selectedArea = 0;
@@ -666,10 +669,16 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     {
                         case "Field":
 
-                            // TODO boşmu değil mi diye look up edit kontrol koyulcak
-                            // TODO exception kontrolü yapman lazım tip seçmenden işlem yapılırsa silme yapılırsa diye
+                            if (lkuField.EditValue == null)
+                            {
+                                MessageBox.Show(@"Field cannot be empty, please select a field.", @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                break;
+                            }
+                            else
+                            {
+                                selectedFieldPropertyId = (int)lkuField.EditValue;
+                            }
 
-                            int selectedFieldPropertyId = (int)lkuField.EditValue;
                             var selectedField = _fieldService.GetAll()
                                 .FirstOrDefault(f => f.PropertyId == selectedFieldPropertyId);
 
@@ -686,7 +695,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                 selectedDescription = selectedField.Description;
                                 selectedSold = selectedField.Sold;
                                 selectedDeleteFlag = selectedField.DeleteFlag;
-
                             }
 
                             if (selectedOwnerId != 0 && selectedId != 0)
@@ -725,7 +733,19 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                         case "House":
 
-                            int selectedHousePropertyId = (int)lkuHouse.EditValue;
+                            if (lkuHouse.EditValue == null)
+                            {
+                                MessageBox.Show(@"House  cannot be empty, please select a house.", @"Information", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                                break;
+                            }
+                            else
+                            {
+                                selectedHousePropertyId = (int)lkuHouse.EditValue;
+                            }
+
+
+                            //selectedHousePropertyId = (int)lkuHouse.EditValue;
                             var selectedHouse = _houseService.GetAll()
                                 .FirstOrDefault(f => f.PropertyId == selectedHousePropertyId);
 
@@ -779,7 +799,18 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                         case "Plot":
 
-                            int selectedPlotPropertyId = (int)lkuPlot.EditValue;
+                            if (lkuPlot.EditValue == null)
+                            {
+
+                                MessageBox.Show(@"Plot  cannot be empty, please select a plot.", @"Information", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                                break;
+                            }
+                            else
+                            {
+                                selectedPlotPropertyId = (int)lkuPlot.EditValue;
+                            }
+
                             var selectedPlot = _plotService.GetAll()
                                 .FirstOrDefault(f => f.PropertyId == selectedPlotPropertyId);
 
@@ -835,8 +866,18 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                         case "Shop":
 
+                            if (lkuShop.EditValue == null)
+                            {
 
-                            int selectedShopPropertyId = (int)lkuShop.EditValue;
+                                MessageBox.Show(@"Shop  cannot be empty, please select a shop.", @"Information", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                                break;
+                            }
+                            else
+                            {
+                                selectedShopPropertyId = (int)lkuShop.EditValue;
+                            }
+
                             var selectedShop = _shopService.GetAll()
                                 .FirstOrDefault(f => f.PropertyId == selectedShopPropertyId);
 
@@ -884,6 +925,11 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                 });
                             }
                             LoadSaleShop();
+                            break;
+
+                        default:
+                            MessageBox.Show(@"Please select a property type.", @"Information", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
                             break;
                     }
 
@@ -901,6 +947,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                 if (confirmation == DialogResult.Yes)
                 {
+                    int selectedFieldPropertyId = 0;
+                    int selectedHousePropertyId = 0;
+                    int selectedPlotPropertyId = 0;
+                    int selectedShopPropertyId = 0;
                     int selectedId = 0;
                     int selectedOwnerId = 0;
                     decimal selectedArea = 0;
@@ -919,8 +969,16 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     {
                         case "Field":
 
+                            if (lkuField.EditValue == null)
+                            {
+                                MessageBox.Show(@"Field cannot be empty, please select a field.", @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                break;
+                            }
+                            else
+                            {
+                                selectedFieldPropertyId = (int)lkuField.EditValue;
+                            }
 
-                            int selectedFieldPropertyId = (int)lkuField.EditValue;
                             var selectedField = _fieldService.GetAll()
                                 .FirstOrDefault(f => f.PropertyId == selectedFieldPropertyId);
 
@@ -944,7 +1002,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                             {
                                 _saleService.Update(new Sale
                                 {
-                                    Id = Convert.ToInt32(txtId.Text),
+                                    Id = Convert.ToInt32(grwSale.GetRowCellValue(grwSale.FocusedRowHandle, "Id")),
                                     OwnerId = selectedOwnerId,
                                     SalePropertyId = selectedFieldPropertyId,
                                     SalePropertyType = "Field",
@@ -977,7 +1035,17 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                         case "House":
 
-                            int selectedHousePropertyId = (int)lkuHouse.EditValue;
+                            if (lkuHouse.EditValue == null)
+                            {
+                                MessageBox.Show(@"House  cannot be empty, please select a house.", @"Information", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                                break;
+                            }
+                            else
+                            {
+                                selectedHousePropertyId = (int)lkuHouse.EditValue;
+                            }
+
                             var selectedHouse = _houseService.GetAll()
                                 .FirstOrDefault(f => f.PropertyId == selectedHousePropertyId);
 
@@ -1001,7 +1069,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                             {
                                 _saleService.Update(new Sale
                                 {
-                                    Id = Convert.ToInt32(txtId.Text),
+                                    Id = Convert.ToInt32(grwSale.GetRowCellValue(grwSale.FocusedRowHandle, "Id")),
                                     OwnerId = selectedOwnerId,
                                     SalePropertyId = selectedHousePropertyId,
                                     SalePropertyType = "House",
@@ -1032,7 +1100,18 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                         case "Plot":
 
-                            int selectedPlotPropertyId = (int)lkuPlot.EditValue;
+                            if (lkuPlot.EditValue == null)
+                            {
+
+                                MessageBox.Show(@"Plot  cannot be empty, please select a plot.", @"Information", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                                break;
+                            }
+                            else
+                            {
+                                selectedPlotPropertyId = (int)lkuPlot.EditValue;
+                            }
+
                             var selectedPlot = _plotService.GetAll()
                                 .FirstOrDefault(f => f.PropertyId == selectedPlotPropertyId);
 
@@ -1057,7 +1136,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                             {
                                 _saleService.Update(new Sale
                                 {
-                                    Id = Convert.ToInt32(txtId.Text),
+                                    Id = Convert.ToInt32(grwSale.GetRowCellValue(grwSale.FocusedRowHandle, "Id")),
                                     OwnerId = selectedOwnerId,
                                     SalePropertyId = selectedPlotPropertyId,
                                     SalePropertyType = "Plot",
@@ -1089,8 +1168,18 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                         case "Shop":
 
+                            if (lkuShop.EditValue == null)
+                            {
 
-                            int selectedShopPropertyId = (int)lkuShop.EditValue;
+                                MessageBox.Show(@"Shop  cannot be empty, please select a shop.", @"Information", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                                break;
+                            }
+                            else
+                            {
+                                selectedShopPropertyId = (int)lkuShop.EditValue;
+                            }
+
                             var selectedShop = _shopService.GetAll()
                                 .FirstOrDefault(f => f.PropertyId == selectedShopPropertyId);
 
@@ -1113,7 +1202,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                             {
                                 _saleService.Update(new Sale
                                 {
-                                    Id = Convert.ToInt32(txtId.Text),
+                                    Id = Convert.ToInt32(grwSale.GetRowCellValue(grwSale.FocusedRowHandle, "Id")),
                                     OwnerId = selectedOwnerId,
                                     SalePropertyId = selectedShopPropertyId,
                                     SalePropertyType = "Shop",
@@ -1139,6 +1228,11 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                 });
                             }
                             LoadSaleShop();
+                            break;
+
+                        default:
+                            MessageBox.Show(@"Please select a property type.", @"Information", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
                             break;
                     }
 
@@ -1158,6 +1252,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
             if (confirmation == DialogResult.Yes)
             {
+                int selectedFieldPropertyId = 0;
+                int selectedHousePropertyId = 0;
+                int selectedPlotPropertyId = 0;
+                int selectedShopPropertyId = 0;
                 int selectedId = 0;
                 int selectedOwnerId = 0;
                 decimal selectedArea = 0;
@@ -1176,8 +1274,16 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 {
                     case "Field":
 
+                        if (lkuField.EditValue == null)
+                        {
+                            MessageBox.Show(@"Field cannot be empty, please select a field.", @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                        }
+                        else
+                        {
+                            selectedFieldPropertyId = (int)lkuField.EditValue;
+                        }
 
-                        int selectedFieldPropertyId = (int)lkuField.EditValue;
                         var selectedField = _fieldService.GetAll()
                             .FirstOrDefault(f => f.PropertyId == selectedFieldPropertyId);
 
@@ -1201,7 +1307,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         {
                             _saleService.Update(new Sale
                             {
-                                Id = Convert.ToInt32(txtId.Text),
+                                Id = Convert.ToInt32(grwSale.GetRowCellValue(grwSale.FocusedRowHandle, "Id")),
                                 OwnerId = selectedOwnerId,
                                 SalePropertyId = selectedFieldPropertyId,
                                 SalePropertyType = "Field",
@@ -1234,7 +1340,17 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                     case "House":
 
-                        int selectedHousePropertyId = (int)lkuHouse.EditValue;
+                        if (lkuHouse.EditValue == null)
+                        {
+                            MessageBox.Show(@"House  cannot be empty, please select a house.", @"Information", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                            break;
+                        }
+                        else
+                        {
+                            selectedHousePropertyId = (int)lkuHouse.EditValue;
+                        }
+
                         var selectedHouse = _houseService.GetAll()
                             .FirstOrDefault(f => f.PropertyId == selectedHousePropertyId);
 
@@ -1258,7 +1374,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         {
                             _saleService.Update(new Sale
                             {
-                                Id = Convert.ToInt32(txtId.Text),
+                                Id = Convert.ToInt32(grwSale.GetRowCellValue(grwSale.FocusedRowHandle, "Id")),
                                 OwnerId = selectedOwnerId,
                                 SalePropertyId = selectedHousePropertyId,
                                 SalePropertyType = "House",
@@ -1290,7 +1406,18 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                     case "Plot":
 
-                        int selectedPlotPropertyId = (int)lkuPlot.EditValue;
+                        if (lkuPlot.EditValue == null)
+                        {
+
+                            MessageBox.Show(@"Plot  cannot be empty, please select a plot.", @"Information", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                            break;
+                        }
+                        else
+                        {
+                            selectedPlotPropertyId = (int)lkuPlot.EditValue;
+                        }
+
                         var selectedPlot = _plotService.GetAll()
                             .FirstOrDefault(f => f.PropertyId == selectedPlotPropertyId);
 
@@ -1315,7 +1442,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         {
                             _saleService.Update(new Sale
                             {
-                                Id = Convert.ToInt32(txtId.Text),
+                                Id = Convert.ToInt32(grwSale.GetRowCellValue(grwSale.FocusedRowHandle, "Id")),
                                 OwnerId = selectedOwnerId,
                                 SalePropertyId = selectedPlotPropertyId,
                                 SalePropertyType = "Plot",
@@ -1349,7 +1476,18 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     case "Shop":
 
 
-                        int selectedShopPropertyId = (int)lkuShop.EditValue;
+                        if (lkuShop.EditValue == null)
+                        {
+
+                            MessageBox.Show(@"Shop  cannot be empty, please select a shop.", @"Information", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                            break;
+                        }
+                        else
+                        {
+                            selectedShopPropertyId = (int)lkuShop.EditValue;
+                        }
+
                         var selectedShop = _shopService.GetAll()
                             .FirstOrDefault(f => f.PropertyId == selectedShopPropertyId);
 
@@ -1372,7 +1510,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         {
                             _saleService.Update(new Sale
                             {
-                                Id = Convert.ToInt32(txtId.Text),
+                                Id = Convert.ToInt32(grwSale.GetRowCellValue(grwSale.FocusedRowHandle, "Id")),
                                 OwnerId = selectedOwnerId,
                                 SalePropertyId = selectedShopPropertyId,
                                 SalePropertyType = "Shop",
@@ -1399,6 +1537,11 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         }
                         LoadSaleShop();
                         Clean();
+                        break;
+
+                    default:
+                        MessageBox.Show(@"Please select a property type.", @"Information", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
                         break;
                 }
 
@@ -1514,13 +1657,22 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void grwSale_MouseDown(object sender, MouseEventArgs e)
         {
-
-            if (e.Button == MouseButtons.Right)
+            if (cmbPropertyType.Text != "")
             {
-                var position = MousePosition;
-                grwSale.Focus();
-                popupMenu1.ShowPopup(position);
+                if (e.Button == MouseButtons.Right)
+                {
+                    var position = MousePosition;
+                    grwSale.Focus();
+                    popupMenu1.ShowPopup(position);
+                }
             }
+            else
+            {
+                MessageBox.Show(@"Please select a property type.", @"Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
+
         }
 
         private CustomerForm _customerForm = new CustomerForm();
@@ -1532,6 +1684,22 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             _customerForm.lcClear.Visibility = LayoutVisibility.Never;
             _customerForm.ShowDialog();
             LoadSale();
+        }
+
+        private void lkuCustomerId_Properties_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            if (e.Value == null || e.Value == DBNull.Value)
+            {
+                e.DisplayText = "";
+            }
+        }
+
+        private void lkuCustomerId_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            if (e.Value == null || e.Value == DBNull.Value)
+            {
+                e.DisplayText = "";
+            }
         }
     }
 }
