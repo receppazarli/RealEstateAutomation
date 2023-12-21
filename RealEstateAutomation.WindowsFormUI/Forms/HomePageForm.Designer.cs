@@ -371,6 +371,7 @@
             this.btnIncome.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnIncome.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnIncome.Name = "btnIncome";
+            this.btnIncome.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnIncome_ItemClick);
             // 
             // btnAdmin
             // 

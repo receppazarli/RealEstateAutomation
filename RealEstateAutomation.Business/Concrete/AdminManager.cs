@@ -68,16 +68,6 @@ namespace RealEstateAutomation.Business.Concrete
         public void Update(Admin admin)
         {
 
-            //try
-            //{
-            //    ValidationTool.Validate(new AdminValidator(), admin);
-            //    _adminDal.Update(admin);
-            //}
-            //catch (Exception e)
-            //{
-            //    MessageBox.Show(e.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-
             try
             {
                 ValidationTool.Validate(new AdminValidator(), admin);

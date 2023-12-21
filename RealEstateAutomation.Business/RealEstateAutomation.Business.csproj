@@ -93,8 +93,10 @@
     <Compile Include="ValidationRules\FluentValidation\AdminValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\CustomerValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\EmployeeValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\ExpenseValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\FieldValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\HouseValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\IncomeValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\OwnerValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\PlotValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\SaleValidator.cs" />
