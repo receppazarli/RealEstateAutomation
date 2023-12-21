@@ -99,5 +99,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
             OpenForm<IncomeForm>();
         }
+
+        private void btnExpenses_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<ExpenseForm>();
+        }
     }
 }
