@@ -20,7 +20,6 @@ namespace RealEstateAutomation.DataAccess.Concrete.EntityFramework
         public DbSet<Sale> Sales { get; set; }
         public DbSet<Shop> Shops { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<UserAuthorization> UserAuthorizations { get; set; }
 
     }
 }

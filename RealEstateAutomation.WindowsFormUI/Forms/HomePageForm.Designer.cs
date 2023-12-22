@@ -77,6 +77,7 @@
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -105,9 +106,10 @@
             this.btnAuthorizations,
             this.barButtonItem6,
             this.btnIncome,
-            this.btnAdmin});
+            this.btnAdmin,
+            this.barButtonItem8});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 19;
+            this.ribbonControl1.MaxItemId = 20;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -589,6 +591,14 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "barButtonItem8";
+            this.barButtonItem8.Id = 19;
+            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
+            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.barButtonItem8.Name = "barButtonItem8";
+            // 
             // HomePageForm
             // 
             this.Appearance.Options.UseFont = true;
@@ -661,5 +671,6 @@
         private DevExpress.XtraBars.BarButtonItem btnAdmin;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
     }
 }

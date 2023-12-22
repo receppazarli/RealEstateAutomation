@@ -82,6 +82,7 @@
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.UserId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -382,7 +383,8 @@
             this.City,
             this.County,
             this.Address,
-            this.DeleteFlag});
+            this.DeleteFlag,
+            this.UserId});
             this.grwEmployee.GridControl = this.grcEmployee;
             this.grwEmployee.Name = "grwEmployee";
             // 
@@ -642,6 +644,12 @@
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Ribbon = this.ribbonControl1;
             // 
+            // UserId
+            // 
+            this.UserId.Caption = "UserId";
+            this.UserId.FieldName = "UserId";
+            this.UserId.Name = "UserId";
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -735,5 +743,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Address;
         private DevExpress.XtraGrid.Columns.GridColumn DeleteFlag;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.XtraGrid.Columns.GridColumn UserId;
     }
 }

@@ -1059,6 +1059,32 @@
         Mo2gQ5ClxGkN/D+QoPYNyjCHoEagDiHUZ/F/wv8lADB+B3eE88Zb5X+IAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="barButtonItem8.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAMnRFWHRUaXRsZQBDdXN0b21l
+        cjtFbXBsb3llZTtQZXJzb247Q29udGFjdDtVc2VyO0NsaWVudH4RNugAAADMSURBVDhPpdE7CsJAFIXh
+        FGLvMhRsrLSK9tlDduEabKytrVyBKwiCriEr0DoWKjL+B2biMAyZoMUHyT1zD3lkxpi/RIfrw26OE+7W
+        GbnNWrqPLQ9whQncMESyYIxw2ZkgWbBEbFlWSBZsEFsWZcmCBd4IlzXTx+0uEMIKYUFls14FOZ5wy7ru
+        9xsdDpS4WKU37y4gGGGLoTfT/9dMWbyAwQxHvKDH3mNq6VozZTqjs98Cbgo84N45RWcLv6D2wr5qv6AJ
+        wj6atuB3JvsA4rKZbGY7CYQAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="barButtonItem8.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAMnRFWHRUaXRsZQBDdXN0b21l
+        cjtFbXBsb3llZTtQZXJzb247Q29udGFjdDtVc2VyO0NsaWVudH4RNugAAAHHSURBVFhHxda/K8VRGMdx
+        xWIwKLISi8HdraQoi/K3SAaJ5dbd/VisUgY7CyspyaCkiFHIQFFf71Pfr57n9JznfAf3Gl7D59zzfJ7D
+        TekqiuJfqbC0t1XHPPbxiK/SEw6wIPvqUIGCnE0UGbuyM0cFhj2zsBZaFmWvRwUGPeHXbi2zHMpejwoM
+        em5gLbPcyl6PCgx63mEts7zKXo8KDHqsRSmfstejAoMpU7AWeaZkd4oKDKVsw1ri2ZbdKSowlNKEtcTT
+        lN0pKjCUMopnWIss4e6o7E5RgSHPKqxllmXZ61GBQc8ErGWWCdnrUYHBnCNYC6Vj2ZmjAsM5DXzAWhyE
+        zxqyM0cFhuuYwwvi5W+Yk311qEBBXYNYQfhKTrGGIdlVlwqU5HQbZ7/Kjh7ZmaNCXBiZxAXGxFks/KVc
+        YlL2elQQRZVhrOMa1Xd9gl7Ed/twjupemNnAiNwRU4HLlX7sIPy/VxVKZ5hGT2kGV7Duho7Q1S93VVTg
+        UjCOO1hlse+S9VksdI7LfYEKXBjAfTnQDqF7QO6MH9ASl9ulJXfGD2jnT1+5lzvjB1gDf07ujB/wEF9u
+        gwe5Uz3gP5iHnWQedpJ52DlF1w/TSoXqAtuVOgAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="xtraTabbedMdiManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

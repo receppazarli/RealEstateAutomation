@@ -52,9 +52,6 @@ namespace RealEstateAutomation.Business.DependencyResolvers
             Bind<IShopService>().To<ShopManager>().InSingletonScope();
             Bind<IShopDal>().To<EfShopDal>().InSingletonScope();
 
-            Bind<IUserAuthorizationService>().To<UserAuthorizationManager>().InSingletonScope();
-            Bind<IUserAuthorizationDal>().To<EfUserAuthorizationDal>().InSingletonScope();
-
             Bind<IUserService>().To<UserManager>().InSingletonScope();
             Bind<IUserDal>().To<EfUserDal>().InSingletonScope();
 

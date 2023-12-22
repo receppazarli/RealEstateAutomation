@@ -66,7 +66,6 @@
     <Compile Include="Abstract\IPropertyDal.cs" />
     <Compile Include="Abstract\ISaleDal.cs" />
     <Compile Include="Abstract\IShopDal.cs" />
-    <Compile Include="Abstract\IUserAuthorizationDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfAdminDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCityDal.cs" />
@@ -83,7 +82,6 @@
     <Compile Include="Concrete\EntityFramework\EfPropertyDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfSaleDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfShopDal.cs" />
-    <Compile Include="Concrete\EntityFramework\EfUserAuthorizationDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\EntityFramework\RealEstateAutomationContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
