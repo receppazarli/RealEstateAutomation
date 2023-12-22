@@ -6,8 +6,9 @@ namespace RealEstateAutomation.Business.Abstract
     public interface IEmployeeService
     {
         List<Employee> GetAll();
-        void Save(Employee employee);
+        void Add(Employee employee);
         void Update(Employee employee);
 
+        void Update2(Employee employee);
     }
 }

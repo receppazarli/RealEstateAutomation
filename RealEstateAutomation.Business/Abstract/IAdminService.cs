@@ -6,8 +6,9 @@ namespace RealEstateAutomation.Business.Abstract
     public interface IAdminService
     {
         List<Admin> GetAll();
-        void Save(Admin admin);
+        void Add(Admin admin);
         void Update(Admin admin);
 
+        void Update2(Admin admin);
     }
 }

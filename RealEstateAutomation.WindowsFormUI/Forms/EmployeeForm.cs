@@ -23,9 +23,11 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             _employeeService = InstanceFactory.GetInstance<IEmployeeService>();
             _cityService = InstanceFactory.GetInstance<ICityService>();
             _countyService = InstanceFactory.GetInstance<ICountyService>();
+            _userService = InstanceFactory.GetInstance<IUserService>();
         }
 
         private readonly IEmployeeService _employeeService;
+        private readonly IUserService _userService;
         private readonly ICityService _cityService;
         private readonly ICountyService _countyService;
         private readonly CommonMethods _commonMethods = new CommonMethods();
@@ -107,18 +109,49 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                 if (confirmation == DialogResult.Yes)
                 {
-                    _employeeService.Save(new Employee
+                    _userService.Add(new User
                     {
-                        NationalityId = txtNationalityId.Text,
-                        FirstName = txtFirstName.Text,
-                        LastName = txtLastName.Text,
-                        Phone = btnPhone.Text,
-                        Email = txtEmail.Text,
-                        City = lkuCity.Text,
-                        County = lkuCounty.Text,
-                        Address = txtAddress.Text,
+                        UserName = txtNationalityId.Text,
+                        UserPassword = "1234",
+                        UserAuthorization = 2,
                         DeleteFlag = false
                     });
+
+                    User lastAddedUser = _userService.GetLastAddedUser();
+                    int newUserId = 0;
+                    newUserId = lastAddedUser?.Id ?? 0;
+
+                    if (newUserId != -1 && newUserId != 0)
+                    {
+                        try
+                        {
+                            _employeeService.Add(new Employee
+                            {
+                                UserId = newUserId,
+                                NationalityId = txtNationalityId.Text,
+                                FirstName = txtFirstName.Text,
+                                LastName = txtLastName.Text,
+                                Phone = btnPhone.Text,
+                                Email = txtEmail.Text,
+                                City = lkuCity.Text,
+                                County = lkuCounty.Text,
+                                Address = txtAddress.Text,
+                                DeleteFlag = false
+                            });
+                        }
+                        catch (Exception e)
+                        {
+                            _userService.Delete(new User
+                            {
+                                Id = newUserId
+                            });
+
+                            MessageBox.Show(
+                                e.InnerException == null ? e.Message : "This record already exists please check your details",
+                                @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+
                     LoadEmployee();
                     Clear();
                 }
@@ -138,6 +171,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     _employeeService.Update(new Employee()
                     {
                         Id = Convert.ToInt32(grwEmployee.GetRowCellValue(grwEmployee.FocusedRowHandle, "Id")),
+                        UserId = Convert.ToInt32(grwEmployee.GetRowCellValue(grwEmployee.FocusedRowHandle, "UserId")),
                         NationalityId = txtNationalityId.Text,
                         FirstName = txtFirstName.Text,
                         LastName = txtLastName.Text,
@@ -166,19 +200,52 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
             if (confirmation == DialogResult.Yes)
             {
-                _employeeService.Update(new Employee
+                try
                 {
-                    Id = Convert.ToInt32(grwEmployee.GetRowCellValue(grwEmployee.FocusedRowHandle, "Id")),
-                    NationalityId = txtNationalityId.Text,
-                    FirstName = txtFirstName.Text,
-                    LastName = txtLastName.Text,
-                    Phone = btnPhone.Text,
-                    Email = txtEmail.Text,
-                    City = lkuCity.Text,
-                    County = lkuCounty.Text,
-                    Address = txtAddress.Text,
-                    DeleteFlag = true
-                });
+                    _employeeService.Update2(new Employee
+                    {
+                        Id = Convert.ToInt32(grwEmployee.GetRowCellValue(grwEmployee.FocusedRowHandle, "Id")),
+                        UserId = Convert.ToInt32(grwEmployee.GetRowCellValue(grwEmployee.FocusedRowHandle, "UserId")),
+                        NationalityId = txtNationalityId.Text,
+                        FirstName = txtFirstName.Text,
+                        LastName = txtLastName.Text,
+                        Phone = btnPhone.Text,
+                        Email = txtEmail.Text,
+                        City = lkuCity.Text,
+                        County = lkuCounty.Text,
+                        Address = txtAddress.Text,
+                        DeleteFlag = true
+                    });
+
+                    int userId = Convert.ToInt32(grwEmployee.GetRowCellValue(grwEmployee.FocusedRowHandle, "UserId"));
+                    User updateUser = _userService.GetAll().FirstOrDefault(x => x.Id == userId);
+                    string userName = "";
+                    string password = "";
+
+                    if (updateUser != null)
+                    {
+                        userName = updateUser.UserName;
+                        password = updateUser.UserPassword;
+                    }
+
+                    _userService.Update(new User
+                    {
+                        Id = Convert.ToInt32(grwEmployee.GetRowCellValue(grwEmployee.FocusedRowHandle, "UserId")),
+                        UserName = userName,
+                        UserPassword = password,
+                        UserAuthorization = 2,
+                        DeleteFlag = true
+                    });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        ex.InnerException == null ? ex.Message : "This record already exists please check your details",
+                        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
+
                 LoadEmployee();
                 Clear();
             }

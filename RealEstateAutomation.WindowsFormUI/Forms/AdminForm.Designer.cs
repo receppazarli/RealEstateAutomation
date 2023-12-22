@@ -66,6 +66,7 @@
             this.County = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Address = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DeleteFlag = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.UserId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -82,7 +83,6 @@
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.UserId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -373,6 +373,7 @@
             this.grcAdmin.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grwAdmin});
             this.grcAdmin.Click += new System.EventHandler(this.grcAdmin_Click);
+
             this.grcAdmin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.grcAdmin_MouseDown);
             // 
             // grwAdmin
@@ -468,6 +469,12 @@
             this.DeleteFlag.Caption = "Delete Flag";
             this.DeleteFlag.FieldName = "DeleteFlag";
             this.DeleteFlag.Name = "DeleteFlag";
+            // 
+            // UserId
+            // 
+            this.UserId.Caption = "UserId";
+            this.UserId.FieldName = "UserId";
+            this.UserId.Name = "UserId";
             // 
             // layoutControlGroup1
             // 
@@ -648,12 +655,6 @@
             this.popupMenu1.ItemLinks.Add(this.btnExcelTransfer2);
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Ribbon = this.ribbonControl1;
-            // 
-            // UserId
-            // 
-            this.UserId.Caption = "UserId";
-            this.UserId.FieldName = "UserId";
-            this.UserId.Name = "UserId";
             // 
             // AdminForm
             // 

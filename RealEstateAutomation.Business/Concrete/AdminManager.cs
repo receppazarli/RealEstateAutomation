@@ -25,7 +25,7 @@ namespace RealEstateAutomation.Business.Concrete
             {
                 return _adminDal.GetAll(x => x.DeleteFlag == false);
             }
-            catch (Exception )
+            catch (Exception)
             {
                 MessageBox.Show("There was an error loading the information. Please try again.", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -33,36 +33,36 @@ namespace RealEstateAutomation.Business.Concrete
             }
         }
 
-        public void Save(Admin admin)
+        public void Add(Admin admin)
         {
-            try
-            {
-                ValidationTool.Validate(new AdminValidator(), admin);
-                _adminDal.Add(admin);
-            }
+            //try
+            //{
+            ValidationTool.Validate(new AdminValidator(), admin);
+            _adminDal.Add(admin);
+            //}
 
-            catch (SqlException e)
-            {
-                switch (e.Number)
-                {
-                    case 2627: // Unique key 
+            //catch (SqlException e)
+            //{
+            //    switch (e.Number)
+            //    {
+            //        case 2627: // Unique key 
 
-                        MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+            //            MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            break;
 
-                    default:
-                        MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                }
-            }
+            //        default:
+            //            MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            break;
+            //    }
+            //}
 
-            catch (Exception ex)
+            //catch (Exception ex)
 
-            {
-                MessageBox.Show(
-                    ex.InnerException == null ? ex.Message : "This record already exists please check your details",
-                    "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            //{
+            //    MessageBox.Show(
+            //        ex.InnerException == null ? ex.Message : "This record already exists please check your details",
+            //        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
         }
 
         public void Update(Admin admin)
@@ -95,6 +95,12 @@ namespace RealEstateAutomation.Business.Concrete
                     ex.InnerException == null ? ex.Message : "This record already exists please check your details",
                     "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        public void Update2(Admin admin)
+        {
+            ValidationTool.Validate(new AdminValidator(), admin);
+            _adminDal.Update(admin);
         }
     }
 }

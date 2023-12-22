@@ -17,7 +17,7 @@ namespace RealEstateAutomation.WindowsFormUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomePageForm());
+            Application.Run(new LoginForm());
         }
     }
 }

@@ -12,6 +12,9 @@ using RealEstateAutomation.Business.Abstract;
 using RealEstateAutomation.Business.DependencyResolvers;
 using RealEstateAutomation.Entities.Concrete;
 using RealEstateAutomation.WindowsFormUI.Methods;
+using RealEstateAutomation.Business.Utilities;
+using RealEstateAutomation.Business.ValidationRules.FluentValidation;
+using System.Data.SqlClient;
 
 namespace RealEstateAutomation.WindowsFormUI.Forms
 {
@@ -24,9 +27,11 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             _adminService = InstanceFactory.GetInstance<IAdminService>();
             _cityService = InstanceFactory.GetInstance<ICityService>();
             _countyService = InstanceFactory.GetInstance<ICountyService>();
+            _userService = InstanceFactory.GetInstance<IUserService>();
         }
 
         private readonly IAdminService _adminService;
+        private readonly IUserService _userService;
         private readonly ICityService _cityService;
         private readonly ICountyService _countyService;
         private readonly CommonMethods _commonMethods = new CommonMethods();
@@ -111,18 +116,48 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                 if (confirmation == DialogResult.Yes)
                 {
-                    _adminService.Save(new Admin
+                    _userService.Add(new User
                     {
-                        NationalityId = txtNationalityId.Text,
-                        FirstName = txtFirstName.Text,
-                        LastName = txtLastName.Text,
-                        Phone = btnPhone.Text,
-                        Email = txtEmail.Text,
-                        City = lkuCity.Text,
-                        County = lkuCounty.Text,
-                        Address = txtAddress.Text,
+                        UserName = txtNationalityId.Text,
+                        UserPassword = "1234",
+                        UserAuthorization = 1,
                         DeleteFlag = false
                     });
+
+                    User lastAddedUser = _userService.GetLastAddedUser();
+                    int newUserId = 0;
+                    newUserId = lastAddedUser?.Id ?? 0;
+
+                    if (newUserId != -1 && newUserId != 0)
+                    {
+                        try
+                        {
+                            _adminService.Add(new Admin
+                            {
+                                UserId = newUserId,
+                                NationalityId = txtNationalityId.Text,
+                                FirstName = txtFirstName.Text,
+                                LastName = txtLastName.Text,
+                                Phone = btnPhone.Text,
+                                Email = txtEmail.Text,
+                                City = lkuCity.Text,
+                                County = lkuCounty.Text,
+                                Address = txtAddress.Text,
+                                DeleteFlag = false
+                            });
+                        }
+                        catch (Exception e)
+                        {
+                            _userService.Delete(new User
+                            {
+                                Id = newUserId
+                            });
+
+                            MessageBox.Show(
+                                e.InnerException == null ? e.Message : "This record already exists please check your details",
+                                @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                     LoadAdmin();
                     Clear();
                 }
@@ -142,6 +177,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     _adminService.Update(new Admin
                     {
                         Id = Convert.ToInt32(grwAdmin.GetRowCellValue(grwAdmin.FocusedRowHandle, "Id")),
+                        UserId = Convert.ToInt32(grwAdmin.GetRowCellValue(grwAdmin.FocusedRowHandle, "UserId")),
                         NationalityId = txtNationalityId.Text,
                         FirstName = txtFirstName.Text,
                         LastName = txtLastName.Text,
@@ -170,19 +206,52 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
             if (confirmation == DialogResult.Yes)
             {
-                _adminService.Update(new Admin
+                try
                 {
-                    Id = Convert.ToInt32(grwAdmin.GetRowCellValue(grwAdmin.FocusedRowHandle, "Id")),
-                    NationalityId = txtNationalityId.Text,
-                    FirstName = txtFirstName.Text,
-                    LastName = txtLastName.Text,
-                    Phone = btnPhone.Text,
-                    Email = txtEmail.Text,
-                    City = lkuCity.Text,
-                    County = lkuCounty.Text,
-                    Address = txtAddress.Text,
-                    DeleteFlag = true
-                });
+                    _adminService.Update2(new Admin
+                    {
+                        Id = Convert.ToInt32(grwAdmin.GetRowCellValue(grwAdmin.FocusedRowHandle, "Id")),
+                        UserId = Convert.ToInt32(grwAdmin.GetRowCellValue(grwAdmin.FocusedRowHandle, "UserId")),
+                        NationalityId = txtNationalityId.Text,
+                        FirstName = txtFirstName.Text,
+                        LastName = txtLastName.Text,
+                        Phone = btnPhone.Text,
+                        Email = txtEmail.Text,
+                        City = lkuCity.Text,
+                        County = lkuCounty.Text,
+                        Address = txtAddress.Text,
+                        DeleteFlag = true
+                    });
+
+                    int userId = Convert.ToInt32(grwAdmin.GetRowCellValue(grwAdmin.FocusedRowHandle, "UserId"));
+                    User updateUser = _userService.GetAll().FirstOrDefault(x => x.Id == userId);
+                    string userName = "";
+                    string password = "";
+
+                    if (updateUser != null)
+                    {
+                        userName = updateUser.UserName;
+                        password = updateUser.UserPassword;
+                    }
+
+                    _userService.Update(new User
+                    {
+                        Id = Convert.ToInt32(grwAdmin.GetRowCellValue(grwAdmin.FocusedRowHandle, "UserId")),
+                        UserName = userName,
+                        UserPassword = password,
+                        UserAuthorization = 1,
+                        DeleteFlag = true
+                    });
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        ex.InnerException == null ? ex.Message : "This record already exists please check your details",
+                        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+
                 LoadAdmin();
                 Clear();
             }
@@ -255,5 +324,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 popupMenu1.ShowPopup(position);
             }
         }
+
+
     }
 }
