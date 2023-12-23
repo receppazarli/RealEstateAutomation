@@ -20,7 +20,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void HomePageForm_Load(object sender, EventArgs e)
         {
-
+            PanelControl();
         }
 
         public void OpenForm<T>() where T : Form, new()
@@ -44,6 +44,27 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             newForm.Show();
         }
 
+        public void PanelControl()
+        {
+            try
+            {
+                if (LoginForm.EnteredUserAuthorization == 1)
+                {
+
+                }
+                else if (LoginForm.EnteredUserAuthorization == 2)
+                {
+                    ribbonPageEmployees.Visible = false;
+                    ribbonPageGroupProperties.Visible = false;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(@"Error Loading System. Please try again.", @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
+        }
 
         private void btnCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -103,6 +124,11 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         private void btnExpenses_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenForm<ExpenseForm>();
+        }
+
+        private void HomePageForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -2,6 +2,8 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 using System;
+using DevExpress.XtraBars.Ribbon;
+using RealEstateAutomation.WindowsFormUI.Forms;
 
 namespace RealEstateAutomation.WindowsFormUI.Methods
 {
@@ -51,5 +53,7 @@ namespace RealEstateAutomation.WindowsFormUI.Methods
             }
 
         }
+
+       
     }
 }
