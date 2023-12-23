@@ -98,7 +98,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                      Sold = f.Sold,
                                      DeleteFlag = f.DeleteFlag,
                                  };
-                    grcField.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
+                    grcField.DataSource = entity.ToList().Where(x => x.DeleteFlag == false && x.Sold ==false);
 
                 }
             }
@@ -108,7 +108,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 throw;
             }
         }
-        
+
         void Clear()
         {
             txtId.Text = "";
@@ -195,9 +195,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                     ReferenceId = newFieldId,
                                     PropertyType = "Field",
                                     DeleteFlag = false
-
                                 });
-
                             }
                         }
                         catch (Exception e)

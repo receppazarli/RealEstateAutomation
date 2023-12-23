@@ -67,6 +67,7 @@
             this.Address = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Price = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Description = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Sold = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DeleteFlag = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -85,7 +86,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.Sold = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -542,6 +542,12 @@
             this.Description.Visible = true;
             this.Description.VisibleIndex = 7;
             // 
+            // Sold
+            // 
+            this.Sold.Caption = "Sold";
+            this.Sold.FieldName = "Sold";
+            this.Sold.Name = "Sold";
+            // 
             // DeleteFlag
             // 
             this.DeleteFlag.Caption = "DeleteFlag";
@@ -737,14 +743,6 @@
             this.popupMenu1.ItemLinks.Add(this.btnExcelTransfer2);
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Ribbon = this.ribbonControl1;
-            // 
-            // Sold
-            // 
-            this.Sold.Caption = "Sold";
-            this.Sold.FieldName = "Sold";
-            this.Sold.Name = "Sold";
-            this.Sold.Visible = true;
-            this.Sold.VisibleIndex = 8;
             // 
             // HouseForm
             // 

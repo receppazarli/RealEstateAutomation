@@ -101,7 +101,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                      Sold = h.Sold,
                                      DeleteFlag = h.DeleteFlag,
                                  };
-                    grcHouse.DataSource = entity.ToList().Where(x => x.DeleteFlag == false);
+                    grcHouse.DataSource = entity.ToList().Where(x => x.DeleteFlag == false && x.Sold == false);
 
                 }
             }
