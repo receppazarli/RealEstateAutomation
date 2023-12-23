@@ -29,6 +29,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void OpenForm(Form form)
         {
+
             form.Show();
         }
 

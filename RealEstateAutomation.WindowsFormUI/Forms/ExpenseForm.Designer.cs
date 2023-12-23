@@ -309,6 +309,7 @@
             this.Id.Caption = "Id";
             this.Id.FieldName = "Id";
             this.Id.Name = "Id";
+            this.Id.OptionsColumn.ReadOnly = true;
             // 
             // ExpenseDate
             // 
