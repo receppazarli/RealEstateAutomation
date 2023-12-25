@@ -1,12 +1,5 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RealEstateAutomation.Business.Abstract;
 using RealEstateAutomation.Business.DependencyResolvers;
@@ -24,8 +17,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         private readonly IUserService _userService;
         public static int EnteredUserId;
         public static int EnteredUserAuthorization;
-        public static string EnteredUserName;
-        public static string EnteredUserPassword;
+        public string EnteredUserName;
+        public string EnteredUserPassword;
 
         private void OpenForm(Form form)
         {

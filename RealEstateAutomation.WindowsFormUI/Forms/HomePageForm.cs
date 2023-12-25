@@ -130,5 +130,12 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
             Application.Exit();
         }
+
+        private UserForm _userForm = new UserForm();
+
+        private void btnUsers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            _userForm.ShowDialog();
+        }
     }
 }

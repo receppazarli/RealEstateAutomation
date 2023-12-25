@@ -336,6 +336,7 @@
             this.btnUsers.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUsers.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnUsers.Name = "btnUsers";
+            this.btnUsers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUsers_ItemClick);
             // 
             // btnAuthorizations
             // 

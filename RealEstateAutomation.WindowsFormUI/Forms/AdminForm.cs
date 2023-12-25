@@ -72,6 +72,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             {
                 txtId.Text = grwAdmin.GetFocusedRowCellValue("Id").ToString();
                 txtNationalityId.Text = grwAdmin.GetFocusedRowCellValue("NationalityId").ToString();
+                txtNationalityId.ReadOnly = true;
                 txtFirstName.Text = grwAdmin.GetFocusedRowCellValue("FirstName").ToString();
                 txtLastName.Text = grwAdmin.GetFocusedRowCellValue("LastName").ToString();
                 btnPhone.Text = grwAdmin.GetFocusedRowCellValue("Phone").ToString();
@@ -91,6 +92,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         void Clear()
         {
             txtNationalityId.Text = "";
+            txtNationalityId.ReadOnly = false;
             txtFirstName.Text = "";
             txtLastName.Text = "";
             btnPhone.Text = "";
