@@ -302,6 +302,7 @@
             this.DeleteFlag});
             this.grwExpense.GridControl = this.grcExpense;
             this.grwExpense.Name = "grwExpense";
+            this.grwExpense.OptionsBehavior.ReadOnly = true;
             this.grwExpense.MouseDown += new System.Windows.Forms.MouseEventHandler(this.grwExpense_MouseDown);
             // 
             // Id
