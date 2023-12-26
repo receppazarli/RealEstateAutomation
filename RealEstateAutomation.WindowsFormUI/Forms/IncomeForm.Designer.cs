@@ -210,7 +210,7 @@
             this.btnSave.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(859, 108);
+            this.btnSave.Location = new System.Drawing.Point(859, 132);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(377, 36);
             this.btnSave.StyleController = this.layoutControl1;
@@ -223,7 +223,7 @@
             this.btnClear.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnClear.Appearance.Options.UseFont = true;
             this.btnClear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.ImageOptions.Image")));
-            this.btnClear.Location = new System.Drawing.Point(859, 148);
+            this.btnClear.Location = new System.Drawing.Point(859, 172);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(377, 36);
             this.btnClear.StyleController = this.layoutControl1;
@@ -236,7 +236,7 @@
             this.btnDelete.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(859, 188);
+            this.btnDelete.Location = new System.Drawing.Point(859, 212);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(377, 36);
             this.btnDelete.StyleController = this.layoutControl1;
@@ -246,22 +246,26 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(954, 84);
+            this.txtDescription.Location = new System.Drawing.Point(954, 102);
             this.txtDescription.MenuManager = this.ribbonControl1;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(282, 20);
+            this.txtDescription.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtDescription.Properties.Appearance.Options.UseFont = true;
+            this.txtDescription.Size = new System.Drawing.Size(282, 26);
             this.txtDescription.StyleController = this.layoutControl1;
             this.txtDescription.TabIndex = 9;
             // 
             // txtIncomePrice
             // 
-            this.txtIncomePrice.Location = new System.Drawing.Point(954, 60);
+            this.txtIncomePrice.Location = new System.Drawing.Point(954, 72);
             this.txtIncomePrice.MenuManager = this.ribbonControl1;
             this.txtIncomePrice.Name = "txtIncomePrice";
+            this.txtIncomePrice.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtIncomePrice.Properties.Appearance.Options.UseFont = true;
             this.txtIncomePrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtIncomePrice.Properties.MaskSettings.Set("mask", "c");
             this.txtIncomePrice.Properties.NullText = "0";
-            this.txtIncomePrice.Size = new System.Drawing.Size(282, 20);
+            this.txtIncomePrice.Size = new System.Drawing.Size(282, 26);
             this.txtIncomePrice.StyleController = this.layoutControl1;
             this.txtIncomePrice.TabIndex = 8;
             // 
@@ -270,21 +274,25 @@
             this.txtId.Location = new System.Drawing.Point(954, 12);
             this.txtId.MenuManager = this.ribbonControl1;
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(282, 20);
+            this.txtId.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtId.Properties.Appearance.Options.UseFont = true;
+            this.txtId.Size = new System.Drawing.Size(282, 26);
             this.txtId.StyleController = this.layoutControl1;
             this.txtId.TabIndex = 7;
             // 
             // dteIncomeDate
             // 
             this.dteIncomeDate.EditValue = null;
-            this.dteIncomeDate.Location = new System.Drawing.Point(954, 36);
+            this.dteIncomeDate.Location = new System.Drawing.Point(954, 42);
             this.dteIncomeDate.MenuManager = this.ribbonControl1;
             this.dteIncomeDate.Name = "dteIncomeDate";
+            this.dteIncomeDate.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dteIncomeDate.Properties.Appearance.Options.UseFont = true;
             this.dteIncomeDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteIncomeDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteIncomeDate.Size = new System.Drawing.Size(282, 20);
+            this.dteIncomeDate.Size = new System.Drawing.Size(282, 26);
             this.dteIncomeDate.StyleController = this.layoutControl1;
             this.dteIncomeDate.TabIndex = 6;
             // 
@@ -302,6 +310,10 @@
             // 
             // grwIncome
             // 
+            this.grwIncome.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.grwIncome.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grwIncome.Appearance.Row.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.grwIncome.Appearance.Row.Options.UseFont = true;
             this.grwIncome.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id,
             this.IncomeDate,
@@ -382,9 +394,9 @@
             this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem3.Control = this.dteIncomeDate;
-            this.layoutControlItem3.Location = new System.Drawing.Point(847, 24);
+            this.layoutControlItem3.Location = new System.Drawing.Point(847, 30);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(381, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(381, 30);
             this.layoutControlItem3.Text = "Income Date:";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(83, 19);
             // 
@@ -393,9 +405,9 @@
             this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem5.Control = this.txtIncomePrice;
-            this.layoutControlItem5.Location = new System.Drawing.Point(847, 48);
+            this.layoutControlItem5.Location = new System.Drawing.Point(847, 60);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(381, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(381, 30);
             this.layoutControlItem5.Text = "Income Price:";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(83, 19);
             // 
@@ -404,9 +416,9 @@
             this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem6.Control = this.txtDescription;
-            this.layoutControlItem6.Location = new System.Drawing.Point(847, 72);
+            this.layoutControlItem6.Location = new System.Drawing.Point(847, 90);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(381, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(381, 30);
             this.layoutControlItem6.Text = "Desciption:";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(83, 19);
             // 
@@ -417,7 +429,7 @@
             this.layoutControlItem4.Control = this.txtId;
             this.layoutControlItem4.Location = new System.Drawing.Point(847, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(381, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(381, 30);
             this.layoutControlItem4.Text = "Id:";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(83, 19);
             this.layoutControlItem4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
@@ -425,16 +437,16 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnDelete;
-            this.layoutControlItem7.Location = new System.Drawing.Point(847, 176);
+            this.layoutControlItem7.Location = new System.Drawing.Point(847, 200);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(381, 289);
+            this.layoutControlItem7.Size = new System.Drawing.Size(381, 265);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.btnClear;
-            this.layoutControlItem8.Location = new System.Drawing.Point(847, 136);
+            this.layoutControlItem8.Location = new System.Drawing.Point(847, 160);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(381, 40);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -443,7 +455,7 @@
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.btnSave;
-            this.layoutControlItem9.Location = new System.Drawing.Point(847, 96);
+            this.layoutControlItem9.Location = new System.Drawing.Point(847, 120);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(381, 40);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);

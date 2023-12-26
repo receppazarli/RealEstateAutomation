@@ -30,13 +30,16 @@
         {
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
             DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.grcCustomer = new DevExpress.XtraGrid.GridControl();
             this.grwCustomers = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,7 +59,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.layoutControlItemWebBrowser = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -91,6 +93,14 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(626, 311);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(610, 295);
+            this.webBrowser1.TabIndex = 7;
+            // 
             // grcCustomer
             // 
             this.grcCustomer.Location = new System.Drawing.Point(626, 12);
@@ -105,6 +115,10 @@
             // 
             // grwCustomers
             // 
+            this.grwCustomers.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.grwCustomers.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grwCustomers.Appearance.Row.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.grwCustomers.Appearance.Row.Options.UseFont = true;
             this.grwCustomers.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id,
             this.NationalityId,
@@ -202,7 +216,7 @@
             xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             this.chartControlIncome.Diagram = xyDiagram1;
-            this.chartControlIncome.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            this.chartControlIncome.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControlIncome.Location = new System.Drawing.Point(12, 311);
             this.chartControlIncome.Name = "chartControlIncome";
             series1.Name = "Incomes";
@@ -210,12 +224,17 @@
         series1};
             this.chartControlIncome.Size = new System.Drawing.Size(610, 295);
             this.chartControlIncome.TabIndex = 5;
+            chartTitle1.DXFont = new DevExpress.Drawing.DXFont("Times New Roman", 18F);
+            chartTitle1.Text = "INCOMES";
+            this.chartControlIncome.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
+            chartTitle1});
             // 
             // chartControlExpense
             // 
             xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
             xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
             this.chartControlExpense.Diagram = xyDiagram2;
+            this.chartControlExpense.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControlExpense.Location = new System.Drawing.Point(12, 12);
             this.chartControlExpense.Name = "chartControlExpense";
             series2.Name = "Expenses";
@@ -223,6 +242,10 @@
         series2};
             this.chartControlExpense.Size = new System.Drawing.Size(610, 295);
             this.chartControlExpense.TabIndex = 4;
+            chartTitle2.DXFont = new DevExpress.Drawing.DXFont("Times New Roman", 18F);
+            chartTitle2.Text = "EXPENSES";
+            this.chartControlExpense.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
+            chartTitle2});
             // 
             // layoutControlGroup1
             // 
@@ -280,14 +303,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(614, 299);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(626, 311);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(610, 295);
-            this.webBrowser1.TabIndex = 7;
             // 
             // layoutControlItemWebBrowser
             // 

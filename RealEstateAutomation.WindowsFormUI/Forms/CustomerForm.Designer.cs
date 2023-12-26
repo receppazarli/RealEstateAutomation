@@ -268,9 +268,11 @@
             this.btnNationalityId.Location = new System.Drawing.Point(959, 12);
             this.btnNationalityId.MenuManager = this.ribbonControl1;
             this.btnNationalityId.Name = "btnNationalityId";
+            this.btnNationalityId.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnNationalityId.Properties.Appearance.Options.UseFont = true;
             this.btnNationalityId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.btnNationalityId.Size = new System.Drawing.Size(277, 20);
+            this.btnNationalityId.Size = new System.Drawing.Size(277, 26);
             this.btnNationalityId.StyleController = this.layoutControl1;
             this.btnNationalityId.TabIndex = 24;
             // 
@@ -279,7 +281,7 @@
             this.btnClear.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnClear.Appearance.Options.UseFont = true;
             this.btnClear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.ImageOptions.Image")));
-            this.btnClear.Location = new System.Drawing.Point(859, 347);
+            this.btnClear.Location = new System.Drawing.Point(859, 379);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(377, 36);
             this.btnClear.StyleController = this.layoutControl1;
@@ -292,7 +294,7 @@
             this.btnRemove.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnRemove.Appearance.Options.UseFont = true;
             this.btnRemove.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.ImageOptions.Image")));
-            this.btnRemove.Location = new System.Drawing.Point(859, 306);
+            this.btnRemove.Location = new System.Drawing.Point(859, 338);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(377, 36);
             this.btnRemove.StyleController = this.layoutControl1;
@@ -305,7 +307,7 @@
             this.btnSave.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(859, 264);
+            this.btnSave.Location = new System.Drawing.Point(859, 296);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(377, 36);
             this.btnSave.StyleController = this.layoutControl1;
@@ -315,51 +317,55 @@
             // 
             // txtDeleteflag
             // 
-            this.txtDeleteflag.Location = new System.Drawing.Point(959, 214);
+            this.txtDeleteflag.Location = new System.Drawing.Point(959, 240);
             this.txtDeleteflag.MenuManager = this.ribbonControl1;
             this.txtDeleteflag.Name = "txtDeleteflag";
-            this.txtDeleteflag.Size = new System.Drawing.Size(277, 20);
+            this.txtDeleteflag.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtDeleteflag.Properties.Appearance.Options.UseFont = true;
+            this.txtDeleteflag.Size = new System.Drawing.Size(277, 26);
             this.txtDeleteflag.StyleController = this.layoutControl1;
             this.txtDeleteflag.TabIndex = 17;
             this.txtDeleteflag.Visible = false;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(959, 190);
+            this.txtId.Location = new System.Drawing.Point(959, 210);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(277, 20);
+            this.txtId.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtId.Properties.Appearance.Options.UseFont = true;
+            this.txtId.Size = new System.Drawing.Size(277, 26);
             this.txtId.StyleController = this.layoutControl1;
             this.txtId.TabIndex = 16;
             this.txtId.Visible = false;
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtFirstName.Location = new System.Drawing.Point(959, 37);
+            this.txtFirstName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtFirstName.Location = new System.Drawing.Point(959, 43);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(277, 20);
             this.txtFirstName.TabIndex = 12;
             // 
             // txtLastName
             // 
-            this.txtLastName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtLastName.Location = new System.Drawing.Point(959, 62);
+            this.txtLastName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtLastName.Location = new System.Drawing.Point(959, 68);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(277, 20);
             this.txtLastName.TabIndex = 11;
             // 
             // txtAddress
             // 
-            this.txtAddress.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAddress.Location = new System.Drawing.Point(959, 166);
+            this.txtAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAddress.Location = new System.Drawing.Point(959, 186);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(277, 20);
             this.txtAddress.TabIndex = 9;
             // 
             // txtDescription
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtDescription.Location = new System.Drawing.Point(959, 239);
+            this.txtDescription.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtDescription.Location = new System.Drawing.Point(959, 271);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(277, 20);
             this.txtDescription.TabIndex = 8;
@@ -380,6 +386,10 @@
             // 
             // grwCustomers
             // 
+            this.grwCustomers.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.grwCustomers.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grwCustomers.Appearance.Row.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.grwCustomers.Appearance.Row.Options.UseFont = true;
             this.grwCustomers.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id,
             this.NationalityId,
@@ -483,10 +493,10 @@
             // 
             // lkuCity
             // 
-            this.lkuCity.Location = new System.Drawing.Point(959, 112);
+            this.lkuCity.Location = new System.Drawing.Point(959, 124);
             this.lkuCity.MenuManager = this.ribbonControl1;
             this.lkuCity.Name = "lkuCity";
-            this.lkuCity.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lkuCity.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lkuCity.Properties.Appearance.Options.UseFont = true;
             this.lkuCity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -495,17 +505,17 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CityName", "City Name")});
             this.lkuCity.Properties.NullText = "Please Choose";
             this.lkuCity.Properties.PopupSizeable = false;
-            this.lkuCity.Size = new System.Drawing.Size(277, 22);
+            this.lkuCity.Size = new System.Drawing.Size(277, 26);
             this.lkuCity.StyleController = this.layoutControl1;
             this.lkuCity.TabIndex = 14;
             this.lkuCity.EditValueChanged += new System.EventHandler(this.lkuCity_EditValueChanged);
             // 
             // lkuCounty
             // 
-            this.lkuCounty.Location = new System.Drawing.Point(959, 139);
+            this.lkuCounty.Location = new System.Drawing.Point(959, 155);
             this.lkuCounty.MenuManager = this.ribbonControl1;
             this.lkuCounty.Name = "lkuCounty";
-            this.lkuCounty.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lkuCounty.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lkuCounty.Properties.Appearance.Options.UseFont = true;
             this.lkuCounty.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -515,20 +525,22 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CityId", "CityId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lkuCounty.Properties.NullText = "Please Choose";
             this.lkuCounty.Properties.PopupSizeable = false;
-            this.lkuCounty.Size = new System.Drawing.Size(277, 22);
+            this.lkuCounty.Size = new System.Drawing.Size(277, 26);
             this.lkuCounty.StyleController = this.layoutControl1;
             this.lkuCounty.TabIndex = 15;
             // 
             // btnPhone
             // 
-            this.btnPhone.Location = new System.Drawing.Point(959, 87);
+            this.btnPhone.Location = new System.Drawing.Point(959, 93);
             this.btnPhone.MenuManager = this.ribbonControl1;
             this.btnPhone.Name = "btnPhone";
+            this.btnPhone.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPhone.Properties.Appearance.Options.UseFont = true;
             this.btnPhone.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.btnPhone.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
             this.btnPhone.Properties.MaskSettings.Set("mask", "(000) 000-0000");
-            this.btnPhone.Size = new System.Drawing.Size(277, 20);
+            this.btnPhone.Size = new System.Drawing.Size(277, 26);
             this.btnPhone.StyleController = this.layoutControl1;
             this.btnPhone.TabIndex = 23;
             // 
@@ -581,7 +593,7 @@
             this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem6.Control = this.txtAddress;
-            this.layoutControlItem6.Location = new System.Drawing.Point(847, 154);
+            this.layoutControlItem6.Location = new System.Drawing.Point(847, 174);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(381, 24);
             this.layoutControlItem6.Text = "Address :";
@@ -592,7 +604,7 @@
             this.txtLastName2.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtLastName2.AppearanceItemCaption.Options.UseFont = true;
             this.txtLastName2.Control = this.txtLastName;
-            this.txtLastName2.Location = new System.Drawing.Point(847, 50);
+            this.txtLastName2.Location = new System.Drawing.Point(847, 56);
             this.txtLastName2.Name = "txtLastName2";
             this.txtLastName2.Size = new System.Drawing.Size(381, 24);
             this.txtLastName2.Text = "Last Name :";
@@ -603,7 +615,7 @@
             this.txtFirstName2.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtFirstName2.AppearanceItemCaption.Options.UseFont = true;
             this.txtFirstName2.Control = this.txtFirstName;
-            this.txtFirstName2.Location = new System.Drawing.Point(847, 25);
+            this.txtFirstName2.Location = new System.Drawing.Point(847, 31);
             this.txtFirstName2.Name = "txtFirstName2";
             this.txtFirstName2.Size = new System.Drawing.Size(381, 24);
             this.txtFirstName2.Text = "First Name :";
@@ -614,9 +626,9 @@
             this.layoutControlItem12.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.layoutControlItem12.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem12.Control = this.lkuCounty;
-            this.layoutControlItem12.Location = new System.Drawing.Point(847, 127);
+            this.layoutControlItem12.Location = new System.Drawing.Point(847, 143);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(381, 26);
+            this.layoutControlItem12.Size = new System.Drawing.Size(381, 30);
             this.layoutControlItem12.Text = "County :";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(88, 19);
             // 
@@ -625,18 +637,18 @@
             this.layoutControlItem11.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.layoutControlItem11.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem11.Control = this.lkuCity;
-            this.layoutControlItem11.Location = new System.Drawing.Point(847, 100);
+            this.layoutControlItem11.Location = new System.Drawing.Point(847, 112);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(381, 26);
+            this.layoutControlItem11.Size = new System.Drawing.Size(381, 30);
             this.layoutControlItem11.Text = "City :";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(88, 19);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtId;
-            this.layoutControlItem2.Location = new System.Drawing.Point(847, 178);
+            this.layoutControlItem2.Location = new System.Drawing.Point(847, 198);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(381, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(381, 30);
             this.layoutControlItem2.Text = "Id:";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(88, 13);
             this.layoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
@@ -644,9 +656,9 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtDeleteflag;
-            this.layoutControlItem3.Location = new System.Drawing.Point(847, 202);
+            this.layoutControlItem3.Location = new System.Drawing.Point(847, 228);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(381, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(381, 30);
             this.layoutControlItem3.Text = "Delete Flag:";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(88, 13);
             this.layoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
@@ -656,7 +668,7 @@
             this.txtDescription2.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtDescription2.AppearanceItemCaption.Options.UseFont = true;
             this.txtDescription2.Control = this.txtDescription;
-            this.txtDescription2.Location = new System.Drawing.Point(847, 227);
+            this.txtDescription2.Location = new System.Drawing.Point(847, 259);
             this.txtDescription2.Name = "txtDescription2";
             this.txtDescription2.Size = new System.Drawing.Size(381, 24);
             this.txtDescription2.Text = "Description :";
@@ -665,7 +677,7 @@
             // lcDelete
             // 
             this.lcDelete.Control = this.btnRemove;
-            this.lcDelete.Location = new System.Drawing.Point(847, 294);
+            this.lcDelete.Location = new System.Drawing.Point(847, 326);
             this.lcDelete.Name = "lcDelete";
             this.lcDelete.Size = new System.Drawing.Size(381, 40);
             this.lcDelete.TextSize = new System.Drawing.Size(0, 0);
@@ -674,7 +686,7 @@
             // lcClear
             // 
             this.lcClear.Control = this.btnClear;
-            this.lcClear.Location = new System.Drawing.Point(847, 335);
+            this.lcClear.Location = new System.Drawing.Point(847, 367);
             this.lcClear.Name = "lcClear";
             this.lcClear.Size = new System.Drawing.Size(381, 40);
             this.lcClear.TextSize = new System.Drawing.Size(0, 0);
@@ -685,9 +697,9 @@
             this.layoutControlItem10.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.layoutControlItem10.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem10.Control = this.btnPhone;
-            this.layoutControlItem10.Location = new System.Drawing.Point(847, 75);
+            this.layoutControlItem10.Location = new System.Drawing.Point(847, 81);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(381, 24);
+            this.layoutControlItem10.Size = new System.Drawing.Size(381, 30);
             this.layoutControlItem10.Text = "Phone:";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(88, 19);
             // 
@@ -698,14 +710,14 @@
             this.layoutControlItem7.Control = this.btnNationalityId;
             this.layoutControlItem7.Location = new System.Drawing.Point(847, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(381, 24);
+            this.layoutControlItem7.Size = new System.Drawing.Size(381, 30);
             this.layoutControlItem7.Text = "Nationality ID:";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(88, 19);
             // 
             // lcSave
             // 
             this.lcSave.Control = this.btnSave;
-            this.lcSave.Location = new System.Drawing.Point(847, 252);
+            this.lcSave.Location = new System.Drawing.Point(847, 284);
             this.lcSave.Name = "lcSave";
             this.lcSave.Size = new System.Drawing.Size(381, 40);
             this.lcSave.TextSize = new System.Drawing.Size(0, 0);
@@ -714,86 +726,86 @@
             // simpleSeparator1
             // 
             this.simpleSeparator1.AllowHotTrack = false;
-            this.simpleSeparator1.Location = new System.Drawing.Point(847, 24);
+            this.simpleSeparator1.Location = new System.Drawing.Point(847, 30);
             this.simpleSeparator1.Name = "simpleSeparator1";
             this.simpleSeparator1.Size = new System.Drawing.Size(381, 1);
             // 
             // simpleSeparator2
             // 
             this.simpleSeparator2.AllowHotTrack = false;
-            this.simpleSeparator2.Location = new System.Drawing.Point(847, 49);
+            this.simpleSeparator2.Location = new System.Drawing.Point(847, 55);
             this.simpleSeparator2.Name = "simpleSeparator2";
             this.simpleSeparator2.Size = new System.Drawing.Size(381, 1);
             // 
             // simpleSeparator3
             // 
             this.simpleSeparator3.AllowHotTrack = false;
-            this.simpleSeparator3.Location = new System.Drawing.Point(847, 74);
+            this.simpleSeparator3.Location = new System.Drawing.Point(847, 80);
             this.simpleSeparator3.Name = "simpleSeparator3";
             this.simpleSeparator3.Size = new System.Drawing.Size(381, 1);
             // 
             // simpleSeparator4
             // 
             this.simpleSeparator4.AllowHotTrack = false;
-            this.simpleSeparator4.Location = new System.Drawing.Point(847, 99);
+            this.simpleSeparator4.Location = new System.Drawing.Point(847, 111);
             this.simpleSeparator4.Name = "simpleSeparator4";
             this.simpleSeparator4.Size = new System.Drawing.Size(381, 1);
             // 
             // simpleSeparator5
             // 
             this.simpleSeparator5.AllowHotTrack = false;
-            this.simpleSeparator5.Location = new System.Drawing.Point(847, 126);
+            this.simpleSeparator5.Location = new System.Drawing.Point(847, 142);
             this.simpleSeparator5.Name = "simpleSeparator5";
             this.simpleSeparator5.Size = new System.Drawing.Size(381, 1);
             // 
             // simpleSeparator6
             // 
             this.simpleSeparator6.AllowHotTrack = false;
-            this.simpleSeparator6.Location = new System.Drawing.Point(847, 153);
+            this.simpleSeparator6.Location = new System.Drawing.Point(847, 173);
             this.simpleSeparator6.Name = "simpleSeparator6";
             this.simpleSeparator6.Size = new System.Drawing.Size(381, 1);
             // 
             // simpleSeparator7
             // 
             this.simpleSeparator7.AllowHotTrack = false;
-            this.simpleSeparator7.Location = new System.Drawing.Point(847, 226);
+            this.simpleSeparator7.Location = new System.Drawing.Point(847, 258);
             this.simpleSeparator7.Name = "simpleSeparator7";
             this.simpleSeparator7.Size = new System.Drawing.Size(381, 1);
             // 
             // simpleSeparator8
             // 
             this.simpleSeparator8.AllowHotTrack = false;
-            this.simpleSeparator8.Location = new System.Drawing.Point(847, 251);
+            this.simpleSeparator8.Location = new System.Drawing.Point(847, 283);
             this.simpleSeparator8.Name = "simpleSeparator8";
             this.simpleSeparator8.Size = new System.Drawing.Size(381, 1);
             // 
             // simpleSeparator9
             // 
             this.simpleSeparator9.AllowHotTrack = false;
-            this.simpleSeparator9.Location = new System.Drawing.Point(847, 293);
+            this.simpleSeparator9.Location = new System.Drawing.Point(847, 325);
             this.simpleSeparator9.Name = "simpleSeparator9";
             this.simpleSeparator9.Size = new System.Drawing.Size(381, 1);
             // 
             // simpleSeparator10
             // 
             this.simpleSeparator10.AllowHotTrack = false;
-            this.simpleSeparator10.Location = new System.Drawing.Point(847, 292);
+            this.simpleSeparator10.Location = new System.Drawing.Point(847, 324);
             this.simpleSeparator10.Name = "simpleSeparator10";
             this.simpleSeparator10.Size = new System.Drawing.Size(381, 1);
             // 
             // simpleSeparator11
             // 
             this.simpleSeparator11.AllowHotTrack = false;
-            this.simpleSeparator11.Location = new System.Drawing.Point(847, 334);
+            this.simpleSeparator11.Location = new System.Drawing.Point(847, 366);
             this.simpleSeparator11.Name = "simpleSeparator11";
             this.simpleSeparator11.Size = new System.Drawing.Size(381, 1);
             // 
             // simpleSeparator12
             // 
             this.simpleSeparator12.AllowHotTrack = false;
-            this.simpleSeparator12.Location = new System.Drawing.Point(847, 375);
+            this.simpleSeparator12.Location = new System.Drawing.Point(847, 407);
             this.simpleSeparator12.Name = "simpleSeparator12";
-            this.simpleSeparator12.Size = new System.Drawing.Size(381, 90);
+            this.simpleSeparator12.Size = new System.Drawing.Size(381, 58);
             // 
             // popupMenu1
             // 

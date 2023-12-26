@@ -130,6 +130,10 @@
             // 
             // grwHouse
             // 
+            this.grwHouse.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.grwHouse.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grwHouse.Appearance.Row.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.grwHouse.Appearance.Row.Options.UseFont = true;
             this.grwHouse.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn22,
             this.gridColumn23,
@@ -144,6 +148,7 @@
             this.gridColumn31});
             this.grwHouse.GridControl = this.grcHouse;
             this.grwHouse.Name = "grwHouse";
+            this.grwHouse.OptionsBehavior.ReadOnly = true;
             this.grwHouse.OptionsView.ShowViewCaption = true;
             this.grwHouse.ViewCaption = "House Detail";
             // 
@@ -242,6 +247,10 @@
             // 
             // grwPlot
             // 
+            this.grwPlot.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.grwPlot.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grwPlot.Appearance.Row.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.grwPlot.Appearance.Row.Options.UseFont = true;
             this.grwPlot.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn11,
             this.gridColumn12,
@@ -257,6 +266,7 @@
             this.gridColumn21});
             this.grwPlot.GridControl = this.grcPlot;
             this.grwPlot.Name = "grwPlot";
+            this.grwPlot.OptionsBehavior.ReadOnly = true;
             this.grwPlot.OptionsView.ShowViewCaption = true;
             this.grwPlot.ViewCaption = "Plot Detail";
             // 
@@ -363,6 +373,10 @@
             // 
             // grwField
             // 
+            this.grwField.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.grwField.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grwField.Appearance.Row.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.grwField.Appearance.Row.Options.UseFont = true;
             this.grwField.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
@@ -377,6 +391,7 @@
             this.gridColumn10});
             this.grwField.GridControl = this.grcField;
             this.grwField.Name = "grwField";
+            this.grwField.OptionsBehavior.ReadOnly = true;
             this.grwField.OptionsView.ShowViewCaption = true;
             this.grwField.ViewCaption = "Field Detail";
             // 
@@ -475,6 +490,10 @@
             // 
             // grwShop
             // 
+            this.grwShop.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.grwShop.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grwShop.Appearance.Row.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.grwShop.Appearance.Row.Options.UseFont = true;
             this.grwShop.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id,
             this.PropertyId,
@@ -488,6 +507,7 @@
             this.DeleteFlag});
             this.grwShop.GridControl = this.grcShop;
             this.grwShop.Name = "grwShop";
+            this.grwShop.OptionsBehavior.ReadOnly = true;
             this.grwShop.OptionsView.ShowViewCaption = true;
             this.grwShop.ViewCaption = "Shop Detail";
             // 
