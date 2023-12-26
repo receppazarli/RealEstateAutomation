@@ -80,7 +80,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         }
 
-
         void LoadChartIncome()
         {
             using (var context = new RealEstateAutomationContext())
@@ -110,7 +109,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         Convert.ToDouble(e.TotalIncome)));
                 }
             }
-
         }
     }
 }
