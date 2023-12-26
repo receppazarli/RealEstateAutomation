@@ -84,7 +84,7 @@
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(30, 32, 30, 32);
+            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(45, 44, 45, 44);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -110,8 +110,10 @@
             this.barButtonItem8,
             this.barButtonItem9});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ribbonControl1.MaxItemId = 21;
             this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.OptionsMenuMinWidth = 495;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2,
@@ -136,6 +138,7 @@
             this.btnHomePage.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnHomePage.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnHomePage.Name = "btnHomePage";
+            this.btnHomePage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHomePage_ItemClick);
             // 
             // C
             // 
@@ -601,6 +604,8 @@
             // 
             // xtraTabbedMdiManager1
             // 
+            this.xtraTabbedMdiManager1.AppearancePage.Header.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xtraTabbedMdiManager1.AppearancePage.Header.Options.UseFont = true;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // HomePageForm
@@ -614,6 +619,7 @@
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("HomePageForm.IconOptions.Image")));
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("HomePageForm.IconOptions.LargeImage")));
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "HomePageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HOME PAGE";

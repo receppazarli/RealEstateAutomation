@@ -16,6 +16,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         public HomePageForm()
         {
             InitializeComponent();
+            OpenForm<HomePage2>();
         }
 
         private void HomePageForm_Load(object sender, EventArgs e)
@@ -136,6 +137,11 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         private void btnUsers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             _userForm.ShowDialog();
+        }
+
+        private void btnHomePage_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<HomePage2>();
         }
     }
 }
