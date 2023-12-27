@@ -276,6 +276,16 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     Sold = false,
                     DeleteFlag = true
                 });
+
+                _propertyService.Update(new Property
+                {
+                    Id = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "PropertyId")),
+                    ReferenceId = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Id")),
+                    PropertyType = "Plot",
+                    DeleteFlag = true
+                });
+
+
                 LoadPlot();
                 Clear();
 

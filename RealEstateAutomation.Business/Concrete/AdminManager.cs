@@ -35,34 +35,10 @@ namespace RealEstateAutomation.Business.Concrete
 
         public void Add(Admin admin)
         {
-            //try
-            //{
+           
             ValidationTool.Validate(new AdminValidator(), admin);
             _adminDal.Add(admin);
-            //}
-
-            //catch (SqlException e)
-            //{
-            //    switch (e.Number)
-            //    {
-            //        case 2627: // Unique key 
-
-            //            MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            break;
-
-            //        default:
-            //            MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            break;
-            //    }
-            //}
-
-            //catch (Exception ex)
-
-            //{
-            //    MessageBox.Show(
-            //        ex.InnerException == null ? ex.Message : "This record already exists please check your details",
-            //        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
+            
         }
 
         public void Update(Admin admin)

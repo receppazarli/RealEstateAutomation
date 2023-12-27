@@ -493,8 +493,6 @@
             this.OwnerId.Caption = "Owner Id";
             this.OwnerId.FieldName = "OwnerId";
             this.OwnerId.Name = "OwnerId";
-            this.OwnerId.Visible = true;
-            this.OwnerId.VisibleIndex = 0;
             // 
             // OwnerName
             // 
@@ -502,7 +500,7 @@
             this.OwnerName.FieldName = "OwnerName";
             this.OwnerName.Name = "OwnerName";
             this.OwnerName.Visible = true;
-            this.OwnerName.VisibleIndex = 1;
+            this.OwnerName.VisibleIndex = 0;
             // 
             // Area
             // 
@@ -510,7 +508,7 @@
             this.Area.FieldName = "Area";
             this.Area.Name = "Area";
             this.Area.Visible = true;
-            this.Area.VisibleIndex = 2;
+            this.Area.VisibleIndex = 1;
             // 
             // Pafta
             // 
@@ -518,7 +516,7 @@
             this.Pafta.FieldName = "Pafta";
             this.Pafta.Name = "Pafta";
             this.Pafta.Visible = true;
-            this.Pafta.VisibleIndex = 3;
+            this.Pafta.VisibleIndex = 2;
             // 
             // City
             // 
@@ -526,7 +524,7 @@
             this.City.FieldName = "City";
             this.City.Name = "City";
             this.City.Visible = true;
-            this.City.VisibleIndex = 4;
+            this.City.VisibleIndex = 3;
             // 
             // County
             // 
@@ -534,7 +532,7 @@
             this.County.FieldName = "County";
             this.County.Name = "County";
             this.County.Visible = true;
-            this.County.VisibleIndex = 5;
+            this.County.VisibleIndex = 4;
             // 
             // Address
             // 
@@ -542,7 +540,7 @@
             this.Address.FieldName = "Address";
             this.Address.Name = "Address";
             this.Address.Visible = true;
-            this.Address.VisibleIndex = 6;
+            this.Address.VisibleIndex = 5;
             // 
             // Price
             // 
@@ -550,7 +548,7 @@
             this.Price.FieldName = "Price";
             this.Price.Name = "Price";
             this.Price.Visible = true;
-            this.Price.VisibleIndex = 7;
+            this.Price.VisibleIndex = 6;
             // 
             // Description
             // 
@@ -558,7 +556,7 @@
             this.Description.FieldName = "Description";
             this.Description.Name = "Description";
             this.Description.Visible = true;
-            this.Description.VisibleIndex = 8;
+            this.Description.VisibleIndex = 7;
             // 
             // Sold
             // 

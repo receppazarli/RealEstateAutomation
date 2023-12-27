@@ -277,6 +277,15 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     Sold = false,
                     DeleteFlag = true
                 });
+
+                _propertyService.Update(new Property
+                {
+                    Id = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle,"PropertyId")),
+                    ReferenceId = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Id")),
+                    PropertyType = "Field",
+                    DeleteFlag = true
+                });
+
                 LoadField();
                 Clear();
             }

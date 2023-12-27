@@ -239,6 +239,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         Sold = false,
                         DeleteFlag = false
                     });
+
+                    
                     LoadHouse();
                     Clear();
 
@@ -274,6 +276,15 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     Sold = false,
                     DeleteFlag = true
                 });
+
+                _propertyService.Update(new Property
+                {
+                    Id = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "PropertyId")),
+                    ReferenceId = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Id")),
+                    PropertyType = "House",
+                    DeleteFlag = true
+                });
+
                 LoadHouse();
                 Clear();
 

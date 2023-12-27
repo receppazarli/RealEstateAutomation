@@ -271,6 +271,16 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     Sold = false,
                     DeleteFlag = true
                 });
+
+                _propertyService.Update(new Property
+                {
+                    Id = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "PropertyId")),
+                    ReferenceId = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Id")),
+                    PropertyType = "Shop",
+                    DeleteFlag = true
+                });
+
+
                 LoadShop();
                 Clear();
             }
