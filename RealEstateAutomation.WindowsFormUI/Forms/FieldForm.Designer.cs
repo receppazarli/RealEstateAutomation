@@ -61,6 +61,7 @@
             this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PropertyId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OwnerId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OwnerName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Area = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Pafta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.City = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -460,6 +461,7 @@
             this.Id,
             this.PropertyId,
             this.OwnerId,
+            this.OwnerName,
             this.Area,
             this.Pafta,
             this.City,
@@ -488,11 +490,19 @@
             // 
             // OwnerId
             // 
-            this.OwnerId.Caption = "Owner Name";
+            this.OwnerId.Caption = "Owner Id";
             this.OwnerId.FieldName = "OwnerId";
             this.OwnerId.Name = "OwnerId";
             this.OwnerId.Visible = true;
             this.OwnerId.VisibleIndex = 0;
+            // 
+            // OwnerName
+            // 
+            this.OwnerName.Caption = "Owner Name";
+            this.OwnerName.FieldName = "OwnerName";
+            this.OwnerName.Name = "OwnerName";
+            this.OwnerName.Visible = true;
+            this.OwnerName.VisibleIndex = 1;
             // 
             // Area
             // 
@@ -500,7 +510,7 @@
             this.Area.FieldName = "Area";
             this.Area.Name = "Area";
             this.Area.Visible = true;
-            this.Area.VisibleIndex = 1;
+            this.Area.VisibleIndex = 2;
             // 
             // Pafta
             // 
@@ -508,7 +518,7 @@
             this.Pafta.FieldName = "Pafta";
             this.Pafta.Name = "Pafta";
             this.Pafta.Visible = true;
-            this.Pafta.VisibleIndex = 2;
+            this.Pafta.VisibleIndex = 3;
             // 
             // City
             // 
@@ -516,7 +526,7 @@
             this.City.FieldName = "City";
             this.City.Name = "City";
             this.City.Visible = true;
-            this.City.VisibleIndex = 3;
+            this.City.VisibleIndex = 4;
             // 
             // County
             // 
@@ -524,7 +534,7 @@
             this.County.FieldName = "County";
             this.County.Name = "County";
             this.County.Visible = true;
-            this.County.VisibleIndex = 4;
+            this.County.VisibleIndex = 5;
             // 
             // Address
             // 
@@ -532,7 +542,7 @@
             this.Address.FieldName = "Address";
             this.Address.Name = "Address";
             this.Address.Visible = true;
-            this.Address.VisibleIndex = 5;
+            this.Address.VisibleIndex = 6;
             // 
             // Price
             // 
@@ -540,7 +550,7 @@
             this.Price.FieldName = "Price";
             this.Price.Name = "Price";
             this.Price.Visible = true;
-            this.Price.VisibleIndex = 6;
+            this.Price.VisibleIndex = 7;
             // 
             // Description
             // 
@@ -548,7 +558,7 @@
             this.Description.FieldName = "Description";
             this.Description.Name = "Description";
             this.Description.Visible = true;
-            this.Description.VisibleIndex = 7;
+            this.Description.VisibleIndex = 8;
             // 
             // Sold
             // 
@@ -870,5 +880,6 @@
         private DevExpress.XtraEditors.TextEdit txtPropertyType;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
         private DevExpress.XtraGrid.Columns.GridColumn Sold;
+        private DevExpress.XtraGrid.Columns.GridColumn OwnerName;
     }
 }

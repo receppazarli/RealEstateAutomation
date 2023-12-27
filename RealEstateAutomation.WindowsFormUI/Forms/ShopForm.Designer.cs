@@ -83,6 +83,7 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.OwnerName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -436,6 +437,7 @@
             this.Id,
             this.PropertyId,
             this.OwnerId,
+            this.OwnerName,
             this.Area,
             this.City,
             this.County,
@@ -463,11 +465,9 @@
             // 
             // OwnerId
             // 
-            this.OwnerId.Caption = "Owner Name";
+            this.OwnerId.Caption = "Owner Id";
             this.OwnerId.FieldName = "OwnerId";
             this.OwnerId.Name = "OwnerId";
-            this.OwnerId.Visible = true;
-            this.OwnerId.VisibleIndex = 0;
             // 
             // Area
             // 
@@ -707,6 +707,14 @@
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Ribbon = this.ribbonControl1;
             // 
+            // OwnerName
+            // 
+            this.OwnerName.Caption = "Owner  Name";
+            this.OwnerName.FieldName = "OwnerName";
+            this.OwnerName.Name = "OwnerName";
+            this.OwnerName.Visible = true;
+            this.OwnerName.VisibleIndex = 0;
+            // 
             // ShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -807,5 +815,6 @@
         private DevExpress.XtraEditors.TextEdit txtPropertyType;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private DevExpress.XtraGrid.Columns.GridColumn Sold;
+        private DevExpress.XtraGrid.Columns.GridColumn OwnerName;
     }
 }

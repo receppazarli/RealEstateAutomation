@@ -78,7 +78,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                  {
                                      Id = f.Id,
                                      PropertyId = f.PropertyId,
-                                     OwnerId = o.FirstName,
+                                     OwnerId = f.OwnerId,
+                                     OwnerName = o.FirstName,
                                      Area = f.Area,
                                      Pafta = f.Pafta,
                                      City = ci.CityName,
@@ -89,7 +90,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                      Sold = f.Sold,
                                      DeleteFlag = f.DeleteFlag,
                                  };
-                    grcField.DataSource = entity.ToList().Where(x => x.DeleteFlag == false && x.Sold ==false);
+                    grcField.DataSource = entity.ToList().Where(x => x.DeleteFlag == false && x.Sold == false);
 
                 }
             }
@@ -121,7 +122,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             {
                 txtId.Text = grwField.GetFocusedRowCellValue("Id").ToString();
                 txtPropertyType.Text = grwField.GetFocusedRowCellValue("PropertyId").ToString();
-                lkuOwnerId.Text = grwField.GetFocusedRowCellValue("OwnerId").ToString();
+                lkuOwnerId.EditValue = grwField.GetFocusedRowCellValue("OwnerId");
                 txtArea.Text = grwField.GetFocusedRowCellValue("Area").ToString();
                 txtPafta.Text = grwField.GetFocusedRowCellValue("Pafta").ToString();
                 lkuCity.Text = grwField.GetFocusedRowCellValue("City").ToString();

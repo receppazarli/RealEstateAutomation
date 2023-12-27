@@ -78,7 +78,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                  {
                                      Id = s.Id,
                                      PropertyId = s.PropertyId,
-                                     OwnerId = o.FirstName,
+                                     OwnerId = s.OwnerId,
+                                     OwnerName = o.FirstName,
                                      Area = s.Area,
                                      City = ci.CityName,
                                      County = co.CountyName,
@@ -118,7 +119,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             {
                 txtId.Text = grwShop.GetFocusedRowCellValue("Id").ToString();
                 txtPropertyType.Text = grwShop.GetFocusedRowCellValue("PropertyId").ToString();
-                lkuOwnerId.Text = grwShop.GetFocusedRowCellValue("OwnerId").ToString();
+                lkuOwnerId.EditValue = grwShop.GetFocusedRowCellValue("OwnerId");
                 txtArea.Text = grwShop.GetFocusedRowCellValue("Area").ToString();
                 lkuCity.Text = grwShop.GetFocusedRowCellValue("City").ToString();
                 lkuCounty.Text = grwShop.GetFocusedRowCellValue("County").ToString();

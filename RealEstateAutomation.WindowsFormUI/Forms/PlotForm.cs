@@ -78,7 +78,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                  {
                                      Id = pl.Id,
                                      PropertyId = pl.PropertyId,
-                                     OwnerId = o.FirstName,
+                                     OwnerId = pl.OwnerId,
+                                     OwnerName = o.FirstName,
                                      Area = pl.Area,
                                      Ada = pl.Ada,
                                      Pafta = pl.Pafta,
@@ -121,7 +122,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             {
                 txtId.Text = grwPlot.GetFocusedRowCellValue("Id").ToString();
                 txtPropertyType.Text = grwPlot.GetFocusedRowCellValue("PropertyId").ToString();
-                lkuOwnerId.Text = grwPlot.GetFocusedRowCellValue("OwnerId").ToString();
+                lkuOwnerId.EditValue = grwPlot.GetFocusedRowCellValue("OwnerId");
                 txtArea.Text = grwPlot.GetFocusedRowCellValue("Area").ToString();
                 txtAda.Text = grwPlot.GetFocusedRowCellValue("Ada").ToString();
                 txtPafta.Text = grwPlot.GetFocusedRowCellValue("Pafta").ToString();
