@@ -1,20 +1,10 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RealEstateAutomation.Business.Abstract;
 using RealEstateAutomation.Business.DependencyResolvers;
 using RealEstateAutomation.Entities.Concrete;
 using RealEstateAutomation.WindowsFormUI.Methods;
-using RealEstateAutomation.Business.Utilities;
-using RealEstateAutomation.Business.ValidationRules.FluentValidation;
-using System.Data.SqlClient;
 
 namespace RealEstateAutomation.WindowsFormUI.Forms
 {
