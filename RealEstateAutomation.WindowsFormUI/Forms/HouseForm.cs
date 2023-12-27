@@ -44,6 +44,13 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             lkuOwnerId.Properties.ValueMember = "Id";
         }
 
+        void LoadOwner2()
+        {
+            lkuOwnerId.Properties.DataSource = _ownerService.GetAll2();
+            lkuOwnerId.Properties.DisplayMember = "FirstName";
+            lkuOwnerId.Properties.ValueMember = "Id";
+        }
+
         private void LoadCity()
         {
             lkuCity.Properties.DataSource = _cityService.GetAll();
@@ -106,6 +113,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             txtId.Text = "";
             txtPropertyType.Text = "";
             lkuOwnerId.EditValue = 0;
+            LoadOwner();
             txtArea.Text = "0";
             txtHouseType.Text = "";
             lkuCity.EditValue = 0;
@@ -121,6 +129,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             {
                 txtId.Text = grwHouse.GetFocusedRowCellValue("Id").ToString();
                 txtPropertyType.Text = grwHouse.GetFocusedRowCellValue("PropertyId").ToString();
+                LoadOwner2();
                 lkuOwnerId.EditValue = grwHouse.GetFocusedRowCellValue("OwnerId");
                 txtArea.Text = grwHouse.GetFocusedRowCellValue("Area").ToString();
                 txtHouseType.Text = grwHouse.GetFocusedRowCellValue("HouseType").ToString();

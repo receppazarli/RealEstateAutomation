@@ -44,6 +44,14 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             lkuOwnerId.Properties.ValueMember = "Id";
         }
 
+        // click yapıldığnda bütün ownerları getirecek çünkü seçieln kişi ownerlardan silinmişse de orda mülk sahibi olarak görünebilir.
+        void LoadOwner2()
+        {
+            lkuOwnerId.Properties.DataSource = _ownerService.GetAll2();
+            lkuOwnerId.Properties.DisplayMember = "FirstName";
+            lkuOwnerId.Properties.ValueMember = "Id";
+        }
+
         private void LoadCity()
         {
             lkuCity.Properties.DataSource = _cityService.GetAll();
@@ -106,6 +114,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             txtId.Text = "";
             txtPropertyType.Text = "";
             lkuOwnerId.EditValue = 0;
+            LoadOwner();
             txtArea.Text = "0";
             txtPafta.Text = "";
             lkuCity.EditValue = 0;
@@ -122,6 +131,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             {
                 txtId.Text = grwField.GetFocusedRowCellValue("Id").ToString();
                 txtPropertyType.Text = grwField.GetFocusedRowCellValue("PropertyId").ToString();
+                LoadOwner2();
                 lkuOwnerId.EditValue = grwField.GetFocusedRowCellValue("OwnerId");
                 txtArea.Text = grwField.GetFocusedRowCellValue("Area").ToString();
                 txtPafta.Text = grwField.GetFocusedRowCellValue("Pafta").ToString();

@@ -7,6 +7,8 @@ namespace RealEstateAutomation.Business.Abstract
     {
         List<Owner> GetAll();
 
+        List<Owner> GetAll2();
+
         void Save(Owner owner);
         void Update(Owner owner);
 
