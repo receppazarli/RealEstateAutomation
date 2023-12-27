@@ -253,8 +253,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                  Id = s.Id,
                                  SalePropertyId = s.SalePropertyId,
                                  SalePropertyType = s.SalePropertyType,
-                                 OwnerId = o.FirstName,
-                                 CustomerId = c.FirstName,
+                                 OwnerId = s.OwnerId,
+                                 CustomerId = s.CustomerId,
+                                 OwnerName = o.FirstName,
+                                 CustomerName = c.FirstName,
                                  Area = sh.Area,
                                  City = ci.CityName,
                                  County = co.CountyName,
@@ -300,8 +302,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                  Id = s.Id,
                                  SalePropertyId = s.SalePropertyId,
                                  SalePropertyType = s.SalePropertyType,
-                                 OwnerId = o.FirstName,
-                                 CustomerId = c.FirstName,
+                                 OwnerId = s.OwnerId,
+                                 CustomerId = s.CustomerId,
+                                 OwnerName = o.FirstName,
+                                 CustomerName = c.FirstName,
                                  Area = pl.Area,
                                  Ada = pl.Ada,
                                  Pafta = pl.Pafta,
@@ -348,8 +352,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                  Id = s.Id,
                                  SalePropertyId = s.SalePropertyId,
                                  SalePropertyType = s.SalePropertyType,
-                                 OwnerId = o.FirstName,
-                                 CustomerId = c.FirstName,
+                                 OwnerId = s.OwnerId,
+                                 CustomerId = s.CustomerId,
+                                 OwnerName = o.FirstName,
+                                 CustomerName = c.FirstName,
                                  Area = h.Area,
                                  HouseType = h.HouseType,
                                  City = ci.CityName,
@@ -396,8 +402,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                                  SalePropertyId = s.SalePropertyId,
                                  SalePropertyType = s.SalePropertyType,
-                                 OwnerId = o.FirstName,
-                                 CustomerId = c.FirstName,
+                                 OwnerId = s.OwnerId,
+                                 CustomerId = s.CustomerId,
+                                 OwnerName = o.FirstName,
+                                 CustomerName = c.FirstName,
                                  Area = f.Area,
                                  Pafta = f.Pafta,
                                  City = ci.CityName,
@@ -438,8 +446,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     if (grwSale.FocusedRowHandle >= 0)
                     {
                         txtId.Text = grwSale.GetFocusedRowCellValue("Id").ToString();
-                        lkuField.Text = grwSale.GetFocusedRowCellValue("OwnerId").ToString();
-                        lkuCustomerId.Text = grwSale.GetFocusedRowCellValue("CustomerId").ToString();
+                        lkuField.EditValue = grwSale.GetFocusedRowCellValue("SalePropertyId");
+                        lkuCustomerId.EditValue = grwSale.GetFocusedRowCellValue("CustomerId");
                         txtSalePrice.Text = grwSale.GetFocusedRowCellValue("SalePrice").ToString();
                         txtSaleDate.Text = grwSale.GetFocusedRowCellValue("SaleDate").ToString();
                     }
@@ -453,8 +461,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     if (grwSale.FocusedRowHandle >= 0)
                     {
                         txtId.Text = grwSale.GetFocusedRowCellValue("Id").ToString();
-                        lkuHouse.Text = grwSale.GetFocusedRowCellValue("OwnerId").ToString();
-                        lkuCustomerId.Text = grwSale.GetFocusedRowCellValue("CustomerId").ToString();
+                        lkuHouse.EditValue = grwSale.GetFocusedRowCellValue("SalePropertyId");
+                        lkuCustomerId.EditValue = grwSale.GetFocusedRowCellValue("CustomerId");
                         txtSalePrice.Text = grwSale.GetFocusedRowCellValue("SalePrice").ToString();
                         txtSaleDate.Text = grwSale.GetFocusedRowCellValue("SaleDate").ToString();
                     }
@@ -467,8 +475,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     if (grwSale.FocusedRowHandle >= 0)
                     {
                         txtId.Text = grwSale.GetFocusedRowCellValue("Id").ToString();
-                        lkuPlot.Text = grwSale.GetFocusedRowCellValue("OwnerId").ToString();
-                        lkuCustomerId.Text = grwSale.GetFocusedRowCellValue("CustomerId").ToString();
+                        lkuPlot.EditValue = grwSale.GetFocusedRowCellValue("OwnerId");
+                        lkuCustomerId.EditValue = grwSale.GetFocusedRowCellValue("CustomerId");
                         txtSalePrice.Text = grwSale.GetFocusedRowCellValue("SalePrice").ToString();
                         txtSaleDate.Text = grwSale.GetFocusedRowCellValue("SaleDate").ToString();
                     }
@@ -481,8 +489,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     if (grwSale.FocusedRowHandle >= 0)
                     {
                         txtId.Text = grwSale.GetFocusedRowCellValue("Id").ToString();
-                        lkuShop.Text = grwSale.GetFocusedRowCellValue("OwnerId").ToString();
-                        lkuCustomerId.Text = grwSale.GetFocusedRowCellValue("CustomerId").ToString();
+                        lkuShop.EditValue = grwSale.GetFocusedRowCellValue("SalePropertyId");
+                        lkuCustomerId.EditValue = grwSale.GetFocusedRowCellValue("CustomerId");
                         txtSalePrice.Text = grwSale.GetFocusedRowCellValue("SalePrice").ToString();
                         txtSaleDate.Text = grwSale.GetFocusedRowCellValue("SaleDate").ToString();
                     }
