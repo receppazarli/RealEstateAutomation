@@ -241,7 +241,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     });
                     LoadShop();
                     Clear();
-
                 }
                 else
                 {

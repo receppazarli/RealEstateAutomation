@@ -154,7 +154,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                 if (confirmation == DialogResult.Yes)
                 {
-
                     _propertyService.Add(new Property
                     {
                         PropertyType = "Field",

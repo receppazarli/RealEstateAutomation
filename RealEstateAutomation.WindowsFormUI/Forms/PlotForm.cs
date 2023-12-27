@@ -99,7 +99,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                      DeleteFlag = pl.DeleteFlag,
                                  };
                     grcPlot.DataSource = entity.ToList().Where(x => x.DeleteFlag == false && x.Sold == false);
-
                 }
             }
             catch (Exception)
@@ -195,7 +194,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                     ReferenceId = newPlotId,
                                     PropertyType = "Plot",
                                     DeleteFlag = false
-
                                 });
                             }
                         }
@@ -205,7 +203,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                             {
                                 Id = newPropertyId
                             });
-
                             MessageBox.Show(
                                 e.InnerException == null ? e.Message : "This record already exists please check your details",
                                 @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
