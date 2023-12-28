@@ -418,6 +418,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 336);
             this.Controls.Add(this.layoutControl2);
+            this.IconOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.field_10679993__1_;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FieldDetailForm";

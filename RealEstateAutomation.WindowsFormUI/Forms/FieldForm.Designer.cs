@@ -780,6 +780,7 @@
             this.ClientSize = new System.Drawing.Size(1248, 618);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl1);
+            this.IconOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.field_10679993__1_;
             this.Name = "FieldForm";
             this.Text = "FIELD";
             this.Load += new System.EventHandler(this.FieldForm_Load);

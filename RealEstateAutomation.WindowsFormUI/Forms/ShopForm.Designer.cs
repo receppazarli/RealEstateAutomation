@@ -59,6 +59,7 @@
             this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PropertyId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OwnerId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OwnerName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Area = new DevExpress.XtraGrid.Columns.GridColumn();
             this.City = new DevExpress.XtraGrid.Columns.GridColumn();
             this.County = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -83,7 +84,6 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.OwnerName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -469,6 +469,14 @@
             this.OwnerId.FieldName = "OwnerId";
             this.OwnerId.Name = "OwnerId";
             // 
+            // OwnerName
+            // 
+            this.OwnerName.Caption = "Owner  Name";
+            this.OwnerName.FieldName = "OwnerName";
+            this.OwnerName.Name = "OwnerName";
+            this.OwnerName.Visible = true;
+            this.OwnerName.VisibleIndex = 0;
+            // 
             // Area
             // 
             this.Area.Caption = "Area";
@@ -707,14 +715,6 @@
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Ribbon = this.ribbonControl1;
             // 
-            // OwnerName
-            // 
-            this.OwnerName.Caption = "Owner  Name";
-            this.OwnerName.FieldName = "OwnerName";
-            this.OwnerName.Name = "OwnerName";
-            this.OwnerName.Visible = true;
-            this.OwnerName.VisibleIndex = 0;
-            // 
             // ShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -722,6 +722,7 @@
             this.ClientSize = new System.Drawing.Size(1248, 618);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl1);
+            this.IconOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.shop_2981297;
             this.Name = "ShopForm";
             this.Text = "SHOP";
             this.Load += new System.EventHandler(this.ShopForm_Load);

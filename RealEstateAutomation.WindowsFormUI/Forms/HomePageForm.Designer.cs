@@ -617,7 +617,7 @@
             this.Controls.Add(this.ribbonControl1);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.IconOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.homepage_4116406;
-            this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("HomePageForm.IconOptions.LargeImage")));
+            this.IconOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.homepage_4116406;
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "HomePageForm";

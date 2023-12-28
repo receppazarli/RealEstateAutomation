@@ -394,6 +394,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 289);
             this.Controls.Add(this.layoutControl1);
+            this.IconOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.shop_2981297;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ShopDetailForm";

@@ -111,7 +111,7 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(12, 306);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 342);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(457, 36);
             this.simpleButton1.StyleController = this.layoutControl1;
@@ -121,7 +121,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(137, -24);
+            this.txtId.Location = new System.Drawing.Point(137, 12);
             this.txtId.Name = "txtId";
             this.txtId.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtId.Properties.Appearance.Options.UseFont = true;
@@ -131,7 +131,7 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(137, 216);
+            this.txtAddress.Location = new System.Drawing.Point(137, 252);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtAddress.Properties.Appearance.Options.UseFont = true;
@@ -141,7 +141,7 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(137, 246);
+            this.txtPrice.Location = new System.Drawing.Point(137, 282);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtPrice.Properties.Appearance.Options.UseFont = true;
@@ -153,7 +153,7 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(137, 276);
+            this.txtDescription.Location = new System.Drawing.Point(137, 312);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtDescription.Properties.Appearance.Options.UseFont = true;
@@ -163,7 +163,7 @@
             // 
             // txtArea
             // 
-            this.txtArea.Location = new System.Drawing.Point(137, 66);
+            this.txtArea.Location = new System.Drawing.Point(137, 102);
             this.txtArea.Name = "txtArea";
             this.txtArea.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtArea.Properties.Appearance.Options.UseFont = true;
@@ -176,7 +176,7 @@
             // 
             // lkuCity
             // 
-            this.lkuCity.Location = new System.Drawing.Point(137, 156);
+            this.lkuCity.Location = new System.Drawing.Point(137, 192);
             this.lkuCity.Name = "lkuCity";
             this.lkuCity.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lkuCity.Properties.Appearance.Options.UseFont = true;
@@ -193,7 +193,7 @@
             // 
             // lkuCounty
             // 
-            this.lkuCounty.Location = new System.Drawing.Point(137, 186);
+            this.lkuCounty.Location = new System.Drawing.Point(137, 222);
             this.lkuCounty.Name = "lkuCounty";
             this.lkuCounty.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lkuCounty.Properties.Appearance.Options.UseFont = true;
@@ -210,7 +210,7 @@
             // 
             // txtPafta
             // 
-            this.txtPafta.Location = new System.Drawing.Point(137, 126);
+            this.txtPafta.Location = new System.Drawing.Point(137, 162);
             this.txtPafta.Name = "txtPafta";
             this.txtPafta.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtPafta.Properties.Appearance.Options.UseFont = true;
@@ -223,7 +223,7 @@
             // 
             // lkuOwnerId
             // 
-            this.lkuOwnerId.Location = new System.Drawing.Point(137, 36);
+            this.lkuOwnerId.Location = new System.Drawing.Point(137, 72);
             this.lkuOwnerId.Name = "lkuOwnerId";
             this.lkuOwnerId.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lkuOwnerId.Properties.Appearance.Options.UseFont = true;
@@ -243,7 +243,7 @@
             // 
             // txtAda
             // 
-            this.txtAda.Location = new System.Drawing.Point(137, 96);
+            this.txtAda.Location = new System.Drawing.Point(137, 132);
             this.txtAda.Name = "txtAda";
             this.txtAda.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtAda.Properties.Appearance.Options.UseFont = true;
@@ -256,7 +256,7 @@
             // 
             // txtPropertyType
             // 
-            this.txtPropertyType.Location = new System.Drawing.Point(137, 6);
+            this.txtPropertyType.Location = new System.Drawing.Point(137, 42);
             this.txtPropertyType.Name = "txtPropertyType";
             this.txtPropertyType.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtPropertyType.Properties.Appearance.Options.UseFont = true;
@@ -458,6 +458,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 345);
             this.Controls.Add(this.layoutControl1);
+            this.IconOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.land_10364853;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PlotDetailForm";

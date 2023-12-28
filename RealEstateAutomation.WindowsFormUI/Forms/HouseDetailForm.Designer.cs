@@ -421,6 +421,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 331);
             this.Controls.Add(this.layoutControl1);
+            this.IconOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.home_10725584;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HouseDetailForm";
