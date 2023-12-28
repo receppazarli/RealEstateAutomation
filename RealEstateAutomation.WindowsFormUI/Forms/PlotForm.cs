@@ -259,35 +259,45 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
             if (confirmation == DialogResult.Yes)
             {
-
-                _plotService.Update(new Plot
+                try
                 {
-                    Id = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Id")),
-                    PropertyId = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "PropertyId")),
-                    OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
-                    Area = Convert.ToDecimal(txtArea.Text),
-                    Ada = txtAda.Text,
-                    Pafta = txtPafta.Text,
-                    City = Convert.ToInt32(lkuCity.EditValue),
-                    County = Convert.ToInt32(lkuCounty.EditValue),
-                    Address = txtAddress.Text,
-                    Price = Convert.ToDecimal(txtPrice.Text),
-                    Description = txtDescription.Text,
-                    Sold = false,
-                    DeleteFlag = true
-                });
+                    _plotService.Update(new Plot
+                    {
+                        Id = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Id")),
+                        PropertyId = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "PropertyId")),
+                        OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
+                        Area = Convert.ToDecimal(txtArea.Text),
+                        Ada = txtAda.Text,
+                        Pafta = txtPafta.Text,
+                        City = Convert.ToInt32(lkuCity.EditValue),
+                        County = Convert.ToInt32(lkuCounty.EditValue),
+                        Address = txtAddress.Text,
+                        Price = Convert.ToDecimal(txtPrice.Text),
+                        Description = txtDescription.Text,
+                        Sold = false,
+                        DeleteFlag = true
+                    });
 
-                _propertyService.Update(new Property
+                    _propertyService.Update(new Property
+                    {
+                        Id = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "PropertyId")),
+                        ReferenceId = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Id")),
+                        PropertyType = "Plot",
+                        DeleteFlag = true
+                    });
+
+
+                    LoadPlot();
+                    Clear();
+                }
+                catch (Exception ex)
                 {
-                    Id = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "PropertyId")),
-                    ReferenceId = Convert.ToInt32(grwPlot.GetRowCellValue(grwPlot.FocusedRowHandle, "Id")),
-                    PropertyType = "Plot",
-                    DeleteFlag = true
-                });
+                    MessageBox.Show(
+                        ex.InnerException == null ? ex.Message : "This record already exists please check your details",
+                        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
 
-                LoadPlot();
-                Clear();
 
 
             }

@@ -240,7 +240,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         DeleteFlag = false
                     });
 
-                    
                     LoadHouse();
                     Clear();
 
@@ -260,35 +259,42 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
             if (confirmation == DialogResult.Yes)
             {
-
-                _houseService.Update(new House
+                try
                 {
-                    Id = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Id")),
-                    PropertyId = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "PropertyId")),
-                    OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
-                    Area = Convert.ToDecimal(txtArea.Text),
-                    HouseType = txtHouseType.Text,
-                    City = Convert.ToInt32(lkuCity.EditValue),
-                    County = Convert.ToInt32(lkuCounty.EditValue),
-                    Address = txtAddress.Text,
-                    Price = Convert.ToDecimal(txtPrice.Text),
-                    Description = txtDescription.Text,
-                    Sold = false,
-                    DeleteFlag = true
-                });
+                    _houseService.Update(new House
+                    {
+                        Id = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Id")),
+                        PropertyId = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "PropertyId")),
+                        OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
+                        Area = Convert.ToDecimal(txtArea.Text),
+                        HouseType = txtHouseType.Text,
+                        City = Convert.ToInt32(lkuCity.EditValue),
+                        County = Convert.ToInt32(lkuCounty.EditValue),
+                        Address = txtAddress.Text,
+                        Price = Convert.ToDecimal(txtPrice.Text),
+                        Description = txtDescription.Text,
+                        Sold = false,
+                        DeleteFlag = true
+                    });
 
-                _propertyService.Update(new Property
+                    _propertyService.Update(new Property
+                    {
+                        Id = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "PropertyId")),
+                        ReferenceId = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Id")),
+                        PropertyType = "House",
+                        DeleteFlag = true
+                    });
+
+                    LoadHouse();
+                    Clear();
+
+                }
+                catch (Exception ex)
                 {
-                    Id = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "PropertyId")),
-                    ReferenceId = Convert.ToInt32(grwHouse.GetRowCellValue(grwHouse.FocusedRowHandle, "Id")),
-                    PropertyType = "House",
-                    DeleteFlag = true
-                });
-
-                LoadHouse();
-                Clear();
-
-
+                    MessageBox.Show(
+                        ex.InnerException == null ? ex.Message : "This record already exists please check your details",
+                        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {

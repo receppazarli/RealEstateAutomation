@@ -257,32 +257,40 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
             if (confirmation == DialogResult.Yes)
             {
-                _shopService.Update(new Shop
+                try
                 {
-                    Id = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Id")),
-                    PropertyId = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "PropertyId")),
-                    OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
-                    Area = Convert.ToDecimal(txtArea.Text),
-                    City = Convert.ToInt32(lkuCity.EditValue),
-                    County = Convert.ToInt32(lkuCounty.EditValue),
-                    Address = txtAddress.Text,
-                    Price = Convert.ToDecimal(txtPrice.Text),
-                    Description = txtDescription.Text,
-                    Sold = false,
-                    DeleteFlag = true
-                });
+                    _shopService.Update(new Shop
+                    {
+                        Id = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Id")),
+                        PropertyId = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "PropertyId")),
+                        OwnerId = Convert.ToInt32(lkuOwnerId.EditValue),
+                        Area = Convert.ToDecimal(txtArea.Text),
+                        City = Convert.ToInt32(lkuCity.EditValue),
+                        County = Convert.ToInt32(lkuCounty.EditValue),
+                        Address = txtAddress.Text,
+                        Price = Convert.ToDecimal(txtPrice.Text),
+                        Description = txtDescription.Text,
+                        Sold = false,
+                        DeleteFlag = true
+                    });
 
-                _propertyService.Update(new Property
+                    _propertyService.Update(new Property
+                    {
+                        Id = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "PropertyId")),
+                        ReferenceId = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Id")),
+                        PropertyType = "Shop",
+                        DeleteFlag = true
+                    });
+
+                    LoadShop();
+                    Clear();
+                }
+                catch (Exception ex)
                 {
-                    Id = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "PropertyId")),
-                    ReferenceId = Convert.ToInt32(grwShop.GetRowCellValue(grwShop.FocusedRowHandle, "Id")),
-                    PropertyType = "Shop",
-                    DeleteFlag = true
-                });
-
-
-                LoadShop();
-                Clear();
+                    MessageBox.Show(
+                        ex.InnerException == null ? ex.Message : "This record already exists please check your details",
+                        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {

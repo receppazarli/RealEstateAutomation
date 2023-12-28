@@ -434,7 +434,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             }
         }
 
-
         void LoadClick()
         {
             switch (cmbPropertyType.Text)

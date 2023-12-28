@@ -22,33 +22,36 @@ namespace RealEstateAutomation.Business.Concrete
 
         public void Add(Shop shop)
         {
-            try
-            {
-                ValidationTool.Validate(new ShopValidator(), shop);
-                _shopDal.Add(shop);
-            }
+            ValidationTool.Validate(new ShopValidator(), shop);
+            _shopDal.Add(shop);
 
-            catch (SqlException e)
-            {
-                switch (e.Number)
-                {
-                    case 2627: // Unique key 
+            //try
+            //{
+            //    ValidationTool.Validate(new ShopValidator(), shop);
+            //    _shopDal.Add(shop);
+            //}
 
-                        MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+            //catch (SqlException e)
+            //{
+            //    switch (e.Number)
+            //    {
+            //        case 2627: // Unique key 
 
-                    default:
-                        MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                }
-            }
+            //            MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            break;
 
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    ex.InnerException == null ? ex.Message : "This record already exists please check your details",
-                    "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            //        default:
+            //            MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            break;
+            //    }
+            //}
+
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(
+            //        ex.InnerException == null ? ex.Message : "This record already exists please check your details",
+            //        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
 
         }
 
@@ -73,33 +76,36 @@ namespace RealEstateAutomation.Business.Concrete
 
         public void Update(Shop shop)
         {
-            try
-            {
-                ValidationTool.Validate(new ShopValidator(), shop);
-                _shopDal.Update(shop);
-            }
+            ValidationTool.Validate(new ShopValidator(), shop);
+            _shopDal.Update(shop);
 
-            catch (SqlException e)
-            {
-                switch (e.Number)
-                {
-                    case 2627: // Unique key 
+            //try
+            //{
+            //    ValidationTool.Validate(new ShopValidator(), shop);
+            //    _shopDal.Update(shop);
+            //}
 
-                        MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+            //catch (SqlException e)
+            //{
+            //    switch (e.Number)
+            //    {
+            //        case 2627: // Unique key 
 
-                    default:
-                        MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                }
-            }
+            //            MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            break;
 
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    ex.InnerException == null ? ex.Message : "This record already exists please check your details",
-                    "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            //        default:
+            //            MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            break;
+            //    }
+            //}
+
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(
+            //        ex.InnerException == null ? ex.Message : "This record already exists please check your details",
+            //        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
         }
     }
 }

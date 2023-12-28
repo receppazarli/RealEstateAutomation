@@ -22,64 +22,70 @@ namespace RealEstateAutomation.Business.Concrete
 
         public void Add(Plot plot)
         {
-            try
-            {
-                ValidationTool.Validate(new PlotValidator(), plot);
-                _plotDal.Add(plot);
-            }
+            ValidationTool.Validate(new PlotValidator(), plot);
+            _plotDal.Add(plot);
 
-            catch (SqlException e)
-            {
-                switch (e.Number)
-                {
-                    case 2627: // Unique key 
+            //try
+            //{
+            //    ValidationTool.Validate(new PlotValidator(), plot);
+            //    _plotDal.Add(plot);
+            //}
 
-                        MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+            //catch (SqlException e)
+            //{
+            //    switch (e.Number)
+            //    {
+            //        case 2627: // Unique key 
 
-                    default:
-                        MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                }
-            }
+            //            MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            break;
 
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    ex.InnerException == null ? ex.Message : "This record already exists please check your details",
-                    "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            //        default:
+            //            MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            break;
+            //    }
+            //}
+
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(
+            //        ex.InnerException == null ? ex.Message : "This record already exists please check your details",
+            //        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
         }
 
         public void Update(Plot plot)
         {
-            try
-            {
-                ValidationTool.Validate(new PlotValidator(), plot);
-                _plotDal.Update(plot);
-            }
+            ValidationTool.Validate(new PlotValidator(), plot);
+            _plotDal.Update(plot);
 
-            catch (SqlException e)
-            {
-                switch (e.Number)
-                {
-                    case 2627: // Unique key 
+            //try
+            //{
+            //    ValidationTool.Validate(new PlotValidator(), plot);
+            //    _plotDal.Update(plot);
+            //}
 
-                        MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+            //catch (SqlException e)
+            //{
+            //    switch (e.Number)
+            //    {
+            //        case 2627: // Unique key 
 
-                    default:
-                        MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                }
-            }
+            //            MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            break;
 
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    ex.InnerException == null ? ex.Message : "This record already exists please check your details",
-                    "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            //        default:
+            //            MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            break;
+            //    }
+            //}
+
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(
+            //        ex.InnerException == null ? ex.Message : "This record already exists please check your details",
+            //        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
         }
 
         public Plot GetLastAddedHouse()
