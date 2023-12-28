@@ -73,6 +73,66 @@ namespace RealEstateAutomation.WindowsFormUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap field_10679993 {
+            get {
+                object obj = ResourceManager.GetObject("field_10679993", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap field_10679993__1_ {
+            get {
+                object obj = ResourceManager.GetObject("field_10679993 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap home_10725584 {
+            get {
+                object obj = ResourceManager.GetObject("home_10725584", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap homepage_10725734 {
+            get {
+                object obj = ResourceManager.GetObject("homepage_10725734", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap homepage_4116406 {
+            get {
+                object obj = ResourceManager.GetObject("homepage_4116406", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap land_10364853 {
+            get {
+                object obj = ResourceManager.GetObject("land_10364853", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login {
             get {
                 object obj = ResourceManager.GetObject("login", resourceCulture);
@@ -106,6 +166,36 @@ namespace RealEstateAutomation.WindowsFormUI.Properties {
         internal static System.Drawing.Bitmap login4 {
             get {
                 object obj = ResourceManager.GetObject("login4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shop_2981297 {
+            get {
+                object obj = ResourceManager.GetObject("shop_2981297", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shop_9822972 {
+            get {
+                object obj = ResourceManager.GetObject("shop_9822972", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap website_6479160 {
+            get {
+                object obj = ResourceManager.GetObject("website_6479160", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
