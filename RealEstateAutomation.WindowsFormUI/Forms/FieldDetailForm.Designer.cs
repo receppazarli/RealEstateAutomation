@@ -299,6 +299,7 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(457, 30);
             this.layoutControlItem1.Text = "Id:";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(113, 21);
+            this.layoutControlItem1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // layoutControlItem2
             // 
@@ -409,6 +410,7 @@
             this.layoutControlItem9.Size = new System.Drawing.Size(457, 30);
             this.layoutControlItem9.Text = "Property Type:";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(113, 21);
+            this.layoutControlItem9.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // FieldDetailForm
             // 

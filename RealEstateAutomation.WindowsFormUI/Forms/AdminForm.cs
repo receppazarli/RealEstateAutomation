@@ -35,6 +35,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         private void LoadAdmin()
         {
             grcAdmin.DataSource = _adminService.GetAll();
+
         }
 
         private void LoadCity()

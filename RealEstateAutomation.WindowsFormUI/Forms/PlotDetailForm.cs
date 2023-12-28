@@ -74,7 +74,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                              {
                                  Id = pl.Id,
                                  PropertyId = pl.PropertyId,
-                                 OwnerId = o.FirstName,
+                                 OwnerId = pl.OwnerId,
                                  Area = pl.Area,
                                  Ada = pl.Ada,
                                  Pafta = pl.Pafta,
@@ -96,7 +96,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         txtId.Text = current.Id.ToString();
                         txtPropertyType.Text = current.PropertyId.ToString();
 
-                        lkuOwnerId.Text = current.OwnerId;
+                        lkuOwnerId.EditValue = current.OwnerId;
                         lkuCity.Text = current.City.ToString();
                         lkuCounty.Text = current.County.ToString();
 
