@@ -73,6 +73,46 @@ namespace RealEstateAutomation.WindowsFormUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap adaptive_3592781 {
+            get {
+                object obj = ResourceManager.GetObject("adaptive_3592781", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap budget_6553601 {
+            get {
+                object obj = ResourceManager.GetObject("budget_6553601", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap estate_agent_6999986 {
+            get {
+                object obj = ResourceManager.GetObject("estate-agent_6999986", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap feedback_3201629 {
+            get {
+                object obj = ResourceManager.GetObject("feedback_3201629", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap field_10679993 {
             get {
                 object obj = ResourceManager.GetObject("field_10679993", resourceCulture);
@@ -93,9 +133,49 @@ namespace RealEstateAutomation.WindowsFormUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap field_2431991 {
+            get {
+                object obj = ResourceManager.GetObject("field_2431991", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap financial_1875513 {
+            get {
+                object obj = ResourceManager.GetObject("financial_1875513", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gear_738853 {
+            get {
+                object obj = ResourceManager.GetObject("gear_738853", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap home_10725584 {
             get {
                 object obj = ResourceManager.GetObject("home_10725584", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap home_page_844786 {
+            get {
+                object obj = ResourceManager.GetObject("home-page_844786", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +196,16 @@ namespace RealEstateAutomation.WindowsFormUI.Properties {
         internal static System.Drawing.Bitmap homepage_4116406 {
             get {
                 object obj = ResourceManager.GetObject("homepage_4116406", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap house_9058341 {
+            get {
+                object obj = ResourceManager.GetObject("house_9058341", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,6 +263,96 @@ namespace RealEstateAutomation.WindowsFormUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mortgage_6989767 {
+            get {
+                object obj = ResourceManager.GetObject("mortgage_6989767", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap opportunity_6823097 {
+            get {
+                object obj = ResourceManager.GetObject("opportunity_6823097", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profit_growth_8991266 {
+            get {
+                object obj = ResourceManager.GetObject("profit-growth_8991266", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap programmer_2419329 {
+            get {
+                object obj = ResourceManager.GetObject("programmer_2419329", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap protection_6486399 {
+            get {
+                object obj = ResourceManager.GetObject("protection_6486399", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Real_Estate_PNG_Background_Image {
+            get {
+                object obj = ResourceManager.GetObject("Real-Estate-PNG-Background-Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Real_Estate_PNG_Background_Image1 {
+            get {
+                object obj = ResourceManager.GetObject("Real-Estate-PNG-Background-Image1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rent_6232046 {
+            get {
+                object obj = ResourceManager.GetObject("rent_6232046", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sale_5661432 {
+            get {
+                object obj = ResourceManager.GetObject("sale_5661432", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shop_2981297 {
             get {
                 object obj = ResourceManager.GetObject("shop_2981297", resourceCulture);
@@ -186,6 +366,26 @@ namespace RealEstateAutomation.WindowsFormUI.Properties {
         internal static System.Drawing.Bitmap shop_9822972 {
             get {
                 object obj = ResourceManager.GetObject("shop_9822972", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap team_2405310 {
+            get {
+                object obj = ResourceManager.GetObject("team_2405310", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap universal_icon_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("universal_icon_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

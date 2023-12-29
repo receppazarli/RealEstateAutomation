@@ -640,6 +640,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 761);
             this.Controls.Add(this.layoutControl1);
+            this.IconOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.mortgage_6989767;
+            this.IconOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.mortgage_6989767;
             this.Name = "PropertyForm";
             this.Text = "PROPERTY";
             this.Load += new System.EventHandler(this.PropertyForm_Load);

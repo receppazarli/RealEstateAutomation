@@ -118,46 +118,106 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="website_6479160" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\website_6479160.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Real-Estate-PNG-Background-Image1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Real-Estate-PNG-Background-Image1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="home_10725584" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\home_10725584.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="estate-agent_6999986" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estate-agent_6999986.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="43022" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\43022.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="adaptive_3592781" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adaptive_3592781.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="universal_icon_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\universal_icon_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sale_5661432" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sale_5661432.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Login-removebg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login-removebg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="opportunity_6823097" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\opportunity_6823097.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="field_2431991" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\field_2431991.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="profit-growth_8991266" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profit-growth_8991266.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home_10725584" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_10725584.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="43022" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\43022.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="budget_6553601" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\budget_6553601.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Real-Estate-PNG-Background-Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Real-Estate-PNG-Background-Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="protection_6486399" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\protection_6486399.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="homepage_4116406" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\homepage_4116406.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="field_10679993 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\field_10679993 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shop_2981297" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shop_2981297.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="login2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\login2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="login4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\login4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="field_10679993" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\field_10679993.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="programmer_2419329" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\programmer_2419329.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="homepage_10725734" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\homepage_10725734.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="field_10679993" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\field_10679993.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="feedback_3201629" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\feedback_3201629.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="team_2405310" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\team_2405310.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shop_2981297" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shop_2981297.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="financial_1875513" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\financial_1875513.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rent_6232046" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rent_6232046.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="shop_9822972" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shop_9822972.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="website_6479160" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\website_6479160.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="house_9058341" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\house_9058341.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="land_10364853" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\land_10364853.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="homepage_4116406" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\homepage_4116406.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mortgage_6989767" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mortgage_6989767.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home-page_844786" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home-page_844786.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gear_738853" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gear_738853.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

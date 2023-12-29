@@ -121,7 +121,7 @@
             this.ribbonPageEmployees,
             this.ribbonPage4});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
-            this.ribbonControl1.Size = new System.Drawing.Size(1285, 139);
+            this.ribbonControl1.Size = new System.Drawing.Size(1285, 152);
             // 
             // btnHomePage
             // 
@@ -150,8 +150,8 @@
             // 
             this.btnCustomers.Caption = "CUSTOMERS";
             this.btnCustomers.Id = 3;
-            this.btnCustomers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomers.ImageOptions.Image")));
-            this.btnCustomers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCustomers.ImageOptions.LargeImage")));
+            this.btnCustomers.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.feedback_3201629;
+            this.btnCustomers.ImageOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.feedback_3201629;
             this.btnCustomers.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCustomers.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnCustomers.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -167,8 +167,8 @@
             // 
             this.btnEmployee.Caption = "EMPLOYEES";
             this.btnEmployee.Id = 4;
-            this.btnEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployee.ImageOptions.Image")));
-            this.btnEmployee.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEmployee.ImageOptions.LargeImage")));
+            this.btnEmployee.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.team_2405310;
+            this.btnEmployee.ImageOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.team_2405310;
             this.btnEmployee.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnEmployee.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnEmployee.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -184,8 +184,8 @@
             // 
             this.btnExpenses.Caption = "EXPENSES";
             this.btnExpenses.Id = 5;
-            this.btnExpenses.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExpenses.ImageOptions.Image")));
-            this.btnExpenses.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnExpenses.ImageOptions.LargeImage")));
+            this.btnExpenses.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.budget_6553601;
+            this.btnExpenses.ImageOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.budget_6553601;
             this.btnExpenses.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnExpenses.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnExpenses.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -201,8 +201,8 @@
             // 
             this.btnFıelds.Caption = "FIELDS";
             this.btnFıelds.Id = 6;
-            this.btnFıelds.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.field_10679993__1_;
-            this.btnFıelds.ImageOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.field_10679993__1_;
+            this.btnFıelds.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.field_2431991;
+            this.btnFıelds.ImageOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.field_2431991;
             this.btnFıelds.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnFıelds.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnFıelds.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -218,8 +218,8 @@
             // 
             this.btnHouses.Caption = "HOUSES";
             this.btnHouses.Id = 7;
-            this.btnHouses.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.home_10725584;
-            this.btnHouses.ImageOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.home_10725584;
+            this.btnHouses.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.house_9058341;
+            this.btnHouses.ImageOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.house_9058341;
             this.btnHouses.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnHouses.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnHouses.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -277,8 +277,8 @@
             // 
             this.btnOwners.Caption = "OWNERS";
             this.btnOwners.Id = 11;
-            this.btnOwners.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOwners.ImageOptions.Image")));
-            this.btnOwners.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOwners.ImageOptions.LargeImage")));
+            this.btnOwners.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.opportunity_6823097;
+            this.btnOwners.ImageOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.opportunity_6823097;
             this.btnOwners.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnOwners.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnOwners.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -294,8 +294,8 @@
             // 
             this.btnProperties.Caption = "PROPERTIES";
             this.btnProperties.Id = 12;
-            this.btnProperties.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnProperties.ImageOptions.Image")));
-            this.btnProperties.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProperties.ImageOptions.LargeImage")));
+            this.btnProperties.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.mortgage_6989767;
+            this.btnProperties.ImageOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.mortgage_6989767;
             this.btnProperties.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnProperties.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnProperties.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -311,8 +311,8 @@
             // 
             this.btnSales.Caption = "SALES";
             this.btnSales.Id = 13;
-            this.btnSales.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSales.ImageOptions.Image")));
-            this.btnSales.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSales.ImageOptions.LargeImage")));
+            this.btnSales.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.sale_5661432;
+            this.btnSales.ImageOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.sale_5661432;
             this.btnSales.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSales.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnSales.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -328,8 +328,8 @@
             // 
             this.btnUsers.Caption = "USERS";
             this.btnUsers.Id = 14;
-            this.btnUsers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUsers.ImageOptions.Image")));
-            this.btnUsers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUsers.ImageOptions.LargeImage")));
+            this.btnUsers.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.protection_6486399;
+            this.btnUsers.ImageOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.protection_6486399;
             this.btnUsers.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUsers.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnUsers.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -368,8 +368,8 @@
             // 
             this.btnIncome.Caption = "INCOME";
             this.btnIncome.Id = 17;
-            this.btnIncome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIncome.ImageOptions.Image")));
-            this.btnIncome.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnIncome.ImageOptions.LargeImage")));
+            this.btnIncome.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.profit_growth_8991266;
+            this.btnIncome.ImageOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.profit_growth_8991266;
             this.btnIncome.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnIncome.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnIncome.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -385,8 +385,8 @@
             // 
             this.btnAdmin.Caption = "ADMIN";
             this.btnAdmin.Id = 18;
-            this.btnAdmin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmin.ImageOptions.Image")));
-            this.btnAdmin.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAdmin.ImageOptions.LargeImage")));
+            this.btnAdmin.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.programmer_2419329;
+            this.btnAdmin.ImageOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.programmer_2419329;
             this.btnAdmin.ItemAppearance.Disabled.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAdmin.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnAdmin.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -426,6 +426,7 @@
             this.ribbonPageGroup5,
             this.ribbonPageGroup6,
             this.ribbonPageGroup7});
+            this.ribbonPage1.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.home_page_844786;
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "HOME PAGE";
             // 
@@ -464,6 +465,7 @@
             this.ribbonPageGroupProperties,
             this.ribbonPageGroup2,
             this.ribbonPageGroup11});
+            this.ribbonPage2.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.estate_agent_6999986;
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "PROPERTIES";
             // 
@@ -492,6 +494,7 @@
             this.ribbonPageGroup13,
             this.ribbonPageGroup1,
             this.ribbonPageGroup9});
+            this.ribbonPage3.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.financial_1875513;
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "INCOME & EXPENSE";
             // 
@@ -519,6 +522,7 @@
             this.ribbonPageEmployees.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup8,
             this.ribbonPageGroup14});
+            this.ribbonPageEmployees.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.adaptive_3592781;
             this.ribbonPageEmployees.Name = "ribbonPageEmployees";
             this.ribbonPageEmployees.Text = "EMPLOYEES";
             // 
@@ -540,6 +544,7 @@
             this.ribbonPage4.AppearanceSelected.Options.UseFont = true;
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup4});
+            this.ribbonPage4.ImageOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.gear_738853;
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "SETTINGS";
             // 

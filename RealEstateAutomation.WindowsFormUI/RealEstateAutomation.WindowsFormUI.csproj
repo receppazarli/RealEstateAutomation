@@ -365,7 +365,27 @@
     <None Include="Resources\homepage_4116406.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\gear_738853.png" />
+    <None Include="Resources\financial_1875513.png" />
+    <None Include="Resources\universal_icon_32x32.png" />
+    <None Include="Resources\home-page_844786.png" />
+    <None Include="Resources\rent_6232046.png" />
+    <None Include="Resources\Real-Estate-PNG-Background-Image1.png" />
+    <None Include="Resources\Real-Estate-PNG-Background-Image.png" />
+    <None Include="Resources\house_9058341.png" />
+    <None Include="Resources\field_2431991.png" />
+    <None Include="Resources\protection_6486399.png" />
+    <None Include="Resources\programmer_2419329.png" />
+    <None Include="Resources\team_2405310.png" />
+    <None Include="Resources\profit-growth_8991266.png" />
+    <None Include="Resources\sale_5661432.png" />
+    <None Include="Resources\feedback_3201629.png" />
+    <None Include="Resources\budget_6553601.png" />
+    <None Include="Resources\estate-agent_6999986.png" />
+    <None Include="Resources\adaptive_3592781.png" />
     <Content Include="Resources\field_10679993.png" />
+    <None Include="Resources\opportunity_6823097.png" />
+    <None Include="Resources\mortgage_6989767.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
