@@ -59,7 +59,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     _expenseService.Add(new Expense
                     {
                         ExpensePrice = Convert.ToDecimal(txtExpensePrice.Text),
-                        ExpenseDate = string.IsNullOrWhiteSpace(dteExpenseDate.Text) ? (DateTime?)null : Convert.ToDateTime(dteExpenseDate.DateTime.Date),
+                        ExpenseDate = string.IsNullOrWhiteSpace(dteExpenseDate.Text) 
+                            ? (DateTime?)null : Convert.ToDateTime(dteExpenseDate.DateTime.Date),
                         Description = txtDescription.Text,
                         DeleteFlag = false
                     });
@@ -82,9 +83,11 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 {
                     _expenseService.Update(new Expense
                     {
-                        Id = Convert.ToInt32(grwExpense.GetRowCellValue(grwExpense.FocusedRowHandle, "Id")),
+                        Id = Convert.ToInt32(grwExpense.
+                            GetRowCellValue(grwExpense.FocusedRowHandle, "Id")),
                         ExpensePrice = Convert.ToDecimal(txtExpensePrice.Text),
-                        ExpenseDate = string.IsNullOrWhiteSpace(dteExpenseDate.Text) ? (DateTime?)null : Convert.ToDateTime(dteExpenseDate.DateTime.Date),
+                        ExpenseDate = string.IsNullOrWhiteSpace(dteExpenseDate.Text) 
+                            ? (DateTime?)null : Convert.ToDateTime(dteExpenseDate.DateTime.Date),
                         Description = txtDescription.Text,
                         DeleteFlag = false
                     });
@@ -110,9 +113,11 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             {
                 _expenseService.Update(new Expense
                 {
-                    Id = Convert.ToInt32(grwExpense.GetRowCellValue(grwExpense.FocusedRowHandle, "Id")),
+                    Id = Convert.ToInt32(grwExpense.
+                        GetRowCellValue(grwExpense.FocusedRowHandle, "Id")),
                     ExpensePrice = Convert.ToDecimal(txtExpensePrice.Text),
-                    ExpenseDate = string.IsNullOrWhiteSpace(dteExpenseDate.Text) ? (DateTime?)null : Convert.ToDateTime(dteExpenseDate.DateTime.Date),
+                    ExpenseDate = string.IsNullOrWhiteSpace(dteExpenseDate.Text)
+                        ? (DateTime?)null : Convert.ToDateTime(dteExpenseDate.DateTime.Date),
                     Description = txtDescription.Text,
                     DeleteFlag = true
                 });

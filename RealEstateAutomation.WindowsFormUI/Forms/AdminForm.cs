@@ -104,7 +104,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
             if (txtId.Text == "")
             {
-                DialogResult confirmation = MessageBox.Show(@"Are you sure you want to save the information?", @"Information", MessageBoxButtons.YesNo,
+                DialogResult confirmation = MessageBox.Show(@"Are you sure you want to save the information?",
+                    @"Information", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
 
                 if (confirmation == DialogResult.Yes)
@@ -156,7 +157,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 }
                 else
                 {
-                    MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
+                    MessageBox.Show(@"Your transaction has been canceled.",
+                        @"Information", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }

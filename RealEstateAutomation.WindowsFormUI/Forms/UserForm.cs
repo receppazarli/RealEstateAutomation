@@ -47,7 +47,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 UserName = enteredUser.UserName;
                 UserPassword = enteredUser.UserPassword;
             }
-
             txtUsername.Text = UserName;
         }
 

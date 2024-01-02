@@ -43,7 +43,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             {
                 if (LoginForm.EnteredUserAuthorization == 1)
                 {
-
+                    ribbonPageEmployees.Visible = true;
+                    ribbonPageGroupProperties.Visible = true;
                 }
                 else if (LoginForm.EnteredUserAuthorization == 2)
                 {
@@ -53,7 +54,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             }
             catch (Exception)
             {
-                MessageBox.Show(@"Error Loading System. Please try again.", @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"Error Loading System. Please try again.", @"Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
 

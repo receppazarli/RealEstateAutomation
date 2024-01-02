@@ -113,7 +113,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                             MessageBoxIcon.Information);
                     }
 
-
                 }
                 else
                 {

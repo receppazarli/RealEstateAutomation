@@ -22,7 +22,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
             LoadIncome();
         }
-
         void LoadIncome()
         {
             grcIncome.DataSource = _incomeService.GetAll();

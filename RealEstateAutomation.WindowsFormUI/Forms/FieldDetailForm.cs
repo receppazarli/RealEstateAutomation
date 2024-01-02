@@ -33,15 +33,11 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             LoadCity();
             LoadCounty();
             LoadField();
-
             txtId.Text = ItemId.ToString();
 
         }
 
         public int ItemId;
-
-        private readonly Field _field = new Field();
-
 
         void LoadField()
         {
@@ -88,15 +84,12 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 }
                 else
                 {
-                    MessageBox.Show(@"There was an error loading the information. Please try again.", @"Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    MessageBox.Show(@"There was an error loading the information. Please try again."
+                        , @"Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-
-
-
         }
+
         void LoadOwner()
         {
             lkuOwnerId.Properties.DataSource = _ownerService.GetAll();
@@ -154,14 +147,16 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show(@"Incorrect data entry, Please fill in the missing fields ", @"Information", MessageBoxButtons.OK,
+                        MessageBox.Show(@"Incorrect data entry, Please fill in the missing fields ",
+                            @"Information", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show(@"Your transaction has been canceled.", @"Information", MessageBoxButtons.OK,
+                    MessageBox.Show(@"Your transaction has been canceled.",
+                        @"Information", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }

@@ -17,11 +17,6 @@ namespace RealEstateAutomation.Business.ValidationRules.FluentValidation
             RuleFor(x => x.Price).NotEmpty().WithMessage("Price cannot be empty.");
             RuleFor(x => x.Price).GreaterThan(0).WithMessage("Price cannot be less than 0.");
             RuleFor(x => x.PropertyId).NotEmpty().WithMessage("Please fill in the missing information and try again.");
-
-
         }
-
-
-
     }
 }

@@ -152,7 +152,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         PropertyType = "Shop",
                         DeleteFlag = false
                     });
-
                     Property lastAddedProperty = _propertyService.GetLastAddedProperty();
                     int newPropertyId = 0;
                     newPropertyId = lastAddedProperty?.Id ?? -1;

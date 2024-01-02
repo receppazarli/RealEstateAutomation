@@ -181,7 +181,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void grcField_DoubleClick(object sender, EventArgs e)
         {
-
             FieldDetailForm fieldDetailForm = new FieldDetailForm();
             fieldDetailForm.ItemId = Convert.ToInt32(grwField.GetRowCellValue(grwField.FocusedRowHandle, "Id"));
             fieldDetailForm.ShowDialog();

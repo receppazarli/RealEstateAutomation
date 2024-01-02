@@ -56,11 +56,13 @@ namespace RealEstateAutomation.Business.Concrete
                 {
                     case 2627: // Unique key 
 
-                        MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("This record already exists please check your details", "Information",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
 
                     default:
-                        MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("An unexpected database error occurred, please try again.", "Information",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                 }
             }

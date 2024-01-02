@@ -202,7 +202,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                             {
                                 Id = newPropertyId
                             });
-
                             MessageBox.Show(
                                 e.InnerException == null ? e.Message : "This record already exists please check your details",
                                 @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

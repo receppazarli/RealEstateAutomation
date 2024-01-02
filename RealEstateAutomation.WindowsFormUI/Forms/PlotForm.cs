@@ -286,7 +286,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                         DeleteFlag = true
                     });
 
-
                     LoadPlot();
                     Clear();
                 }

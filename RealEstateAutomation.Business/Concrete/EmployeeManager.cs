@@ -36,33 +36,8 @@ namespace RealEstateAutomation.Business.Concrete
 
         public void Add(Employee employee)
         {
-            //try
-            //{
             ValidationTool.Validate(new EmployeeValidator(), employee);
             _employeeDal.Add(employee);
-            //}
-
-            //catch (SqlException e)
-            //{
-            //    switch (e.Number)
-            //    {
-            //        case 2627: // Unique key 
-
-            //            MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            break;
-
-            //        default:
-            //            MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            break;
-            //    }
-            //}
-
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(
-            //        ex.InnerException == null ? ex.Message : "This record already exists please check your details",
-            //        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
         }
 
         public void Update(Employee employee)
@@ -79,11 +54,13 @@ namespace RealEstateAutomation.Business.Concrete
                 {
                     case 2627: // Unique key 
 
-                        MessageBox.Show("This record already exists please check your details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("This record already exists please check your details", "Information",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
 
                     default:
-                        MessageBox.Show("An unexpected database error occurred, please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("An unexpected database error occurred, please try again.", "Information",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                 }
             }

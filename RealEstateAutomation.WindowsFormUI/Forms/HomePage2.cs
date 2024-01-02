@@ -52,7 +52,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                                 ExpenseDate = g.Key,
                                 TotalExpense = g.Sum(x => x.ExpensePrice)
                             };
-
                 var expenseList = query.ToList();
 
                 if (chartControlExpense.Series["Expenses"] == null)

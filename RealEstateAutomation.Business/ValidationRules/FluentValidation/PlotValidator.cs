@@ -4,8 +4,7 @@ using RealEstateAutomation.Entities.Concrete;
 namespace RealEstateAutomation.Business.ValidationRules.FluentValidation
 {
     public class PlotValidator : AbstractValidator<Plot>
-    {
-
+    { 
         public PlotValidator()
         {
             RuleFor(x => x.OwnerId).NotEmpty().WithMessage("Owner space cannot be empty.");
@@ -17,8 +16,6 @@ namespace RealEstateAutomation.Business.ValidationRules.FluentValidation
             RuleFor(x => x.County).NotEmpty().WithMessage("County cannot be empty.");
             RuleFor(x => x.Price).NotEmpty().WithMessage("Price cannot be empty.");
             RuleFor(x => x.Price).GreaterThan(0).WithMessage("Price cannot be less than 0.");
-
         }
-
     }
 }

@@ -107,7 +107,7 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                     _userService.Add(new User
                     {
                         UserName = txtNationalityId.Text,
-                        UserPassword = "1234",
+                        UserPassword = "12345",
                         UserAuthorization = 2,
                         DeleteFlag = false
                     });
@@ -165,8 +165,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 {
                     _employeeService.Update(new Employee()
                     {
-                        Id = Convert.ToInt32(grwEmployee.GetRowCellValue(grwEmployee.FocusedRowHandle, "Id")),
-                        UserId = Convert.ToInt32(grwEmployee.GetRowCellValue(grwEmployee.FocusedRowHandle, "UserId")),
+                        Id = Convert.ToInt32(grwEmployee.
+                            GetRowCellValue(grwEmployee.FocusedRowHandle, "Id")),
+                        UserId = Convert.ToInt32(grwEmployee.
+                            GetRowCellValue(grwEmployee.FocusedRowHandle, "UserId")),
                         NationalityId = txtNationalityId.Text,
                         FirstName = txtFirstName.Text,
                         LastName = txtLastName.Text,
@@ -199,8 +201,10 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 {
                     _employeeService.Update2(new Employee
                     {
-                        Id = Convert.ToInt32(grwEmployee.GetRowCellValue(grwEmployee.FocusedRowHandle, "Id")),
-                        UserId = Convert.ToInt32(grwEmployee.GetRowCellValue(grwEmployee.FocusedRowHandle, "UserId")),
+                        Id = Convert.ToInt32(grwEmployee.
+                            GetRowCellValue(grwEmployee.FocusedRowHandle, "Id")),
+                        UserId = Convert.ToInt32(grwEmployee.
+                            GetRowCellValue(grwEmployee.FocusedRowHandle, "UserId")),
                         NationalityId = txtNationalityId.Text,
                         FirstName = txtFirstName.Text,
                         LastName = txtLastName.Text,

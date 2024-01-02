@@ -10,6 +10,5 @@ namespace RealEstateAutomation.Entities.Concrete
         public int UserAuthorization { get; set; }
         public bool DeleteFlag { get; set; }
 
-
     }
 }

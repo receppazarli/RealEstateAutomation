@@ -35,7 +35,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
         private void SaleForm_Load(object sender, EventArgs e)
         {
-            //LoadSale();
             LoadCustomer();
             LoadField();
             LoadPlot();
@@ -649,7 +648,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             if (txtId.Text == "")
             {
 
-                DialogResult confirmation = MessageBox.Show(@"Are you sure you want to save the information?", @"Information", MessageBoxButtons.YesNo,
+                DialogResult confirmation = MessageBox.Show(@"Are you sure you want to save the information?",
+                    @"Information", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
 
                 if (confirmation == DialogResult.Yes)
@@ -678,7 +678,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
 
                             if (lkuField.EditValue == null)
                             {
-                                MessageBox.Show(@"Field cannot be empty, please select a field.", @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show(@"Field cannot be empty, please select a field.",
+                                    @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 break;
                             }
                             else

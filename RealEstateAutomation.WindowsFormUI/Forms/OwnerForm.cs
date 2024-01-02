@@ -26,7 +26,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         {
             LoadOwner();
         }
-
         void LoadOwner()
         {
             grcOwner.DataSource = _ownerService.GetAll();

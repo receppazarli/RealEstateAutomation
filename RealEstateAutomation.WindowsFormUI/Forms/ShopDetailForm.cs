@@ -60,7 +60,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
         }
 
         public int ItemId;
-
         void LoadShop()
         {
             using (RealEstateAutomationContext context = new RealEstateAutomationContext())

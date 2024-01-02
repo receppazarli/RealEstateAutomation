@@ -137,7 +137,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
                 {
                     _customerService.Update(new Customer()
                     {
-                        Id = Convert.ToInt32(grwCustomers.GetRowCellValue(grwCustomers.FocusedRowHandle, "Id")),
+                        Id = Convert.ToInt32(grwCustomers.GetRowCellValue
+                            (grwCustomers.FocusedRowHandle, "Id")),
                         NationalityId = btnNationalityId.Text,
                         FirstName = txtFirstName.Text,
                         LastName = txtLastName.Text,
@@ -168,7 +169,8 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             {
                 _customerService.Update(new Customer()
                 {
-                    Id = Convert.ToInt32(grwCustomers.GetRowCellValue(grwCustomers.FocusedRowHandle, "Id")),
+                    Id = Convert.ToInt32(grwCustomers.
+                        GetRowCellValue(grwCustomers.FocusedRowHandle, "Id")),
                     NationalityId = btnNationalityId.Text,
                     FirstName = txtFirstName.Text,
                     LastName = txtLastName.Text,

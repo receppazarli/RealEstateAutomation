@@ -13,9 +13,6 @@ namespace RealEstateAutomation.Business.ValidationRules.FluentValidation
             RuleFor(x => x.FirstName).NotEmpty().WithMessage("Name field cannot be empty");
             RuleFor(x => x.LastName).NotEmpty().WithMessage("Last name field cannot be empty");
             RuleFor(x => x.Phone).NotEmpty().WithMessage("Phone field cannot be empty");
-
-
-
         }
     }
 }

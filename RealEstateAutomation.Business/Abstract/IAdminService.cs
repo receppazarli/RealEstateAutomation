@@ -8,7 +8,6 @@ namespace RealEstateAutomation.Business.Abstract
         List<Admin> GetAll();
         void Add(Admin admin);
         void Update(Admin admin);
-
         void Update2(Admin admin);
     }
 }

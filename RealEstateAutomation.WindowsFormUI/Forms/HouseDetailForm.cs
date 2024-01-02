@@ -38,7 +38,6 @@ namespace RealEstateAutomation.WindowsFormUI.Forms
             lkuCity.Properties.ValueMember = "Id";
         }
 
-
         private void LoadCounty()
         {
             lkuCounty.Properties.DataSource = _countyService.GetAll(Convert.ToInt32(lkuCity.EditValue)).ToList();
