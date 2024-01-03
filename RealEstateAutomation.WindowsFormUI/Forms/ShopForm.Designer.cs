@@ -247,9 +247,9 @@
             // 
             this.btnOwnerAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOwnerAdd.ImageOptions.Image")));
             this.btnOwnerAdd.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnOwnerAdd.Location = new System.Drawing.Point(1158, 72);
+            this.btnOwnerAdd.Location = new System.Drawing.Point(1204, 72);
             this.btnOwnerAdd.Name = "btnOwnerAdd";
-            this.btnOwnerAdd.Size = new System.Drawing.Size(78, 22);
+            this.btnOwnerAdd.Size = new System.Drawing.Size(32, 22);
             this.btnOwnerAdd.StyleController = this.layoutControl1;
             this.btnOwnerAdd.TabIndex = 16;
             this.btnOwnerAdd.Click += new System.EventHandler(this.btnOwnerAdd_Click);
@@ -311,7 +311,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DeleteFlag", "DeleteFlag", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lkuOwnerId.Properties.NullText = "Please Choose";
             this.lkuOwnerId.Properties.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.lookUpEdit3_Properties_CustomDisplayText);
-            this.lkuOwnerId.Size = new System.Drawing.Size(170, 26);
+            this.lkuOwnerId.Size = new System.Drawing.Size(216, 26);
             this.lkuOwnerId.StyleController = this.layoutControl1;
             this.lkuOwnerId.TabIndex = 12;
             // 
@@ -610,7 +610,7 @@
             this.layoutControlItem9.Control = this.lkuOwnerId;
             this.layoutControlItem9.Location = new System.Drawing.Point(847, 60);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(299, 30);
+            this.layoutControlItem9.Size = new System.Drawing.Size(345, 30);
             this.layoutControlItem9.Text = "Owner Name:";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(113, 21);
             // 
@@ -644,9 +644,9 @@
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.btnOwnerAdd;
-            this.layoutControlItem13.Location = new System.Drawing.Point(1146, 60);
+            this.layoutControlItem13.Location = new System.Drawing.Point(1192, 60);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(82, 30);
+            this.layoutControlItem13.Size = new System.Drawing.Size(36, 30);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 

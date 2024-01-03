@@ -827,6 +827,8 @@
             this.ClientSize = new System.Drawing.Size(1248, 618);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl1);
+            this.IconOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.feedback_3201629;
+            this.IconOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.feedback_3201629;
             this.Name = "CustomerForm";
             this.Text = "CUSTOMER";
             this.Load += new System.EventHandler(this.BaseFormData_Load);

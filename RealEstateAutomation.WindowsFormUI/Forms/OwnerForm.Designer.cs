@@ -175,7 +175,6 @@
             this.btnExcelTransfer2.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnExcelTransfer2.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnExcelTransfer2.Name = "btnExcelTransfer2";
-            this.btnExcelTransfer2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnExcelTransfer2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExcelTransfer2_ItemClick);
             // 
             // ribbonPage1
@@ -535,6 +534,8 @@
             this.ClientSize = new System.Drawing.Size(1248, 618);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl1);
+            this.IconOptions.Image = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.opportunity_6823097;
+            this.IconOptions.LargeImage = global::RealEstateAutomation.WindowsFormUI.Properties.Resources.opportunity_6823097;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "OwnerForm";

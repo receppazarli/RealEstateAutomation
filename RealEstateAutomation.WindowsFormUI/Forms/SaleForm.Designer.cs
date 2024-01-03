@@ -56,6 +56,8 @@
             this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OwnerId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CustomerId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OwnerName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Area = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ada = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Pafta = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -91,8 +93,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.OwnerName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CustomerName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -247,9 +247,9 @@
             this.btnAddCustomer.Appearance.Options.UseFont = true;
             this.btnAddCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCustomer.ImageOptions.Image")));
             this.btnAddCustomer.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnAddCustomer.Location = new System.Drawing.Point(1198, 192);
+            this.btnAddCustomer.Location = new System.Drawing.Point(1206, 192);
             this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(38, 22);
+            this.btnAddCustomer.Size = new System.Drawing.Size(30, 22);
             this.btnAddCustomer.StyleController = this.layoutControl1;
             this.btnAddCustomer.TabIndex = 17;
             this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
@@ -298,7 +298,7 @@
             this.btnDelete.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(850, 362);
+            this.btnDelete.Location = new System.Drawing.Point(850, 322);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(386, 36);
             this.btnDelete.StyleController = this.layoutControl1;
@@ -311,7 +311,7 @@
             this.btnClear.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnClear.Appearance.Options.UseFont = true;
             this.btnClear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.ImageOptions.Image")));
-            this.btnClear.Location = new System.Drawing.Point(850, 322);
+            this.btnClear.Location = new System.Drawing.Point(850, 362);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(386, 36);
             this.btnClear.StyleController = this.layoutControl1;
@@ -378,7 +378,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DeleteFlag", "DeleteFlag", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lkuCustomerId.Properties.NullText = "Please Choose";
             this.lkuCustomerId.Properties.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.lkuCustomerId_Properties_CustomDisplayText);
-            this.lkuCustomerId.Size = new System.Drawing.Size(207, 26);
+            this.lkuCustomerId.Size = new System.Drawing.Size(215, 26);
             this.lkuCustomerId.StyleController = this.layoutControl1;
             this.lkuCustomerId.TabIndex = 6;
             // 
@@ -464,6 +464,22 @@
             this.CustomerId.Caption = "Customer Id";
             this.CustomerId.FieldName = "CustomerId";
             this.CustomerId.Name = "CustomerId";
+            // 
+            // OwnerName
+            // 
+            this.OwnerName.Caption = "Owner Name";
+            this.OwnerName.FieldName = "OwnerName";
+            this.OwnerName.Name = "OwnerName";
+            this.OwnerName.Visible = true;
+            this.OwnerName.VisibleIndex = 0;
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.Caption = "Customer Name";
+            this.CustomerName.FieldName = "CustomerName";
+            this.CustomerName.Name = "CustomerName";
+            this.CustomerName.Visible = true;
+            this.CustomerName.VisibleIndex = 1;
             // 
             // Area
             // 
@@ -669,7 +685,6 @@
             this.layoutControlItem4,
             this.lcClear,
             this.layoutControlItem6,
-            this.lcDelete,
             this.lcSale,
             this.lycShop,
             this.lycHouse,
@@ -677,7 +692,8 @@
             this.lycPlot,
             this.lycField,
             this.layoutControlItem3,
-            this.layoutControlItem1});
+            this.layoutControlItem1,
+            this.lcDelete});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1248, 485);
             this.layoutControlGroup1.TextVisible = false;
@@ -719,9 +735,9 @@
             // lcClear
             // 
             this.lcClear.Control = this.btnClear;
-            this.lcClear.Location = new System.Drawing.Point(838, 310);
+            this.lcClear.Location = new System.Drawing.Point(838, 350);
             this.lcClear.Name = "lcClear";
-            this.lcClear.Size = new System.Drawing.Size(390, 40);
+            this.lcClear.Size = new System.Drawing.Size(390, 115);
             this.lcClear.TextSize = new System.Drawing.Size(0, 0);
             this.lcClear.TextVisible = false;
             // 
@@ -740,9 +756,9 @@
             // lcDelete
             // 
             this.lcDelete.Control = this.btnDelete;
-            this.lcDelete.Location = new System.Drawing.Point(838, 350);
+            this.lcDelete.Location = new System.Drawing.Point(838, 310);
             this.lcDelete.Name = "lcDelete";
-            this.lcDelete.Size = new System.Drawing.Size(390, 115);
+            this.lcDelete.Size = new System.Drawing.Size(390, 40);
             this.lcDelete.TextSize = new System.Drawing.Size(0, 0);
             this.lcDelete.TextVisible = false;
             // 
@@ -825,16 +841,16 @@
             this.layoutControlItem3.Control = this.lkuCustomerId;
             this.layoutControlItem3.Location = new System.Drawing.Point(838, 180);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(348, 30);
+            this.layoutControlItem3.Size = new System.Drawing.Size(356, 30);
             this.layoutControlItem3.Text = "Customer Name:";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(125, 21);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.btnAddCustomer;
-            this.layoutControlItem1.Location = new System.Drawing.Point(1186, 180);
+            this.layoutControlItem1.Location = new System.Drawing.Point(1194, 180);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(42, 30);
+            this.layoutControlItem1.Size = new System.Drawing.Size(34, 30);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -846,22 +862,6 @@
             this.popupMenu1.ItemLinks.Add(this.btnExcelTransfer2);
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Ribbon = this.ribbonControl1;
-            // 
-            // OwnerName
-            // 
-            this.OwnerName.Caption = "Owner Name";
-            this.OwnerName.FieldName = "OwnerName";
-            this.OwnerName.Name = "OwnerName";
-            this.OwnerName.Visible = true;
-            this.OwnerName.VisibleIndex = 0;
-            // 
-            // CustomerName
-            // 
-            this.CustomerName.Caption = "Customer Name";
-            this.CustomerName.FieldName = "CustomerName";
-            this.CustomerName.Name = "CustomerName";
-            this.CustomerName.Visible = true;
-            this.CustomerName.VisibleIndex = 1;
             // 
             // SaleForm
             // 

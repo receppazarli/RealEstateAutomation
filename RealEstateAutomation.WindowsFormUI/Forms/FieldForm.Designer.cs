@@ -257,9 +257,9 @@
             this.btnOwnerAdd.Appearance.Options.UseFont = true;
             this.btnOwnerAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOwnerAdd.ImageOptions.Image")));
             this.btnOwnerAdd.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnOwnerAdd.Location = new System.Drawing.Point(1202, 67);
+            this.btnOwnerAdd.Location = new System.Drawing.Point(1207, 67);
             this.btnOwnerAdd.Name = "btnOwnerAdd";
-            this.btnOwnerAdd.Size = new System.Drawing.Size(34, 22);
+            this.btnOwnerAdd.Size = new System.Drawing.Size(29, 22);
             this.btnOwnerAdd.StyleController = this.layoutControl1;
             this.btnOwnerAdd.TabIndex = 23;
             this.btnOwnerAdd.Click += new System.EventHandler(this.btnOwnerAdd_Click);
@@ -394,7 +394,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Phone", "Phone", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DeleteFlag", "Delete Flag", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lkuOwnerId.Properties.NullText = "";
-            this.lkuOwnerId.Size = new System.Drawing.Size(214, 26);
+            this.lkuOwnerId.Size = new System.Drawing.Size(219, 26);
             this.lkuOwnerId.StyleController = this.layoutControl1;
             this.lkuOwnerId.TabIndex = 8;
             this.lkuOwnerId.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.lkuOwnerId_CustomDisplayText);
@@ -633,7 +633,7 @@
             this.layoutControlItem5.Control = this.lkuOwnerId;
             this.layoutControlItem5.Location = new System.Drawing.Point(847, 55);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(343, 30);
+            this.layoutControlItem5.Size = new System.Drawing.Size(348, 30);
             this.layoutControlItem5.Text = "Owner Name:";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(113, 21);
             // 
@@ -734,9 +734,9 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnOwnerAdd;
-            this.layoutControlItem7.Location = new System.Drawing.Point(1190, 55);
+            this.layoutControlItem7.Location = new System.Drawing.Point(1195, 55);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(38, 30);
+            this.layoutControlItem7.Size = new System.Drawing.Size(33, 30);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
